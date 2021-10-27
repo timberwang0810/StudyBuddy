@@ -14,11 +14,11 @@ struct ContentView: View {
         TabView {
             TasksView()
                 .tabItem {
-                    Label("Task", systemImage: "square.and.pencil")
+                    Label("Task", systemImage: "list.dash")
                 }
             PlaygroundView()
                 .tabItem {
-                    Label("Playground", systemImage: "list.dash")
+                    Label("Playground", systemImage: "gamecontroller")
                 }
         }
 //        VStack {
