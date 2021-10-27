@@ -11,10 +11,15 @@ struct ContentView: View {
     @ObservedObject var viewModel = ViewModel()
   
     var body: some View {
-        VStack {
-            Text("Hello, world!")
-                .padding()
-            NavbarView(viewModel: viewModel)
+        TabView {
+            TasksView()
+                .tabItem {
+                    Label("Task", systemImage: "list.dash")
+                }
+            PlaygroundView()
+                .tabItem {
+                    Label("Playground", systemImage: "gamecontroller")
+                }
         }
     }
 }

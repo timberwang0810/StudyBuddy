@@ -16,8 +16,9 @@
 		D1A4AFB1272738B900C92354 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1A4AFAF272738B900C92354 /* LaunchScreen.storyboard */; };
 		D1A4AFBC272738BA00C92354 /* StudyBuddyAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A4AFBB272738BA00C92354 /* StudyBuddyAppTests.swift */; };
 		D1A4AFC7272738BA00C92354 /* StudyBuddyAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A4AFC6272738BA00C92354 /* StudyBuddyAppUITests.swift */; };
-		D908AA95272909420095600F /* NavbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D908AA94272909420095600F /* NavbarView.swift */; };
 		D908AA9A2729096A0095600F /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D908AA992729096A0095600F /* ViewModel.swift */; };
+		D908AA9F27290D2C0095600F /* TasksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D908AA9E27290D2C0095600F /* TasksView.swift */; };
+		D908AAA427290D3E0095600F /* PlaygroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D908AAA327290D3E0095600F /* PlaygroundView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,8 +54,9 @@
 		D1A4AFC2272738BA00C92354 /* StudyBuddyAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StudyBuddyAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1A4AFC6272738BA00C92354 /* StudyBuddyAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyBuddyAppUITests.swift; sourceTree = "<group>"; };
 		D1A4AFC8272738BA00C92354 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D908AA94272909420095600F /* NavbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavbarView.swift; sourceTree = "<group>"; };
 		D908AA992729096A0095600F /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		D908AA9E27290D2C0095600F /* TasksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksView.swift; sourceTree = "<group>"; };
+		D908AAA327290D3E0095600F /* PlaygroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaygroundView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,8 +117,9 @@
 				D1A4AFB2272738B900C92354 /* Info.plist */,
 				D1A4AFA7272738B300C92354 /* StudyBuddyApp.xcdatamodeld */,
 				D1A4AFAC272738B900C92354 /* Preview Content */,
-				D908AA94272909420095600F /* NavbarView.swift */,
 				D908AA992729096A0095600F /* ViewModel.swift */,
+				D908AA9E27290D2C0095600F /* TasksView.swift */,
+				D908AAA327290D3E0095600F /* PlaygroundView.swift */,
 			);
 			path = StudyBuddyApp;
 			sourceTree = "<group>";
@@ -293,10 +296,11 @@
 			files = (
 				D1A4AFA9272738B300C92354 /* StudyBuddyApp.xcdatamodeld in Sources */,
 				D1A4AFA2272738B300C92354 /* AppDelegate.swift in Sources */,
-				D908AA95272909420095600F /* NavbarView.swift in Sources */,
+				D908AA9F27290D2C0095600F /* TasksView.swift in Sources */,
 				D1A4AFA4272738B300C92354 /* SceneDelegate.swift in Sources */,
 				D908AA9A2729096A0095600F /* ViewModel.swift in Sources */,
 				D1A4AFA6272738B300C92354 /* ContentView.swift in Sources */,
+				D908AAA427290D3E0095600F /* PlaygroundView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
