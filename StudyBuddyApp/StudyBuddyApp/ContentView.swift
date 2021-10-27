@@ -21,11 +21,6 @@ struct ContentView: View {
                     Label("Playground", systemImage: "gamecontroller")
                 }
         }
-//        VStack {
-//            Text("Hello, world!")
-//                .padding()
-//            NavbarView(viewModel: viewModel)
-//        }
     }
 }
 
