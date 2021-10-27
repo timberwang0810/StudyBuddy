@@ -1,10 +1,3 @@
-//
-//  Task.swift
-//  StudyBuddyApp
-//
-//  Created by Tim Wang on 10/27/21.
-//
-
 import Foundation
 
 enum TaskCategory{
@@ -37,16 +30,20 @@ class Task{
   }
   
   func start() {
+    if (self.hasTaskStarted) {
+      // shouldn't happen
+      return
+    }
     self.hasTaskStarted = true
     startTime = NSDate()
   }
   
-  func stopAndCollectReward(timeElapsed: Int) -> Bool{
+  func stopAndCollectReward() -> Int{
     if (!self.hasTaskStarted) {
       // shouldn't happen
-      return false;
+      return 0;
     }
-    return true;
+    return Task.calculateFinalRewards(baseReward: self.baseReward, timeEstimated: self.duration, timeActual: self.elapsedTime)
   }
   
   private static func calculateBaseRewards(duration: TimeInterval) -> Int{
@@ -54,4 +51,8 @@ class Task{
     return 100
   }
   
+  private static func calculateFinalRewards(baseReward: Int, timeEstimated: TimeInterval, timeActual: TimeInterval) -> Int{
+    // TODO: Reward calculation function
+    return baseReward
+  }
 }
