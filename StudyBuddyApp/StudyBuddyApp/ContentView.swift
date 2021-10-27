@@ -11,11 +11,21 @@ struct ContentView: View {
     @ObservedObject var viewModel = ViewModel()
   
     var body: some View {
-        VStack {
-            Text("Hello, world!")
-                .padding()
-            NavbarView(viewModel: viewModel)
+        TabView {
+            TasksView()
+                .tabItem {
+                    Label("Task", systemImage: "square.and.pencil")
+                }
+            PlaygroundView()
+                .tabItem {
+                    Label("Playground", systemImage: "list.dash")
+                }
         }
+//        VStack {
+//            Text("Hello, world!")
+//                .padding()
+//            NavbarView(viewModel: viewModel)
+//        }
     }
 }
 
