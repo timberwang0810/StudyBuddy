@@ -8,9 +8,19 @@
 import SwiftUI
 
 struct ContentView: View {
+    @ObservedObject var viewModel = ViewModel()
+  
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        TabView {
+            TasksView()
+                .tabItem {
+                    Label("Task", systemImage: "list.dash")
+                }
+            PlaygroundView()
+                .tabItem {
+                    Label("Playground", systemImage: "gamecontroller")
+                }
+        }
     }
 }
 
