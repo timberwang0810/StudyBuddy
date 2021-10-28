@@ -1,14 +1,14 @@
 import Foundation
 
 enum TaskCategory{
-  case STUDY, WORK, CHORES, EXERCISE, OTHERS
+  case STUDY, WORK, CHORES, EXERCISE, OTHER
 }
 
 class Task{
   let name : String
-  var baseReward: Int
+  private var baseReward: Int
   let duration: TimeInterval
-  var category: TaskCategory
+  let category: TaskCategory
   
   private var hasTaskStarted: Bool
   private var startTime: NSDate?
@@ -27,6 +27,10 @@ class Task{
     self.category = category
     self.baseReward = Task.calculateBaseRewards(duration: duration)
     self.hasTaskStarted = false
+  }
+  
+  public func getBaseReward() -> Int{
+    return self.baseReward;
   }
   
   func start() {
