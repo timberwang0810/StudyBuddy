@@ -25,7 +25,7 @@ struct TasksView: View {
             HStack {
                 Text("Duration")
                     .padding();
-                TimeDurationPickerView(time: .constant(Time(hour: 0, minute: 30)))
+                DurationPickerView(time: .constant(Time(hour: 0, minute: 30)))
             }
         }
         .padding(20)
