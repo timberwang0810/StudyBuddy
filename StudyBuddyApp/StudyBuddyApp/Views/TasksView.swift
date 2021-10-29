@@ -9,7 +9,8 @@ import SwiftUI
 
 struct TasksView: View {
     @State var name: String = ""
-    @State var duration: Date = Date()
+    @State var hours: Int = 0
+    @State var minutes: Int = 0
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -22,7 +23,9 @@ struct TasksView: View {
             }
             
             HStack {
-                DatePicker("Duration", selection: $duration, displayedComponents: .hourAndMinute);
+                Text("Duration")
+                    .padding();
+                TimeDurationPickerView(time: .constant(Time(hour: 0, minute: 30)))
             }
         }
         .padding(20)
