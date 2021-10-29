@@ -22,6 +22,7 @@
 		D908AA9A2729096A0095600F /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D908AA992729096A0095600F /* ViewModel.swift */; };
 		D908AA9F27290D2C0095600F /* TasksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D908AA9E27290D2C0095600F /* TasksView.swift */; };
 		D908AAA427290D3E0095600F /* PlaygroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D908AAA327290D3E0095600F /* PlaygroundView.swift */; };
+		D9BC45F0272C721A00962100 /* DurationPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BC45EF272C721A00962100 /* DurationPickerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		D908AA992729096A0095600F /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		D908AA9E27290D2C0095600F /* TasksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksView.swift; sourceTree = "<group>"; };
 		D908AAA327290D3E0095600F /* PlaygroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaygroundView.swift; sourceTree = "<group>"; };
+		D9BC45EF272C721A00962100 /* DurationPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DurationPickerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,15 +119,12 @@
 				D1A4AFD7272738DA00C92354 /* Models */,
 				D1A4AFA1272738B300C92354 /* AppDelegate.swift */,
 				D1A4AFA3272738B300C92354 /* SceneDelegate.swift */,
-				D1A4AFA5272738B300C92354 /* ContentView.swift */,
 				D1A4AFAA272738B900C92354 /* Assets.xcassets */,
 				D1A4AFAF272738B900C92354 /* LaunchScreen.storyboard */,
 				D1A4AFB2272738B900C92354 /* Info.plist */,
 				D1A4AFA7272738B300C92354 /* StudyBuddyApp.xcdatamodeld */,
 				D1A4AFAC272738B900C92354 /* Preview Content */,
 				D908AA992729096A0095600F /* ViewModel.swift */,
-				D908AA9E27290D2C0095600F /* TasksView.swift */,
-				D908AAA327290D3E0095600F /* PlaygroundView.swift */,
 			);
 			path = StudyBuddyApp;
 			sourceTree = "<group>";
@@ -169,6 +168,10 @@
 		D1A4AFD9272738F400C92354 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D1A4AFA5272738B300C92354 /* ContentView.swift */,
+				D908AA9E27290D2C0095600F /* TasksView.swift */,
+				D908AAA327290D3E0095600F /* PlaygroundView.swift */,
+				D9BC45EF272C721A00962100 /* DurationPickerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -307,6 +310,7 @@
 				D1F03D072729B6970076A871 /* Task.swift in Sources */,
 				D1A4AFA9272738B300C92354 /* StudyBuddyApp.xcdatamodeld in Sources */,
 				D1A4AFA2272738B300C92354 /* AppDelegate.swift in Sources */,
+				D9BC45F0272C721A00962100 /* DurationPickerView.swift in Sources */,
 				D908AA9F27290D2C0095600F /* TasksView.swift in Sources */,
 				D1A4AFA4272738B300C92354 /* SceneDelegate.swift in Sources */,
 				D160120B272B1622003BAD02 /* User.swift in Sources */,
