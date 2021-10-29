@@ -11,6 +11,8 @@ struct TasksView: View {
     @State var name: String = ""
     // TODO: Make this duration get updated when picker is updated
     @State var duration: TimeInterval = TimeInterval()
+    @State private var selection = "Study"
+    let categories = ["Other", "Exercise", "Chores", "Work", "Study"]
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -26,6 +28,16 @@ struct TasksView: View {
                 Text("Duration")
                     .padding();
                 DurationPicker(duration: .constant(duration))
+            }
+            
+            HStack {
+                Text("Category")
+                Picker("\(selection)", selection: $selection) {
+                    ForEach(categories, id: \.self) {
+                        Text($0)
+                    }
+                }
+                .pickerStyle(MenuPickerStyle())
             }
         }
         .padding(20)
