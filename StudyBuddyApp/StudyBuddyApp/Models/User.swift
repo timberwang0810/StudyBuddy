@@ -8,7 +8,7 @@
 import Foundation
 
 enum CurrentTaskState{
-  case Started, Pausd, Completed, Idle
+  case Started, Paused, Completed, Idle
 }
 class User{
   

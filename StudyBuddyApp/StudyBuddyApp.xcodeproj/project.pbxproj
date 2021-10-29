@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D160120B272B1622003BAD02 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D160120A272B1622003BAD02 /* User.swift */; };
+		D1601216272BA4B9003BAD02 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1601215272BA4B9003BAD02 /* Item.swift */; };
 		D1A4AFA2272738B300C92354 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A4AFA1272738B300C92354 /* AppDelegate.swift */; };
 		D1A4AFA4272738B300C92354 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A4AFA3272738B300C92354 /* SceneDelegate.swift */; };
 		D1A4AFA6272738B300C92354 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A4AFA5272738B300C92354 /* ContentView.swift */; };
@@ -42,6 +43,7 @@
 
 /* Begin PBXFileReference section */
 		D160120A272B1622003BAD02 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		D1601215272BA4B9003BAD02 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		D1A4AF9E272738B300C92354 /* StudyBuddyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudyBuddyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1A4AFA1272738B300C92354 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D1A4AFA3272738B300C92354 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 			children = (
 				D1F03D062729B6970076A871 /* Task.swift */,
 				D160120A272B1622003BAD02 /* User.swift */,
+				D1601215272BA4B9003BAD02 /* Item.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -300,6 +303,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1601216272BA4B9003BAD02 /* Item.swift in Sources */,
 				D1F03D072729B6970076A871 /* Task.swift in Sources */,
 				D1A4AFA9272738B300C92354 /* StudyBuddyApp.xcdatamodeld in Sources */,
 				D1A4AFA2272738B300C92354 /* AppDelegate.swift in Sources */,
