@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D160120B272B1622003BAD02 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D160120A272B1622003BAD02 /* User.swift */; };
 		D1A4AFA2272738B300C92354 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A4AFA1272738B300C92354 /* AppDelegate.swift */; };
 		D1A4AFA4272738B300C92354 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A4AFA3272738B300C92354 /* SceneDelegate.swift */; };
 		D1A4AFA6272738B300C92354 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A4AFA5272738B300C92354 /* ContentView.swift */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D160120A272B1622003BAD02 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D1A4AF9E272738B300C92354 /* StudyBuddyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudyBuddyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1A4AFA1272738B300C92354 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D1A4AFA3272738B300C92354 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				D1F03D062729B6970076A871 /* Task.swift */,
+				D160120A272B1622003BAD02 /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -302,6 +305,7 @@
 				D1A4AFA2272738B300C92354 /* AppDelegate.swift in Sources */,
 				D908AA9F27290D2C0095600F /* TasksView.swift in Sources */,
 				D1A4AFA4272738B300C92354 /* SceneDelegate.swift in Sources */,
+				D160120B272B1622003BAD02 /* User.swift in Sources */,
 				D908AA9A2729096A0095600F /* ViewModel.swift in Sources */,
 				D1A4AFA6272738B300C92354 /* ContentView.swift in Sources */,
 				D908AAA427290D3E0095600F /* PlaygroundView.swift in Sources */,
