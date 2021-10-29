@@ -9,6 +9,7 @@ import SwiftUI
 
 struct TasksView: View {
     @State var name: String = ""
+    // TODO: Make this duration get updated when picker is updated
     @State var duration: TimeInterval = TimeInterval()
     
     var body: some View {
