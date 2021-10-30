@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct ContentView: View {
-    @ObservedObject var taskViewModel = ViewModel()
+    @ObservedObject var viewModel = ViewModel()
   
     var body: some View {
         TabView {
-            TasksView(taskViewModel: taskViewModel)
+            TasksView(viewModel: viewModel)
                 .tabItem {
                     Label("Task", systemImage: "list.dash")
                 }
