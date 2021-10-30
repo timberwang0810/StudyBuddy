@@ -1,10 +1,3 @@
-//
-//  Item.swift
-//  StudyBuddyApp
-//
-//  Created by Tim Wang on 10/28/21.
-//
-
 import Foundation
 
 enum AccessoryItemCategory{
@@ -15,29 +8,46 @@ enum PlaygroundItemCategory{
   case Wall, Ceiling, Floor
 }
 
-protocol Item {
+protocol Item{
   var name: String {get set}
   var price: Int {get set}
 }
 
-struct AccessoryItem : Item{
-  var name: String
-  var price: Int
+extension Item{
+  var name: String {get {"Name"} set{self.name = newValue}}
+  var price: Int {get{100} set{self.price = newValue}}
+  
+  static func == (lhs: Item, rhs: Item) -> Bool {
+      return lhs.name == rhs.name && lhs.price == rhs.price
+  }
+
+  func hash(into hasher: inout Hasher) {
+      hasher.combine(name)
+      hasher.combine(price)
+  }
+}
+
+struct AccessoryItem : Item, Equatable, Hashable{
   var category : AccessoryItemCategory
   init(name: String, price: Int, category: AccessoryItemCategory){
     self.name = name
     self.price = price
     self.category = category
   }
+  
+  static func == (lhs: AccessoryItem, rhs: AccessoryItem) -> Bool{
+    return lhs.name == rhs.name
+  }
 }
 
-struct PlaygroundItem : Item{
-  var name: String
-  var price: Int
+struct PlaygroundItem : Item, Equatable, Hashable{
   var category : PlaygroundItemCategory
   init(name: String, price: Int, category: PlaygroundItemCategory){
     self.name = name
     self.price = price
     self.category = category
+  }
+  static func == (lhs: PlaygroundItem, rhs: PlaygroundItem) -> Bool{
+    return lhs.name == rhs.name
   }
 }
