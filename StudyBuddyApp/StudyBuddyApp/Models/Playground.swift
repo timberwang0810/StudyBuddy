@@ -31,18 +31,18 @@ class Playground{
         break
       }
     }
-    if var l = self.decorations[item.category]{
-      l.append(item)
-      self.decorations[item.category] = l
+    if var arr = self.decorations[item.category]{
+      arr.append(item)
+      self.decorations[item.category] = arr
     }
   }
   
   public func moveIntoStorage(item: PlaygroundItem){
-    if var l = self.decorations[item.category]{
-      for (index, element) in l.enumerated(){
+    if var arr = self.decorations[item.category]{
+      for (index, element) in arr.enumerated(){
         if (element == item){
-          l.remove(at: index)
-          self.decorations[item.category] = l
+          arr.remove(at: index)
+          self.decorations[item.category] = arr
           break
         }
       }

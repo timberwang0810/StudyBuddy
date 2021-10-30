@@ -39,7 +39,7 @@ class Store {
     character.onNewItemPurchased(item: item)
   }
   
-  public unc purchasePlaygroundItem(item: PlaygroundItem, playground: Playground){
+  public func purchasePlaygroundItem(item: PlaygroundItem, playground: Playground){
     for (index, element) in self.playgroundItems.enumerated(){
       if (element == item){
         self.playgroundItems.remove(at: index)
