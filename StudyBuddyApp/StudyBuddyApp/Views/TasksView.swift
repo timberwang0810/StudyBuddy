@@ -16,7 +16,12 @@ struct TasksView: View {
     
     var body: some View {
         VStack {
+            
             VStack(alignment: .leading) {
+                Text("New Task")
+                    .font(.largeTitle)
+                    .padding();
+                
                 HStack {
                     Text("Name")
                         .padding();
@@ -34,6 +39,7 @@ struct TasksView: View {
                 
                 HStack {
                     Text("Category")
+                        .padding();
                     Picker("\(selection)", selection: $selection) {
                         ForEach(categories, id: \.self) {
                             Text($0)
@@ -51,7 +57,7 @@ struct TasksView: View {
                     HStack {
                         Image("coin")
                         Text("\(Int(duration) / 50)+")
-                            .font(.system(size: 50))
+                            .font(.system(size: 45))
                     }
                     .padding(.horizontal)
                 }
