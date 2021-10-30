@@ -1,7 +1,11 @@
 import Foundation
 
-enum TaskCategory{
-  case STUDY, WORK, CHORES, EXERCISE, OTHER
+enum TaskCategory: String, CaseIterable {
+    case STUDY = "Study"
+    case WORK = "Work"
+    case CHORES = "Chores"
+    case EXERCISE = "Exercise"
+    case OTHER = "Other"
 }
 
 class Task{
@@ -50,9 +54,9 @@ class Task{
     return Task.calculateFinalRewards(baseReward: self.baseReward, timeEstimated: self.duration, timeActual: self.elapsedTime)
   }
   
-  private static func calculateBaseRewards(duration: TimeInterval) -> Int{
+  static func calculateBaseRewards(duration: TimeInterval) -> Int{
     // TODO: Reward calculation function
-    return 100
+    return Int(duration) / 50
   }
   
   private static func calculateFinalRewards(baseReward: Int, timeEstimated: TimeInterval, timeActual: TimeInterval) -> Int{

@@ -8,11 +8,10 @@
 import SwiftUI
 
 struct TasksView: View {
+    @ObservedObject var taskViewModel: ViewModel
     @State var name: String = ""
-    // TODO: Make this duration get updated when picker is updated
     @State var duration: TimeInterval = TimeInterval()
-    @State private var selection = "Study"
-    let categories = ["Other", "Exercise", "Chores", "Work", "Study"]
+    @State private var selection: TaskCategory = .STUDY
     
     var body: some View {
         VStack {
@@ -39,9 +38,9 @@ struct TasksView: View {
                 
                 HStack {
                     Text("Category")
-                    Picker("\(selection)", selection: $selection) {
-                        ForEach(categories, id: \.self) {
-                            Text($0)
+                    Picker("\(selection.rawValue)", selection: $selection) {
+                        ForEach(TaskCategory.allCases.reversed(), id: \.self) {
+                            Text($0.rawValue)
                         }
                     }
                     .pickerStyle(MenuPickerStyle())
@@ -55,24 +54,33 @@ struct TasksView: View {
                         .font(.headline)
                     HStack {
                         Image("coin")
-                        Text("\(Int(duration) / 50)+")
+                        Text("\(Task.calculateBaseRewards(duration: duration))+")
                             .font(.system(size: 45))
                     }
                     .padding(.horizontal)
                 }
                 .padding()
+                .padding(.horizontal, 40)
                 .overlay(
-                    RoundedRectangle(cornerRadius: 5)
-                        .stroke(Color(red: 230 / 255, green: 230 / 255, blue: 230 / 255), lineWidth: 3)
+                    RoundedRectangle(cornerRadius: 10)
+                        .stroke(Color(red: 230 / 255, green: 230 / 255, blue: 230 / 255), lineWidth: 2)
                 )
             }
             .padding(20)
+            
+            Button("Start Now", action: {self.taskViewModel.createTask(name: name, duration: duration, category: selection, isStarted: true)})
+                .padding()
+                .background(Color(red: 248 / 255, green: 208 / 255, blue: 116 / 255))
+                .foregroundColor(.black)
+                .cornerRadius(10)
+                .shadow(color: Color(red: 185 / 255, green: 108 / 255, blue: 37 / 255), radius: 1, x: 0, y: 5)
+                .font(.title)
         }
     }
 }
 
-struct TasksView_Previews: PreviewProvider {
-    static var previews: some View {
-        TasksView()
-    }
-}
+//struct TasksView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        TasksView(taskViewModel: <#ViewModel#>)
+//    }
+//}
