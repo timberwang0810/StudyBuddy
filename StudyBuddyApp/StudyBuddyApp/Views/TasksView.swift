@@ -31,13 +31,6 @@ struct TasksView: View {
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .padding(.horizontal)
                 
-                // If you can figure out how to do this inline
-//                HStack {
-//                    Text("Duration")
-//                        .padding();
-//                    DurationPicker(duration: $duration)
-//                }
-                
                 VStack(alignment: .leading, spacing: -15) {
                     Text("Duration")
                     DurationPicker(duration: $duration)
