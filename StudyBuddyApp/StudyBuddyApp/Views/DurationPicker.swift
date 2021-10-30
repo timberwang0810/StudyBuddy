@@ -24,7 +24,7 @@ struct DurationPicker: UIViewRepresentable {
     }
 
     func makeCoordinator() -> Coordinator {
-        Coordinator(self)
+        return Coordinator(self)
     }
 
     class Coordinator: NSObject {

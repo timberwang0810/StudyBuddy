@@ -27,7 +27,7 @@ struct TasksView: View {
             HStack {
                 Text("Duration")
                     .padding();
-                DurationPicker(duration: .constant(duration))
+                DurationPicker(duration: $duration)
             }
             
             HStack {
