@@ -8,24 +8,21 @@
 import SwiftUI
 
 struct ContentView: View {
-    @ObservedObject var taskViewModel = ViewModel()
-  
+    @ObservedObject var viewModel = ViewModel()
+    @EnvironmentObject var viewRouter: ViewRouter
+
     var body: some View {
-        TabView {
-            TasksView(taskViewModel: taskViewModel)
-                .tabItem {
-                    Label("Task", systemImage: "list.dash")
-                }
-            PlaygroundView()
-                .tabItem {
-                    Label("Playground", systemImage: "gamecontroller")
-                }
+        switch viewRouter.currentPage {
+            case .tabbedPage:
+                TabbedView(viewModel: viewModel)
+            case .doingTaskPage:
+                DoingTaskView(viewModel: viewModel)
         }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView().environmentObject(ViewRouter())
     }
 }
