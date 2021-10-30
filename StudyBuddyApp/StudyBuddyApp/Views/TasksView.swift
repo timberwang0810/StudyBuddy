@@ -9,7 +9,6 @@ import SwiftUI
 
 struct TasksView: View {
     @State var name: String = ""
-    // TODO: Make this duration get updated when picker is updated
     @State var duration: TimeInterval = TimeInterval()
     @State private var selection = "Study"
     let categories = ["Other", "Exercise", "Chores", "Work", "Study"]
@@ -61,9 +60,10 @@ struct TasksView: View {
                     .padding(.horizontal)
                 }
                 .padding()
+                .padding(.horizontal, 40)
                 .overlay(
-                    RoundedRectangle(cornerRadius: 5)
-                        .stroke(Color(red: 230 / 255, green: 230 / 255, blue: 230 / 255), lineWidth: 3)
+                    RoundedRectangle(cornerRadius: 10)
+                        .stroke(Color(red: 230 / 255, green: 230 / 255, blue: 230 / 255), lineWidth: 2)
                 )
             }
             .padding(20)
