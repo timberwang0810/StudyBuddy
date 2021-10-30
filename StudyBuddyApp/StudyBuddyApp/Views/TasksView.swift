@@ -10,8 +10,7 @@ import SwiftUI
 struct TasksView: View {
     @State var name: String = ""
     @State var duration: TimeInterval = TimeInterval()
-    @State private var selection = "Study"
-    let categories = ["Other", "Exercise", "Chores", "Work", "Study"]
+    @State private var selection: TaskCategory = .STUDY
     
     var body: some View {
         VStack {
@@ -38,9 +37,9 @@ struct TasksView: View {
                 
                 HStack {
                     Text("Category")
-                    Picker("\(selection)", selection: $selection) {
-                        ForEach(categories, id: \.self) {
-                            Text($0)
+                    Picker("\(selection.rawValue)", selection: $selection) {
+                        ForEach(TaskCategory.allCases.reversed(), id: \.self) {
+                            Text($0.rawValue)
                         }
                     }
                     .pickerStyle(MenuPickerStyle())

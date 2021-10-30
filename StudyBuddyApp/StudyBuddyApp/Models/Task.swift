@@ -1,7 +1,11 @@
 import Foundation
 
-enum TaskCategory{
-  case STUDY, WORK, CHORES, EXERCISE, OTHER
+enum TaskCategory: String, CaseIterable {
+    case STUDY = "Study"
+    case WORK = "Work"
+    case CHORES = "Chores"
+    case EXERCISE = "Exercise"
+    case OTHER = "Other"
 }
 
 class Task{
