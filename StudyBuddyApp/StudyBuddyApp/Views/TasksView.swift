@@ -9,6 +9,7 @@ import SwiftUI
 
 struct TasksView: View {
     @ObservedObject var viewModel: ViewModel
+    @EnvironmentObject var viewRouter: ViewRouter
     @State var name: String = ""
     @State var duration: TimeInterval = TimeInterval()
     @State private var selection: TaskCategory = .STUDY
@@ -68,7 +69,9 @@ struct TasksView: View {
             }
             .padding(20)
             
-            Button("Start Now", action: {self.viewModel.createTask(name: name, duration: duration, category: selection, isStarted: true)})
+            Button("Start Now", action: {self.viewModel.createTask(name: name, duration: duration, category: selection, isStarted: true, completion: {
+                viewRouter.currentPage = .doingTaskPage
+            })})
                 .padding()
                 .background(Color(red: 248 / 255, green: 208 / 255, blue: 116 / 255))
                 .foregroundColor(.black)
@@ -79,8 +82,8 @@ struct TasksView: View {
     }
 }
 
-//struct TasksView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        TasksView(taskViewModel: <#ViewModel#>)
-//    }
-//}
+struct TasksView_Previews: PreviewProvider {
+    static var previews: some View {
+        TasksView(viewModel: ViewModel()).environmentObject(ViewRouter())
+    }
+}
