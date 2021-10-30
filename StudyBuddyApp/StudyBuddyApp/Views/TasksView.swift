@@ -39,10 +39,23 @@ struct TasksView: View {
                 }
                 .pickerStyle(MenuPickerStyle())
             }
+            
+            VStack {
+                Text("Reward")
+                    .font(.headline)
+                HStack {
+                    Image("coin")
+                    Text("100+")
+                }
+            }
+            .padding()
+            .overlay(
+                RoundedRectangle(cornerRadius: 3)
+                .stroke(lineWidth: 2)
+            )
         }
         .padding(20)
         .textFieldStyle(RoundedBorderTextFieldStyle())
-        
     }
 }
 
