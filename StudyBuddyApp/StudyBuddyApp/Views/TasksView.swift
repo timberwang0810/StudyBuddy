@@ -50,7 +50,7 @@ struct TasksView: View {
                         .font(.headline)
                     HStack {
                         Image("coin")
-                        Text("100+")
+                        Text("\(Int(duration) / 50)+")
                             .font(.system(size: 50))
                     }
                     .padding(.horizontal)
