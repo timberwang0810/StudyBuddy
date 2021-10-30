@@ -15,34 +15,59 @@ struct TasksView: View {
     let categories = ["Other", "Exercise", "Chores", "Work", "Study"]
     
     var body: some View {
-        VStack(alignment: .leading) {
-            HStack {
-                Text("Name")
-                    .padding();
-                TextField("Task Name", text: $name)
-                    .padding()
-                    .cornerRadius(3.0);
-            }
+        VStack {
             
-            HStack {
-                Text("Duration")
+            VStack(alignment: .leading) {
+                Text("New Task")
+                    .font(.largeTitle)
                     .padding();
-                DurationPicker(duration: .constant(duration))
-            }
-            
-            HStack {
-                Text("Category")
-                Picker("\(selection)", selection: $selection) {
-                    ForEach(categories, id: \.self) {
-                        Text($0)
-                    }
+                
+                HStack {
+                    Text("Name")
+                    TextField("Task Name", text: $name)
+                        .padding()
+                        .cornerRadius(3.0);
                 }
-                .pickerStyle(MenuPickerStyle())
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .padding(.horizontal)
+                
+                VStack(alignment: .leading, spacing: -15) {
+                    Text("Duration")
+                    DurationPicker(duration: $duration)
+                        .padding(.horizontal)
+                }.padding(.horizontal)
+                
+                HStack {
+                    Text("Category")
+                    Picker("\(selection)", selection: $selection) {
+                        ForEach(categories, id: \.self) {
+                            Text($0)
+                        }
+                    }
+                    .pickerStyle(MenuPickerStyle())
+                }.padding(.horizontal)
             }
+            .padding(20)
+            
+            VStack(alignment: .center) {
+                VStack{
+                    Text("Reward")
+                        .font(.headline)
+                    HStack {
+                        Image("coin")
+                        Text("\(Int(duration) / 50)+")
+                            .font(.system(size: 45))
+                    }
+                    .padding(.horizontal)
+                }
+                .padding()
+                .overlay(
+                    RoundedRectangle(cornerRadius: 5)
+                        .stroke(Color(red: 230 / 255, green: 230 / 255, blue: 230 / 255), lineWidth: 3)
+                )
+            }
+            .padding(20)
         }
-        .padding(20)
-        .textFieldStyle(RoundedBorderTextFieldStyle())
-        
     }
 }
 
