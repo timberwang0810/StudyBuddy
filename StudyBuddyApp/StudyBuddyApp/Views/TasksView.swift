@@ -24,29 +24,35 @@ struct TasksView: View {
                 
                 HStack {
                     Text("Name")
-                        .padding();
                     TextField("Task Name", text: $name)
                         .padding()
                         .cornerRadius(3.0);
                 }
                 .textFieldStyle(RoundedBorderTextFieldStyle())
+                .padding(.horizontal)
                 
-                HStack {
+                // If you can figure out how to do this inline
+//                HStack {
+//                    Text("Duration")
+//                        .padding();
+//                    DurationPicker(duration: $duration)
+//                }
+                
+                VStack(alignment: .leading, spacing: -15) {
                     Text("Duration")
-                        .padding();
                     DurationPicker(duration: $duration)
-                }
+                        .padding(.horizontal)
+                }.padding(.horizontal)
                 
                 HStack {
                     Text("Category")
-                        .padding();
                     Picker("\(selection)", selection: $selection) {
                         ForEach(categories, id: \.self) {
                             Text($0)
                         }
                     }
                     .pickerStyle(MenuPickerStyle())
-                }
+                }.padding(.horizontal)
             }
             .padding(20)
             
