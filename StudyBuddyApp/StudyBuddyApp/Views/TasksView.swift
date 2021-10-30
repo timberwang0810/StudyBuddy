@@ -67,6 +67,14 @@ struct TasksView: View {
                 )
             }
             .padding(20)
+            
+            Button("Start Now", action: {})
+                .padding()
+                .background(Color(red: 248 / 255, green: 208 / 255, blue: 116 / 255))
+                .foregroundColor(.black)
+                .cornerRadius(10)
+                .shadow(color: Color(red: 185 / 255, green: 108 / 255, blue: 37 / 255), radius: 1, x: 0, y: 5)
+                .font(.title)
         }
     }
 }
