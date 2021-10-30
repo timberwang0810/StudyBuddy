@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct TasksView: View {
+    @ObservedObject var taskViewModel: ViewModel
     @State var name: String = ""
     @State var duration: TimeInterval = TimeInterval()
     @State private var selection: TaskCategory = .STUDY
@@ -67,7 +68,7 @@ struct TasksView: View {
             }
             .padding(20)
             
-            Button("Start Now", action: {})
+            Button("Start Now", action: {self.taskViewModel.createTask(name: name, duration: duration, category: selection, isStarted: true)})
                 .padding()
                 .background(Color(red: 248 / 255, green: 208 / 255, blue: 116 / 255))
                 .foregroundColor(.black)
@@ -78,8 +79,8 @@ struct TasksView: View {
     }
 }
 
-struct TasksView_Previews: PreviewProvider {
-    static var previews: some View {
-        TasksView()
-    }
-}
+//struct TasksView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        TasksView(taskViewModel: <#ViewModel#>)
+//    }
+//}
