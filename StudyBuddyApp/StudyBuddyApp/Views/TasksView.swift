@@ -57,8 +57,8 @@ struct TasksView: View {
                 }
                 .padding()
                 .overlay(
-                    RoundedRectangle(cornerRadius: 3)
-                    .stroke(lineWidth: 2)
+                    RoundedRectangle(cornerRadius: 5)
+                        .stroke(Color(red: 230 / 255, green: 230 / 255, blue: 230 / 255), lineWidth: 3)
                 )
             }
             .padding(20)
