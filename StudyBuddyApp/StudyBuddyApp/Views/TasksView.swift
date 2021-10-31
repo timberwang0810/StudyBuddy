@@ -56,7 +56,7 @@ struct TasksView: View {
                 .padding(20)
                 
                 VStack(alignment: .center) {
-                    VStack{
+                    VStack (spacing: 0) {
                         Text("Reward")
                             .fontWeight(.light)
                         HStack {
@@ -65,10 +65,9 @@ struct TasksView: View {
                                 .font(Font.custom("Chalkboard SE", size: 34))
                                 .fontWeight(.light)
                         }
-                        .padding(.horizontal)
                     }
-                    .padding()
-                    .padding(.horizontal, 40)
+                    .padding(.vertical, 10)
+                    .padding(.horizontal, 70)
                     .overlay(
                         RoundedRectangle(cornerRadius: 10)
                             .stroke(Color(red: 230 / 255, green: 230 / 255, blue: 230 / 255), lineWidth: 2)
