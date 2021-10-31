@@ -51,6 +51,12 @@ struct TasksView: View {
                             }
                         }
                         .pickerStyle(MenuPickerStyle())
+                        .padding(.vertical, 1)
+                        .padding(.horizontal, 25)
+                        .frame(width: 125)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 10)
+                                .stroke(Color(red: 230 / 255, green: 230 / 255, blue: 230 / 255), lineWidth: 2))
                     }.padding(.horizontal)
                 }
                 .font(Font.custom("Chalkboard SE", size: 18))
