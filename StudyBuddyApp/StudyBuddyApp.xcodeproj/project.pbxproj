@@ -17,6 +17,7 @@
 		D160122E272DC7B2003BAD02 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = D160122D272DC7B2003BAD02 /* Character.swift */; };
 		D1601236272DFDBC003BAD02 /* UserTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1601235272DFDBC003BAD02 /* UserTest.swift */; };
 		D1601248272EE182003BAD02 /* TaskTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1601247272EE182003BAD02 /* TaskTest.swift */; };
+		D160124D272F0A1E003BAD02 /* ItemTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D160124C272F0A1E003BAD02 /* ItemTest.swift */; };
 		D1A4AFA2272738B300C92354 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A4AFA1272738B300C92354 /* AppDelegate.swift */; };
 		D1A4AFA4272738B300C92354 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A4AFA3272738B300C92354 /* SceneDelegate.swift */; };
 		D1A4AFA6272738B300C92354 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A4AFA5272738B300C92354 /* ContentView.swift */; };
@@ -67,6 +68,7 @@
 		D160122D272DC7B2003BAD02 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		D1601235272DFDBC003BAD02 /* UserTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTest.swift; sourceTree = "<group>"; };
 		D1601247272EE182003BAD02 /* TaskTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTest.swift; sourceTree = "<group>"; };
+		D160124C272F0A1E003BAD02 /* ItemTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTest.swift; sourceTree = "<group>"; };
 		D1A4AF9E272738B300C92354 /* StudyBuddyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudyBuddyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1A4AFA1272738B300C92354 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D1A4AFA3272738B300C92354 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 		D1A4AFBA272738BA00C92354 /* StudyBuddyAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				D160124C272F0A1E003BAD02 /* ItemTest.swift */,
 				D1601247272EE182003BAD02 /* TaskTest.swift */,
 				D1601235272DFDBC003BAD02 /* UserTest.swift */,
 				D1A4AFBD272738BA00C92354 /* Info.plist */,
@@ -500,6 +503,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D1601248272EE182003BAD02 /* TaskTest.swift in Sources */,
+				D160124D272F0A1E003BAD02 /* ItemTest.swift in Sources */,
 				D1601236272DFDBC003BAD02 /* UserTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
