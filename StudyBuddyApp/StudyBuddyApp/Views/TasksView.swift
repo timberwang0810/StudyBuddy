@@ -64,6 +64,7 @@ struct TasksView: View {
                             Text("\(Task.calculateBaseRewards(duration: duration))+")
                                 .font(Font.custom("Chalkboard SE", size: 34))
                                 .fontWeight(.light)
+                                .baselineOffset(5)
                         }
                     }
                     .padding(.vertical, 10)
