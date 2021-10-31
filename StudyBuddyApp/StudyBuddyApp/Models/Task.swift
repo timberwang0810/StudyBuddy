@@ -8,7 +8,7 @@ enum TaskCategory: String, CaseIterable {
     case OTHER = "Other"
 }
 
-class Task{
+class Task : Equatable{
   let name : String
   private var baseReward: Int
   let duration: TimeInterval
@@ -52,6 +52,10 @@ class Task{
       return 0;
     }
     return Task.calculateFinalRewards(baseReward: self.baseReward, timeEstimated: self.duration, timeActual: self.elapsedTime)
+  }
+  
+  static func == (lhs: Task, rhs: Task) -> Bool{
+    return lhs === rhs
   }
   
   static func calculateBaseRewards(duration: TimeInterval) -> Int{

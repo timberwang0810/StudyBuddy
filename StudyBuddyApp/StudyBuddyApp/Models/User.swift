@@ -1,10 +1,3 @@
-//
-//  User.swift
-//  StudyBuddyApp
-//
-//  Created by Tim Wang on 10/28/21.
-//
-
 import Foundation
 
 enum CurrentTaskState{

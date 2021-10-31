@@ -6,7 +6,7 @@
 //
 
 import XCTest
-@testable import StudyBuddyApp
+@testable import Pods_StudyBuddyApp
 
 class StudyBuddyAppTests: XCTestCase {
 

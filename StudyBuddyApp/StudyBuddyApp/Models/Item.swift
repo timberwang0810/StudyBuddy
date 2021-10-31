@@ -30,9 +30,9 @@ extension Item{
 struct AccessoryItem : Item, Equatable, Hashable{
   var category : AccessoryItemCategory
   init(name: String, price: Int, category: AccessoryItemCategory){
+    self.category = category
     self.name = name
     self.price = price
-    self.category = category
   }
   
   static func == (lhs: AccessoryItem, rhs: AccessoryItem) -> Bool{
@@ -43,9 +43,9 @@ struct AccessoryItem : Item, Equatable, Hashable{
 struct PlaygroundItem : Item, Equatable, Hashable{
   var category : PlaygroundItemCategory
   init(name: String, price: Int, category: PlaygroundItemCategory){
+    self.category = category
     self.name = name
     self.price = price
-    self.category = category
   }
   static func == (lhs: PlaygroundItem, rhs: PlaygroundItem) -> Bool{
     return lhs.name == rhs.name
