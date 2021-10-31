@@ -29,23 +29,29 @@ class Store {
     playgroundItems.append(item)
   }
   
-  public func purchaseAccessoryItem(item: AccessoryItem, character: Character){
+  public func removeAccessoryItem(item: AccessoryItem){
     for (index, element) in self.accessoryItems.enumerated(){
       if (element == item){
         self.accessoryItems.remove(at: index)
         break
       }
     }
-    character.onNewItemPurchased(item: item)
   }
   
-  public func purchasePlaygroundItem(item: PlaygroundItem, playground: Playground){
+  public func removePlaygroundItem(item: PlaygroundItem){
     for (index, element) in self.playgroundItems.enumerated(){
       if (element == item){
         self.playgroundItems.remove(at: index)
         break
       }
     }
-    playground.onNewItemPurchased(item: item)
+  }
+  
+  public func hasAccessoryItem(item: AccessoryItem) -> Bool {
+    return accessoryItems.contains(item)
+  }
+  
+  public func hasPlaygroundItem(item: PlaygroundItem) -> Bool {
+    return playgroundItems.contains(item)
   }
 }

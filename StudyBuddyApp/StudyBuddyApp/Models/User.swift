@@ -44,6 +44,26 @@ class User{
     self.money -= dec
   }
   
+  public func purchaseAccessoryItem(item : AccessoryItem, store: Store, character: Character) -> Bool{
+    if (!store.hasAccessoryItem(item: item) || item.price > self.money){
+      return false
+    }
+    store.removeAccessoryItem(item: item)
+    spendMoney(dec: item.price)
+    character.onNewItemPurchased(item: item)
+    return true
+  }
+  
+  public func purchasePlaygroundItem(item : PlaygroundItem, store: Store, playground: Playground) -> Bool{
+    if (!store.hasPlaygroundItem(item: item) || item.price > self.money){
+      return false
+    }
+    store.removePlaygroundItem(item: item)
+    spendMoney(dec: item.price)
+    playground.onNewItemPurchased(item: item)
+    return true
+  }
+  
   public func getCurrentAppState() -> CurrentTaskState{
     return taskState
   }

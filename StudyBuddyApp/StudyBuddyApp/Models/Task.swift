@@ -24,12 +24,9 @@ class Task : Equatable{
       if let endTime = self.endTime {
         return endTime.timeIntervalSince(startTime as Date)
       }
-      else {
-        return -startTime.timeIntervalSinceNow
-      }
-    } else {
-      return 0
+      return -startTime.timeIntervalSinceNow
     }
+    return 0
   }
   
   init(name: String, duration: TimeInterval, category: TaskCategory){
@@ -72,18 +69,14 @@ class Task : Equatable{
     if (self.startTime != nil) {
       return self.startTime
     }
-    else{
-      return nil
-    }
+    return nil
   }
   
   public func getEndTime() -> NSDate?{
     if (self.endTime != nil) {
       return self.endTime
     }
-    else{
-      return nil
-    }
+    return nil
   }
   
   static func == (lhs: Task, rhs: Task) -> Bool{
