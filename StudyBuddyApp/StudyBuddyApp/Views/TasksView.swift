@@ -19,11 +19,12 @@ struct TasksView: View {
             
             VStack(alignment: .leading) {
                 Text("New Task")
-                    .font(.largeTitle)
+                    .font(Font.custom("Chalkboard SE", size: 24))
                     .padding();
                 
                 HStack {
                     Text("Name")
+                        .fontWeight(.light)
                     TextField("Task Name", text: $name)
                         .padding()
                         .cornerRadius(3.0);
@@ -33,12 +34,14 @@ struct TasksView: View {
                 
                 VStack(alignment: .leading, spacing: -15) {
                     Text("Duration")
+                        .fontWeight(.light)
                     DurationPicker(duration: $duration)
                         .padding(.horizontal)
                 }.padding(.horizontal)
                 
                 HStack {
                     Text("Category")
+                        .fontWeight(.light)
                     Picker("\(selection.rawValue)", selection: $selection) {
                         ForEach(TaskCategory.allCases.reversed(), id: \.self) {
                             Text($0.rawValue)
@@ -47,16 +50,18 @@ struct TasksView: View {
                     .pickerStyle(MenuPickerStyle())
                 }.padding(.horizontal)
             }
+            .font(Font.custom("Chalkboard SE", size: 18))
             .padding(20)
             
             VStack(alignment: .center) {
                 VStack{
                     Text("Reward")
-                        .font(.headline)
+                        .fontWeight(.light)
                     HStack {
                         Image("coin")
                         Text("\(Task.calculateBaseRewards(duration: duration))+")
-                            .font(.system(size: 45))
+                            .font(Font.custom("Chalkboard SE", size: 34))
+                            .fontWeight(.light)
                     }
                     .padding(.horizontal)
                 }
@@ -69,16 +74,19 @@ struct TasksView: View {
             }
             .padding(20)
             
-            Button("Start Now", action: {self.viewModel.createTask(name: name, duration: duration, category: selection, isStarted: true, completion: {
+            Button(action: {self.viewModel.createTask(name: name, duration: duration, category: selection, isStarted: true, completion: {
                 viewRouter.currentPage = .doingTaskPage
-            })})
+            })}) {
+                Text("Start Now")
+                    .font(Font.custom("Chalkboard SE", size: 20))
+                    .fontWeight(.light)
+            }
                 .padding()
                 .background(Color(red: 248 / 255, green: 208 / 255, blue: 116 / 255))
                 .foregroundColor(.black)
                 .cornerRadius(10)
                 .shadow(color: Color(red: 185 / 255, green: 108 / 255, blue: 37 / 255), radius: 1, x: 0, y: 5)
-                .font(.title)
-        }
+        }.font(Font.custom("Chalkboard SE", size: 22))
     }
 }
 
