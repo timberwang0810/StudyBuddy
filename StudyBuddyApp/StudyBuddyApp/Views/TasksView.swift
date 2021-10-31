@@ -89,7 +89,6 @@ struct TasksView: View {
                     .foregroundColor(.black)
                     .cornerRadius(10)
                     .shadow(color: Color(red: 185 / 255, green: 108 / 255, blue: 37 / 255), radius: 1, x: 0, y: 5)
-                Spacer()
             }
             .font(Font.custom("Chalkboard SE", size: 22))
             .frame(maxWidth: 385, maxHeight: 725)
