@@ -22,7 +22,8 @@ struct TasksView: View {
                 VStack(alignment: .leading) {
                     Text("New Task")
                         .font(Font.custom("Chalkboard SE", size: 24))
-                        .padding();
+                        .padding(.bottom, 10)
+                        .padding(.horizontal);
                     
                     HStack {
                         Text("Name")
