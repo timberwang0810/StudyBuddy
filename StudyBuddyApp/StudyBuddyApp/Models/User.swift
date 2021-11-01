@@ -1,10 +1,3 @@
-//
-//  User.swift
-//  StudyBuddyApp
-//
-//  Created by Tim Wang on 10/28/21.
-//
-
 import Foundation
 
 enum CurrentTaskState{
@@ -15,11 +8,17 @@ class User{
   private var money: Int
   private var tasks: [Task]
   private var taskState: CurrentTaskState
+  private var store: Store
+  private var character: Character
+  private var playground: Playground
   
-  init(){
+  init(store: Store, character: Character, playground: Playground){
     self.money = 0
     self.tasks = []
     self.taskState = CurrentTaskState.Idle
+    self.store = store
+    self.character = character
+    self.playground = playground
   }
   
   public func getTasks() -> [Task] {
@@ -49,6 +48,26 @@ class User{
   
   public func spendMoney(dec : Int){
     self.money -= dec
+  }
+  
+  public func purchaseAccessoryItem(item : AccessoryItem) -> Bool{
+    if (!self.store.hasAccessoryItem(item: item) || item.price > self.money){
+      return false
+    }
+    self.store.removeAccessoryItem(item: item)
+    spendMoney(dec: item.price)
+    self.character.onNewItemPurchased(item: item)
+    return true
+  }
+  
+  public func purchasePlaygroundItem(item : PlaygroundItem) -> Bool{
+    if (!self.store.hasPlaygroundItem(item: item) || item.price > self.money){
+      return false
+    }
+    self.store.removePlaygroundItem(item: item)
+    spendMoney(dec: item.price)
+    self.playground.onNewItemPurchased(item: item)
+    return true
   }
   
   public func getCurrentAppState() -> CurrentTaskState{

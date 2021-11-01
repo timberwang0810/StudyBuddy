@@ -25,6 +25,9 @@ class Playground{
   }
   
   public func moveIntoPlayground(item: PlaygroundItem){
+    if (!self.storage.contains(item)){
+      return
+    }
     for (index, element) in self.storage.enumerated(){
       if (element == item){
         self.storage.remove(at: index)
@@ -39,6 +42,9 @@ class Playground{
   
   public func moveIntoStorage(item: PlaygroundItem){
     if var arr = self.decorations[item.category]{
+      if (!arr.contains(item)){
+        return
+      }
       for (index, element) in arr.enumerated(){
         if (element == item){
           arr.remove(at: index)
@@ -46,8 +52,8 @@ class Playground{
           break
         }
       }
+      storage.append(item)
     }
-    storage.append(item)
   }
   
   public func getNumNewItem() -> Int{
