@@ -13,20 +13,6 @@ protocol Item{
   var price: Int {get set}
 }
 
-//extension Item{
-//
-//  static func == (lhs: Item, rhs: Item) -> Bool {
-//    print(lhs.name)
-//    print(rhs.name)
-//    return lhs.name == rhs.name
-//  }
-//
-//  func hash(into hasher: inout Hasher) {
-//      hasher.combine(name)
-//      hasher.combine(price)
-//  }
-//}
-
 struct AccessoryItem : Item, Equatable, Hashable{
   var name: String
   var price: Int

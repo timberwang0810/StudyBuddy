@@ -13,14 +13,18 @@ class Store {
     return accessoryItems
   }
   
+  public func getAccessoryItemsByCategory(category: AccessoryItemCategory) -> [AccessoryItem]{
+    return accessoryItems.filter{$0.category == category}
+  }
+  
   public func getAllPlaygroundItems() -> [PlaygroundItem]{
     return playgroundItems
   }
   
-  public func getAllItems() -> [Item]{
-    return accessoryItems + playgroundItems
+  public func getPlaygroundItemsByCategory(category: PlaygroundItemCategory) -> [PlaygroundItem]{
+    return playgroundItems.filter{$0.category == category}
   }
-  
+
   public func addAccessoryItem(item: AccessoryItem){
     accessoryItems.append(item)
   }
