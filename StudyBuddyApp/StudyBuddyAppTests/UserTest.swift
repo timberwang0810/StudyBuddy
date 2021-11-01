@@ -10,11 +10,14 @@ import XCTest
 
 class UserTest: XCTestCase {
 
+  let store: Store = Store()
+  let character: Character = Character(name: "Bob")
+  let playground: Playground = Playground()
   var sut : User!
     
   override func setUpWithError() throws {
     try super.setUpWithError()
-    sut = User()
+    sut = User(store: store, character: character, playground: playground)
   }
 
   override func tearDownWithError() throws {
@@ -132,4 +135,113 @@ class UserTest: XCTestCase {
     XCTAssertEqual(sut.getCurrentAppState(), CurrentTaskState.Started)
   }
   
+  func testPurchaseAccessoryItem() throws {
+    let beanie = AccessoryItem(name: "Beanie", price: 300, category: AccessoryItemCategory.Hat)
+    let cowboy = AccessoryItem(name: "Cowboy Hat", price: 200, category: AccessoryItemCategory.Hat)
+    let baseball = AccessoryItem(name: "Baseball Hat", price: 150, category: AccessoryItemCategory.Hat)
+    store.addAccessoryItem(item: beanie)
+    store.addAccessoryItem(item: cowboy)
+    store.addAccessoryItem(item: baseball)
+    sut.earnMoney(inc: 600)
+    XCTAssertEqual(sut.getMoney(), 600)
+    XCTAssertEqual(store.getAllAccessoryItems().count, 3)
+    XCTAssertTrue(store.hasAccessoryItem(item: beanie))
+    XCTAssertTrue(store.hasAccessoryItem(item: cowboy))
+    XCTAssertTrue(store.hasAccessoryItem(item: baseball))
+    XCTAssertFalse(character.getAllWardrobeItems().contains(beanie))
+    XCTAssertFalse(character.getAllWardrobeItems().contains(cowboy))
+    XCTAssertFalse(character.getAllWardrobeItems().contains(baseball))
+    
+    XCTAssertTrue(sut.purchaseAccessoryItem(item: beanie))
+    
+    XCTAssertEqual(store.getAllAccessoryItems().count, 2)
+    XCTAssertFalse(store.hasAccessoryItem(item: beanie))
+    XCTAssertEqual(sut.getMoney(), 300)
+    XCTAssertTrue(character.getAllWardrobeItems().contains(beanie))
+    XCTAssertFalse(character.getAllWardrobeItems().contains(cowboy))
+    XCTAssertFalse(character.getAllWardrobeItems().contains(baseball))
+    
+    // can only buy items in store
+    XCTAssertFalse(sut.purchaseAccessoryItem(item: beanie))
+    
+    XCTAssertEqual(store.getAllAccessoryItems().count, 2)
+    XCTAssertFalse(store.hasAccessoryItem(item: beanie))
+    XCTAssertEqual(sut.getMoney(), 300)
+    XCTAssertTrue(character.getAllWardrobeItems().contains(beanie))
+    XCTAssertFalse(character.getAllWardrobeItems().contains(cowboy))
+    XCTAssertFalse(character.getAllWardrobeItems().contains(baseball))
+    
+    XCTAssertTrue(sut.purchaseAccessoryItem(item: baseball))
+    
+    XCTAssertEqual(store.getAllAccessoryItems().count, 1)
+    XCTAssertFalse(store.hasAccessoryItem(item: baseball))
+    XCTAssertEqual(sut.getMoney(), 150)
+    XCTAssertTrue(character.getAllWardrobeItems().contains(beanie))
+    XCTAssertFalse(character.getAllWardrobeItems().contains(cowboy))
+    XCTAssertTrue(character.getAllWardrobeItems().contains(baseball))
+    
+    XCTAssertFalse(sut.purchaseAccessoryItem(item: cowboy))
+
+    XCTAssertEqual(store.getAllAccessoryItems().count, 1)
+    XCTAssertTrue(store.hasAccessoryItem(item: cowboy))
+    XCTAssertEqual(sut.getMoney(), 150)
+    XCTAssertTrue(character.getAllWardrobeItems().contains(beanie))
+    XCTAssertFalse(character.getAllWardrobeItems().contains(cowboy))
+    XCTAssertTrue(character.getAllWardrobeItems().contains(baseball))
+  }
+  
+  func testPurchasePlaygroundItem() throws {
+    let lamp = PlaygroundItem(name: "Lamp", price: 400, category: PlaygroundItemCategory.Floor)
+    let fan = PlaygroundItem(name: "Fan", price: 500, category: PlaygroundItemCategory.Ceiling)
+    let painting = PlaygroundItem(name: "Painting", price: 5000, category: PlaygroundItemCategory.Wall)
+    store.addPlaygroundItem(item: lamp)
+    store.addPlaygroundItem(item: fan)
+    store.addPlaygroundItem(item: painting)
+    sut.earnMoney(inc: 1000)
+    XCTAssertEqual(sut.getMoney(), 1000)
+    XCTAssertEqual(store.getAllPlaygroundItems().count, 3)
+    XCTAssertTrue(store.hasPlaygroundItem(item: lamp))
+    XCTAssertTrue(store.hasPlaygroundItem(item: fan))
+    XCTAssertTrue(store.hasPlaygroundItem(item: painting))
+    XCTAssertFalse(playground.getAllStorageItems().contains(lamp))
+    XCTAssertFalse(playground.getAllStorageItems().contains(fan))
+    XCTAssertFalse(playground.getAllStorageItems().contains(painting))
+
+    XCTAssertTrue(sut.purchasePlaygroundItem(item: fan))
+    
+    XCTAssertEqual(store.getAllPlaygroundItems().count, 2)
+    XCTAssertFalse(store.hasPlaygroundItem(item: fan))
+    XCTAssertEqual(sut.getMoney(), 500)
+    XCTAssertFalse(playground.getAllStorageItems().contains(lamp))
+    XCTAssertTrue(playground.getAllStorageItems().contains(fan))
+    XCTAssertFalse(playground.getAllStorageItems().contains(painting))
+    
+    // can only buy items in store
+    XCTAssertFalse(sut.purchasePlaygroundItem(item: fan))
+    
+    XCTAssertEqual(store.getAllPlaygroundItems().count, 2)
+    XCTAssertFalse(store.hasPlaygroundItem(item: fan))
+    XCTAssertEqual(sut.getMoney(), 500)
+    XCTAssertFalse(playground.getAllStorageItems().contains(lamp))
+    XCTAssertTrue(playground.getAllStorageItems().contains(fan))
+    XCTAssertFalse(playground.getAllStorageItems().contains(painting))
+    
+    XCTAssertTrue(sut.purchasePlaygroundItem(item: lamp))
+    
+    XCTAssertEqual(store.getAllPlaygroundItems().count, 1)
+    XCTAssertFalse(store.hasPlaygroundItem(item: fan))
+    XCTAssertEqual(sut.getMoney(), 100)
+    XCTAssertTrue(playground.getAllStorageItems().contains(lamp))
+    XCTAssertTrue(playground.getAllStorageItems().contains(fan))
+    XCTAssertFalse(playground.getAllStorageItems().contains(painting))
+    
+    XCTAssertFalse(sut.purchasePlaygroundItem(item: painting))
+
+    XCTAssertEqual(store.getAllPlaygroundItems().count, 1)
+    XCTAssertTrue(store.hasPlaygroundItem(item: painting))
+    XCTAssertEqual(sut.getMoney(), 100)
+    XCTAssertTrue(playground.getAllStorageItems().contains(lamp))
+    XCTAssertTrue(playground.getAllStorageItems().contains(fan))
+    XCTAssertFalse(playground.getAllStorageItems().contains(painting))
+  }
 }

@@ -8,11 +8,17 @@ class User{
   private var money: Int
   private var tasks: [Task]
   private var taskState: CurrentTaskState
+  private var store: Store
+  private var character: Character
+  private var playground: Playground
   
-  init(){
+  init(store: Store, character: Character, playground: Playground){
     self.money = 0
     self.tasks = []
     self.taskState = CurrentTaskState.Idle
+    self.store = store
+    self.character = character
+    self.playground = playground
   }
   
   public func getTasks() -> [Task] {
@@ -44,23 +50,23 @@ class User{
     self.money -= dec
   }
   
-  public func purchaseAccessoryItem(item : AccessoryItem, store: Store, character: Character) -> Bool{
-    if (!store.hasAccessoryItem(item: item) || item.price > self.money){
+  public func purchaseAccessoryItem(item : AccessoryItem) -> Bool{
+    if (!self.store.hasAccessoryItem(item: item) || item.price > self.money){
       return false
     }
-    store.removeAccessoryItem(item: item)
+    self.store.removeAccessoryItem(item: item)
     spendMoney(dec: item.price)
-    character.onNewItemPurchased(item: item)
+    self.character.onNewItemPurchased(item: item)
     return true
   }
   
-  public func purchasePlaygroundItem(item : PlaygroundItem, store: Store, playground: Playground) -> Bool{
-    if (!store.hasPlaygroundItem(item: item) || item.price > self.money){
+  public func purchasePlaygroundItem(item : PlaygroundItem) -> Bool{
+    if (!self.store.hasPlaygroundItem(item: item) || item.price > self.money){
       return false
     }
-    store.removePlaygroundItem(item: item)
+    self.store.removePlaygroundItem(item: item)
     spendMoney(dec: item.price)
-    playground.onNewItemPurchased(item: item)
+    self.playground.onNewItemPurchased(item: item)
     return true
   }
   
