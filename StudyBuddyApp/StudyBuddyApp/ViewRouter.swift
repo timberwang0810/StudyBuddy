@@ -17,6 +17,7 @@ import Foundation
 enum Page {
     case tabbedPage
     case doingTaskPage
+    case rewardsPage
 }
 
 //struct ViewRouter_Previews: PreviewProvider {
