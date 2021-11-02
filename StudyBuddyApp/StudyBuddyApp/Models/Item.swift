@@ -8,12 +8,31 @@ enum PlaygroundItemCategory{
   case Wall, Ceiling, Floor
 }
 
-protocol Item{
+protocol Item : Hashable{
   var name: String {get set}
   var price: Int {get set}
 }
 
-struct AccessoryItem : Item, Equatable, Hashable{
+extension Item{
+  var name: String {
+    return "ItemName"
+  }
+  var price: Int {
+    return 100
+  }
+  var isPurchased : Bool {
+    return false
+  }
+  static func == (lhs: Self, rhs: Self) -> Bool {
+    return lhs.name == rhs.name
+  }
+  func hash(into hasher: inout Hasher) {
+      hasher.combine(name)
+      hasher.combine(price)
+  }
+}
+
+struct AccessoryItem : Item{
   var name: String
   var price: Int
   var category : AccessoryItemCategory
@@ -22,17 +41,10 @@ struct AccessoryItem : Item, Equatable, Hashable{
     self.name = name
     self.price = price
   }
-  static func == (lhs: AccessoryItem, rhs: AccessoryItem) -> Bool {
-    return lhs.name == rhs.name
-  }
-
-  func hash(into hasher: inout Hasher) {
-      hasher.combine(name)
-      hasher.combine(price)
-  }
+  
 }
 
-struct PlaygroundItem : Item, Equatable, Hashable{
+struct PlaygroundItem : Item{
   var name: String
   var price: Int
   var category : PlaygroundItemCategory
@@ -40,13 +52,5 @@ struct PlaygroundItem : Item, Equatable, Hashable{
     self.category = category
     self.name = name
     self.price = price
-  }
-  static func == (lhs: PlaygroundItem, rhs: PlaygroundItem) -> Bool {
-    return lhs.name == rhs.name
-  }
-
-  func hash(into hasher: inout Hasher) {
-      hasher.combine(name)
-      hasher.combine(price)
   }
 }
