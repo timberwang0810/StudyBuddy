@@ -17,6 +17,8 @@ struct ContentView: View {
                 TabbedView(viewModel: viewModel)
             case .doingTaskPage:
                 DoingTaskView(viewModel: viewModel)
+            case .rewardsPage:
+                RewardsView(viewModel: viewModel)
         }
     }
 }
