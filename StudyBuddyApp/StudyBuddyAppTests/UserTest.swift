@@ -152,38 +152,38 @@ class UserTest: XCTestCase {
     XCTAssertFalse(character.getAllWardrobeItems().contains(cowboy))
     XCTAssertFalse(character.getAllWardrobeItems().contains(baseball))
     
+    XCTAssertTrue(store.hasAccessoryItem(item: beanie))
     XCTAssertTrue(sut.purchaseAccessoryItem(item: beanie))
-    
-    XCTAssertEqual(store.getAllAccessoryItems().count, 2)
     XCTAssertFalse(store.hasAccessoryItem(item: beanie))
+
     XCTAssertEqual(sut.getMoney(), 300)
     XCTAssertTrue(character.getAllWardrobeItems().contains(beanie))
     XCTAssertFalse(character.getAllWardrobeItems().contains(cowboy))
     XCTAssertFalse(character.getAllWardrobeItems().contains(baseball))
     
-    // can only buy items in store
+    // can only buy unpurchased item
+    XCTAssertFalse(store.hasAccessoryItem(item: beanie))
     XCTAssertFalse(sut.purchaseAccessoryItem(item: beanie))
-    
-    XCTAssertEqual(store.getAllAccessoryItems().count, 2)
     XCTAssertFalse(store.hasAccessoryItem(item: beanie))
     XCTAssertEqual(sut.getMoney(), 300)
     XCTAssertTrue(character.getAllWardrobeItems().contains(beanie))
     XCTAssertFalse(character.getAllWardrobeItems().contains(cowboy))
     XCTAssertFalse(character.getAllWardrobeItems().contains(baseball))
     
+    XCTAssertTrue(store.hasAccessoryItem(item: baseball))
     XCTAssertTrue(sut.purchaseAccessoryItem(item: baseball))
-    
-    XCTAssertEqual(store.getAllAccessoryItems().count, 1)
     XCTAssertFalse(store.hasAccessoryItem(item: baseball))
+
     XCTAssertEqual(sut.getMoney(), 150)
     XCTAssertTrue(character.getAllWardrobeItems().contains(beanie))
     XCTAssertFalse(character.getAllWardrobeItems().contains(cowboy))
     XCTAssertTrue(character.getAllWardrobeItems().contains(baseball))
     
-    XCTAssertFalse(sut.purchaseAccessoryItem(item: cowboy))
-
-    XCTAssertEqual(store.getAllAccessoryItems().count, 1)
+    // can't buy item if you can't afford
     XCTAssertTrue(store.hasAccessoryItem(item: cowboy))
+    XCTAssertFalse(sut.purchaseAccessoryItem(item: cowboy))
+    XCTAssertTrue(store.hasAccessoryItem(item: cowboy))
+
     XCTAssertEqual(sut.getMoney(), 150)
     XCTAssertTrue(character.getAllWardrobeItems().contains(beanie))
     XCTAssertFalse(character.getAllWardrobeItems().contains(cowboy))
@@ -199,46 +199,45 @@ class UserTest: XCTestCase {
     store.addPlaygroundItem(item: painting)
     sut.earnMoney(inc: 1000)
     XCTAssertEqual(sut.getMoney(), 1000)
-    XCTAssertEqual(store.getAllPlaygroundItems().count, 3)
     XCTAssertTrue(store.hasPlaygroundItem(item: lamp))
     XCTAssertTrue(store.hasPlaygroundItem(item: fan))
     XCTAssertTrue(store.hasPlaygroundItem(item: painting))
     XCTAssertFalse(playground.getAllStorageItems().contains(lamp))
     XCTAssertFalse(playground.getAllStorageItems().contains(fan))
     XCTAssertFalse(playground.getAllStorageItems().contains(painting))
-
-    XCTAssertTrue(sut.purchasePlaygroundItem(item: fan))
     
-    XCTAssertEqual(store.getAllPlaygroundItems().count, 2)
+    XCTAssertTrue(store.hasPlaygroundItem(item: fan))
+    XCTAssertTrue(sut.purchasePlaygroundItem(item: fan))
     XCTAssertFalse(store.hasPlaygroundItem(item: fan))
+    
     XCTAssertEqual(sut.getMoney(), 500)
     XCTAssertFalse(playground.getAllStorageItems().contains(lamp))
     XCTAssertTrue(playground.getAllStorageItems().contains(fan))
     XCTAssertFalse(playground.getAllStorageItems().contains(painting))
     
     // can only buy items in store
-    XCTAssertFalse(sut.purchasePlaygroundItem(item: fan))
-    
-    XCTAssertEqual(store.getAllPlaygroundItems().count, 2)
     XCTAssertFalse(store.hasPlaygroundItem(item: fan))
+    XCTAssertFalse(sut.purchasePlaygroundItem(item: fan))
+    XCTAssertFalse(store.hasPlaygroundItem(item: fan))
+    
     XCTAssertEqual(sut.getMoney(), 500)
     XCTAssertFalse(playground.getAllStorageItems().contains(lamp))
     XCTAssertTrue(playground.getAllStorageItems().contains(fan))
     XCTAssertFalse(playground.getAllStorageItems().contains(painting))
     
+    XCTAssertTrue(store.hasPlaygroundItem(item: lamp))
     XCTAssertTrue(sut.purchasePlaygroundItem(item: lamp))
-    
-    XCTAssertEqual(store.getAllPlaygroundItems().count, 1)
-    XCTAssertFalse(store.hasPlaygroundItem(item: fan))
+    XCTAssertFalse(store.hasPlaygroundItem(item: lamp))
+
     XCTAssertEqual(sut.getMoney(), 100)
     XCTAssertTrue(playground.getAllStorageItems().contains(lamp))
     XCTAssertTrue(playground.getAllStorageItems().contains(fan))
     XCTAssertFalse(playground.getAllStorageItems().contains(painting))
     
-    XCTAssertFalse(sut.purchasePlaygroundItem(item: painting))
-
-    XCTAssertEqual(store.getAllPlaygroundItems().count, 1)
     XCTAssertTrue(store.hasPlaygroundItem(item: painting))
+    XCTAssertFalse(sut.purchasePlaygroundItem(item: painting))
+    XCTAssertTrue(store.hasPlaygroundItem(item: painting))
+
     XCTAssertEqual(sut.getMoney(), 100)
     XCTAssertTrue(playground.getAllStorageItems().contains(lamp))
     XCTAssertTrue(playground.getAllStorageItems().contains(fan))

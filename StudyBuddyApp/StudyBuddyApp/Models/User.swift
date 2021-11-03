@@ -54,7 +54,7 @@ class User{
     if (!self.store.hasAccessoryItem(item: item) || item.price > self.money){
       return false
     }
-    self.store.removeAccessoryItem(item: item)
+    self.store.markAccessoryItemAsPurhcased(item: item)
     spendMoney(dec: item.price)
     self.character.onNewItemPurchased(item: item)
     return true
@@ -64,7 +64,7 @@ class User{
     if (!self.store.hasPlaygroundItem(item: item) || item.price > self.money){
       return false
     }
-    self.store.removePlaygroundItem(item: item)
+    self.store.markPlaygroundItemAsPurchased(item: item)
     spendMoney(dec: item.price)
     self.playground.onNewItemPurchased(item: item)
     return true
