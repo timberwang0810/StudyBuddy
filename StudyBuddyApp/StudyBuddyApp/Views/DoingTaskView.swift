@@ -31,6 +31,8 @@ struct DoingTaskView: View {
             )}.onReceive(timer) { time in
                 if timeRemaining > 0.0 && !timerIsPaused {
                     timeRemaining -= 1.0
+                }else if timeRemaining == 0.0 {
+                  self.viewRouter.currentPage = .rewardsPage
                 }
             }
         HStack {
