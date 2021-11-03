@@ -11,8 +11,6 @@ struct DoingTaskView: View {
     @ObservedObject var viewModel: ViewModel
     @EnvironmentObject var viewRouter: ViewRouter
     
-    
-    
     @State var hours: Int = 0
     @State var minutes: Int = 0
     @State var seconds: Int = 0
@@ -29,12 +27,9 @@ struct DoingTaskView: View {
     
     var body: some View {
         HStack{
-            //"\(self.timeRemaining)"
-            //(countDownString(timeRemaining: self.timeRemaining)
             Text((countDownString(timeRemaining: timeRemaining))
             )}.onReceive(timer) { time in
                 if timeRemaining > 0.0 && !timerIsPaused {
-                    print(timeRemaining)
                     timeRemaining -= 1.0
                 }
             }
@@ -42,32 +37,29 @@ struct DoingTaskView: View {
             if timerIsPaused {
                 
                 Button(action:{
-                    print("START")
                     self.startTimer()
                 }){
                     Image(systemName: "play.fill")
-                        .padding(.all)
+                        .padding()
                 }
-                .padding(.all)
+                .padding()
             } else {
                 Button(action:{
-                    print("Paused")
                     self.pauseTimer()
                 }){
                     Image(systemName: "pause.fill")
-                        .padding(.all)
+                        .padding()
                 }
-                .padding(.all)
+                .padding()
             }
             
             Button(action:{
-                print("Stop")
                 self.viewRouter.currentPage = .tabbedPage
             }){
                 Image(systemName: "stop.fill")
-                    .padding(.all)
+                    .padding()
             }
-            .padding(.all)
+            .padding()
             
         }
     }
