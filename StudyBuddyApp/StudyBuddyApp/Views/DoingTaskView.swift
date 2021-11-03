@@ -63,7 +63,6 @@ struct DoingTaskView: View {
             Button(action:{
                 print("Stop")
                 self.viewRouter.currentPage = .tabbedPage
-                self.stopTimer()
             }){
                 Image(systemName: "stop.fill")
                     .padding(.all)
@@ -79,10 +78,6 @@ struct DoingTaskView: View {
     }
     func pauseTimer(){
         timerIsPaused = true
-    }
-    
-    func stopTimer(){
-        
     }
     
     func countDownString(timeRemaining: Double) -> String {
