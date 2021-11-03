@@ -30,6 +30,9 @@ struct TasksView: View {
                         HStack {
                             Text("Name")
                                 .fontWeight(.light)
+                                + Text("*")
+                                .fontWeight(.light)
+                                .foregroundColor(.red)
                             TextField("Task Name", text: $name)
                                 .padding(.horizontal)
                                 .cornerRadius(3.0);
