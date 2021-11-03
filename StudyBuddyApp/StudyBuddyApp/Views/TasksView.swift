@@ -11,7 +11,7 @@ struct TasksView: View {
     @ObservedObject var viewModel: ViewModel
     @EnvironmentObject var viewRouter: ViewRouter
     @State var name: String = ""
-    @State var duration: TimeInterval = TimeInterval()
+    @State var duration: TimeInterval = TimeInterval(60)
     @State private var selection: TaskCategory = .STUDY
     
     var body: some View {
