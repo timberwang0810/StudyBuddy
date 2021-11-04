@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		38F3E0B627339A2D00E36A14 /* doingTask1.png in Resources */ = {isa = PBXBuildFile; fileRef = 38F3E0B527339A2D00E36A14 /* doingTask1.png */; };
 		A9EE60D611FE8C1DD4BD0774 /* Pods_StudyBuddyAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E8D64EDE2A72AC155B302B5 /* Pods_StudyBuddyAppTests.framework */; };
 		C3F59CCA737769A6743DC217 /* Pods_StudyBuddyApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EF48D5CC853A954D904CDE7 /* Pods_StudyBuddyApp.framework */; };
 		C939FE84D401F898FC509120 /* Pods_StudyBuddyApp_StudyBuddyAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C429A496873E1E2552C3E042 /* Pods_StudyBuddyApp_StudyBuddyAppUITests.framework */; };
@@ -60,6 +61,7 @@
 /* Begin PBXFileReference section */
 		0EF48D5CC853A954D904CDE7 /* Pods_StudyBuddyApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StudyBuddyApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BA03A543A571531BA9E78C6 /* Pods-StudyBuddyApp-StudyBuddyAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StudyBuddyApp-StudyBuddyAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-StudyBuddyApp-StudyBuddyAppUITests/Pods-StudyBuddyApp-StudyBuddyAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		38F3E0B527339A2D00E36A14 /* doingTask1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = doingTask1.png; sourceTree = "<group>"; };
 		4E95550742C409491BA84052 /* Pods-StudyBuddyApp-StudyBuddyAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StudyBuddyApp-StudyBuddyAppUITests.release.xcconfig"; path = "Target Support Files/Pods-StudyBuddyApp-StudyBuddyAppUITests/Pods-StudyBuddyApp-StudyBuddyAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		6E8D64EDE2A72AC155B302B5 /* Pods_StudyBuddyAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StudyBuddyAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E51CDA8A292E2B3D566E5A2 /* Pods-StudyBuddyAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StudyBuddyAppTests.debug.xcconfig"; path = "Target Support Files/Pods-StudyBuddyAppTests/Pods-StudyBuddyAppTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 				D1A4AFA1272738B300C92354 /* AppDelegate.swift */,
 				D1A4AFA3272738B300C92354 /* SceneDelegate.swift */,
 				D1A4AFAA272738B900C92354 /* Assets.xcassets */,
+				38F3E0B527339A2D00E36A14 /* doingTask1.png */,
 				D1A4AFAF272738B900C92354 /* LaunchScreen.storyboard */,
 				D1A4AFB2272738B900C92354 /* Info.plist */,
 				D1A4AFA7272738B300C92354 /* StudyBuddyApp.xcdatamodeld */,
@@ -363,6 +366,7 @@
 				D1A4AFB1272738B900C92354 /* LaunchScreen.storyboard in Resources */,
 				D1A4AFAE272738B900C92354 /* Preview Assets.xcassets in Resources */,
 				D1A4AFAB272738B900C92354 /* Assets.xcassets in Resources */,
+				38F3E0B627339A2D00E36A14 /* doingTask1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
