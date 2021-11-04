@@ -13,7 +13,7 @@ struct PlaygroundView: View {
     var body: some View {
       VStack{
         HStack{
-          Text("\(viewModel.getCurrentMoney())+")
+          Text("\(viewModel.getCurrentMoney())")
               .font(Font.custom("Chalkboard SE", size: 24))
               .baselineOffset(5)
               .padding(.trailing, 10)
