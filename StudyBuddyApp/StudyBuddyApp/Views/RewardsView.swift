@@ -20,9 +20,7 @@ struct RewardsView: View {
             Button(action: { viewRouter.currentPage = .tabbedPage }) {
                 Image(systemName: "gift.fill")
                     .font(Font.custom("Chalkboard SE", size: 35))
-                // TODO: Calculate final rewards
-//                Text("\(Task.calculateBaseRewards(duration: viewModel.currentTask!.duration))+")
-                Text("+150")
+                Text("\(viewModel.getTaskReward())+")
                     .font(Font.custom("Chalkboard SE", size: 24))
                     .baselineOffset(5)
                     .padding(.trailing, 10)

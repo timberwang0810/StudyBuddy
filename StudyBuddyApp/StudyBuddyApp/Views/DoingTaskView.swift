@@ -32,6 +32,7 @@ struct DoingTaskView: View {
                 if timeRemaining > 0.0 && !timerIsPaused {
                     timeRemaining -= 1.0
                 }else if timeRemaining == 0.0 {
+                  self.viewModel.stopTask(timeRemaining: timeRemaining)
                   self.viewRouter.currentPage = .rewardsPage
                 }
             }

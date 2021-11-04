@@ -38,49 +38,6 @@ class TaskTest: XCTestCase {
     XCTAssertTrue(sut.isTaskStarted())
   }
   
-  func testIsTaskEnded() throws {
-    XCTAssertFalse(sut.isTaskEnded())
-    sut.start()
-    XCTAssertFalse(sut.isTaskEnded())
-    _ = sut.stopAndCollectReward()
-    XCTAssertTrue(sut.isTaskEnded())
-  }
-  
-  func testGetStartDate() throws {
-    XCTAssertNil(sut.getStartTime())
-    sut.start()
-    let startTime = sut.getStartTime()
-    XCTAssertNotNil(startTime)
-    sleep(5)
-    XCTAssertEqual(sut.getStartTime(), startTime)
-    _ = sut.stopAndCollectReward()
-    XCTAssertNotNil(sut.getStartTime())
-  }
-  
-  func testGetEndDate() throws {
-    XCTAssertNil(sut.getStartTime())
-    sut.start()
-    XCTAssertNil(sut.getEndTime())
-    sleep(5)
-    _ = sut.stopAndCollectReward()
-    XCTAssertNotNil(sut.getEndTime())
-    if let startTime = sut.getStartTime(), let endTime = sut.getEndTime(){
-      XCTAssertGreaterThan(endTime.timeIntervalSince1970, startTime.timeIntervalSince1970)
-    }
-  }
-  
-  func testElapsedTime() throws {
-    XCTAssertNil(sut.getStartTime())
-    XCTAssertEqual(sut.elapsedTime, 0)
-    sut.start()
-    sleep(5)
-    XCTAssertGreaterThanOrEqual(sut.elapsedTime, 4)
-    _ = sut.stopAndCollectReward()
-    let elapsed = sut.elapsedTime
-    sleep(5)
-    XCTAssertEqual(sut.elapsedTime, elapsed)
-  }
-  
   func testStartTask() throws {
     XCTAssertNil(sut.getStartTime())
     XCTAssertFalse(sut.isTaskStarted())

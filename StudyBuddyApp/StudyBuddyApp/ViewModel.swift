@@ -26,5 +26,13 @@ class ViewModel: ObservableObject {
         
         completion()
     }
+  
+  func stopTask(timeRemaining: TimeInterval){
+    currentTask!.complete(timeRemaining: timeRemaining)
+  }
+  
+  func getTaskReward() -> Int{
+    return currentTask!.finalReward
+  }
 }
 
