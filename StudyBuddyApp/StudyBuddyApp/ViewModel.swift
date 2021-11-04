@@ -12,8 +12,15 @@ import SwiftUI
 class ViewModel: ObservableObject {
 //  State we want to update view with when it changes
     @Published var currentTask: Task?
+    @Published var showTaskErrorMessage: Bool = false
   
     func createTask(name: String, duration: TimeInterval, category: TaskCategory, isStarted: Bool, completion: @escaping () -> Void) {
+        if (name == "") {
+            showTaskErrorMessage = true
+            return
+        }
+        showTaskErrorMessage = false
+        
         currentTask = Task(name: name, duration: duration, category: category)
         if (isStarted) {
             currentTask?.start()
