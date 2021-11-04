@@ -17,7 +17,9 @@ struct RewardsView: View {
             Text("Nicely Done!")
                 .font(Font.custom("Chalkboard SE", size: 40))
                 .padding(.bottom, 50)
-            Button(action: { viewRouter.currentPage = .tabbedPage }) {
+            Button(action: {
+                    viewModel.earnMoney(inc: viewModel.getTaskReward())
+                    viewRouter.currentPage = .tabbedPage }) {
                 Image(systemName: "gift.fill")
                     .font(Font.custom("Chalkboard SE", size: 35))
                 Text("\(viewModel.getTaskReward())+")

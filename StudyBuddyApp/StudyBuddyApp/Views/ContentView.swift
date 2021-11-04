@@ -19,6 +19,8 @@ struct ContentView: View {
                 DoingTaskView(viewModel: viewModel)
             case .rewardsPage:
                 RewardsView(viewModel: viewModel)
+          case .playgroundPage:
+            PlaygroundView(viewModel: viewModel)
         }
     }
 }

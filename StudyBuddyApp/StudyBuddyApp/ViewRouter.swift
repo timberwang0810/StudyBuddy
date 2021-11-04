@@ -18,6 +18,7 @@ enum Page {
     case tabbedPage
     case doingTaskPage
     case rewardsPage
+    case playgroundPage
 }
 
 //struct ViewRouter_Previews: PreviewProvider {
