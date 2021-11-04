@@ -42,7 +42,7 @@ class Task : Equatable{
       return;
     }
     self.hasTaskEnded = true
-    self.finalReward = Task.calculateFinalRewards(baseReward: self.baseReward, timeEstimated: self.duration, timeActual: abs(self.duration-timeRemaining))
+    self.finalReward = Task.calculateFinalRewards(baseReward: self.baseReward, timeEstimated: self.duration, timeActual: self.duration-timeRemaining)
   }
   
   public func isTaskStarted() -> Bool{
