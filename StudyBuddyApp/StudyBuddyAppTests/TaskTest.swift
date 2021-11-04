@@ -25,50 +25,47 @@ class TaskTest: XCTestCase {
     XCTAssertEqual(sut.duration, 20000)
     XCTAssertEqual(sut.category, TaskCategory.STUDY)
     XCTAssertEqual(sut.baseReward, 400)
-    XCTAssertNil(sut.getStartTime())
-    XCTAssertFalse(sut.isTaskStarted())
-    XCTAssertEqual(sut.elapsedTime, 0)
+    XCTAssertEqual(sut.finalReward, 0)
   }
     
   func testIsTaskStarted() throws{
     XCTAssertFalse(sut.isTaskStarted())
     sut.start()
     XCTAssertTrue(sut.isTaskStarted())
-    _ = sut.stopAndCollectReward()
+    sut.complete(timeRemaining: 0)
     XCTAssertTrue(sut.isTaskStarted())
   }
   
+  func testIsTaskEnded() throws {
+    XCTAssertFalse(sut.isTaskEnded())
+    sut.start()
+    XCTAssertFalse(sut.isTaskEnded())
+    sut.complete(timeRemaining: 0)
+    XCTAssertTrue(sut.isTaskEnded())
+  }
+  
   func testStartTask() throws {
-    XCTAssertNil(sut.getStartTime())
     XCTAssertFalse(sut.isTaskStarted())
     sut.start()
     XCTAssertTrue(sut.isTaskStarted())
-    XCTAssertNotNil(sut.getStartTime())
-    XCTAssertGreaterThan(sut.elapsedTime, 0)
-    XCTAssertLessThan(sut.elapsedTime, sut.duration)
-    sleep(5)
-    XCTAssertGreaterThan(sut.elapsedTime, 5)
-    let startTime = sut.getStartTime()
     // Can't start again
     sut.start()
     XCTAssertTrue(sut.isTaskStarted())
-    XCTAssertNotNil(sut.getStartTime())
-    XCTAssertGreaterThan(sut.elapsedTime, 0)
-    XCTAssertLessThan(sut.elapsedTime, sut.duration)
-    XCTAssertEqual(sut.getStartTime(), startTime) // should be the same time as before
   }
   
   func testStopTask() throws {
     // Can't stop if task is not started
-    XCTAssertEqual(sut.stopAndCollectReward(), 0)
-    XCTAssertNil(sut.getStartTime())
+    sut.complete(timeRemaining: 0)
+    XCTAssertEqual(sut.finalReward, 0)
     XCTAssertFalse(sut.isTaskStarted())
+    XCTAssertFalse(sut.isTaskEnded())
     sut.start()
+    XCTAssertFalse(sut.isTaskEnded())
     XCTAssertTrue(sut.isTaskStarted())
-    sleep(5)
-    XCTAssertGreaterThanOrEqual(sut.stopAndCollectReward(), sut.baseReward)
-    XCTAssertNotNil(sut.getStartTime())
+    sut.complete(timeRemaining: 0)
     XCTAssertTrue(sut.isTaskStarted())
+    XCTAssertTrue(sut.isTaskEnded())
+    XCTAssertEqual(sut.finalReward, 503)
   }
   
   func testTaskEqual() throws{
