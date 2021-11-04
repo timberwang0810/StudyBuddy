@@ -15,7 +15,7 @@ struct DoingTaskView: View {
   @State var minutes: Int = 0
   @State var seconds: Int = 0
   @State var timerIsPaused: Bool = false
-  @State var timeRemaining: Double = 0.0
+  @State var timeRemaining: Double = 3660.0
   
   let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
   
@@ -23,56 +23,62 @@ struct DoingTaskView: View {
   
   init( viewModel: ViewModel) {
     self.viewModel = viewModel
-    _timeRemaining = State(initialValue: viewModel.currentTask!.duration)
+    //    _timeRemaining = State(initialValue: viewModel.currentTask!.duration)
   }
   
   var body: some View {
     ZStack{
-      Image("doingTask1")
-      VStack{
-        HStack{
-          Text(calculateTime()).font(Font.custom("Chalkboard SE", size: 24)).padding(.trailing)
-        }
-        Spacer()
-        VStack(alignment: .trailing){
+      GeometryReader{ geometry in
+        Image("doingTask1").frame(maxWidth: geometry.size.width, maxHeight: geometry.size.height)
+        
+        VStack{
           HStack{
-            Text((countDownString(timeRemaining: timeRemaining))
-            ).font(Font.custom("Chalkboard SE", size: 35))
-            .padding(10)}.onReceive(timer) { time in
+            Text(calculateTime()).font(Font.custom("Chalkboard SE", size: 24))
+            Spacer()
+          }
+          Spacer()
+          VStack(alignment: .trailing){
+            HStack{
+              Spacer()
+              Text((countDownString(timeRemaining: timeRemaining))
+              ).font(Font.custom("Chalkboard SE", size: 35))
+              .padding(10)}.onReceive(timer) { time in
                 if timeRemaining > 0.0 && !timerIsPaused {
-                    timeRemaining -= 1.0
+                  timeRemaining -= 1.0
                 }else if timeRemaining == 0.0 {
                   self.viewModel.stopTask(timeRemaining: timeRemaining)
                   self.viewRouter.currentPage = .rewardsPage
                 }
-            }
-          HStack{
-            if timerIsPaused {
-              
-              Button(action:{
-                self.startTimer()
-              }){
-                Image(systemName: "play.fill")
-                  .padding()
               }
-              
-            } else {
-              Button(action:{
-                self.pauseTimer()
-              }){
-                Image(systemName: "pause.fill")
-                  .padding()
-              }
-              
-            }
             
-            Button(action:{
-              self.viewRouter.currentPage = .tabbedPage
-            }){
-              Image(systemName: "stop.fill")
-                .padding()
+            HStack{
+              if timerIsPaused {
+                
+                Button(action:{
+                  self.startTimer()
+                }){
+                  Image(systemName: "play.fill")
+                    .padding()
+                }
+                
+              } else {
+                Button(action:{
+                  self.pauseTimer()
+                }){
+                  Image(systemName: "pause.fill")
+                    .padding()
+                }
+                
+              }
+              
+              Button(action:{
+                self.viewRouter.currentPage = .tabbedPage
+              }){
+                Image(systemName: "stop.fill")
+                  .padding()
+              }
+              //            .padding()
             }
-            .padding()
           }
         }
       }
