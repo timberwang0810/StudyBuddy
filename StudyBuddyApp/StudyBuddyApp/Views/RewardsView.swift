@@ -22,7 +22,7 @@ struct RewardsView: View {
                     viewRouter.currentPage = .tabbedPage }) {
                 Image(systemName: "gift.fill")
                     .font(Font.custom("Chalkboard SE", size: 35))
-                Text("\(viewModel.getTaskReward())+")
+                Text("\(viewModel.getTaskReward())")
                     .font(Font.custom("Chalkboard SE", size: 24))
                     .baselineOffset(5)
                     .padding(.trailing, 10)
