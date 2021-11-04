@@ -13,21 +13,10 @@ class Task : Equatable{
   let baseReward: Int
   let duration: TimeInterval
   let category: TaskCategory
+  var finalReward: Int
   
   private var hasTaskStarted: Bool
   private var hasTaskEnded: Bool
-  private var startTime: NSDate?
-  private var endTime: NSDate?
-  
-  var elapsedTime: TimeInterval {
-    if let startTime = self.startTime {
-      if let endTime = self.endTime {
-        return endTime.timeIntervalSince(startTime as Date)
-      }
-      return -startTime.timeIntervalSinceNow
-    }
-    return 0
-  }
   
   init(name: String, duration: TimeInterval, category: TaskCategory){
     self.name = name
@@ -36,6 +25,7 @@ class Task : Equatable{
     self.baseReward = Task.calculateBaseRewards(duration: duration)
     self.hasTaskStarted = false
     self.hasTaskEnded = false
+    self.finalReward = 0
   }
   
   func start() {
@@ -44,17 +34,15 @@ class Task : Equatable{
       return
     }
     self.hasTaskStarted = true
-    startTime = NSDate()
   }
   
-  func stopAndCollectReward() -> Int{
+  func complete(timeRemaining: TimeInterval){
     if (!self.hasTaskStarted) {
       // shouldn't happen
-      return 0;
+      return;
     }
     self.hasTaskEnded = true
-    self.endTime = NSDate()
-    return Task.calculateFinalRewards(baseReward: self.baseReward, timeEstimated: self.duration, timeActual: self.elapsedTime)
+    self.finalReward = Task.calculateFinalRewards(baseReward: self.baseReward, timeEstimated: self.duration, timeActual: abs(self.duration-timeRemaining))
   }
   
   public func isTaskStarted() -> Bool{
@@ -63,20 +51,6 @@ class Task : Equatable{
   
   public func isTaskEnded() -> Bool {
     return self.hasTaskEnded
-  }
-  
-  public func getStartTime() -> NSDate?{
-    if (self.startTime != nil) {
-      return self.startTime
-    }
-    return nil
-  }
-  
-  public func getEndTime() -> NSDate?{
-    if (self.endTime != nil) {
-      return self.endTime
-    }
-    return nil
   }
   
   static func == (lhs: Task, rhs: Task) -> Bool{
@@ -90,6 +64,6 @@ class Task : Equatable{
   
   private static func calculateFinalRewards(baseReward: Int, timeEstimated: TimeInterval, timeActual: TimeInterval) -> Int{
     // TODO: Reward calculation function
-    return baseReward
+    return (baseReward * 5 / 4) + 3
   }
 }

@@ -88,20 +88,29 @@ class StoreTest: XCTestCase {
     XCTAssertTrue(sut.getAllAccessoryItems().contains(beanie))
     XCTAssertTrue(sut.getAllAccessoryItems().contains(cowboy))
     XCTAssertTrue(sut.getAllAccessoryItems().contains(baseball))
-    
-    sut.removeAccessoryItem(item: cowboy)
-    XCTAssertEqual(sut.getAllAccessoryItems().count, 2)
+    XCTAssertTrue(sut.hasAccessoryItem(item: beanie))
+    XCTAssertTrue(sut.hasAccessoryItem(item: cowboy))
+    XCTAssertTrue(sut.hasAccessoryItem(item: baseball))
+    XCTAssertFalse(sut.hasAccessoryItem(item: helmet))
+
+
+    sut.markAccessoryItemAsPurhcased(item: cowboy)
+    XCTAssertEqual(sut.getAllAccessoryItems().count, 3)
     XCTAssertTrue(sut.getAllAccessoryItems().contains(beanie))
-    XCTAssertFalse(sut.getAllAccessoryItems().contains(cowboy))
+    XCTAssertTrue(sut.getAllAccessoryItems().contains(cowboy))
     XCTAssertTrue(sut.getAllAccessoryItems().contains(baseball))
+    XCTAssertFalse(sut.hasAccessoryItem(item: cowboy))
     
     XCTAssertFalse(sut.getAllAccessoryItems().contains(helmet))
-    sut.removeAccessoryItem(item: helmet)
-    XCTAssertEqual(sut.getAllAccessoryItems().count, 2)
+    sut.markAccessoryItemAsPurhcased(item: helmet)
+    XCTAssertEqual(sut.getAllAccessoryItems().count, 3)
+    XCTAssertFalse(sut.hasAccessoryItem(item: helmet))
     
-    sut.removeAccessoryItem(item: beanie)
-    sut.removeAccessoryItem(item: baseball)
-    XCTAssertEqual(sut.getAllAccessoryItems().count, 0)
+    sut.markAccessoryItemAsPurhcased(item: beanie)
+    sut.markAccessoryItemAsPurhcased(item: baseball)
+    XCTAssertEqual(sut.getAllAccessoryItems().count, 3)
+    XCTAssertFalse(sut.hasAccessoryItem(item: beanie))
+    XCTAssertFalse(sut.hasAccessoryItem(item: baseball))
   }
   
   func testAddPlaygroundItem() throws {
@@ -137,20 +146,31 @@ class StoreTest: XCTestCase {
     XCTAssertTrue(sut.getAllPlaygroundItems().contains(lamp))
     XCTAssertTrue(sut.getAllPlaygroundItems().contains(fan))
     XCTAssertTrue(sut.getAllPlaygroundItems().contains(carpet))
+    XCTAssertTrue(sut.hasPlaygroundItem(item: lamp))
+    XCTAssertTrue(sut.hasPlaygroundItem(item: fan))
+    XCTAssertTrue(sut.hasPlaygroundItem(item: carpet))
+    XCTAssertFalse(sut.hasPlaygroundItem(item: painting))
     
-    sut.removePlaygroundItem(item: fan)
-    XCTAssertEqual(sut.getAllPlaygroundItems().count, 2)
+    sut.markPlaygroundItemAsPurchased(item: fan)
+    XCTAssertFalse(sut.hasPlaygroundItem(item: fan))
+    XCTAssertEqual(sut.getAllPlaygroundItems().count, 3)
     XCTAssertTrue(sut.getAllPlaygroundItems().contains(lamp))
-    XCTAssertFalse(sut.getAllPlaygroundItems().contains(fan))
+    XCTAssertTrue(sut.getAllPlaygroundItems().contains(fan))
     XCTAssertTrue(sut.getAllPlaygroundItems().contains(carpet))
+    XCTAssertFalse(sut.hasPlaygroundItem(item: fan))
     
     XCTAssertFalse(sut.getAllPlaygroundItems().contains(painting))
-    sut.removePlaygroundItem(item: painting)
-    XCTAssertEqual(sut.getAllPlaygroundItems().count, 2)
+    sut.markPlaygroundItemAsPurchased(item: painting)
+    XCTAssertEqual(sut.getAllPlaygroundItems().count, 3)
+    XCTAssertFalse(sut.hasPlaygroundItem(item: painting))
     
-    sut.removePlaygroundItem(item: carpet)
-    sut.removePlaygroundItem(item: lamp)
-    XCTAssertEqual(sut.getAllPlaygroundItems().count, 0)
+    sut.markPlaygroundItemAsPurchased(item: carpet)
+    sut.markPlaygroundItemAsPurchased(item: lamp)
+    XCTAssertFalse(sut.hasPlaygroundItem(item: lamp))
+    XCTAssertFalse(sut.hasPlaygroundItem(item: carpet))
+    XCTAssertEqual(sut.getAllPlaygroundItems().count, 3)
+    XCTAssertTrue(sut.getAllPlaygroundItems().contains(lamp))
+    XCTAssertTrue(sut.getAllPlaygroundItems().contains(carpet))
   }
   
   func testHasAccessoryItem() throws {
@@ -167,6 +187,11 @@ class StoreTest: XCTestCase {
     sut.addAccessoryItem(item: baseball)
     XCTAssertTrue(sut.hasAccessoryItem(item: beanie))
     XCTAssertTrue(sut.hasAccessoryItem(item: cowboy))
+    XCTAssertTrue(sut.hasAccessoryItem(item: baseball))
+    
+    sut.markAccessoryItemAsPurhcased(item: (cowboy))
+    XCTAssertTrue(sut.hasAccessoryItem(item: beanie))
+    XCTAssertFalse(sut.hasAccessoryItem(item: cowboy))
     XCTAssertTrue(sut.hasAccessoryItem(item: baseball))
   }
   func testHasPlaygroundItem() throws {
@@ -186,6 +211,11 @@ class StoreTest: XCTestCase {
     sut.addPlaygroundItem(item: lamp)
     XCTAssertTrue(sut.hasPlaygroundItem(item: lamp))
     XCTAssertTrue(sut.hasPlaygroundItem(item: fan))
+    XCTAssertTrue(sut.hasPlaygroundItem(item: carpet))
+    
+    sut.markPlaygroundItemAsPurchased(item: fan)
+    XCTAssertTrue(sut.hasPlaygroundItem(item: lamp))
+    XCTAssertFalse(sut.hasPlaygroundItem(item: fan))
     XCTAssertTrue(sut.hasPlaygroundItem(item: carpet))
   }
 }

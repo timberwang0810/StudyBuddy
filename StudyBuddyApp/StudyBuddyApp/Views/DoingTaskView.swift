@@ -39,9 +39,12 @@ struct DoingTaskView: View {
             Text((countDownString(timeRemaining: timeRemaining))
             ).font(Font.custom("Chalkboard SE", size: 35))
             .padding(10)}.onReceive(timer) { time in
-              if timeRemaining > 0.0 && !timerIsPaused {
-                timeRemaining -= 1.0
-              }
+                if timeRemaining > 0.0 && !timerIsPaused {
+                    timeRemaining -= 1.0
+                }else if timeRemaining == 0.0 {
+                  self.viewModel.stopTask(timeRemaining: timeRemaining)
+                  self.viewRouter.currentPage = .rewardsPage
+                }
             }
           HStack{
             if timerIsPaused {
