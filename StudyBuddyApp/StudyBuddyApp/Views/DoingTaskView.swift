@@ -15,7 +15,7 @@ struct DoingTaskView: View {
   @State var minutes: Int = 0
   @State var seconds: Int = 0
   @State var timerIsPaused: Bool = false
-  @State var timeRemaining: Double = 3660.0
+  @State var timeRemaining: Double = 0.0
   
   let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
   
@@ -23,7 +23,7 @@ struct DoingTaskView: View {
   
   init( viewModel: ViewModel) {
     self.viewModel = viewModel
-    //    _timeRemaining = State(initialValue: viewModel.currentTask!.duration)
+        _timeRemaining = State(initialValue: viewModel.currentTask!.duration)
   }
   
   var body: some View {
