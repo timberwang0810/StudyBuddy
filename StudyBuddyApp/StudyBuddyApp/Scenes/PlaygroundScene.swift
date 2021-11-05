@@ -13,13 +13,11 @@ class PlaygroundScene: SKScene {
     override func didMove(to view: SKView) {
         backgroundColor = SKColor.gray
         
-        let text = SKLabelNode(fontNamed: "Chalkduster")
-        text.text = "Text!"
-        text.fontSize = 65
-        text.fontColor = SKColor.black
-        text.position = CGPoint(x: size.width / 2, y: size.height / 2)
-           
-        addChild(text)
+        let bob = AnimatedSprite(timePerFrame: 1.0, atlasName: "bob_writing")
+        bob.position = CGPoint(x: frame.midX, y: frame.midY)
+        addChild(bob)
+        
+        bob.startAnimation()
     }
     
     
