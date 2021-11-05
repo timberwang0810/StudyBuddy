@@ -22,6 +22,7 @@ struct PlaygroundView: View {
               .frame(width: 32.0, height: 32.0)
           
         }
+        Image("doingTask1")
       }
       
     }
