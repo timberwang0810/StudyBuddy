@@ -10,75 +10,112 @@ import SwiftUI
 struct TasksView: View {
     @ObservedObject var viewModel: ViewModel
     @EnvironmentObject var viewRouter: ViewRouter
+    
     @State var name: String = ""
-    @State var duration: TimeInterval = TimeInterval()
+    @State var duration: TimeInterval = TimeInterval(1200)
     @State private var selection: TaskCategory = .STUDY
     
     var body: some View {
-        VStack {
-            
-            VStack(alignment: .leading) {
-                Text("New Task")
-                    .font(.largeTitle)
-                    .padding();
+        ZStack {
+            Color(red: 241 / 255, green: 241 / 255, blue: 241 / 255).edgesIgnoringSafeArea([.top])
+            VStack {
                 
-                HStack {
-                    Text("Name")
-                    TextField("Task Name", text: $name)
-                        .padding()
-                        .cornerRadius(3.0);
-                }
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .padding(.horizontal)
-                
-                VStack(alignment: .leading, spacing: -15) {
-                    Text("Duration")
-                    DurationPicker(duration: $duration)
+                VStack(alignment: .leading) {
+                    Text("New Task")
+                        .font(Font.custom("Chalkboard SE", size: 24))
+                        .padding(.bottom, 10)
+                        .padding(.horizontal);
+                    
+                    VStack(alignment: .leading, spacing: 0) {
+                        HStack {
+                            Text("Name")
+                                .fontWeight(.light)
+                                + Text("*")
+                                .fontWeight(.light)
+                                .foregroundColor(.red)
+                            TextField("Task Name", text: $name)
+                                .padding(.horizontal)
+                                .cornerRadius(3.0);
+                        }
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
                         .padding(.horizontal)
-                }.padding(.horizontal)
-                
-                HStack {
-                    Text("Category")
-                    Picker("\(selection.rawValue)", selection: $selection) {
-                        ForEach(TaskCategory.allCases.reversed(), id: \.self) {
-                            Text($0.rawValue)
+                        
+                        if (viewModel.showTaskErrorMessage) {
+                            Text("Please provide a name for your task!")
+                                .font(Font.custom("Chalkboard SE", size: 10))
+                                .foregroundColor(.red)
+                                .padding(.horizontal)
                         }
                     }
-                    .pickerStyle(MenuPickerStyle())
-                }.padding(.horizontal)
-            }
-            .padding(20)
-            
-            VStack(alignment: .center) {
-                VStack{
-                    Text("Reward")
-                        .font(.headline)
+                    
+                    VStack(alignment: .leading, spacing: -15) {
+                        Text("Duration")
+                            .fontWeight(.light)
+                        DurationPicker(duration: $duration)
+                            .padding(.horizontal)
+                    }.padding(.horizontal)
+                    
                     HStack {
-                        Image("coin")
-                        Text("\(Task.calculateBaseRewards(duration: duration))+")
-                            .font(.system(size: 45))
-                    }
-                    .padding(.horizontal)
+                        Text("Category")
+                            .fontWeight(.light)
+                        Picker("\(selection.rawValue)", selection: $selection) {
+                            ForEach(TaskCategory.allCases.reversed(), id: \.self) {
+                                Text($0.rawValue)
+                            }
+                        }
+                        .pickerStyle(MenuPickerStyle())
+                        .padding(.vertical, 1)
+                        .padding(.horizontal, 25)
+                        .frame(width: 125)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 10)
+                                .stroke(Color(red: 230 / 255, green: 230 / 255, blue: 230 / 255), lineWidth: 2))
+                    }.padding(.horizontal)
                 }
-                .padding()
-                .padding(.horizontal, 40)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 10)
-                        .stroke(Color(red: 230 / 255, green: 230 / 255, blue: 230 / 255), lineWidth: 2)
-                )
-            }
-            .padding(20)
-            
-            Button("Start Now", action: {self.viewModel.createTask(name: name, duration: duration, category: selection, isStarted: true, completion: {
-                viewRouter.currentPage = .doingTaskPage
-            })})
+                .font(Font.custom("Chalkboard SE", size: 18))
+                .padding(20)
+                
+                VStack(alignment: .center) {
+                    VStack (spacing: 0) {
+                        Text("Reward")
+                            .fontWeight(.light)
+                        HStack {
+                            Image("coin")
+                            Text("\(Task.calculateBaseRewards(duration: duration))+")
+                                .font(Font.custom("Chalkboard SE", size: 34))
+                                .fontWeight(.light)
+                                .baselineOffset(5)
+                        }
+                    }
+                    .padding(.vertical, 10)
+                    .padding(.horizontal, 70)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 10)
+                            .stroke(Color(red: 230 / 255, green: 230 / 255, blue: 230 / 255), lineWidth: 2)
+                    )
+                }
+                .padding(20)
+                
+                Button(action: {self.viewModel.createTask(name: name, duration: duration, category: selection, isStarted: true, completion: {
+                    viewRouter.currentPage = .doingTaskPage
+                })}) {
+                    Text("Start Now")
+                        .font(Font.custom("Chalkboard SE", size: 20))
+                        .fontWeight(.light)
+                }
                 .padding()
                 .background(Color(red: 248 / 255, green: 208 / 255, blue: 116 / 255))
                 .foregroundColor(.black)
                 .cornerRadius(10)
                 .shadow(color: Color(red: 185 / 255, green: 108 / 255, blue: 37 / 255), radius: 1, x: 0, y: 5)
-                .font(.title)
+            }
+            .font(Font.custom("Chalkboard SE", size: 22))
+            .frame(maxWidth: 385, maxHeight: 725)
+            .background(Color.white)
+            .cornerRadius(10)
+            .shadow(color: Color.gray, radius: 3, x: 0, y: 5)
         }
+        
     }
 }
 

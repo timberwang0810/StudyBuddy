@@ -4,21 +4,30 @@ class Store {
   private var accessoryItems: [AccessoryItem]
   private var playgroundItems: [PlaygroundItem]
   
+  private var purchasedAccessoryItems: [AccessoryItem]
+  private var purchasedPlaygroundItems: [PlaygroundItem]
+  
   init(){
     self.accessoryItems = []
     self.playgroundItems = []
+    self.purchasedAccessoryItems = []
+    self.purchasedPlaygroundItems = []
   }
   
   public func getAllAccessoryItems() -> [AccessoryItem]{
-    return accessoryItems
+    return accessoryItems + purchasedAccessoryItems
+  }
+  
+  public func getAccessoryItemsByCategory(category: AccessoryItemCategory) -> [AccessoryItem]{
+    return accessoryItems.filter{$0.category == category} + purchasedAccessoryItems.filter{$0.category == category}
   }
   
   public func getAllPlaygroundItems() -> [PlaygroundItem]{
-    return playgroundItems
+    return playgroundItems + purchasedPlaygroundItems
   }
   
-  public func getAllItems() -> [Item]{
-    return accessoryItems + playgroundItems
+  public func getPlaygroundItemsByCategory(category: PlaygroundItemCategory) -> [PlaygroundItem]{
+    return playgroundItems.filter{$0.category == category} + purchasedPlaygroundItems.filter{$0.category == category}
   }
   
   public func addAccessoryItem(item: AccessoryItem){
@@ -29,23 +38,31 @@ class Store {
     playgroundItems.append(item)
   }
   
-  public func purchaseAccessoryItem(item: AccessoryItem, character: Character){
+  public func markAccessoryItemAsPurhcased(item:AccessoryItem){
     for (index, element) in self.accessoryItems.enumerated(){
       if (element == item){
         self.accessoryItems.remove(at: index)
+        self.purchasedAccessoryItems.append(item)
         break
       }
     }
-    character.onNewItemPurchased(item: item)
   }
   
-  public func purchasePlaygroundItem(item: PlaygroundItem, playground: Playground){
+  public func markPlaygroundItemAsPurchased(item: PlaygroundItem){
     for (index, element) in self.playgroundItems.enumerated(){
       if (element == item){
         self.playgroundItems.remove(at: index)
+        self.purchasedPlaygroundItems.append(item)
         break
       }
     }
-    playground.onNewItemPurchased(item: item)
+  }
+  
+  public func hasAccessoryItem(item: AccessoryItem) -> Bool {
+    return accessoryItems.contains(item)
+  }
+  
+  public func hasPlaygroundItem(item: PlaygroundItem) -> Bool {
+    return playgroundItems.contains(item)
   }
 }

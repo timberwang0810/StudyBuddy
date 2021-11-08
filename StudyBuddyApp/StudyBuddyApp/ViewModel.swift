@@ -12,8 +12,19 @@ import SwiftUI
 class ViewModel: ObservableObject {
 //  State we want to update view with when it changes
     @Published var currentTask: Task?
+  @Published var store: Store = Store()
+  @Published var playground: Playground = Playground()
+  @Published var character: Character = Character(name: "Bob")
+  @Published var user: User = User()
+    @Published var showTaskErrorMessage: Bool = false
   
     func createTask(name: String, duration: TimeInterval, category: TaskCategory, isStarted: Bool, completion: @escaping () -> Void) {
+        if (name == "") {
+            showTaskErrorMessage = true
+            return
+        }
+        showTaskErrorMessage = false
+        
         currentTask = Task(name: name, duration: duration, category: category)
         if (isStarted) {
             currentTask?.start()
@@ -26,5 +37,21 @@ class ViewModel: ObservableObject {
         
         completion()
     }
+  
+  func stopTask(timeRemaining: TimeInterval){
+    currentTask!.complete(timeRemaining: timeRemaining)
+  }
+  
+  func getTaskReward() -> Int{
+    return currentTask!.finalReward
+  }
+  
+  func earnMoney(inc: Int) {
+    user.earnMoney(inc: inc)
+  }
+  
+  func getCurrentMoney() -> Int{
+    return user.getMoney()
+  }
 }
 

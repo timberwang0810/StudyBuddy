@@ -8,22 +8,15 @@ enum TaskCategory: String, CaseIterable {
     case OTHER = "Other"
 }
 
-class Task{
+class Task : Equatable{
   let name : String
-  private var baseReward: Int
+  let baseReward: Int
   let duration: TimeInterval
   let category: TaskCategory
+  var finalReward: Int
   
   private var hasTaskStarted: Bool
-  private var startTime: NSDate?
-  
-  var elapsedTime: TimeInterval {
-    if let startTime = self.startTime {
-      return -1 * startTime.timeIntervalSinceNow // could also just say -startTime.timeIntervalSinceNow
-    } else {
-      return 0
-    }
-  }
+  private var hasTaskEnded: Bool
   
   init(name: String, duration: TimeInterval, category: TaskCategory){
     self.name = name
@@ -31,10 +24,8 @@ class Task{
     self.category = category
     self.baseReward = Task.calculateBaseRewards(duration: duration)
     self.hasTaskStarted = false
-  }
-  
-  public func getBaseReward() -> Int{
-    return self.baseReward;
+    self.hasTaskEnded = false
+    self.finalReward = 0
   }
   
   func start() {
@@ -43,15 +34,27 @@ class Task{
       return
     }
     self.hasTaskStarted = true
-    startTime = NSDate()
   }
   
-  func stopAndCollectReward() -> Int{
+  func complete(timeRemaining: TimeInterval){
     if (!self.hasTaskStarted) {
       // shouldn't happen
-      return 0;
+      return;
     }
-    return Task.calculateFinalRewards(baseReward: self.baseReward, timeEstimated: self.duration, timeActual: self.elapsedTime)
+    self.hasTaskEnded = true
+    self.finalReward = Task.calculateFinalRewards(baseReward: self.baseReward, timeEstimated: self.duration, timeActual: self.duration-timeRemaining)
+  }
+  
+  public func isTaskStarted() -> Bool{
+    return self.hasTaskStarted
+  }
+  
+  public func isTaskEnded() -> Bool {
+    return self.hasTaskEnded
+  }
+  
+  static func == (lhs: Task, rhs: Task) -> Bool{
+    return lhs === rhs
   }
   
   static func calculateBaseRewards(duration: TimeInterval) -> Int{
@@ -61,6 +64,6 @@ class Task{
   
   private static func calculateFinalRewards(baseReward: Int, timeEstimated: TimeInterval, timeActual: TimeInterval) -> Int{
     // TODO: Reward calculation function
-    return baseReward
+    return (baseReward * 5 / 4) + 3
   }
 }

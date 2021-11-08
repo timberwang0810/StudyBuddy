@@ -30,30 +30,36 @@ class Character{
   }
   
   public func onNewItemPurchased(item: AccessoryItem){
-    wardrobe.append(item)
-    numNewItem+=1
+    self.wardrobe.append(item)
+    self.numNewItem+=1
   }
   
   public func wearItem(item: AccessoryItem){
+    if (!self.wardrobe.contains(item)){
+      return
+    }
     for (index, element) in self.wardrobe.enumerated(){
       if (element == item){
         self.wardrobe.remove(at: index)
         break
       }
     }
-    currentClothes[item.category] = item
+    moveIntoWardrobe(itemCategory: item.category)
+    self.currentClothes[item.category] = item
   }
   
-  public func moveIntoWardrobe(item: AccessoryItem){
-    currentClothes.removeValue(forKey: item.category)
-    wardrobe.append(item)
+  public func moveIntoWardrobe(itemCategory: AccessoryItemCategory){
+    if let item = self.currentClothes[itemCategory]{
+      self.currentClothes.removeValue(forKey: itemCategory)
+      self.wardrobe.append(item)
+    }
   }
   
   public func getNumNewItem() -> Int{
-    return numNewItem
+    return self.numNewItem
   }
   
   public func resetNumNewItem(){
-    numNewItem = 0
+    self.numNewItem = 0
   }
 }

@@ -17,7 +17,7 @@ struct TabbedView: View {
                 .tabItem {
                     Label("Task", systemImage: "list.dash")
                 }
-            PlaygroundView()
+          PlaygroundView(viewModel: viewModel)
                 .tabItem {
                     Label("Playground", systemImage: "gamecontroller")
                 }
