@@ -42,6 +42,8 @@
 		DA68B56C27354CCE004C3EB7 /* bob_writing.atlas in Resources */ = {isa = PBXBuildFile; fileRef = DA68B56B27354CCE004C3EB7 /* bob_writing.atlas */; };
 		DA68B5712735824A004C3EB7 /* bob_sweeping.atlas in Resources */ = {isa = PBXBuildFile; fileRef = DA68B56F2735824A004C3EB7 /* bob_sweeping.atlas */; };
 		DA68B5722735824A004C3EB7 /* bob_cheering.atlas in Resources */ = {isa = PBXBuildFile; fileRef = DA68B5702735824A004C3EB7 /* bob_cheering.atlas */; };
+		DAD0E15C2739A69000EF1E88 /* DoingTaskScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD0E15B2739A69000EF1E88 /* DoingTaskScene.swift */; };
+		DAD0E15E2739A90E00EF1E88 /* RewardsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD0E15D2739A90E00EF1E88 /* RewardsScene.swift */; };
 		DAE29E05272E4D83004835E2 /* PlaygroundScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE29E04272E4D83004835E2 /* PlaygroundScene.swift */; };
 		DAE29E08272E883A004835E2 /* AnimatedSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE29E07272E883A004835E2 /* AnimatedSprite.swift */; };
 /* End PBXBuildFile section */
@@ -109,6 +111,8 @@
 		DA68B56B27354CCE004C3EB7 /* bob_writing.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = bob_writing.atlas; sourceTree = "<group>"; };
 		DA68B56F2735824A004C3EB7 /* bob_sweeping.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = bob_sweeping.atlas; sourceTree = "<group>"; };
 		DA68B5702735824A004C3EB7 /* bob_cheering.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = bob_cheering.atlas; sourceTree = "<group>"; };
+		DAD0E15B2739A69000EF1E88 /* DoingTaskScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoingTaskScene.swift; sourceTree = "<group>"; };
+		DAD0E15D2739A90E00EF1E88 /* RewardsScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardsScene.swift; sourceTree = "<group>"; };
 		DAE29E04272E4D83004835E2 /* PlaygroundScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaygroundScene.swift; sourceTree = "<group>"; };
 		DAE29E07272E883A004835E2 /* AnimatedSprite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedSprite.swift; sourceTree = "<group>"; };
 		E813536AC9E3653487A06554 /* Pods-StudyBuddyAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StudyBuddyAppTests.release.xcconfig"; path = "Target Support Files/Pods-StudyBuddyAppTests/Pods-StudyBuddyAppTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -290,6 +294,8 @@
 			isa = PBXGroup;
 			children = (
 				DAE29E04272E4D83004835E2 /* PlaygroundScene.swift */,
+				DAD0E15B2739A69000EF1E88 /* DoingTaskScene.swift */,
+				DAD0E15D2739A90E00EF1E88 /* RewardsScene.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -559,10 +565,12 @@
 				D1A4AFA4272738B300C92354 /* SceneDelegate.swift in Sources */,
 				D160122E272DC7B2003BAD02 /* Character.swift in Sources */,
 				D160120B272B1622003BAD02 /* User.swift in Sources */,
+				DAD0E15E2739A90E00EF1E88 /* RewardsScene.swift in Sources */,
 				D9BC462E272DE76900962100 /* DoingTaskView.swift in Sources */,
 				D908AA9A2729096A0095600F /* ViewModel.swift in Sources */,
 				DAE29E05272E4D83004835E2 /* PlaygroundScene.swift in Sources */,
 				D1A4AFA6272738B300C92354 /* ContentView.swift in Sources */,
+				DAD0E15C2739A69000EF1E88 /* DoingTaskScene.swift in Sources */,
 				D908AAA427290D3E0095600F /* PlaygroundView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

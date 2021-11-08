@@ -8,7 +8,10 @@
 import SwiftUI
 import SpriteKit
 
-struct PlaygroundViewSK: View {
+struct PlaygroundView: View {
+  @ObservedObject var viewModel: ViewModel
+  @EnvironmentObject var viewRouter: ViewRouter
+    
     var scene: SKScene {
         let scene = PlaygroundScene()
         scene.size = CGSize(width: 400, height: 700)
@@ -16,22 +19,6 @@ struct PlaygroundViewSK: View {
         return scene
     }
     
-    var body: some View {
-        VStack {
-            SpriteView(scene: scene)
-                .frame(width: 400.0, height: 700.0)
-                .edgesIgnoringSafeArea(.all)
-            Text("Playground View")
-        }
-
-
-
-    }
-}
-
-struct PlaygroundView: View {
-  @ObservedObject var viewModel: ViewModel
-  @EnvironmentObject var viewRouter: ViewRouter
     var body: some View {
       VStack{
         HStack{
@@ -44,7 +31,9 @@ struct PlaygroundView: View {
               .frame(width: 32.0, height: 32.0)
           
         }
-        Image("doingTask1")
+        SpriteView(scene: scene)
+            .frame(width: 400.0, height: 700.0)
+            .edgesIgnoringSafeArea(.all)
       }
       
     }
