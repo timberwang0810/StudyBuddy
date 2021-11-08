@@ -6,10 +6,18 @@
 //
 
 import SwiftUI
+import SpriteKit
 
 struct RewardsView: View {
     @ObservedObject var viewModel: ViewModel
     @EnvironmentObject var viewRouter: ViewRouter
+    
+    var scene: SKScene {
+      let scene = RewardsScene()
+          scene.size = CGSize(width: 400, height: 700)
+          scene.scaleMode = .fill
+          return scene
+      }
     
     var body: some View {
         VStack {
@@ -17,6 +25,9 @@ struct RewardsView: View {
             Text("Nicely Done!")
                 .font(Font.custom("Chalkboard SE", size: 40))
                 .padding(.bottom, 50)
+            SpriteView(scene: scene)
+                .frame(width: 400.0, height: 400.0)
+                .edgesIgnoringSafeArea(.all)
             Button(action: {
                     viewModel.earnMoney(inc: viewModel.getTaskReward())
                     viewRouter.currentPage = .tabbedPage }) {
