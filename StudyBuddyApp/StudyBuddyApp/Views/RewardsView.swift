@@ -14,7 +14,7 @@ struct RewardsView: View {
     
     var scene: SKScene {
       let scene = RewardsScene()
-          scene.size = CGSize(width: 400, height: 700)
+          scene.size = CGSize(width: 400, height: 400)
           scene.scaleMode = .fill
           return scene
       }

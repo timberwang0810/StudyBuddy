@@ -21,7 +21,7 @@ struct DoingTaskView: View {
   let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
   
   var scene: SKScene {
-    let scene = DoingTaskScene(atlasName: "bob_writing")
+    let scene = DoingTaskScene()
         scene.size = CGSize(width: 400, height: 700)
         scene.scaleMode = .fill
         return scene
