@@ -11,13 +11,6 @@ struct RewardsView: View {
     @ObservedObject var viewModel: ViewModel
     @EnvironmentObject var viewRouter: ViewRouter
     
-    var scene: SKScene {
-      let scene = RewardsScene()
-          scene.size = CGSize(width: 400, height: 400)
-          scene.scaleMode = .fill
-          return scene
-      }
-    
     var body: some View {
         VStack {
             Spacer()
