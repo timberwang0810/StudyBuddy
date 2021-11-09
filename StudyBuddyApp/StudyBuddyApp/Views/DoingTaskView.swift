@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import SpriteKit
 
 struct DoingTaskView: View {
   @ObservedObject var viewModel: ViewModel
@@ -20,12 +19,7 @@ struct DoingTaskView: View {
   
   let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
   
-  var scene: SKScene {
-    let scene = DoingTaskScene(atlasName: "bob_writing")
-        scene.size = CGSize(width: 400, height: 700)
-        scene.scaleMode = .fill
-        return scene
-    }
+  
   
   init( viewModel: ViewModel) {
     self.viewModel = viewModel
@@ -35,9 +29,7 @@ struct DoingTaskView: View {
   var body: some View {
     ZStack{
       GeometryReader{ geometry in
-        SpriteView(scene: scene)
-            .frame(width: geometry.size.width, height: geometry.size.height)
-            .edgesIgnoringSafeArea(.all)
+        Image("doingTask1").frame(maxWidth: geometry.size.width, maxHeight: geometry.size.height)
         
         VStack{
           HStack{

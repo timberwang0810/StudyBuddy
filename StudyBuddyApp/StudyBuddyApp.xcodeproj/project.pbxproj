@@ -39,13 +39,6 @@
 		D9BC461F272DE43B00962100 /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BC461E272DE43B00962100 /* ViewRouter.swift */; };
 		D9BC462E272DE76900962100 /* DoingTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BC462D272DE76900962100 /* DoingTaskView.swift */; };
 		D9BC4633272DE7A000962100 /* TabbedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BC4632272DE7A000962100 /* TabbedView.swift */; };
-		DA68B56C27354CCE004C3EB7 /* bob_writing.atlas in Resources */ = {isa = PBXBuildFile; fileRef = DA68B56B27354CCE004C3EB7 /* bob_writing.atlas */; };
-		DA68B5712735824A004C3EB7 /* bob_sweeping.atlas in Resources */ = {isa = PBXBuildFile; fileRef = DA68B56F2735824A004C3EB7 /* bob_sweeping.atlas */; };
-		DA68B5722735824A004C3EB7 /* bob_cheering.atlas in Resources */ = {isa = PBXBuildFile; fileRef = DA68B5702735824A004C3EB7 /* bob_cheering.atlas */; };
-		DAD0E15C2739A69000EF1E88 /* DoingTaskScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD0E15B2739A69000EF1E88 /* DoingTaskScene.swift */; };
-		DAD0E15E2739A90E00EF1E88 /* RewardsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD0E15D2739A90E00EF1E88 /* RewardsScene.swift */; };
-		DAE29E05272E4D83004835E2 /* PlaygroundScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE29E04272E4D83004835E2 /* PlaygroundScene.swift */; };
-		DAE29E08272E883A004835E2 /* AnimatedSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE29E07272E883A004835E2 /* AnimatedSprite.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,13 +101,6 @@
 		D9BC461E272DE43B00962100 /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
 		D9BC462D272DE76900962100 /* DoingTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoingTaskView.swift; sourceTree = "<group>"; };
 		D9BC4632272DE7A000962100 /* TabbedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbedView.swift; sourceTree = "<group>"; };
-		DA68B56B27354CCE004C3EB7 /* bob_writing.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = bob_writing.atlas; sourceTree = "<group>"; };
-		DA68B56F2735824A004C3EB7 /* bob_sweeping.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = bob_sweeping.atlas; sourceTree = "<group>"; };
-		DA68B5702735824A004C3EB7 /* bob_cheering.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = bob_cheering.atlas; sourceTree = "<group>"; };
-		DAD0E15B2739A69000EF1E88 /* DoingTaskScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoingTaskScene.swift; sourceTree = "<group>"; };
-		DAD0E15D2739A90E00EF1E88 /* RewardsScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardsScene.swift; sourceTree = "<group>"; };
-		DAE29E04272E4D83004835E2 /* PlaygroundScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaygroundScene.swift; sourceTree = "<group>"; };
-		DAE29E07272E883A004835E2 /* AnimatedSprite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedSprite.swift; sourceTree = "<group>"; };
 		E813536AC9E3653487A06554 /* Pods-StudyBuddyAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StudyBuddyAppTests.release.xcconfig"; path = "Target Support Files/Pods-StudyBuddyAppTests/Pods-StudyBuddyAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		F3D7377D636ED78F7AC7604D /* Pods-StudyBuddyApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StudyBuddyApp.release.xcconfig"; path = "Target Support Files/Pods-StudyBuddyApp/Pods-StudyBuddyApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -195,9 +181,6 @@
 		D1A4AFA0272738B300C92354 /* StudyBuddyApp */ = {
 			isa = PBXGroup;
 			children = (
-				DA68B5652735436B004C3EB7 /* Sprites */,
-				DAE29E06272E87F7004835E2 /* SpriteKit Objects */,
-				DAE29E03272E4D28004835E2 /* Scenes */,
 				D1A4AFD9272738F400C92354 /* Views */,
 				D1A4AFD7272738DA00C92354 /* Models */,
 				D1A4AFA1272738B300C92354 /* AppDelegate.swift */,
@@ -270,42 +253,6 @@
 				D9AD397C2730FA0F00408F59 /* RewardsView.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		DA68B5652735436B004C3EB7 /* Sprites */ = {
-			isa = PBXGroup;
-			children = (
-				DA68B56627354371004C3EB7 /* Bob */,
-			);
-			path = Sprites;
-			sourceTree = "<group>";
-		};
-		DA68B56627354371004C3EB7 /* Bob */ = {
-			isa = PBXGroup;
-			children = (
-				DA68B5702735824A004C3EB7 /* bob_cheering.atlas */,
-				DA68B56F2735824A004C3EB7 /* bob_sweeping.atlas */,
-				DA68B56B27354CCE004C3EB7 /* bob_writing.atlas */,
-			);
-			path = Bob;
-			sourceTree = "<group>";
-		};
-		DAE29E03272E4D28004835E2 /* Scenes */ = {
-			isa = PBXGroup;
-			children = (
-				DAE29E04272E4D83004835E2 /* PlaygroundScene.swift */,
-				DAD0E15B2739A69000EF1E88 /* DoingTaskScene.swift */,
-				DAD0E15D2739A90E00EF1E88 /* RewardsScene.swift */,
-			);
-			path = Scenes;
-			sourceTree = "<group>";
-		};
-		DAE29E06272E87F7004835E2 /* SpriteKit Objects */ = {
-			isa = PBXGroup;
-			children = (
-				DAE29E07272E883A004835E2 /* AnimatedSprite.swift */,
-			);
-			path = "SpriteKit Objects";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -417,10 +364,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D1A4AFB1272738B900C92354 /* LaunchScreen.storyboard in Resources */,
-				DA68B5712735824A004C3EB7 /* bob_sweeping.atlas in Resources */,
-				DA68B5722735824A004C3EB7 /* bob_cheering.atlas in Resources */,
 				D1A4AFAE272738B900C92354 /* Preview Assets.xcassets in Resources */,
-				DA68B56C27354CCE004C3EB7 /* bob_writing.atlas in Resources */,
 				D1A4AFAB272738B900C92354 /* Assets.xcassets in Resources */,
 				38F3E0B627339A2D00E36A14 /* doingTask1.png in Resources */,
 			);
@@ -561,16 +505,12 @@
 				D1A4AFA2272738B300C92354 /* AppDelegate.swift in Sources */,
 				D1601229272DC4DD003BAD02 /* Playground.swift in Sources */,
 				D908AA9F27290D2C0095600F /* TasksView.swift in Sources */,
-				DAE29E08272E883A004835E2 /* AnimatedSprite.swift in Sources */,
 				D1A4AFA4272738B300C92354 /* SceneDelegate.swift in Sources */,
 				D160122E272DC7B2003BAD02 /* Character.swift in Sources */,
 				D160120B272B1622003BAD02 /* User.swift in Sources */,
-				DAD0E15E2739A90E00EF1E88 /* RewardsScene.swift in Sources */,
 				D9BC462E272DE76900962100 /* DoingTaskView.swift in Sources */,
 				D908AA9A2729096A0095600F /* ViewModel.swift in Sources */,
-				DAE29E05272E4D83004835E2 /* PlaygroundScene.swift in Sources */,
 				D1A4AFA6272738B300C92354 /* ContentView.swift in Sources */,
-				DAD0E15C2739A69000EF1E88 /* DoingTaskScene.swift in Sources */,
 				D908AAA427290D3E0095600F /* PlaygroundView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
