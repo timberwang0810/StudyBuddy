@@ -17,25 +17,22 @@ struct DoingTaskView: View {
   @State var seconds: Int = 0
   @State var timerIsPaused: Bool = false
   @State var timeRemaining: Double = 0.0
-
-  
-  var scene: DoingTaskScene {
-    let scene = DoingTaskScene(size: CGSize(width: 400, height: 700), duration: viewModel.currentTask!.duration)
-    scene.scaleMode = .fill
     
-    
-    return scene
-  }
+    @ObservedObject var sceneStore: SceneStore
   
   init( viewModel: ViewModel) {
     self.viewModel = viewModel
         _timeRemaining = State(initialValue: viewModel.currentTask!.duration)
+    
+    self.sceneStore = SceneStore(
+        scene: DoingTaskScene(size: CGSize(width: 400, height: 700), duration: viewModel.currentTask!.duration)
+    )
   }
   
   var body: some View {
     ZStack{
       
-        SpriteView(scene: scene)
+        SpriteView(scene: sceneStore.scene)
                     .frame(width: 400, height: 700)
                     .edgesIgnoringSafeArea(.all)
       VStack{
@@ -49,7 +46,7 @@ struct DoingTaskView: View {
       VStack(alignment: .trailing){
         
         HStack{
-            if self.scene.timer.isTimerPaused {
+            if self.timerIsPaused {
             
             Button(action:{
               self.startTimer()
@@ -93,11 +90,11 @@ struct DoingTaskView: View {
   }
   func startTimer(){
     timerIsPaused = false
-    self.scene.timer.startTimer()
+    self.sceneStore.scene.isPaused = false
   }
   func pauseTimer(){
     timerIsPaused = true
-    self.scene.timer.stopTimer()
+    self.sceneStore.scene.isPaused = true
   }
   
   func countDownString(timeRemaining: Double) -> String {

@@ -34,9 +34,5 @@ class DoingTaskScene: SKScene {
         
         bob.startAnimation()
     }
-    
-    func getTimer() -> SKLabelNode {
-        return self.timer
-    }
 
 }

@@ -17,6 +17,7 @@ class Timer: SKLabelNode {
     
     var timerAction: SKAction
     
+    
     init(timeRemaining: Double) {
         self.isTimerPaused = false
         self.timeRemaining = timeRemaining
@@ -28,10 +29,12 @@ class Timer: SKLabelNode {
         
         self.timerAction = SKAction.repeatForever(SKAction.sequence([
             SKAction.run {
-                self.timeRemaining -= 1
+                if !self.isTimerPaused {
+                    self.timeRemaining -= 0.1
+                }
                 self.updateText()
             },
-            SKAction.wait(forDuration: 1.0)
+            SKAction.wait(forDuration: 0.1)
         ]))
         
         self.fontSize = 35
@@ -39,7 +42,7 @@ class Timer: SKLabelNode {
         self.fontColor = .black
         
         updateText()
-        startTimer()
+        self.run(self.timerAction, withKey: "timer")
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -63,11 +66,13 @@ class Timer: SKLabelNode {
     }
     
     func startTimer() {
-        isTimerPaused = false
-        self.run(self.timerAction, withKey: "timer")
+        self.isTimerPaused = false
+        self.timerAction.speed = 1
+        print("Timer started!")
     }
     func stopTimer() {
-        isTimerPaused = true
-        self.removeAction(forKey: "timer")
+        self.isTimerPaused = true
+        self.timerAction.speed = 0
+        print("Timer stopped.")
     }
 }
