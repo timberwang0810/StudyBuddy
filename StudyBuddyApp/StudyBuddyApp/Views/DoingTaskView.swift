@@ -17,15 +17,15 @@ struct DoingTaskView: View {
   @State var seconds: Int = 0
   @State var timerIsPaused: Bool = false
   @State var timeRemaining: Double = 0.0
+
   
-  let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
-  
-  var scene: SKScene {
-    let scene = DoingTaskScene()
-        scene.size = CGSize(width: 400, height: 700)
-        scene.scaleMode = .fill
-        return scene
-    }
+  var scene: DoingTaskScene {
+    let scene = DoingTaskScene(size: CGSize(width: 400, height: 700), duration: viewModel.currentTask!.duration)
+    scene.scaleMode = .fill
+    
+    
+    return scene
+  }
   
   init( viewModel: ViewModel) {
     self.viewModel = viewModel
@@ -34,62 +34,50 @@ struct DoingTaskView: View {
   
   var body: some View {
     ZStack{
-      GeometryReader{ geometry in
+      
         SpriteView(scene: scene)
-            .frame(width: geometry.size.width, height: geometry.size.height)
-            .edgesIgnoringSafeArea(.all)
-        
-        VStack{
-          HStack{
-            Text(calculateTime()).font(Font.custom("Chalkboard SE", size: 24))
-            Spacer()
-          }
+                    .frame(width: 400, height: 700)
+                    .edgesIgnoringSafeArea(.all)
+      VStack{
+        HStack{
+          Text(calculateTime()).font(Font.custom("Chalkboard SE", size: 24))
+            .padding(10)
           Spacer()
-          VStack(alignment: .trailing){
-            HStack{
-              Spacer()
-              Text((countDownString(timeRemaining: timeRemaining))
-              ).font(Font.custom("Chalkboard SE", size: 35))
-              .padding(10)}.onReceive(timer) { time in
-                if timeRemaining > 0.0 && !timerIsPaused {
-                  timeRemaining -= 1.0
-                }else if timeRemaining == 0.0 {
-                  self.viewModel.stopTask(timeRemaining: timeRemaining)
-                  self.viewRouter.currentPage = .rewardsPage
-                }
-              }
+      }
+        
+      Spacer()
+      VStack(alignment: .trailing){
+        
+        HStack{
+            if self.scene.timer.isTimerPaused {
             
-            HStack{
-              if timerIsPaused {
-                
-                Button(action:{
-                  self.startTimer()
-                }){
-                  Image(systemName: "play.fill")
-                    .padding()
-                }
-                
-              } else {
-                Button(action:{
-                  self.pauseTimer()
-                }){
-                  Image(systemName: "pause.fill")
-                    .padding()
-                }
-                
-              }
-              
-              Button(action:{
-                self.viewRouter.currentPage = .tabbedPage
-              }){
-                Image(systemName: "stop.fill")
-                  .padding()
-              }
-              //            .padding()
+            Button(action:{
+              self.startTimer()
+            }){
+              Image(systemName: "play.fill")
+                .padding()
             }
+            
+          } else {
+            Button(action:{
+              self.pauseTimer()
+            }){
+              Image(systemName: "pause.fill")
+                .padding()
+            }
+            
           }
+          
+          Button(action:{
+            self.viewRouter.currentPage = .tabbedPage
+          }){
+            Image(systemName: "stop.fill")
+              .padding()
+          }
+          //            .padding()
         }
       }
+    }
     }
     
   }
@@ -105,9 +93,11 @@ struct DoingTaskView: View {
   }
   func startTimer(){
     timerIsPaused = false
+    self.scene.timer.startTimer()
   }
   func pauseTimer(){
     timerIsPaused = true
+    self.scene.timer.stopTimer()
   }
   
   func countDownString(timeRemaining: Double) -> String {

@@ -9,6 +9,19 @@ import UIKit
 import SpriteKit
 
 class DoingTaskScene: SKScene {
+    
+    public var timer: Timer
+    
+    init(size: CGSize, duration: Double) {
+        self.timer = Timer(timeRemaining: duration)
+        
+        super.init(size: size)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func didMove(to view: SKView) {
         backgroundColor = SKColor.white
         
@@ -16,7 +29,14 @@ class DoingTaskScene: SKScene {
         bob.position = CGPoint(x: frame.midX, y: frame.midY)
         addChild(bob)
         
+        self.timer.position = CGPoint(x: 1.5 * frame.midX, y: 0.5 * frame.midY)
+        addChild(self.timer)
+        
         bob.startAnimation()
+    }
+    
+    func getTimer() -> SKLabelNode {
+        return self.timer
     }
 
 }
