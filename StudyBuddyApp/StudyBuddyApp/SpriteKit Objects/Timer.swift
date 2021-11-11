@@ -68,11 +68,9 @@ class Timer: SKLabelNode {
     func startTimer() {
         self.isTimerPaused = false
         self.timerAction.speed = 1
-        print("Timer started!")
     }
     func stopTimer() {
         self.isTimerPaused = true
         self.timerAction.speed = 0
-        print("Timer stopped.")
     }
 }
