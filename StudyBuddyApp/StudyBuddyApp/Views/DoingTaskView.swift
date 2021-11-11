@@ -88,21 +88,15 @@ struct DoingTaskView: View {
     let todaysDate = dateFormatter.string(from: date)
     return todaysDate
   }
+
   func startTimer(){
     timerIsPaused = false
     self.sceneStore.scene.isPaused = false
   }
+
   func pauseTimer(){
     timerIsPaused = true
     self.sceneStore.scene.isPaused = true
-  }
-  
-  func countDownString(timeRemaining: Double) -> String {
-    let hours = (Int(timeRemaining) / 3600)
-    let minutes = Int(timeRemaining / 60) - Int(hours * 60)
-    let seconds = Int(timeRemaining) - (Int(timeRemaining / 60) * 60)
-    
-    return String(format: "%0.2d:%0.2d:%0.2d",hours,minutes,seconds)
   }
   
 }
