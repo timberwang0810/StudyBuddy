@@ -40,6 +40,12 @@ struct DoingTaskView: View {
           Text(calculateTime()).font(Font.custom("Chalkboard SE", size: 24))
             .padding(10)
           Spacer()
+            Button(action:{
+              self.viewRouter.currentPage = .tabbedPage
+            }){
+              Image(systemName: "x.circle")
+                .padding()
+            }
       }
         
       Spacer()
@@ -51,7 +57,7 @@ struct DoingTaskView: View {
             Button(action:{
               self.startTimer()
             }){
-              Image(systemName: "play.fill")
+              Image(systemName: "play.circle")
                 .padding()
             }
             
@@ -59,19 +65,18 @@ struct DoingTaskView: View {
             Button(action:{
               self.pauseTimer()
             }){
-              Image(systemName: "pause.fill")
+              Image(systemName: "pause.circle")
                 .padding()
             }
             
           }
           
           Button(action:{
-            self.viewRouter.currentPage = .tabbedPage
+            finishTask()
           }){
-            Image(systemName: "stop.fill")
+            Image(systemName: "checkmark.circle")
               .padding()
           }
-          //            .padding()
         }
       }
     }
@@ -98,6 +103,12 @@ struct DoingTaskView: View {
     timerIsPaused = true
     self.sceneStore.scene.isPaused = true
   }
+    
+    func finishTask() {
+        let scene = self.sceneStore.scene as! DoingTaskScene
+        self.viewModel.stopTask(timeRemaining: scene.timer.timeRemaining)
+        self.viewRouter.currentPage = .rewardsPage
+    }
   
 }
 
