@@ -9,7 +9,7 @@ import SwiftUI
 import UIKit
 import SpriteKit
 
-class Timer: SKLabelNode {
+class SpriteTimer: SKLabelNode {
 
     // isPaused is a SpriteKit variable name
     var isTimerPaused: Bool

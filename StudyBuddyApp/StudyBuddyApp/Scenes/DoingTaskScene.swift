@@ -10,10 +10,10 @@ import SpriteKit
 
 class DoingTaskScene: SKScene {
     
-    public var timer: Timer
+    public var timer: SpriteTimer
     
     init(size: CGSize, duration: Double) {
-        self.timer = Timer(timeRemaining: duration)
+        self.timer = SpriteTimer(timeRemaining: duration)
         
         super.init(size: size)
     }

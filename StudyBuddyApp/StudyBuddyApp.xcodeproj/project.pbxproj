@@ -39,7 +39,7 @@
 		D9BC461F272DE43B00962100 /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BC461E272DE43B00962100 /* ViewRouter.swift */; };
 		D9BC462E272DE76900962100 /* DoingTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BC462D272DE76900962100 /* DoingTaskView.swift */; };
 		D9BC4633272DE7A000962100 /* TabbedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BC4632272DE7A000962100 /* TabbedView.swift */; };
-		DA12B2C8273C638F006F4BE6 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA12B2C7273C638F006F4BE6 /* Timer.swift */; };
+		DA12B2C8273C638F006F4BE6 /* SpriteTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA12B2C7273C638F006F4BE6 /* SpriteTimer.swift */; };
 		DA12B2CA273C85E1006F4BE6 /* SceneStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA12B2C9273C85E1006F4BE6 /* SceneStore.swift */; };
 		DA68B56C27354CCE004C3EB7 /* bob_writing.atlas in Resources */ = {isa = PBXBuildFile; fileRef = DA68B56B27354CCE004C3EB7 /* bob_writing.atlas */; };
 		DA68B5712735824A004C3EB7 /* bob_sweeping.atlas in Resources */ = {isa = PBXBuildFile; fileRef = DA68B56F2735824A004C3EB7 /* bob_sweeping.atlas */; };
@@ -110,7 +110,7 @@
 		D9BC461E272DE43B00962100 /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
 		D9BC462D272DE76900962100 /* DoingTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoingTaskView.swift; sourceTree = "<group>"; };
 		D9BC4632272DE7A000962100 /* TabbedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbedView.swift; sourceTree = "<group>"; };
-		DA12B2C7273C638F006F4BE6 /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
+		DA12B2C7273C638F006F4BE6 /* SpriteTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpriteTimer.swift; sourceTree = "<group>"; };
 		DA12B2C9273C85E1006F4BE6 /* SceneStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneStore.swift; sourceTree = "<group>"; };
 		DA68B56B27354CCE004C3EB7 /* bob_writing.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = bob_writing.atlas; sourceTree = "<group>"; };
 		DA68B56F2735824A004C3EB7 /* bob_sweeping.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = bob_sweeping.atlas; sourceTree = "<group>"; };
@@ -309,7 +309,7 @@
 			isa = PBXGroup;
 			children = (
 				DAE29E07272E883A004835E2 /* AnimatedSprite.swift */,
-				DA12B2C7273C638F006F4BE6 /* Timer.swift */,
+				DA12B2C7273C638F006F4BE6 /* SpriteTimer.swift */,
 			);
 			path = "SpriteKit Objects";
 			sourceTree = "<group>";
@@ -579,7 +579,7 @@
 				DAD0E15C2739A69000EF1E88 /* DoingTaskScene.swift in Sources */,
 				D908AAA427290D3E0095600F /* PlaygroundView.swift in Sources */,
 				DA12B2CA273C85E1006F4BE6 /* SceneStore.swift in Sources */,
-				DA12B2C8273C638F006F4BE6 /* Timer.swift in Sources */,
+				DA12B2C8273C638F006F4BE6 /* SpriteTimer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
