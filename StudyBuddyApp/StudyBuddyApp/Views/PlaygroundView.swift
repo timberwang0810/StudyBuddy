@@ -26,6 +26,9 @@ struct PlaygroundView: View {
               .font(Font.custom("Chalkboard SE", size: 24))
               .baselineOffset(5)
               .padding(.trailing, 10)
+            .onAppear(perform: {
+              self.viewModel.updateUserData()
+            })
           Image("coin")
               .resizable()
               .frame(width: 32.0, height: 32.0)
