@@ -59,7 +59,12 @@ class ViewModel: ObservableObject {
   }
   
   func initializePlaygroundItems() {
+    if (playground.getNumNewItem() > 0) {
+      return
+    }
+    
     print("INITIALIZE PLAYGROUND ITEMS")
+    
     // Hardcode items for now
     for index in 1...5 {
       let painting = PlaygroundItem(name: "Painting \(index)", price: 400, image: "hill_painting", category: PlaygroundItemCategory.Wall)
