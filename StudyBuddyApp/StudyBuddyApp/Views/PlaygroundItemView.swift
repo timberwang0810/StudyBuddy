@@ -8,23 +8,23 @@
 import SwiftUI
 
 struct PlaygroundItemView: View {
-    var item : String
-    var isSelected : Bool
-    let SELECTED_BG_COLOR = Color(red: 170 / 255, green: 208 / 255, blue: 161 / 255)
-    
-    var body: some View {
-        Image(item)
-            .resizable()
-            .scaledToFit()
-            .frame(width: 35.0, height: 35.0)
-            .padding()
-            .border(Color.gray, width: 1)
-            .background(isSelected ? SELECTED_BG_COLOR : Color.white)
-    }
+  @ObservedObject var viewModel: ViewModel
+  var item : PlaygroundItem
+  let SELECTED_BG_COLOR = Color(red: 170 / 255, green: 208 / 255, blue: 161 / 255)
+  
+  var body: some View {
+    Image(item.image)
+      .resizable()
+      .scaledToFit()
+      .frame(width: 35.0, height: 35.0)
+      .padding()
+      .border(Color.gray, width: 1)
+      .background(viewModel.isItemInUse(item: item) ? SELECTED_BG_COLOR : Color.white)
+  }
 }
 
 struct PlaygroundItemView_Previews: PreviewProvider {
-    static var previews: some View {
-        PlaygroundItemView(item: "hill_painting", isSelected: true)
-    }
+  static var previews: some View {
+    PlaygroundItemView(viewModel: ViewModel(), item: PlaygroundItem(name: "Painting", price: 400, image: "hill_painting", category: PlaygroundItemCategory.Wall)).environmentObject(ViewRouter())
+  }
 }

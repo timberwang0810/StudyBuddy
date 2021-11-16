@@ -30,9 +30,11 @@ struct PlaygroundView: View {
         ScrollView(.horizontal) {
           HStack(spacing: 0) {
             ForEach(viewModel.getStorageItems(), id: \.self) { playgroundItem in
-              PlaygroundItemView(item: playgroundItem.image, isSelected: playgroundItem.name == "hill_painting")
+              PlaygroundItemView(viewModel: viewModel, item: playgroundItem)
                 .onTapGesture {
                   print(playgroundItem.name)
+                  viewModel.moveIntoPlayground(item: playgroundItem)
+                  print(viewModel.playground.getAllDecorations())
 //                  self.selectedIndex = index
                 }
             }
