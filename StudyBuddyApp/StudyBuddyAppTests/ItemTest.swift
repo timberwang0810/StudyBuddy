@@ -15,8 +15,8 @@ class ItemTest: XCTestCase {
   
   override func setUpWithError() throws {
     try super.setUpWithError()
-    sut_a = AccessoryItem(name: "Beanie", price: 200, category: AccessoryItemCategory.Hat)
-    sut_p = PlaygroundItem(name: "Lamp", price: 500, category: PlaygroundItemCategory.Floor)
+    sut_a = AccessoryItem(name: "Beanie", price: 200, image: "beanie_img", category: AccessoryItemCategory.Hat)
+    sut_p = PlaygroundItem(name: "Lamp", price: 500, image: "lamp_img", category: PlaygroundItemCategory.Floor)
   }
 
   override func tearDownWithError() throws {
@@ -26,21 +26,23 @@ class ItemTest: XCTestCase {
   func testInitialization() throws {
     XCTAssertEqual(sut_a.name, "Beanie")
     XCTAssertEqual(sut_a.price, 200)
+    XCTAssertEqual(sut_a.image, "beanie_img")
     XCTAssertEqual(sut_a.category, AccessoryItemCategory.Hat)
     
     XCTAssertEqual(sut_p.name, "Lamp")
     XCTAssertEqual(sut_p.price, 500)
+    XCTAssertEqual(sut_p.image, "lamp_img")
     XCTAssertEqual(sut_p.category, PlaygroundItemCategory.Floor)
   }
   
   func testEquals() throws {
-    let beanie = AccessoryItem(name: "Beanie", price: 300, category: AccessoryItemCategory.Hat)
-    let cowboy = AccessoryItem(name: "Cowboy Hat", price: 200, category: AccessoryItemCategory.Hat)
+    let beanie = AccessoryItem(name: "Beanie", price: 300, image: "beanie_img", category: AccessoryItemCategory.Hat)
+    let cowboy = AccessoryItem(name: "Cowboy Hat", price: 200, image: "cowboy_hat_img", category: AccessoryItemCategory.Hat)
     XCTAssertEqual(sut_a, beanie)
     XCTAssertNotEqual(sut_a, cowboy)
     
-    let lamp = PlaygroundItem(name: "Lamp", price: 400, category: PlaygroundItemCategory.Floor)
-    let carpet = PlaygroundItem(name: "carpet", price: 500, category: PlaygroundItemCategory.Floor)
+    let lamp = PlaygroundItem(name: "Lamp", price: 400, image: "lamp_img", category: PlaygroundItemCategory.Floor)
+    let carpet = PlaygroundItem(name: "carpet", price: 500, image: "carpet_img", category: PlaygroundItemCategory.Floor)
     XCTAssertEqual(sut_p, lamp)
     XCTAssertNotEqual(sut_p, carpet)
   }

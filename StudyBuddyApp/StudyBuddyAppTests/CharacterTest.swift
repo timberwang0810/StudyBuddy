@@ -38,8 +38,8 @@ class CharacterTest: XCTestCase {
     XCTAssertEqual(sut.getAllWardrobeItems(), [])
     XCTAssertEqual(sut.getAllCurrentClothes(), [:])
 
-    let beanie = AccessoryItem(name: "Beanie", price: 300, category: AccessoryItemCategory.Hat)
-    let cowboy = AccessoryItem(name: "Cowboy Hat", price: 200, category: AccessoryItemCategory.Hat)
+    let beanie = AccessoryItem(name: "Beanie", price: 300, image: "beanie_img", category: AccessoryItemCategory.Hat)
+    let cowboy = AccessoryItem(name: "Cowboy Hat", price: 200, image: "cowboy_hat_img", category: AccessoryItemCategory.Hat)
     sut.onNewItemPurchased(item: beanie)
     XCTAssertEqual(sut.getNumNewItem(), 1)
     var wardrobe = sut.getAllWardrobeItems()
@@ -56,9 +56,9 @@ class CharacterTest: XCTestCase {
   }
   
   func testWearItem() throws {
-    let beanie = AccessoryItem(name: "Beanie", price: 300, category: AccessoryItemCategory.Hat)
-    let cowboy = AccessoryItem(name: "Cowboy Hat", price: 200, category: AccessoryItemCategory.Hat)
-    let baseball = AccessoryItem(name: "Baseball Hat", price: 150, category: AccessoryItemCategory.Hat)
+    let beanie = AccessoryItem(name: "Beanie", price: 300, image: "beanie_img", category: AccessoryItemCategory.Hat)
+    let cowboy = AccessoryItem(name: "Cowboy Hat", price: 200, image: "cowboy_hat_img", category: AccessoryItemCategory.Hat)
+    let baseball = AccessoryItem(name: "Baseball Hat", price: 150, image: "baseball_hat_img", category: AccessoryItemCategory.Hat)
     sut.onNewItemPurchased(item: beanie)
     sut.onNewItemPurchased(item: cowboy)
     var wardrobe = sut.getAllWardrobeItems()
@@ -93,8 +93,8 @@ class CharacterTest: XCTestCase {
   }
   
   func testMoveIntoWardrob() throws {
-    let beanie = AccessoryItem(name: "Beanie", price: 300, category: AccessoryItemCategory.Hat)
-    let cowboy = AccessoryItem(name: "Cowboy Hat", price: 200, category: AccessoryItemCategory.Hat)
+    let beanie = AccessoryItem(name: "Beanie", price: 300, image: "beanie_img", category: AccessoryItemCategory.Hat)
+    let cowboy = AccessoryItem(name: "Cowboy Hat", price: 200, image: "cowboy_hat_img", category: AccessoryItemCategory.Hat)
     sut.onNewItemPurchased(item: beanie)
     sut.onNewItemPurchased(item: cowboy)
     
@@ -122,8 +122,8 @@ class CharacterTest: XCTestCase {
   }
   
   func testResetNumNewItem() throws {
-    let beanie = AccessoryItem(name: "Beanie", price: 300, category: AccessoryItemCategory.Hat)
-    let cowboy = AccessoryItem(name: "Cowboy Hat", price: 200, category: AccessoryItemCategory.Hat)
+    let beanie = AccessoryItem(name: "Beanie", price: 300, image: "beanie_img", category: AccessoryItemCategory.Hat)
+    let cowboy = AccessoryItem(name: "Cowboy Hat", price: 200, image: "cowboy_hat_img",category: AccessoryItemCategory.Hat)
     sut.onNewItemPurchased(item: beanie)
     sut.onNewItemPurchased(item: cowboy)
     XCTAssertEqual(sut.getNumNewItem(), 2)
