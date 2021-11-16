@@ -31,13 +31,14 @@ struct PlaygroundView: View {
                                 .resizable()
                                 .frame(width: 35.0, height: 35.0)
                                 .padding()
-                                .border(Color.gray, width: 2)
+                                .border(Color.gray, width: 1)
                                 .background(Color.white)
                         }
-                    }.padding(.horizontal, 10)
-                }.frame(height: 90)
+                    }.padding(.horizontal, 15)
+                }.frame(height: 93)
                 .background(Color.yellow)
-                .padding(.horizontal, 10)
+                .overlay(RoundedRectangle(cornerRadius: 6.0).stroke(Color.gray))
+                .padding(.horizontal, 20)
                 Divider()
                 
                 HStack{
