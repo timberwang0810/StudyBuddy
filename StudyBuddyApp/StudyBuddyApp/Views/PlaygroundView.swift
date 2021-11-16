@@ -48,7 +48,10 @@ struct PlaygroundView: View {
                   print("Before: \(viewModel.isItemInUse(item: playgroundItem))")
                   viewModel.togglePlaygroundItem(item: playgroundItem)
                   // update visual display of whether item is selected
-                  selectedItems[playgroundItem] = viewModel.isItemInUse(item: playgroundItem)
+                  for item in viewModel.getAllPlaygroundItems() {
+                    self.selectedItems[item] = viewModel.isItemInUse(item: item)
+                  }
+                  
                   print("After: \(viewModel.isItemInUse(item: playgroundItem))")
                 }
             }
