@@ -58,6 +58,16 @@ class ViewModel: ObservableObject {
     return user.getMoney()
   }
   
+//  func getStoreItems() -> [PlaygroundItem]{
+//    for index in 1...5 {
+//      let painting = PlaygroundItem(name: "Painting \(index)", price: 400, image: "hill_painting", category: PlaygroundItemCategory.Wall)
+//      let carpet = PlaygroundItem(name: "Lamp \(index)", price: 500, image: "yellow_lamp", category: PlaygroundItemCategory.Floor)
+//      store.addPlaygroundItem(item: painting)
+//      store.addPlaygroundItem(item: carpet)
+//    }
+//    return store.getAllPlaygroundItems()
+//  }
+  
   func saveUserData(){
     let context = appDelegate.persistentContainer.viewContext
     if let entity = NSEntityDescription.entity(forEntityName: "UserEntity", in: context){
