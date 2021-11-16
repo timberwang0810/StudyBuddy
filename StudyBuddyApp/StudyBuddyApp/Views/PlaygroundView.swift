@@ -29,14 +29,13 @@ struct PlaygroundView: View {
         Divider()
         ScrollView(.horizontal) {
           HStack(spacing: 0) {
-            ForEach(viewModel.getStorageItems(), id: \.self) { playgroundItem in
+            ForEach(viewModel.getAllPlaygroundItems(), id: \.self) { playgroundItem in
               PlaygroundItemView(viewModel: viewModel, item: playgroundItem)
                 .onTapGesture {
                   print(playgroundItem.name)
                   print("Before: \(viewModel.isItemInUse(item: playgroundItem))")
                   viewModel.togglePlaygroundItem(item: playgroundItem)
                   print("After: \(viewModel.isItemInUse(item: playgroundItem))")
-//                  print(viewModel.playground.getAllDecorations())
 //                  self.selectedIndex = index
                 }
             }

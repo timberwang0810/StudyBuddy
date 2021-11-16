@@ -58,31 +58,28 @@ class ViewModel: ObservableObject {
     return user.getMoney()
   }
   
-  func getStorageItems() -> [PlaygroundItem] {
-    // Hardcode items for now
-    
-    for index in 1...5 {
-      let painting = PlaygroundItem(name: "Painting \(index)", price: 400, image: "hill_painting", category: PlaygroundItemCategory.Wall)
-      let carpet = PlaygroundItem(name: "Lamp \(index)", price: 500, image: "yellow_lamp", category: PlaygroundItemCategory.Floor)
-      
-      playground.onNewItemPurchased(item: painting)
-
-      playground.onNewItemPurchased(item: carpet)
+  func getAllPlaygroundItems() -> [PlaygroundItem] {
+    if (playground.getNumNewItem() == 0) {
+      // Hardcode items for now
+      for index in 1...5 {
+        let painting = PlaygroundItem(name: "Painting \(index)", price: 400, image: "hill_painting", category: PlaygroundItemCategory.Wall)
+        let carpet = PlaygroundItem(name: "Lamp \(index)", price: 500, image: "yellow_lamp", category: PlaygroundItemCategory.Floor)
+        
+        playground.onNewItemPurchased(item: painting)
+        playground.onNewItemPurchased(item: carpet)
+      }
     }
     
-    return playground.getAllStorageItems()
+    return playground.getAllDecorations().values + playground.getAllStorageItems()
   }
   
   func isItemInUse(item: PlaygroundItem) -> Bool {
-    if let arr = playground.getAllDecorations()[item.category]{
-      return arr.contains(item)
-    }
-    return false
+    return item == playground.getAllDecorations()[item.category]
   }
   
   func togglePlaygroundItem(item: PlaygroundItem) {
     if (isItemInUse(item: item)) {
-      playground.moveIntoStorage(item: item)
+      playground.moveIntoStorage(itemCategory: item.category)
     } else {
       playground.moveIntoPlayground(item: item)
     }
