@@ -84,18 +84,18 @@ class ViewModel: ObservableObject {
   }
   
   func isItemInUse(item: PlaygroundItem) -> Bool {
-    if let arr = playground.getAllDecorations()[item.category]{
-      return arr.contains(item)
-    }
+//    if let arr = playground.getAllDecorations()[item.category]{
+//      return arr.contains(item)
+//    }
     return false
   }
   
   func togglePlaygroundItem(item: PlaygroundItem) {
-    if (isItemInUse(item: item)) {
-      playground.moveIntoStorage(item: item)
-    } else {
-      playground.moveIntoPlayground(item: item)
-    }
+//    if (isItemInUse(item: item)) {
+//      playground.moveIntoStorage(item: item)
+//    } else {
+//      playground.moveIntoPlayground(item: item)
+//    }
   }
   
   func saveUserData(){

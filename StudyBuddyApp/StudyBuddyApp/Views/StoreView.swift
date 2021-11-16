@@ -29,7 +29,7 @@ struct StoreView: View {
 //                   }
 //               }
 //           }
-//      }
+      }
 }
 
 struct StoreView_Previews: PreviewProvider {
