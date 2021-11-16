@@ -35,6 +35,7 @@
 		D908AA9F27290D2C0095600F /* TasksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D908AA9E27290D2C0095600F /* TasksView.swift */; };
 		D908AAA427290D3E0095600F /* PlaygroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D908AAA327290D3E0095600F /* PlaygroundView.swift */; };
 		D9AD397D2730FA0F00408F59 /* RewardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AD397C2730FA0F00408F59 /* RewardsView.swift */; };
+		D9B3156C27435FDC002E8120 /* PlaygroundItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B3156B27435FDC002E8120 /* PlaygroundItemView.swift */; };
 		D9BC45F0272C721A00962100 /* DurationPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BC45EF272C721A00962100 /* DurationPicker.swift */; };
 		D9BC461F272DE43B00962100 /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BC461E272DE43B00962100 /* ViewRouter.swift */; };
 		D9BC462E272DE76900962100 /* DoingTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BC462D272DE76900962100 /* DoingTaskView.swift */; };
@@ -108,6 +109,7 @@
 		D908AA9E27290D2C0095600F /* TasksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksView.swift; sourceTree = "<group>"; };
 		D908AAA327290D3E0095600F /* PlaygroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaygroundView.swift; sourceTree = "<group>"; };
 		D9AD397C2730FA0F00408F59 /* RewardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardsView.swift; sourceTree = "<group>"; };
+		D9B3156B27435FDC002E8120 /* PlaygroundItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaygroundItemView.swift; sourceTree = "<group>"; };
 		D9BC45EF272C721A00962100 /* DurationPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DurationPicker.swift; sourceTree = "<group>"; };
 		D9BC461E272DE43B00962100 /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
 		D9BC462D272DE76900962100 /* DoingTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoingTaskView.swift; sourceTree = "<group>"; };
@@ -276,6 +278,7 @@
 				D9BC462D272DE76900962100 /* DoingTaskView.swift */,
 				D9BC4632272DE7A000962100 /* TabbedView.swift */,
 				D9AD397C2730FA0F00408F59 /* RewardsView.swift */,
+				D9B3156B27435FDC002E8120 /* PlaygroundItemView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -575,6 +578,7 @@
 				D1601216272BA4B9003BAD02 /* Item.swift in Sources */,
 				D1F03D072729B6970076A871 /* Task.swift in Sources */,
 				D1A4AFA9272738B300C92354 /* StudyBuddyApp.xcdatamodeld in Sources */,
+				D9B3156C27435FDC002E8120 /* PlaygroundItemView.swift in Sources */,
 				D9BC461F272DE43B00962100 /* ViewRouter.swift in Sources */,
 				D9BC45F0272C721A00962100 /* DurationPicker.swift in Sources */,
 				D9AD397D2730FA0F00408F59 /* RewardsView.swift in Sources */,

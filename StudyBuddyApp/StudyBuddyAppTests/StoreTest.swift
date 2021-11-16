@@ -9,10 +9,28 @@ import XCTest
 @testable import StudyBuddyApp
 
 class StoreTest: XCTestCase {
+  var beanie: AccessoryItem!
+  var cowboy: AccessoryItem!
+  var baseball: AccessoryItem!
+  var lamp: PlaygroundItem!
+  var fan: PlaygroundItem!
+  var carpet: PlaygroundItem!
+  var helmet: AccessoryItem!
+  var painting: PlaygroundItem!
+  
   var sut : Store!
   override func setUpWithError() throws {
     try super.setUpWithError()
     sut = Store()
+    
+    beanie = AccessoryItem(name: "Beanie", price: 300, image: "beanie_img", category: AccessoryItemCategory.Hat)
+    cowboy = AccessoryItem(name: "Cowboy Hat", price: 200, image: "cowboy_hat_img", category: AccessoryItemCategory.Hat)
+    baseball = AccessoryItem(name: "Baseball Hat", price: 150, image: "baseball_img", category: AccessoryItemCategory.Hat)
+    lamp = PlaygroundItem(name: "Lamp", price: 400, image: "lamp_img", category: PlaygroundItemCategory.Floor)
+    fan = PlaygroundItem(name: "Fan", price: 500, image: "fan_img", category: PlaygroundItemCategory.Ceiling)
+    carpet = PlaygroundItem(name: "carpet", price: 500, image: "carpet_img", category: PlaygroundItemCategory.Floor)
+    helmet = AccessoryItem(name: "Helmet", price: 100, image: "helmet_img", category: AccessoryItemCategory.Hat)
+    painting = PlaygroundItem(name: "Painting", price: 5000, image: "painting_img", category: PlaygroundItemCategory.Wall)
   }
 
   override func tearDownWithError() throws {
@@ -25,9 +43,6 @@ class StoreTest: XCTestCase {
   }
   
   func testGetAccessoryItemsByCategory() throws {
-    let beanie = AccessoryItem(name: "Beanie", price: 300, category: AccessoryItemCategory.Hat)
-    let cowboy = AccessoryItem(name: "Cowboy Hat", price: 200, category: AccessoryItemCategory.Hat)
-    let baseball = AccessoryItem(name: "Baseball Hat", price: 150, category: AccessoryItemCategory.Hat)
     sut.addAccessoryItem(item: beanie)
     sut.addAccessoryItem(item: cowboy)
     sut.addAccessoryItem(item: baseball)
@@ -38,9 +53,6 @@ class StoreTest: XCTestCase {
   }
   
   func testGetPlaygroundItemsByCategory() throws {
-    let lamp = PlaygroundItem(name: "Lamp", price: 400, category: PlaygroundItemCategory.Floor)
-    let fan = PlaygroundItem(name: "Fan", price: 500, category: PlaygroundItemCategory.Ceiling)
-    let carpet = PlaygroundItem(name: "carpet", price: 500, category: PlaygroundItemCategory.Floor)
     XCTAssertEqual(sut.getPlaygroundItemsByCategory(category: PlaygroundItemCategory.Floor).count, 0)
     XCTAssertEqual(sut.getPlaygroundItemsByCategory(category: PlaygroundItemCategory.Ceiling).count, 0)
     XCTAssertEqual(sut.getPlaygroundItemsByCategory(category: PlaygroundItemCategory.Wall).count, 0)
@@ -57,9 +69,6 @@ class StoreTest: XCTestCase {
   
   func testAddAccessoryItem() throws {
     XCTAssertEqual(sut.getAllAccessoryItems(), [])
-    let beanie = AccessoryItem(name: "Beanie", price: 300, category: AccessoryItemCategory.Hat)
-    let cowboy = AccessoryItem(name: "Cowboy Hat", price: 200, category: AccessoryItemCategory.Hat)
-    let baseball = AccessoryItem(name: "Baseball Hat", price: 150, category: AccessoryItemCategory.Hat)
     sut.addAccessoryItem(item: beanie)
     XCTAssertEqual(sut.getAllAccessoryItems().count, 1)
     XCTAssertTrue(sut.getAllAccessoryItems().contains(beanie))
@@ -77,10 +86,6 @@ class StoreTest: XCTestCase {
   }
   
   func testRemoveAccessoryItem() throws {
-    let beanie = AccessoryItem(name: "Beanie", price: 300, category: AccessoryItemCategory.Hat)
-    let cowboy = AccessoryItem(name: "Cowboy Hat", price: 200, category: AccessoryItemCategory.Hat)
-    let baseball = AccessoryItem(name: "Baseball Hat", price: 150, category: AccessoryItemCategory.Hat)
-    let helmet = AccessoryItem(name: "Helmet", price: 100, category: AccessoryItemCategory.Hat)
     sut.addAccessoryItem(item: beanie)
     sut.addAccessoryItem(item: cowboy)
     sut.addAccessoryItem(item: baseball)
@@ -115,9 +120,6 @@ class StoreTest: XCTestCase {
   
   func testAddPlaygroundItem() throws {
     XCTAssertEqual(sut.getAllPlaygroundItems(), [])
-    let lamp = PlaygroundItem(name: "Lamp", price: 400, category: PlaygroundItemCategory.Floor)
-    let fan = PlaygroundItem(name: "Fan", price: 500, category: PlaygroundItemCategory.Ceiling)
-    let carpet = PlaygroundItem(name: "carpet", price: 500, category: PlaygroundItemCategory.Floor)
     sut.addPlaygroundItem(item: lamp)
     XCTAssertEqual(sut.getAllPlaygroundItems().count, 1)
     XCTAssertTrue(sut.getAllPlaygroundItems().contains(lamp))
@@ -135,10 +137,6 @@ class StoreTest: XCTestCase {
   }
   
   func testRemovePlaygroundItem() throws {
-    let lamp = PlaygroundItem(name: "Lamp", price: 400, category: PlaygroundItemCategory.Floor)
-    let fan = PlaygroundItem(name: "Fan", price: 500, category: PlaygroundItemCategory.Ceiling)
-    let carpet = PlaygroundItem(name: "carpet", price: 500, category: PlaygroundItemCategory.Floor)
-    let painting = PlaygroundItem(name: "Painting", price: 5000, category: PlaygroundItemCategory.Wall)
     sut.addPlaygroundItem(item: lamp)
     sut.addPlaygroundItem(item: fan)
     sut.addPlaygroundItem(item: carpet)
@@ -175,9 +173,6 @@ class StoreTest: XCTestCase {
   
   func testHasAccessoryItem() throws {
     XCTAssertEqual(sut.getAllAccessoryItems(), [])
-    let beanie = AccessoryItem(name: "Beanie", price: 300, category: AccessoryItemCategory.Hat)
-    let cowboy = AccessoryItem(name: "Cowboy Hat", price: 200, category: AccessoryItemCategory.Hat)
-    let baseball = AccessoryItem(name: "Baseball Hat", price: 150, category: AccessoryItemCategory.Hat)
     sut.addAccessoryItem(item: beanie)
     XCTAssertTrue(sut.hasAccessoryItem(item: beanie))
     XCTAssertFalse(sut.hasAccessoryItem(item: cowboy))
@@ -196,9 +191,6 @@ class StoreTest: XCTestCase {
   }
   func testHasPlaygroundItem() throws {
     XCTAssertEqual(sut.getAllPlaygroundItems(), [])
-    let lamp = PlaygroundItem(name: "Lamp", price: 400, category: PlaygroundItemCategory.Floor)
-    let fan = PlaygroundItem(name: "Fan", price: 500, category: PlaygroundItemCategory.Ceiling)
-    let carpet = PlaygroundItem(name: "carpet", price: 500, category: PlaygroundItemCategory.Floor)
     XCTAssertFalse(sut.hasPlaygroundItem(item: lamp))
     XCTAssertFalse(sut.hasPlaygroundItem(item: fan))
     XCTAssertFalse(sut.hasPlaygroundItem(item: carpet))

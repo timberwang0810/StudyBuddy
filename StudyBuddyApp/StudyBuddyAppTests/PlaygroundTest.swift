@@ -9,11 +9,20 @@ import XCTest
 @testable import StudyBuddyApp
 
 class PlaygroundTest: XCTestCase {
+  var lamp: PlaygroundItem!
+  var fan: PlaygroundItem!
+  var carpet: PlaygroundItem!
+  var painting: PlaygroundItem!
 
   var sut : Playground!
   override func setUpWithError() throws {
     try super.setUpWithError()
     sut = Playground()
+    
+    lamp = PlaygroundItem(name: "Lamp", price: 400, image: "lamp_img", category: PlaygroundItemCategory.Floor)
+    fan = PlaygroundItem(name: "Fan", price: 500, image: "fan_img", category: PlaygroundItemCategory.Ceiling)
+    carpet = PlaygroundItem(name: "carpet", price: 500, image: "carpet_img", category: PlaygroundItemCategory.Floor)
+    painting = PlaygroundItem(name: "Painting", price: 5000, image: "painting_img", category: PlaygroundItemCategory.Wall)
   }
 
   override func tearDownWithError() throws {
@@ -35,8 +44,6 @@ class PlaygroundTest: XCTestCase {
     XCTAssertEqual(sut.getAllDecorations()[PlaygroundItemCategory.Wall], [])
     XCTAssertEqual(sut.getAllStorageItems(), [])
 
-    let lamp = PlaygroundItem(name: "Lamp", price: 400, category: PlaygroundItemCategory.Floor)
-    let carpet = PlaygroundItem(name: "carpet", price: 500, category: PlaygroundItemCategory.Floor)
     sut.onNewItemPurchased(item: lamp)
     XCTAssertEqual(sut.getNumNewItem(), 1)
     var storage = sut.getAllStorageItems()
@@ -55,10 +62,6 @@ class PlaygroundTest: XCTestCase {
   }
   
   func testMoveIntoPlayground() throws {
-    let lamp = PlaygroundItem(name: "Lamp", price: 400, category: PlaygroundItemCategory.Floor)
-    let fan = PlaygroundItem(name: "Fan", price: 500, category: PlaygroundItemCategory.Ceiling)
-    let carpet = PlaygroundItem(name: "carpet", price: 500, category: PlaygroundItemCategory.Floor)
-    let painting = PlaygroundItem(name: "Painting", price: 5000, category: PlaygroundItemCategory.Wall)
     sut.onNewItemPurchased(item: lamp)
     sut.onNewItemPurchased(item: carpet)
     sut.onNewItemPurchased(item: fan)
@@ -121,10 +124,6 @@ class PlaygroundTest: XCTestCase {
   }
   
   func testMoveIntoStorage() throws {
-    let lamp = PlaygroundItem(name: "Lamp", price: 400, category: PlaygroundItemCategory.Floor)
-    let fan = PlaygroundItem(name: "Fan", price: 500, category: PlaygroundItemCategory.Ceiling)
-    let carpet = PlaygroundItem(name: "carpet", price: 500, category: PlaygroundItemCategory.Floor)
-    let painting = PlaygroundItem(name: "Painting", price: 5000, category: PlaygroundItemCategory.Wall)
     sut.onNewItemPurchased(item: lamp)
     sut.onNewItemPurchased(item: carpet)
     sut.onNewItemPurchased(item: fan)
@@ -200,8 +199,6 @@ class PlaygroundTest: XCTestCase {
   }
   
   func testResetNumNewItem() throws {
-    let lamp = PlaygroundItem(name: "Lamp", price: 400, category: PlaygroundItemCategory.Floor)
-    let carpet = PlaygroundItem(name: "carpet", price: 500, category: PlaygroundItemCategory.Floor)
     sut.onNewItemPurchased(item: lamp)
     sut.onNewItemPurchased(item: carpet)
     XCTAssertEqual(sut.getNumNewItem(), 2)
