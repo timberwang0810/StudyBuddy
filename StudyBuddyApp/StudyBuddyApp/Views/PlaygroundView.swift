@@ -11,6 +11,9 @@ import SpriteKit
 struct PlaygroundView: View {
     @ObservedObject var viewModel: ViewModel
     @EnvironmentObject var viewRouter: ViewRouter
+    @State var selectedIndex = 0
+    
+    let MENU_BG_COLOR = Color(red: 248 / 255, green: 208 / 255, blue: 116 / 255)
     
     var scene: SKScene {
         let scene = PlaygroundScene()
@@ -27,16 +30,15 @@ struct PlaygroundView: View {
                 ScrollView(.horizontal) {
                     HStack(spacing: 0) {
                         ForEach(0..<10) { index in
-                            Image("coin")
-                                .resizable()
-                                .frame(width: 35.0, height: 35.0)
-                                .padding()
-                                .border(Color.gray, width: 1)
-                                .background(Color.white)
+                            PlaygroundItemView(item: index % 2 == 0 ? "hill_painting" : "yellow_lamp", isSelected: index == self.selectedIndex ? true : false)
+                                .onTapGesture {
+                                    print(index)
+                                    self.selectedIndex = index
+                                }
                         }
                     }.padding(.horizontal, 15)
                 }.frame(height: 93)
-                .background(Color.yellow)
+                .background(MENU_BG_COLOR)
                 .overlay(RoundedRectangle(cornerRadius: 6.0).stroke(Color.gray))
                 .padding(.horizontal, 20)
                 Divider()
