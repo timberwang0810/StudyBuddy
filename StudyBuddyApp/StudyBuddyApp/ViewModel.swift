@@ -60,41 +60,32 @@ class ViewModel: ObservableObject {
   
   func getStorageItems() -> [PlaygroundItem] {
     // Hardcode items for now
-    var storage: [PlaygroundItem] = []
     
     for index in 1...5 {
       let painting = PlaygroundItem(name: "Painting \(index)", price: 400, image: "hill_painting", category: PlaygroundItemCategory.Wall)
       let carpet = PlaygroundItem(name: "Lamp \(index)", price: 500, image: "yellow_lamp", category: PlaygroundItemCategory.Floor)
       
       playground.onNewItemPurchased(item: painting)
-      storage.append(painting)
-      playground.moveIntoPlayground(item: painting)
 
       playground.onNewItemPurchased(item: carpet)
-      storage.append(carpet)
-      playground.moveIntoPlayground(item: carpet)
     }
-    print(playground.getAllDecorations())
     
-    return storage
-    //        return playground.getAllStorageItems()
+    return playground.getAllStorageItems()
   }
   
   func isItemInUse(item: PlaygroundItem) -> Bool {
     if let arr = playground.getAllDecorations()[item.category]{
-      print("arr")
-      print(arr)
       return arr.contains(item)
     }
     return false
   }
   
-  func moveIntoPlayground(item: PlaygroundItem) {
-    playground.moveIntoPlayground(item: item)
-  }
-  
-  func moveIntoStorage(item: PlaygroundItem) {
-    playground.moveIntoStorage(item: item)
+  func togglePlaygroundItem(item: PlaygroundItem) {
+    if (isItemInUse(item: item)) {
+      playground.moveIntoStorage(item: item)
+    } else {
+      playground.moveIntoPlayground(item: item)
+    }
   }
   
   func saveUserData(){

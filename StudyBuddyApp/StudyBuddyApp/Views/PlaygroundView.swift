@@ -33,8 +33,10 @@ struct PlaygroundView: View {
               PlaygroundItemView(viewModel: viewModel, item: playgroundItem)
                 .onTapGesture {
                   print(playgroundItem.name)
-                  viewModel.moveIntoPlayground(item: playgroundItem)
-                  print(viewModel.playground.getAllDecorations())
+                  print("Before: \(viewModel.isItemInUse(item: playgroundItem))")
+                  viewModel.togglePlaygroundItem(item: playgroundItem)
+                  print("After: \(viewModel.isItemInUse(item: playgroundItem))")
+//                  print(viewModel.playground.getAllDecorations())
 //                  self.selectedIndex = index
                 }
             }
