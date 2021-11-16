@@ -25,16 +25,19 @@ struct PlaygroundView: View {
                 Spacer()
                 Divider()
                 ScrollView(.horizontal) {
-                    HStack(spacing: 10) {
+                    HStack(spacing: 0) {
                         ForEach(0..<10) { index in
-                            Circle()
-                               .fill(Color.yellow)
-                               .frame(width: 70, height: 70)
-                           Text("\(index)")
+                            Image("coin")
+                                .resizable()
+                                .frame(width: 35.0, height: 35.0)
+                                .padding()
+                                .border(Color.gray, width: 2)
+                                .background(Color.white)
                         }
-                    }.padding()
-                    .padding(.top, 20)
-                }.frame(height: 100)
+                    }.padding(.horizontal, 10)
+                }.frame(height: 90)
+                .background(Color.yellow)
+                .padding(.horizontal, 10)
                 Divider()
                 
                 HStack{
