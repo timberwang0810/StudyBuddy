@@ -9,12 +9,25 @@ import XCTest
 @testable import StudyBuddyApp
 
 class UserTest: XCTestCase {
+  var beanie: AccessoryItem!
+  var cowboy: AccessoryItem!
+  var baseball: AccessoryItem!
+  var lamp: PlaygroundItem!
+  var fan: PlaygroundItem!
+  var painting: PlaygroundItem!
 
   var sut : User!
     
   override func setUpWithError() throws {
     try super.setUpWithError()
     sut = User()
+    
+    beanie = AccessoryItem(name: "Beanie", price: 300, image: "beanie_img", category: AccessoryItemCategory.Hat)
+    cowboy = AccessoryItem(name: "Cowboy Hat", price: 200, image: "cowboy_hat_img", category: AccessoryItemCategory.Hat)
+    baseball = AccessoryItem(name: "Baseball Hat", price: 150, image: "baseball_img", category: AccessoryItemCategory.Hat)
+    lamp = PlaygroundItem(name: "Lamp", price: 400, image: "lamp_img", category: PlaygroundItemCategory.Floor)
+    fan = PlaygroundItem(name: "Fan", price: 500, image: "fan_img", category: PlaygroundItemCategory.Ceiling)
+    painting = PlaygroundItem(name: "Painting", price: 5000, image: "painting_img", category: PlaygroundItemCategory.Wall)
   }
 
   override func tearDownWithError() throws {
@@ -136,9 +149,6 @@ class UserTest: XCTestCase {
     let store: Store = Store()
     let character: Character = Character(name: "Bob")
     
-    let beanie = AccessoryItem(name: "Beanie", price: 300, category: AccessoryItemCategory.Hat)
-    let cowboy = AccessoryItem(name: "Cowboy Hat", price: 200, category: AccessoryItemCategory.Hat)
-    let baseball = AccessoryItem(name: "Baseball Hat", price: 150, category: AccessoryItemCategory.Hat)
     store.addAccessoryItem(item: beanie)
     store.addAccessoryItem(item: cowboy)
     store.addAccessoryItem(item: baseball)
@@ -194,9 +204,6 @@ class UserTest: XCTestCase {
     let store: Store = Store()
     let playground: Playground = Playground()
     
-    let lamp = PlaygroundItem(name: "Lamp", price: 400, category: PlaygroundItemCategory.Floor)
-    let fan = PlaygroundItem(name: "Fan", price: 500, category: PlaygroundItemCategory.Ceiling)
-    let painting = PlaygroundItem(name: "Painting", price: 5000, category: PlaygroundItemCategory.Wall)
     store.addPlaygroundItem(item: lamp)
     store.addPlaygroundItem(item: fan)
     store.addPlaygroundItem(item: painting)

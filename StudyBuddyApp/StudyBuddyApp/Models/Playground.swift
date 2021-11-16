@@ -1,17 +1,17 @@
 import Foundation
 
 class Playground{
-  private var decorations: [PlaygroundItemCategory: [PlaygroundItem]]
+  private var decorations: [PlaygroundItemCategory: PlaygroundItem]
   private var storage: [PlaygroundItem]
   private var numNewItem: Int
   
   init(){
-    self.decorations = [PlaygroundItemCategory.Ceiling: [], PlaygroundItemCategory.Floor: [], PlaygroundItemCategory.Wall: []]
+    self.decorations = [:]
     self.storage = []
     self.numNewItem = 0
   }
   
-  public func getAllDecorations() -> [PlaygroundItemCategory: [PlaygroundItem]]{
+  public func getAllDecorations() -> [PlaygroundItemCategory: PlaygroundItem]{
     return decorations
   }
   
@@ -34,25 +34,14 @@ class Playground{
         break
       }
     }
-    if var arr = self.decorations[item.category]{
-      arr.append(item)
-      self.decorations[item.category] = arr
-    }
+    moveIntoStorage(itemCategory: item.category)
+    self.decorations[item.category] = item
   }
   
-  public func moveIntoStorage(item: PlaygroundItem){
-    if var arr = self.decorations[item.category]{
-      if (!arr.contains(item)){
-        return
-      }
-      for (index, element) in arr.enumerated(){
-        if (element == item){
-          arr.remove(at: index)
-          self.decorations[item.category] = arr
-          break
-        }
-      }
-      storage.append(item)
+  public func moveIntoStorage(itemCategory: PlaygroundItemCategory){
+    if let item = self.decorations[itemCategory]{
+      self.decorations.removeValue(forKey: itemCategory)
+      self.storage.append(item)
     }
   }
   

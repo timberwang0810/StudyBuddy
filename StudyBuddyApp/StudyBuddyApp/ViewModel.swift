@@ -12,34 +12,34 @@ import CoreData
 // Write functions in here to be called that change models (e.g. when a button is clicked)
 class ViewModel: ObservableObject {
   let appDelegate: AppDelegate = AppDelegate()
-
-//  State we want to update view with when it changes
-    @Published var currentTask: Task?
+  
+  //  State we want to update view with when it changes
+  @Published var currentTask: Task?
   @Published var store: Store = Store()
   @Published var playground: Playground = Playground()
   @Published var character: Character = Character(name: "Bob")
   @Published var user: User = User()
-    @Published var showTaskErrorMessage: Bool = false
+  @Published var showTaskErrorMessage: Bool = false
   
-    func createTask(name: String, duration: TimeInterval, category: TaskCategory, isStarted: Bool, completion: @escaping () -> Void) {
-        if (name == "") {
-            showTaskErrorMessage = true
-            return
-        }
-        showTaskErrorMessage = false
-        
-        currentTask = Task(name: name, duration: duration, category: category)
-        if (isStarted) {
-            currentTask?.start()
-        }
-        
-        print("Created Task:")
-        print("Name: \(currentTask!.name)")
-        print("Duration: \(currentTask!.duration)")
-        print("Category: \(currentTask!.category)")
-        
-        completion()
+  func createTask(name: String, duration: TimeInterval, category: TaskCategory, isStarted: Bool, completion: @escaping () -> Void) {
+    if (name == "") {
+      showTaskErrorMessage = true
+      return
     }
+    showTaskErrorMessage = false
+    
+    currentTask = Task(name: name, duration: duration, category: category)
+    if (isStarted) {
+      currentTask?.start()
+    }
+    
+    print("Created Task:")
+    print("Name: \(currentTask!.name)")
+    print("Duration: \(currentTask!.duration)")
+    print("Category: \(currentTask!.category)")
+    
+    completion()
+  }
   
   func stopTask(timeRemaining: TimeInterval){
     currentTask!.complete(timeRemaining: timeRemaining)
@@ -67,6 +67,36 @@ class ViewModel: ObservableObject {
 //    }
 //    return store.getAllPlaygroundItems()
 //  }
+
+  func getStorageItems() -> [PlaygroundItem] {
+    // Hardcode items for now
+    
+    for index in 1...5 {
+      let painting = PlaygroundItem(name: "Painting \(index)", price: 400, image: "hill_painting", category: PlaygroundItemCategory.Wall)
+      let carpet = PlaygroundItem(name: "Lamp \(index)", price: 500, image: "yellow_lamp", category: PlaygroundItemCategory.Floor)
+      
+      playground.onNewItemPurchased(item: painting)
+
+      playground.onNewItemPurchased(item: carpet)
+    }
+    
+    return playground.getAllStorageItems()
+  }
+  
+  func isItemInUse(item: PlaygroundItem) -> Bool {
+    if let arr = playground.getAllDecorations()[item.category]{
+      return arr.contains(item)
+    }
+    return false
+  }
+  
+  func togglePlaygroundItem(item: PlaygroundItem) {
+    if (isItemInUse(item: item)) {
+      playground.moveIntoStorage(item: item)
+    } else {
+      playground.moveIntoPlayground(item: item)
+    }
+  }
   
   func saveUserData(){
     let context = appDelegate.persistentContainer.viewContext
@@ -102,25 +132,25 @@ class ViewModel: ObservableObject {
   }
   
   private func fetchRecordsForEntity(_ entity: String, inManagedObjectContext managedObjectContext: NSManagedObjectContext) -> [NSManagedObject] {
-      // Create Fetch Request
-      let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entity)
-
-      // Helpers
-      var result = [NSManagedObject]()
-
-      do {
-          // Execute Fetch Request
-          let records = try managedObjectContext.fetch(fetchRequest)
-
-          if let records = records as? [NSManagedObject] {
-              result = records
-          }
-
-      } catch {
-          print("Unable to fetch managed objects for entity \(entity).")
+    // Create Fetch Request
+    let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entity)
+    
+    // Helpers
+    var result = [NSManagedObject]()
+    
+    do {
+      // Execute Fetch Request
+      let records = try managedObjectContext.fetch(fetchRequest)
+      
+      if let records = records as? [NSManagedObject] {
+        result = records
       }
-
-      return result
+      
+    } catch {
+      print("Unable to fetch managed objects for entity \(entity).")
+    }
+    
+    return result
   }
 }
 

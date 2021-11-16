@@ -36,6 +36,7 @@
 		D908AA9F27290D2C0095600F /* TasksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D908AA9E27290D2C0095600F /* TasksView.swift */; };
 		D908AAA427290D3E0095600F /* PlaygroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D908AAA327290D3E0095600F /* PlaygroundView.swift */; };
 		D9AD397D2730FA0F00408F59 /* RewardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AD397C2730FA0F00408F59 /* RewardsView.swift */; };
+		D9B3156C27435FDC002E8120 /* PlaygroundItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B3156B27435FDC002E8120 /* PlaygroundItemView.swift */; };
 		D9BC45F0272C721A00962100 /* DurationPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BC45EF272C721A00962100 /* DurationPicker.swift */; };
 		D9BC461F272DE43B00962100 /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BC461E272DE43B00962100 /* ViewRouter.swift */; };
 		D9BC462E272DE76900962100 /* DoingTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BC462D272DE76900962100 /* DoingTaskView.swift */; };
@@ -45,6 +46,8 @@
 		DA68B56C27354CCE004C3EB7 /* bob_writing.atlas in Resources */ = {isa = PBXBuildFile; fileRef = DA68B56B27354CCE004C3EB7 /* bob_writing.atlas */; };
 		DA68B5712735824A004C3EB7 /* bob_sweeping.atlas in Resources */ = {isa = PBXBuildFile; fileRef = DA68B56F2735824A004C3EB7 /* bob_sweeping.atlas */; };
 		DA68B5722735824A004C3EB7 /* bob_cheering.atlas in Resources */ = {isa = PBXBuildFile; fileRef = DA68B5702735824A004C3EB7 /* bob_cheering.atlas */; };
+		DA72C45427435B8900590E0B /* yellow_lamp.png in Resources */ = {isa = PBXBuildFile; fileRef = DA72C45227435B8900590E0B /* yellow_lamp.png */; };
+		DA72C45527435B8900590E0B /* hill_painting.png in Resources */ = {isa = PBXBuildFile; fileRef = DA72C45327435B8900590E0B /* hill_painting.png */; };
 		DAD0E15C2739A69000EF1E88 /* DoingTaskScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD0E15B2739A69000EF1E88 /* DoingTaskScene.swift */; };
 		DAD0E15E2739A90E00EF1E88 /* RewardsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD0E15D2739A90E00EF1E88 /* RewardsScene.swift */; };
 		DAE29E05272E4D83004835E2 /* PlaygroundScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE29E04272E4D83004835E2 /* PlaygroundScene.swift */; };
@@ -108,6 +111,7 @@
 		D908AA9E27290D2C0095600F /* TasksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksView.swift; sourceTree = "<group>"; };
 		D908AAA327290D3E0095600F /* PlaygroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaygroundView.swift; sourceTree = "<group>"; };
 		D9AD397C2730FA0F00408F59 /* RewardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardsView.swift; sourceTree = "<group>"; };
+		D9B3156B27435FDC002E8120 /* PlaygroundItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaygroundItemView.swift; sourceTree = "<group>"; };
 		D9BC45EF272C721A00962100 /* DurationPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DurationPicker.swift; sourceTree = "<group>"; };
 		D9BC461E272DE43B00962100 /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
 		D9BC462D272DE76900962100 /* DoingTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoingTaskView.swift; sourceTree = "<group>"; };
@@ -117,6 +121,8 @@
 		DA68B56B27354CCE004C3EB7 /* bob_writing.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = bob_writing.atlas; sourceTree = "<group>"; };
 		DA68B56F2735824A004C3EB7 /* bob_sweeping.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = bob_sweeping.atlas; sourceTree = "<group>"; };
 		DA68B5702735824A004C3EB7 /* bob_cheering.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = bob_cheering.atlas; sourceTree = "<group>"; };
+		DA72C45227435B8900590E0B /* yellow_lamp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yellow_lamp.png; sourceTree = "<group>"; };
+		DA72C45327435B8900590E0B /* hill_painting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hill_painting.png; sourceTree = "<group>"; };
 		DAD0E15B2739A69000EF1E88 /* DoingTaskScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoingTaskScene.swift; sourceTree = "<group>"; };
 		DAD0E15D2739A90E00EF1E88 /* RewardsScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardsScene.swift; sourceTree = "<group>"; };
 		DAE29E04272E4D83004835E2 /* PlaygroundScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaygroundScene.swift; sourceTree = "<group>"; };
@@ -275,6 +281,7 @@
 				D9BC4632272DE7A000962100 /* TabbedView.swift */,
 				D9AD397C2730FA0F00408F59 /* RewardsView.swift */,
 				38A005C6274355E1004E5BD7 /* StoreView.swift */,
+				D9B3156B27435FDC002E8120 /* PlaygroundItemView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -282,6 +289,7 @@
 		DA68B5652735436B004C3EB7 /* Sprites */ = {
 			isa = PBXGroup;
 			children = (
+				DA72C45127435B7500590E0B /* Playground Items */,
 				DA68B56627354371004C3EB7 /* Bob */,
 			);
 			path = Sprites;
@@ -295,6 +303,15 @@
 				DA68B56B27354CCE004C3EB7 /* bob_writing.atlas */,
 			);
 			path = Bob;
+			sourceTree = "<group>";
+		};
+		DA72C45127435B7500590E0B /* Playground Items */ = {
+			isa = PBXGroup;
+			children = (
+				DA72C45327435B8900590E0B /* hill_painting.png */,
+				DA72C45227435B8900590E0B /* yellow_lamp.png */,
+			);
+			path = "Playground Items";
 			sourceTree = "<group>";
 		};
 		DAE29E03272E4D28004835E2 /* Scenes */ = {
@@ -428,10 +445,12 @@
 				D1A4AFB1272738B900C92354 /* LaunchScreen.storyboard in Resources */,
 				DA68B5712735824A004C3EB7 /* bob_sweeping.atlas in Resources */,
 				DA68B5722735824A004C3EB7 /* bob_cheering.atlas in Resources */,
+				DA72C45527435B8900590E0B /* hill_painting.png in Resources */,
 				D1A4AFAE272738B900C92354 /* Preview Assets.xcassets in Resources */,
 				DA68B56C27354CCE004C3EB7 /* bob_writing.atlas in Resources */,
 				D1A4AFAB272738B900C92354 /* Assets.xcassets in Resources */,
 				38F3E0B627339A2D00E36A14 /* doingTask1.png in Resources */,
+				DA72C45427435B8900590E0B /* yellow_lamp.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -562,6 +581,7 @@
 				D1601216272BA4B9003BAD02 /* Item.swift in Sources */,
 				D1F03D072729B6970076A871 /* Task.swift in Sources */,
 				D1A4AFA9272738B300C92354 /* StudyBuddyApp.xcdatamodeld in Sources */,
+				D9B3156C27435FDC002E8120 /* PlaygroundItemView.swift in Sources */,
 				D9BC461F272DE43B00962100 /* ViewRouter.swift in Sources */,
 				D9BC45F0272C721A00962100 /* DurationPicker.swift in Sources */,
 				D9AD397D2730FA0F00408F59 /* RewardsView.swift in Sources */,
