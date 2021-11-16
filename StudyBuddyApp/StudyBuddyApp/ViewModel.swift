@@ -12,34 +12,34 @@ import CoreData
 // Write functions in here to be called that change models (e.g. when a button is clicked)
 class ViewModel: ObservableObject {
   let appDelegate: AppDelegate = AppDelegate()
-
-//  State we want to update view with when it changes
-    @Published var currentTask: Task?
+  
+  //  State we want to update view with when it changes
+  @Published var currentTask: Task?
   @Published var store: Store = Store()
   @Published var playground: Playground = Playground()
   @Published var character: Character = Character(name: "Bob")
   @Published var user: User = User()
-    @Published var showTaskErrorMessage: Bool = false
+  @Published var showTaskErrorMessage: Bool = false
   
-    func createTask(name: String, duration: TimeInterval, category: TaskCategory, isStarted: Bool, completion: @escaping () -> Void) {
-        if (name == "") {
-            showTaskErrorMessage = true
-            return
-        }
-        showTaskErrorMessage = false
-        
-        currentTask = Task(name: name, duration: duration, category: category)
-        if (isStarted) {
-            currentTask?.start()
-        }
-        
-        print("Created Task:")
-        print("Name: \(currentTask!.name)")
-        print("Duration: \(currentTask!.duration)")
-        print("Category: \(currentTask!.category)")
-        
-        completion()
+  func createTask(name: String, duration: TimeInterval, category: TaskCategory, isStarted: Bool, completion: @escaping () -> Void) {
+    if (name == "") {
+      showTaskErrorMessage = true
+      return
     }
+    showTaskErrorMessage = false
+    
+    currentTask = Task(name: name, duration: duration, category: category)
+    if (isStarted) {
+      currentTask?.start()
+    }
+    
+    print("Created Task:")
+    print("Name: \(currentTask!.name)")
+    print("Duration: \(currentTask!.duration)")
+    print("Category: \(currentTask!.category)")
+    
+    completion()
+  }
   
   func stopTask(timeRemaining: TimeInterval){
     currentTask!.complete(timeRemaining: timeRemaining)
@@ -56,6 +56,25 @@ class ViewModel: ObservableObject {
   
   func getCurrentMoney() -> Int{
     return user.getMoney()
+  }
+  
+  func getStorageItems() -> [PlaygroundItem] {
+    // Hardcode items for now
+    var storage: [PlaygroundItem] = []
+    
+    for index in 0...9 {
+      let painting = PlaygroundItem(name: "Painting", price: 400, image: "hill_painting", category: PlaygroundItemCategory.Floor)
+      let carpet = PlaygroundItem(name: "Lamp", price: 500, image: "yellow_lamp", category: PlaygroundItemCategory.Floor)
+      
+      if (index % 2 == 0) {
+        storage.append(painting)
+      } else {
+        storage.append(carpet)
+      }
+    }
+    
+    return storage
+    //        return playground.getAllStorageItems()
   }
   
   func saveUserData(){
@@ -92,25 +111,25 @@ class ViewModel: ObservableObject {
   }
   
   private func fetchRecordsForEntity(_ entity: String, inManagedObjectContext managedObjectContext: NSManagedObjectContext) -> [NSManagedObject] {
-      // Create Fetch Request
-      let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entity)
-
-      // Helpers
-      var result = [NSManagedObject]()
-
-      do {
-          // Execute Fetch Request
-          let records = try managedObjectContext.fetch(fetchRequest)
-
-          if let records = records as? [NSManagedObject] {
-              result = records
-          }
-
-      } catch {
-          print("Unable to fetch managed objects for entity \(entity).")
+    // Create Fetch Request
+    let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entity)
+    
+    // Helpers
+    var result = [NSManagedObject]()
+    
+    do {
+      // Execute Fetch Request
+      let records = try managedObjectContext.fetch(fetchRequest)
+      
+      if let records = records as? [NSManagedObject] {
+        result = records
       }
-
-      return result
+      
+    } catch {
+      print("Unable to fetch managed objects for entity \(entity).")
+    }
+    
+    return result
   }
 }
 
