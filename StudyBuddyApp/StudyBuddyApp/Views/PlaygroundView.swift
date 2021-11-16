@@ -11,9 +11,21 @@ import SpriteKit
 struct PlaygroundView: View {
   @ObservedObject var viewModel: ViewModel
   @EnvironmentObject var viewRouter: ViewRouter
-  @State var selectedIndex = 0
+  @State private var selectedItems: [PlaygroundItem: Bool] = [:]
   
   let MENU_BG_COLOR = Color(red: 248 / 255, green: 208 / 255, blue: 116 / 255)
+  
+  init(viewModel: ViewModel) {
+    self.viewModel = viewModel
+    
+    // initialize state with currently selected items
+    self.viewModel.initializePlaygroundItems()
+    
+    for item in viewModel.getAllPlaygroundItems() {
+      self.selectedItems[item] = viewModel.isItemInUse(item: item)
+    }
+  }
+
   
   var scene: SKScene {
     let scene = PlaygroundScene()
@@ -30,13 +42,14 @@ struct PlaygroundView: View {
         ScrollView(.horizontal) {
           HStack(spacing: 0) {
             ForEach(viewModel.getAllPlaygroundItems(), id: \.self) { playgroundItem in
-              PlaygroundItemView(viewModel: viewModel, item: playgroundItem)
+              PlaygroundItemView(viewModel: viewModel, item: playgroundItem, isInUse: selectedItems[playgroundItem] ?? false)
                 .onTapGesture {
                   print(playgroundItem.name)
                   print("Before: \(viewModel.isItemInUse(item: playgroundItem))")
                   viewModel.togglePlaygroundItem(item: playgroundItem)
+                  // update visual display of whether item is selected
+                  selectedItems[playgroundItem] = viewModel.isItemInUse(item: playgroundItem)
                   print("After: \(viewModel.isItemInUse(item: playgroundItem))")
-//                  self.selectedIndex = index
                 }
             }
           }.padding(.horizontal, 15)

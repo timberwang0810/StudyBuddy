@@ -58,18 +58,19 @@ class ViewModel: ObservableObject {
     return user.getMoney()
   }
   
-  func getAllPlaygroundItems() -> [PlaygroundItem] {
-    if (playground.getNumNewItem() == 0) {
-      // Hardcode items for now
-      for index in 1...5 {
-        let painting = PlaygroundItem(name: "Painting \(index)", price: 400, image: "hill_painting", category: PlaygroundItemCategory.Wall)
-        let carpet = PlaygroundItem(name: "Lamp \(index)", price: 500, image: "yellow_lamp", category: PlaygroundItemCategory.Floor)
-        
-        playground.onNewItemPurchased(item: painting)
-        playground.onNewItemPurchased(item: carpet)
-      }
+  func initializePlaygroundItems() {
+    print("INITIALIZE PLAYGROUND ITEMS")
+    // Hardcode items for now
+    for index in 1...5 {
+      let painting = PlaygroundItem(name: "Painting \(index)", price: 400, image: "hill_painting", category: PlaygroundItemCategory.Wall)
+      let carpet = PlaygroundItem(name: "Lamp \(index)", price: 500, image: "yellow_lamp", category: PlaygroundItemCategory.Floor)
+      
+      playground.onNewItemPurchased(item: painting)
+      playground.onNewItemPurchased(item: carpet)
     }
-    
+  }
+  
+  func getAllPlaygroundItems() -> [PlaygroundItem] {
     return playground.getAllDecorations().values + playground.getAllStorageItems()
   }
   
