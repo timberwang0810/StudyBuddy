@@ -88,6 +88,114 @@ class ViewModel: ObservableObject {
     }
   }
   
+  func saveItemData(itemName: String, isPurchased: Bool, isEquipped: Bool){
+    let context = appDelegate.persistentContainer.viewContext
+    if NSEntityDescription.entity(forEntityName: "ItemEntity", in: context) != nil{
+      let itemList = fetchRecordsForEntity("ItemEntity", inManagedObjectContext: context)
+      for item in itemList{
+        if ((item.value(forKey:"name") as? String ?? "" ) == itemName){
+          item.setValue(isPurchased, forKey: "isPurchased")
+          item.setValue(isEquipped, forKey: "isEquipped")
+          break;
+        }
+      }
+      do {
+        try context.save()
+      } catch {
+        NSLog("[Contacts] ERROR: Failed to save User data")
+      }
+    }
+  }
+  
+  func fetchItemData(){
+    let context = appDelegate.persistentContainer.viewContext
+    if let entity = NSEntityDescription.entity(forEntityName: "ItemEntity", in: context){
+      let result = fetchRecordsForEntity("UserEntity", inManagedObjectContext: context)
+      if result.count == 0{
+        // init for first time only
+        var initialItems : [PlaygroundItem] = []
+        for index in 1...5 {
+          let painting = PlaygroundItem(name: "Painting \(index)", price: 400, image: "hill_painting", category: PlaygroundItemCategory.Wall)
+          let carpet = PlaygroundItem(name: "Lamp \(index)", price: 500, image: "yellow_lamp", category: PlaygroundItemCategory.Floor)
+          store.addPlaygroundItem(item: painting)
+          store.addPlaygroundItem(item: carpet)
+          initialItems.append(painting)
+          initialItems.append(carpet)
+        }
+        for item in initialItems{
+          let newItem = NSManagedObject(entity: entity, insertInto: context)
+          newItem.setValue(item.name, forKey: "name")
+          newItem.setValue(item.price, forKey: "price")
+          newItem.setValue(item.category.rawValue, forKey: "category")
+          newItem.setValue(item.image, forKey: "image")
+          newItem.setValue(false, forKey: "isEquipped")
+          newItem.setValue(false, forKey: "isPurchased")
+          newItem.setValue(true, forKey: "isPlayground") // UPDATE THIS LOGIC IF WE HAVE ACCESSORY ITEM
+        }
+        do {
+          try context.save()
+        } catch {
+          NSLog("[Contacts] ERROR: Failed to save Item data")
+        }
+      }
+      else{
+        for data in result{
+          let name = data.value(forKey: "name") as? String ?? ""
+          let price = data.value(forKey: "price") as? Int ?? 0
+          let image = data.value(forKey: "image") as? String ?? ""
+          let category = data.value(forKey: "category") as? String ?? ""
+          let isPlayground = data.value(forKey: "isPlayground") as? Bool ?? false
+          let isPurchased = data.value(forKey: "isPurchased") as? Bool ?? false
+          let isEquipped = data.value(forKey: "isEquipped") as? Bool ?? false
+          if (isPlayground){
+            let item = PlaygroundItem(name:name, price: price, image: image, category: PlaygroundItemCategory(rawValue: category)!)
+            if (isPurchased){
+              playground.onNewItemPurchased(item: item)
+              playground.resetNumNewItem()
+              if (isEquipped){
+                playground.moveIntoPlayground(item: item)
+              }
+            }
+            else{
+              store.addPlaygroundItem(item: item)
+            }
+          }
+          else{
+            let item = AccessoryItem(name:name, price: price, image: image, category: AccessoryItemCategory(rawValue: category)!)
+            if (isPurchased){
+              character.onNewItemPurchased(item: item)
+              character.resetNumNewItem()
+              if (isEquipped){
+                character.wearItem(item: item)
+              }
+            }
+            else{
+              store.addAccessoryItem(item: item)
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  func updateItemData(viewToUpdate: String){
+    switch (viewToUpdate.lowercased()){
+      case "store":
+        store = Store()
+        break
+      case "character":
+        let name = character.getName()
+        character = Character(name: name)
+        break;
+      case "playground":
+        playground = Playground()
+        break;
+      default:
+        break;
+    }
+    fetchItemData()
+  }
+  
   func saveUserData(){
     let context = appDelegate.persistentContainer.viewContext
     if let entity = NSEntityDescription.entity(forEntityName: "UserEntity", in: context){
@@ -142,5 +250,6 @@ class ViewModel: ObservableObject {
     
     return result
   }
+  
 }
 
