@@ -11,9 +11,19 @@ import SpriteKit
 class DoingTaskScene: SKScene {
     
     public var timer: SpriteTimer
+    var atlasName: String
     
-    init(size: CGSize, duration: Double) {
+    let atlases:[TaskCategory:String] = [
+        TaskCategory.STUDY: "bob_writing",
+        TaskCategory.CHORES: "bob_sweeping",
+        TaskCategory.WORK: "bob_writing",
+        TaskCategory.EXERCISE: "bob_sweeping",
+        TaskCategory.OTHER: "bob_sweeping"
+    ]
+    
+    init(size: CGSize, duration: Double, taskCategory: TaskCategory) {
         self.timer = SpriteTimer(timeRemaining: duration)
+        self.atlasName = atlases[taskCategory]!
         
         super.init(size: size)
     }
@@ -25,7 +35,9 @@ class DoingTaskScene: SKScene {
     override func didMove(to view: SKView) {
         backgroundColor = SKColor.white
         
-        let bob = AnimatedSprite(timePerFrame: 1.0, atlasName: "bob_writing")
+        print(self.atlasName)
+        
+        let bob = AnimatedSprite(timePerFrame: 1.0, atlasName: self.atlasName)
         bob.position = CGPoint(x: frame.midX, y: frame.midY)
         addChild(bob)
         

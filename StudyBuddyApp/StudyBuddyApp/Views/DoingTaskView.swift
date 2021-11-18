@@ -25,7 +25,7 @@ struct DoingTaskView: View {
         _timeRemaining = State(initialValue: viewModel.currentTask!.duration)
     
     self.sceneStore = SceneStore(
-        scene: DoingTaskScene(size: CGSize(width: 400, height: 700), duration: viewModel.currentTask!.duration)
+        scene: DoingTaskScene(size: CGSize(width: 400, height: 700), duration: viewModel.currentTask!.duration, taskCategory: viewModel.currentTask!.category)
     )
   }
   
