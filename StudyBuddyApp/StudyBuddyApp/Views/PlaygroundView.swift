@@ -44,13 +44,14 @@ struct PlaygroundView: View {
           Button(action: {
             self.showMenu.toggle()
           }) {
-            Text("Menu")
-              .frame(width: 60, height: 60)
-              //                  .foregroundColor(Color.black)
-              .background(BOX_BG_COLOR)
-              .border(Color.gray)
-              .clipShape(Circle())
+            Image(self.showMenu ? "open-box" : "closed-box")
+              .resizable()
+              .frame(width: 32.0, height: 32.0)
           }
+          .frame(width: 60.0, height: 60.0)
+          .background(BOX_BG_COLOR)
+          .border(Color.gray)
+          .clipShape(Circle())
         }
         
         if self.showMenu {

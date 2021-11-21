@@ -36,6 +36,7 @@
 		D908AAA427290D3E0095600F /* PlaygroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D908AAA327290D3E0095600F /* PlaygroundView.swift */; };
 		D9AD397D2730FA0F00408F59 /* RewardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AD397C2730FA0F00408F59 /* RewardsView.swift */; };
 		D9B3156C27435FDC002E8120 /* PlaygroundItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B3156B27435FDC002E8120 /* PlaygroundItemView.swift */; };
+		D9B31584274AF0E1002E8120 /* open-box.png in Resources */ = {isa = PBXBuildFile; fileRef = D9B31582274AF0E1002E8120 /* open-box.png */; };
 		D9BC45F0272C721A00962100 /* DurationPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BC45EF272C721A00962100 /* DurationPicker.swift */; };
 		D9BC461F272DE43B00962100 /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BC461E272DE43B00962100 /* ViewRouter.swift */; };
 		D9BC462E272DE76900962100 /* DoingTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BC462D272DE76900962100 /* DoingTaskView.swift */; };
@@ -110,6 +111,8 @@
 		D908AAA327290D3E0095600F /* PlaygroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaygroundView.swift; sourceTree = "<group>"; };
 		D9AD397C2730FA0F00408F59 /* RewardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardsView.swift; sourceTree = "<group>"; };
 		D9B3156B27435FDC002E8120 /* PlaygroundItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaygroundItemView.swift; sourceTree = "<group>"; };
+		D9B31582274AF0E1002E8120 /* open-box.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "open-box.png"; sourceTree = "<group>"; };
+		D9B31589274AF11B002E8120 /* closed-box.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "closed-box.png"; path = "/Users/austin/Documents/Zoomers/iOS/StudyBuddy/StudyBuddyApp/StudyBuddyApp/closed-box.png"; sourceTree = "<absolute>"; };
 		D9BC45EF272C721A00962100 /* DurationPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DurationPicker.swift; sourceTree = "<group>"; };
 		D9BC461E272DE43B00962100 /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
 		D9BC462D272DE76900962100 /* DoingTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoingTaskView.swift; sourceTree = "<group>"; };
@@ -213,6 +216,8 @@
 				D1A4AFA1272738B300C92354 /* AppDelegate.swift */,
 				D1A4AFA3272738B300C92354 /* SceneDelegate.swift */,
 				D1A4AFAA272738B900C92354 /* Assets.xcassets */,
+				D9B31589274AF11B002E8120 /* closed-box.png */,
+				D9B31582274AF0E1002E8120 /* open-box.png */,
 				38F3E0B527339A2D00E36A14 /* doingTask1.png */,
 				D1A4AFAF272738B900C92354 /* LaunchScreen.storyboard */,
 				D1A4AFB2272738B900C92354 /* Info.plist */,
@@ -448,6 +453,7 @@
 				38F3E0B627339A2D00E36A14 /* doingTask1.png in Resources */,
 				DA72C45427435B8900590E0B /* yellow_lamp.png in Resources */,
 				DAC76B642746A96700F88AE7 /* bob_sweeping.atlas in Resources */,
+				D9B31584274AF0E1002E8120 /* open-box.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
