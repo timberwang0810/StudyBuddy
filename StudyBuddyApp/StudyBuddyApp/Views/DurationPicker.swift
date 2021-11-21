@@ -12,20 +12,35 @@ import UIKit
 struct DurationPicker: UIViewRepresentable {
     @Binding var duration: TimeInterval
 
-    func makeUIView(context: Context) -> UIDatePicker {
-        let datePicker = UIDatePicker()
-        datePicker.datePickerMode = .countDownTimer
-        datePicker.addTarget(context.coordinator, action: #selector(Coordinator.updateDuration), for: .valueChanged)
-        return datePicker
+    func makeUIView(context: Context) -> GSTimeIntervalPicker {
+//        let datePicker = UIDatePicker()
+//        datePicker.datePickerMode = .countDownTimer
+//        datePicker.addTarget(context.coordinator, action: #selector(Coordinator.updateDuration), for: .valueChanged)
+      
+      let timePicker = GSTimeIntervalPicker()
+      timePicker.maxTimeInterval = 4 * 3600
+      timePicker.minuteInterval = 1
+      timePicker.allowZeroTimeInterval = false
+      timePicker.timeInterval = 1 * 3600
+      timePicker.onTimeIntervalChanged = timeIntervalChangedHandler
+//        return datePicker
+      return timePicker
     }
 
-    func updateUIView(_ datePicker: UIDatePicker, context: Context) {
-        datePicker.countDownDuration = duration
+    func updateUIView(_ datePicker: GSTimeIntervalPicker, context: Context) {
+      //print("called")
+      datePicker.setTimeInterval(duration, animated: true)
+      //print(datePicker.timeInterval)
     }
 
     func makeCoordinator() -> Coordinator {
         return Coordinator(self)
     }
+  
+  func timeIntervalChangedHandler(newInterval : TimeInterval){
+    //print(newInterval)
+    self.duration = newInterval
+  }
 
     class Coordinator: NSObject {
         let parent: DurationPicker
@@ -34,8 +49,8 @@ struct DurationPicker: UIViewRepresentable {
             self.parent = parent
         }
 
-        @objc func updateDuration(datePicker: UIDatePicker) {
-            parent.duration = datePicker.countDownDuration
+        @objc func updateDuration(datePicker: GSTimeIntervalPicker) {
+            parent.duration = datePicker.timeInterval
         }
     }
 }
