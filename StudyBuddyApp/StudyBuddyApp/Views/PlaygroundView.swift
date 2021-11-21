@@ -39,14 +39,16 @@ struct PlaygroundView: View {
     ZStack{
       VStack {
         Spacer()
-        Button(action: {
-          self.showMenu.toggle()
-            }) {
-            Text("Menu")
-                .frame(width: 100, height: 100)
-                .foregroundColor(Color.black)
-                .background(Color.red)
-                .clipShape(Circle())
+        VStack(alignment: .trailing){
+          Button(action: {
+            self.showMenu.toggle()
+              }) {
+              Text("Menu")
+                  .frame(width: 60, height: 60)
+                  .foregroundColor(Color.black)
+                  .background(Color.red)
+                  .clipShape(Circle())
+          }
         }
         
         if self.showMenu {
