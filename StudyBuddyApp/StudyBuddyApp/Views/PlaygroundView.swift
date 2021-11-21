@@ -55,7 +55,6 @@ struct PlaygroundView: View {
         }
         
         if self.showMenu {
-          Divider()
           ScrollView(.horizontal) {
             HStack(spacing: 0) {
               ForEach(viewModel.getAllPlaygroundItems(), id: \.self) { playgroundItem in
@@ -77,7 +76,6 @@ struct PlaygroundView: View {
           .background(MENU_BG_COLOR)
           .overlay(RoundedRectangle(cornerRadius: 6.0).stroke(Color.gray))
           .padding(.horizontal, 20)
-          Divider()
         }
         
         //        HStack{
