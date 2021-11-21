@@ -15,6 +15,7 @@ struct PlaygroundView: View {
   @State private var showMenu: Bool = false
   
   let MENU_BG_COLOR = Color(red: 248 / 255, green: 208 / 255, blue: 116 / 255)
+  let BOX_BG_COLOR = Color(red: 254 / 255, green: 250 / 255, blue: 224 / 255)
   
   init(viewModel: ViewModel) {
     self.viewModel = viewModel
@@ -26,7 +27,7 @@ struct PlaygroundView: View {
       self.selectedItems[item] = viewModel.isItemInUse(item: item)
     }
   }
-
+  
   
   var scene: SKScene {
     let scene = PlaygroundScene()
@@ -39,15 +40,16 @@ struct PlaygroundView: View {
     ZStack{
       VStack {
         Spacer()
-        VStack(alignment: .trailing){
+        HStack {
           Button(action: {
             self.showMenu.toggle()
-              }) {
-              Text("Menu")
-                  .frame(width: 60, height: 60)
-                  .foregroundColor(Color.black)
-                  .background(Color.red)
-                  .clipShape(Circle())
+          }) {
+            Text("Menu")
+              .frame(width: 60, height: 60)
+              //                  .foregroundColor(Color.black)
+              .background(BOX_BG_COLOR)
+              .border(Color.gray)
+              .clipShape(Circle())
           }
         }
         
@@ -77,19 +79,19 @@ struct PlaygroundView: View {
           Divider()
         }
         
-//        HStack{
-//          Text("\(viewModel.getCurrentMoney())")
-//            .font(Font.custom("Chalkboard SE", size: 24))
-//            .baselineOffset(5)
-//            .padding(.trailing, 10)
-//            .onAppear(perform: {
-//              self.viewModel.updateUserData()
-//            })
-//          Image("coin")
-//            .resizable()
-//            .frame(width: 32.0, height: 32.0)
-//
-//        }
+        //        HStack{
+        //          Text("\(viewModel.getCurrentMoney())")
+        //            .font(Font.custom("Chalkboard SE", size: 24))
+        //            .baselineOffset(5)
+        //            .padding(.trailing, 10)
+        //            .onAppear(perform: {
+        //              self.viewModel.updateUserData()
+        //            })
+        //          Image("coin")
+        //            .resizable()
+        //            .frame(width: 32.0, height: 32.0)
+        //
+        //        }
         
         SpriteView(scene: scene)
           .frame(width: 400.0, height: 700.0)
