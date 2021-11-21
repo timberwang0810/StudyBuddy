@@ -50,7 +50,7 @@ struct PlaygroundView: View {
           }
           .frame(width: 60.0, height: 60.0)
           .background(BOX_BG_COLOR)
-          .border(Color.gray)
+          .overlay(RoundedRectangle(cornerRadius: 100).stroke(Color.gray))
           .clipShape(Circle())
         }
         
