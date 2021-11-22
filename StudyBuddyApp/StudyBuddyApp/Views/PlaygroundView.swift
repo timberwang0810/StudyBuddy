@@ -53,31 +53,7 @@ struct PlaygroundView: View {
           .background(BOX_BG_COLOR)
           .overlay(RoundedRectangle(cornerRadius: 100).stroke(Color.gray))
           .clipShape(Circle())
-          .padding(15)
-        }
-        
-        if self.showMenu {
-          ScrollView(.horizontal) {
-            HStack(spacing: 0) {
-              ForEach(viewModel.getAllPlaygroundItems(), id: \.self) { playgroundItem in
-                PlaygroundItemView(viewModel: viewModel, item: playgroundItem, isInUse: selectedItems[playgroundItem] ?? false)
-                  .onTapGesture {
-                    print(playgroundItem.name)
-                    print("Before: \(viewModel.isItemInUse(item: playgroundItem))")
-                    viewModel.togglePlaygroundItem(item: playgroundItem)
-                    // update visual display of whether item is selected
-                    for item in viewModel.getAllPlaygroundItems() {
-                      self.selectedItems[item] = viewModel.isItemInUse(item: item)
-                    }
-                    
-                    print("After: \(viewModel.isItemInUse(item: playgroundItem))")
-                  }
-              }
-            }.padding(.horizontal, 15)
-          }.frame(height: 93)
-          .background(MENU_BG_COLOR)
-          .overlay(RoundedRectangle(cornerRadius: 6.0).stroke(Color.gray))
-          .padding(.horizontal, 20)
+          .padding(20)
         }
         
         //        HStack{
@@ -97,6 +73,31 @@ struct PlaygroundView: View {
         SpriteView(scene: scene)
           .frame(width: 400.0, height: 700.0)
           .edgesIgnoringSafeArea(.all)
+      }
+      
+      if self.showMenu {
+        ScrollView(.horizontal) {
+          HStack(spacing: 0) {
+            ForEach(viewModel.getAllPlaygroundItems(), id: \.self) { playgroundItem in
+              PlaygroundItemView(viewModel: viewModel, item: playgroundItem, isInUse: selectedItems[playgroundItem] ?? false)
+                .onTapGesture {
+                  print(playgroundItem.name)
+//                    print("Before: \(viewModel.isItemInUse(item: playgroundItem))")
+                  viewModel.togglePlaygroundItem(item: playgroundItem)
+                  // update visual display of whether item is selected
+                  for item in viewModel.getAllPlaygroundItems() {
+                    self.selectedItems[item] = viewModel.isItemInUse(item: item)
+                  }
+                  
+//                    print("After: \(viewModel.isItemInUse(item: playgroundItem))")
+                }
+            }
+          }.padding(.horizontal, 15)
+        }.frame(height: 93)
+        .background(MENU_BG_COLOR)
+        .overlay(RoundedRectangle(cornerRadius: 6.0).stroke(Color.gray))
+        .padding(.horizontal, 20)
+          .offset(y: -250)
       }
     }
     
