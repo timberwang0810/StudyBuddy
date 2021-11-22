@@ -41,6 +41,7 @@ struct PlaygroundView: View {
       VStack {
         Spacer()
         HStack {
+          Spacer()
           Button(action: {
             self.showMenu.toggle()
           }) {
@@ -52,6 +53,7 @@ struct PlaygroundView: View {
           .background(BOX_BG_COLOR)
           .overlay(RoundedRectangle(cornerRadius: 100).stroke(Color.gray))
           .clipShape(Circle())
+          .padding(15)
         }
         
         if self.showMenu {
