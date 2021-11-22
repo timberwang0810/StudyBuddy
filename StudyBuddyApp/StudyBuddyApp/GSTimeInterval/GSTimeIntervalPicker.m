@@ -14,7 +14,7 @@
 #define kComponentHours         0
 #define kComponentMinutes       1
 
-#define kLargeInteger           400     // Used to simulate infinite wheel effect.
+#define kLargeInteger           1    // Used to simulate infinite wheel effect.
 
 
 @interface GSTimeIntervalPicker () <UIPickerViewDelegate, UIPickerViewDataSource>
