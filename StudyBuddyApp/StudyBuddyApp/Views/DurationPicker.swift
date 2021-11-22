@@ -18,7 +18,7 @@ struct DurationPicker: UIViewRepresentable {
 //        datePicker.addTarget(context.coordinator, action: #selector(Coordinator.updateDuration), for: .valueChanged)
       
       let timePicker = GSTimeIntervalPicker()
-      timePicker.maxTimeInterval = 4 * 3600
+      timePicker.maxTimeInterval = 4 * 3600 - 60
       timePicker.minuteInterval = 1
       timePicker.allowZeroTimeInterval = false
       timePicker.timeInterval = 1 * 3600
