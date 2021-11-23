@@ -20,6 +20,9 @@ struct DoingTaskView: View {
     
     @ObservedObject var sceneStore: SceneStore
   
+  let SMALL_BUTTON_SIZE: CGFloat = 20.0
+  let BUTTON_SIZE: CGFloat = 64.0
+  
   init( viewModel: ViewModel) {
     self.viewModel = viewModel
         _timeRemaining = State(initialValue: viewModel.currentTask!.duration)
@@ -44,8 +47,11 @@ struct DoingTaskView: View {
               self.viewRouter.currentPage = .tabbedPage
             }){
               Image(systemName: "x.circle")
+                .resizable()
+                .scaledToFill()
+                .frame(width: SMALL_BUTTON_SIZE, height: SMALL_BUTTON_SIZE)
                 .padding()
-            }
+            }.contentShape(Circle())
       }
         
       Spacer()
@@ -58,16 +64,22 @@ struct DoingTaskView: View {
               self.startTimer()
             }){
               Image(systemName: "play.circle")
+                .resizable()
+                .scaledToFill()
+                .frame(width: BUTTON_SIZE, height: BUTTON_SIZE)
                 .padding()
-            }
+            }.contentShape(Circle())
             
           } else {
             Button(action:{
               self.pauseTimer()
             }){
               Image(systemName: "pause.circle")
+                .resizable()
+                .scaledToFill()
+                .frame(width: BUTTON_SIZE, height: BUTTON_SIZE)
                 .padding()
-            }
+            }.contentShape(Circle())
             
           }
           
@@ -75,8 +87,11 @@ struct DoingTaskView: View {
             finishTask()
           }){
             Image(systemName: "checkmark.circle")
+              .resizable()
+              .scaledToFill()
+              .frame(width: BUTTON_SIZE, height: BUTTON_SIZE)
               .padding()
-          }
+          }.contentShape(Circle())
         }
       }
     }
