@@ -21,13 +21,19 @@ struct RewardsView: View {
     
     var body: some View {
         VStack {
-            Spacer()
+            Text("Completed Task:\n\(viewModel.getTaskName())")
+              .font(Font.custom("Chalkboard SE", size: 24))
+              .multilineTextAlignment(.center)
+              .padding(.bottom, 15)
+          
             Text("Nicely Done!")
                 .font(Font.custom("Chalkboard SE", size: 40))
                 .padding(.bottom, 50)
+          
             SpriteView(scene: scene)
                 .frame(width: 400.0, height: 400.0)
                 .edgesIgnoringSafeArea(.all)
+          
             Button(action: {
                     viewModel.earnMoney(inc: viewModel.getTaskReward())
                     viewRouter.currentPage = .tabbedPage }) {
