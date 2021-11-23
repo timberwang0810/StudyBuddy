@@ -17,34 +17,36 @@ struct DoingTaskView: View {
   @State var seconds: Int = 0
   @State var timerIsPaused: Bool = false
   @State var timeRemaining: Double = 0.0
-    
-    @ObservedObject var sceneStore: SceneStore
+  
+  @ObservedObject var sceneStore: SceneStore
   
   let SMALL_BUTTON_SIZE: CGFloat = 20.0
   let BUTTON_SIZE: CGFloat = 64.0
   
   init( viewModel: ViewModel) {
     self.viewModel = viewModel
-        _timeRemaining = State(initialValue: viewModel.currentTask!.duration)
+    _timeRemaining = State(initialValue: viewModel.currentTask!.duration)
     
     self.sceneStore = SceneStore(
-        scene: DoingTaskScene(size: CGSize(width: 400, height: 700), duration: viewModel.currentTask!.duration, taskCategory: viewModel.currentTask!.category)
+      scene: DoingTaskScene(size: CGSize(width: 400, height: 700), duration: viewModel.currentTask!.duration, taskCategory: viewModel.currentTask!.category)
     )
   }
   
   var body: some View {
     ZStack{
+      SpriteView(scene: sceneStore.scene)
+        .frame(width: 400, height: 700)
+        .edgesIgnoringSafeArea(.all)
       
-        SpriteView(scene: sceneStore.scene)
-                    .frame(width: 400, height: 700)
-                    .edgesIgnoringSafeArea(.all)
       VStack{
         HStack{
           VStack(alignment: .leading, spacing: 0) {
             Text(viewModel.getTaskName()).font(Font.custom("Chalkboard SE", size: 24))
             Text(calculateTime()).font(Font.custom("Chalkboard SE", size: 12))
           }.padding(.horizontal, 20)
+          s
           Spacer()
+          
           Button(action:{
             self.viewRouter.currentPage = .tabbedPage
           }){
@@ -55,49 +57,49 @@ struct DoingTaskView: View {
               .padding(.trailing, 20)
           }.contentShape(Circle())
           .offset(y: -5)
-      }
+        }
         
-      Spacer()
-      VStack(alignment: .trailing){
+        Spacer()
         
-        HStack{
+        VStack(alignment: .trailing){
+          HStack{
             if self.timerIsPaused {
+              
+              Button(action:{
+                self.startTimer()
+              }){
+                Image(systemName: "play.circle")
+                  .resizable()
+                  .scaledToFill()
+                  .frame(width: BUTTON_SIZE, height: BUTTON_SIZE)
+                  .padding()
+              }.contentShape(Circle())
+              
+            } else {
+              Button(action:{
+                self.pauseTimer()
+              }){
+                Image(systemName: "pause.circle")
+                  .resizable()
+                  .scaledToFill()
+                  .frame(width: BUTTON_SIZE, height: BUTTON_SIZE)
+                  .padding()
+              }.contentShape(Circle())
+              
+            }
             
             Button(action:{
-              self.startTimer()
+              finishTask()
             }){
-              Image(systemName: "play.circle")
+              Image(systemName: "checkmark.circle")
                 .resizable()
                 .scaledToFill()
                 .frame(width: BUTTON_SIZE, height: BUTTON_SIZE)
                 .padding()
             }.contentShape(Circle())
-            
-          } else {
-            Button(action:{
-              self.pauseTimer()
-            }){
-              Image(systemName: "pause.circle")
-                .resizable()
-                .scaledToFill()
-                .frame(width: BUTTON_SIZE, height: BUTTON_SIZE)
-                .padding()
-            }.contentShape(Circle())
-            
           }
-          
-          Button(action:{
-            finishTask()
-          }){
-            Image(systemName: "checkmark.circle")
-              .resizable()
-              .scaledToFill()
-              .frame(width: BUTTON_SIZE, height: BUTTON_SIZE)
-              .padding()
-          }.contentShape(Circle())
         }
       }
-    }
     }
     
   }
@@ -111,22 +113,22 @@ struct DoingTaskView: View {
     let todaysDate = dateFormatter.string(from: date)
     return todaysDate
   }
-
+  
   func startTimer(){
     timerIsPaused = false
     self.sceneStore.scene.isPaused = false
   }
-
+  
   func pauseTimer(){
     timerIsPaused = true
     self.sceneStore.scene.isPaused = true
   }
-    
-    func finishTask() {
-        let scene = self.sceneStore.scene as! DoingTaskScene
-        self.viewModel.stopTask(timeRemaining: scene.timer.timeRemaining)
-        self.viewRouter.currentPage = .rewardsPage
-    }
+  
+  func finishTask() {
+    let scene = self.sceneStore.scene as! DoingTaskScene
+    self.viewModel.stopTask(timeRemaining: scene.timer.timeRemaining)
+    self.viewRouter.currentPage = .rewardsPage
+  }
   
 }
 
