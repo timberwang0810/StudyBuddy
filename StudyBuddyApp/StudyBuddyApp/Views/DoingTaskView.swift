@@ -44,7 +44,7 @@ struct DoingTaskView: View {
             Text(viewModel.getTaskName()).font(Font.custom("Chalkboard SE", size: 24))
             Text(calculateTime()).font(Font.custom("Chalkboard SE", size: 12))
           }.padding(.horizontal, 20)
-          s
+          
           Spacer()
           
           Button(action:{
@@ -60,7 +60,6 @@ struct DoingTaskView: View {
         }
         
         Spacer()
-        
         VStack(alignment: .trailing){
           HStack{
             if self.timerIsPaused {
