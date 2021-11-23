@@ -40,8 +40,11 @@ struct DoingTaskView: View {
                     .edgesIgnoringSafeArea(.all)
       VStack{
         HStack{
-          Text(calculateTime()).font(Font.custom("Chalkboard SE", size: 24))
-            .padding(10)
+          VStack(alignment: .leading) {
+            Text(viewModel.getTaskName()).font(Font.custom("Chalkboard SE", size: 24))
+              .padding(.bottom, 10)
+            Text(calculateTime()).font(Font.custom("Chalkboard SE", size: 10))
+          }.padding(.horizontal, 20)
           Spacer()
             Button(action:{
               self.viewRouter.currentPage = .tabbedPage
