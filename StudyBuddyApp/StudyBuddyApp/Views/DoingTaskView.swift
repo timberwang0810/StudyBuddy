@@ -40,21 +40,21 @@ struct DoingTaskView: View {
                     .edgesIgnoringSafeArea(.all)
       VStack{
         HStack{
-          VStack(alignment: .leading) {
+          VStack(alignment: .leading, spacing: 0) {
             Text(viewModel.getTaskName()).font(Font.custom("Chalkboard SE", size: 24))
-              .padding(.bottom, 10)
-            Text(calculateTime()).font(Font.custom("Chalkboard SE", size: 10))
+            Text(calculateTime()).font(Font.custom("Chalkboard SE", size: 12))
           }.padding(.horizontal, 20)
           Spacer()
-            Button(action:{
-              self.viewRouter.currentPage = .tabbedPage
-            }){
-              Image(systemName: "x.circle")
-                .resizable()
-                .scaledToFill()
-                .frame(width: SMALL_BUTTON_SIZE, height: SMALL_BUTTON_SIZE)
-                .padding()
-            }.contentShape(Circle())
+          Button(action:{
+            self.viewRouter.currentPage = .tabbedPage
+          }){
+            Image(systemName: "x.circle")
+              .resizable()
+              .scaledToFill()
+              .frame(width: SMALL_BUTTON_SIZE, height: SMALL_BUTTON_SIZE)
+              .padding(.trailing, 20)
+          }.contentShape(Circle())
+          .offset(y: -5)
       }
         
       Spacer()
