@@ -17,6 +17,7 @@ struct DoingTaskView: View {
   @State var seconds: Int = 0
   @State var timerIsPaused: Bool = false
   @State var timeRemaining: Double = 0.0
+  @State private var showingConfirmationAlert = false
   
   @ObservedObject var sceneStore: SceneStore
   
@@ -48,15 +49,28 @@ struct DoingTaskView: View {
           Spacer()
           
           Button(action:{
-            self.viewRouter.currentPage = .tabbedPage
+            self.showingConfirmationAlert = true
           }){
             Image(systemName: "x.circle")
               .resizable()
               .scaledToFill()
               .frame(width: SMALL_BUTTON_SIZE, height: SMALL_BUTTON_SIZE)
               .padding(.trailing, 20)
-          }.contentShape(Circle())
+          }
+          .contentShape(Circle())
           .offset(y: -5)
+          .alert(isPresented: $showingConfirmationAlert) {
+            Alert(
+              title: Text("Are you sure you want to stop your task?"),
+              message: Text("You will lose current progress towards your rewards."),
+              primaryButton: .destructive(Text("Stop Task"), action: {
+                self.viewRouter.currentPage = .tabbedPage
+              }),
+              secondaryButton: .default(Text("Cancel"), action: {
+                self.showingConfirmationAlert = false
+              })
+            )
+          }
         }
         
         Spacer()
