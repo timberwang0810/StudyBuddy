@@ -11,7 +11,7 @@
 		A9EE60D611FE8C1DD4BD0774 /* Pods_StudyBuddyAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E8D64EDE2A72AC155B302B5 /* Pods_StudyBuddyAppTests.framework */; };
 		C3F59CCA737769A6743DC217 /* Pods_StudyBuddyApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EF48D5CC853A954D904CDE7 /* Pods_StudyBuddyApp.framework */; };
 		C939FE84D401F898FC509120 /* Pods_StudyBuddyApp_StudyBuddyAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C429A496873E1E2552C3E042 /* Pods_StudyBuddyApp_StudyBuddyAppUITests.framework */; };
-		D15A4EEF274956FE00B8A029 /* GSTimeIntervalPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = D15A4EEE274956FE00B8A029 /* GSTimeIntervalPicker.m */; };
+		D15A4F5F274CA96800B8A029 /* GSTimeIntervalPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = D15A4F5D274CA96800B8A029 /* GSTimeIntervalPicker.m */; };
 		D160120B272B1622003BAD02 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D160120A272B1622003BAD02 /* User.swift */; };
 		D1601216272BA4B9003BAD02 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1601215272BA4B9003BAD02 /* Item.swift */; };
 		D1601224272DB01B003BAD02 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1601223272DB01B003BAD02 /* Store.swift */; };
@@ -81,8 +81,8 @@
 		A5A4D08E7610B0D29F782739 /* Pods-StudyBuddyApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StudyBuddyApp.debug.xcconfig"; path = "Target Support Files/Pods-StudyBuddyApp/Pods-StudyBuddyApp.debug.xcconfig"; sourceTree = "<group>"; };
 		C429A496873E1E2552C3E042 /* Pods_StudyBuddyApp_StudyBuddyAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StudyBuddyApp_StudyBuddyAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D15A4EEC274956FE00B8A029 /* StudyBuddyApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "StudyBuddyApp-Bridging-Header.h"; sourceTree = "<group>"; };
-		D15A4EED274956FE00B8A029 /* GSTimeIntervalPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GSTimeIntervalPicker.h; path = "../../../mobile app/GSTimeIntervalPicker/GSTimeIntervalPicker.h"; sourceTree = "<group>"; };
-		D15A4EEE274956FE00B8A029 /* GSTimeIntervalPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GSTimeIntervalPicker.m; path = "../../../mobile app/GSTimeIntervalPicker/GSTimeIntervalPicker.m"; sourceTree = "<group>"; };
+		D15A4F5D274CA96800B8A029 /* GSTimeIntervalPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSTimeIntervalPicker.m; sourceTree = "<group>"; };
+		D15A4F5E274CA96800B8A029 /* GSTimeIntervalPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSTimeIntervalPicker.h; sourceTree = "<group>"; };
 		D160120A272B1622003BAD02 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D1601215272BA4B9003BAD02 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		D1601223272DB01B003BAD02 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
@@ -184,6 +184,15 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		D15A4F5C274CA96800B8A029 /* GSTimeInterval */ = {
+			isa = PBXGroup;
+			children = (
+				D15A4F5D274CA96800B8A029 /* GSTimeIntervalPicker.m */,
+				D15A4F5E274CA96800B8A029 /* GSTimeIntervalPicker.h */,
+			);
+			path = GSTimeInterval;
+			sourceTree = "<group>";
+		};
 		D1A4AF95272738B300C92354 = {
 			isa = PBXGroup;
 			children = (
@@ -209,8 +218,7 @@
 		D1A4AFA0272738B300C92354 /* StudyBuddyApp */ = {
 			isa = PBXGroup;
 			children = (
-				D15A4EED274956FE00B8A029 /* GSTimeIntervalPicker.h */,
-				D15A4EEE274956FE00B8A029 /* GSTimeIntervalPicker.m */,
+				D15A4F5C274CA96800B8A029 /* GSTimeInterval */,
 				DA68B5652735436B004C3EB7 /* Sprites */,
 				DAE29E06272E87F7004835E2 /* SpriteKit Objects */,
 				DAE29E03272E4D28004835E2 /* Scenes */,
@@ -588,7 +596,7 @@
 				D1A4AFA9272738B300C92354 /* StudyBuddyApp.xcdatamodeld in Sources */,
 				D9B3156C27435FDC002E8120 /* PlaygroundItemView.swift in Sources */,
 				D9BC461F272DE43B00962100 /* ViewRouter.swift in Sources */,
-				D15A4EEF274956FE00B8A029 /* GSTimeIntervalPicker.m in Sources */,
+				D15A4F5F274CA96800B8A029 /* GSTimeIntervalPicker.m in Sources */,
 				D9BC45F0272C721A00962100 /* DurationPicker.swift in Sources */,
 				D9AD397D2730FA0F00408F59 /* RewardsView.swift in Sources */,
 				D9BC4633272DE7A000962100 /* TabbedView.swift in Sources */,
