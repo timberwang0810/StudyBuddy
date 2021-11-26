@@ -17,69 +17,102 @@ struct DoingTaskView: View {
   @State var seconds: Int = 0
   @State var timerIsPaused: Bool = false
   @State var timeRemaining: Double = 0.0
-    
-    @ObservedObject var sceneStore: SceneStore
+  @State private var showingConfirmationAlert = false
+  
+  @ObservedObject var sceneStore: SceneStore
+  
+  let SMALL_BUTTON_SIZE: CGFloat = 20.0
+  let BUTTON_SIZE: CGFloat = 64.0
   
   init( viewModel: ViewModel) {
     self.viewModel = viewModel
-        _timeRemaining = State(initialValue: viewModel.currentTask!.duration)
+    _timeRemaining = State(initialValue: viewModel.currentTask!.duration)
     
     self.sceneStore = SceneStore(
-        scene: DoingTaskScene(size: CGSize(width: 400, height: 700), duration: viewModel.currentTask!.duration)
+      scene: DoingTaskScene(size: CGSize(width: 400, height: 700), duration: viewModel.currentTask!.duration, taskCategory: viewModel.currentTask!.category)
     )
   }
   
   var body: some View {
     ZStack{
+      SpriteView(scene: sceneStore.scene)
+        .frame(width: 400, height: 700)
+        .edgesIgnoringSafeArea(.all)
       
-        SpriteView(scene: sceneStore.scene)
-                    .frame(width: 400, height: 700)
-                    .edgesIgnoringSafeArea(.all)
       VStack{
         HStack{
-          Text(calculateTime()).font(Font.custom("Chalkboard SE", size: 24))
-            .padding(10)
+          VStack(alignment: .leading, spacing: 0) {
+            Text(viewModel.getTaskName()).font(Font.custom("Chalkboard SE", size: 24))
+            Text(calculateTime()).font(Font.custom("Chalkboard SE", size: 12))
+          }.padding(.horizontal, 20)
+          
           Spacer()
-            Button(action:{
-              self.viewRouter.currentPage = .tabbedPage
-            }){
-              Image(systemName: "x.circle")
-                .padding()
-            }
-      }
-        
-      Spacer()
-      VStack(alignment: .trailing){
-        
-        HStack{
-            if self.timerIsPaused {
-            
-            Button(action:{
-              self.startTimer()
-            }){
-              Image(systemName: "play.circle")
-                .padding()
-            }
-            
-          } else {
-            Button(action:{
-              self.pauseTimer()
-            }){
-              Image(systemName: "pause.circle")
-                .padding()
-            }
-            
-          }
           
           Button(action:{
-            finishTask()
+            self.showingConfirmationAlert = true
           }){
-            Image(systemName: "checkmark.circle")
-              .padding()
+            Image(systemName: "x.circle")
+              .resizable()
+              .scaledToFill()
+              .frame(width: SMALL_BUTTON_SIZE, height: SMALL_BUTTON_SIZE)
+              .padding(.trailing, 20)
+          }
+          .contentShape(Circle())
+          .offset(y: -5)
+          .alert(isPresented: $showingConfirmationAlert) {
+            Alert(
+              title: Text("Are you sure you want to stop your task?"),
+              message: Text("You will lose current progress towards your rewards."),
+              primaryButton: .destructive(Text("Stop Task"), action: {
+                self.viewRouter.currentPage = .tabbedPage
+              }),
+              secondaryButton: .default(Text("Cancel"), action: {
+                self.showingConfirmationAlert = false
+              })
+            )
+          }
+        }
+        
+        Spacer()
+        VStack(alignment: .trailing){
+          HStack{
+            if self.timerIsPaused {
+              
+              Button(action:{
+                self.startTimer()
+              }){
+                Image(systemName: "play.circle")
+                  .resizable()
+                  .scaledToFill()
+                  .frame(width: BUTTON_SIZE, height: BUTTON_SIZE)
+                  .padding()
+              }.contentShape(Circle())
+              
+            } else {
+              Button(action:{
+                self.pauseTimer()
+              }){
+                Image(systemName: "pause.circle")
+                  .resizable()
+                  .scaledToFill()
+                  .frame(width: BUTTON_SIZE, height: BUTTON_SIZE)
+                  .padding()
+              }.contentShape(Circle())
+              
+            }
+            
+            Button(action:{
+              finishTask()
+            }){
+              Image(systemName: "checkmark.circle")
+                .resizable()
+                .scaledToFill()
+                .frame(width: BUTTON_SIZE, height: BUTTON_SIZE)
+                .padding()
+            }.contentShape(Circle())
           }
         }
       }
-    }
     }
     
   }
@@ -93,22 +126,22 @@ struct DoingTaskView: View {
     let todaysDate = dateFormatter.string(from: date)
     return todaysDate
   }
-
+  
   func startTimer(){
     timerIsPaused = false
     self.sceneStore.scene.isPaused = false
   }
-
+  
   func pauseTimer(){
     timerIsPaused = true
     self.sceneStore.scene.isPaused = true
   }
-    
-    func finishTask() {
-        let scene = self.sceneStore.scene as! DoingTaskScene
-        self.viewModel.stopTask(timeRemaining: scene.timer.timeRemaining)
-        self.viewRouter.currentPage = .rewardsPage
-    }
+  
+  func finishTask() {
+    let scene = self.sceneStore.scene as! DoingTaskScene
+    self.viewModel.stopTask(timeRemaining: scene.timer.timeRemaining)
+    self.viewRouter.currentPage = .rewardsPage
+  }
   
 }
 

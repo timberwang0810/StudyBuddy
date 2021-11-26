@@ -1,11 +1,13 @@
 import Foundation
 
-enum AccessoryItemCategory{
-  case Hat
+enum AccessoryItemCategory:String{
+  case Hat = "Hat"
 }
 
-enum PlaygroundItemCategory{
-  case Wall, Ceiling, Floor
+enum PlaygroundItemCategory:String{
+  case Wall = "Wall"
+  case Ceiling = "Ceiling"
+  case Floor = "Floor"
 }
 
 protocol Item : Hashable{

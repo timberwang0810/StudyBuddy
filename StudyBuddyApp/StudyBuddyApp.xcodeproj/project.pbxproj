@@ -13,6 +13,7 @@
 		A9EE60D611FE8C1DD4BD0774 /* Pods_StudyBuddyAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E8D64EDE2A72AC155B302B5 /* Pods_StudyBuddyAppTests.framework */; };
 		C3F59CCA737769A6743DC217 /* Pods_StudyBuddyApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EF48D5CC853A954D904CDE7 /* Pods_StudyBuddyApp.framework */; };
 		C939FE84D401F898FC509120 /* Pods_StudyBuddyApp_StudyBuddyAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C429A496873E1E2552C3E042 /* Pods_StudyBuddyApp_StudyBuddyAppUITests.framework */; };
+		D15A4F5F274CA96800B8A029 /* GSTimeIntervalPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = D15A4F5D274CA96800B8A029 /* GSTimeIntervalPicker.m */; };
 		D160120B272B1622003BAD02 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D160120A272B1622003BAD02 /* User.swift */; };
 		D1601216272BA4B9003BAD02 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1601215272BA4B9003BAD02 /* Item.swift */; };
 		D1601224272DB01B003BAD02 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1601223272DB01B003BAD02 /* Store.swift */; };
@@ -38,17 +39,18 @@
 		D908AAA427290D3E0095600F /* PlaygroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D908AAA327290D3E0095600F /* PlaygroundView.swift */; };
 		D9AD397D2730FA0F00408F59 /* RewardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AD397C2730FA0F00408F59 /* RewardsView.swift */; };
 		D9B3156C27435FDC002E8120 /* PlaygroundItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B3156B27435FDC002E8120 /* PlaygroundItemView.swift */; };
+		D9B31584274AF0E1002E8120 /* open-box.png in Resources */ = {isa = PBXBuildFile; fileRef = D9B31582274AF0E1002E8120 /* open-box.png */; };
 		D9BC45F0272C721A00962100 /* DurationPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BC45EF272C721A00962100 /* DurationPicker.swift */; };
 		D9BC461F272DE43B00962100 /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BC461E272DE43B00962100 /* ViewRouter.swift */; };
 		D9BC462E272DE76900962100 /* DoingTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BC462D272DE76900962100 /* DoingTaskView.swift */; };
 		D9BC4633272DE7A000962100 /* TabbedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BC4632272DE7A000962100 /* TabbedView.swift */; };
 		DA12B2C8273C638F006F4BE6 /* SpriteTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA12B2C7273C638F006F4BE6 /* SpriteTimer.swift */; };
 		DA12B2CA273C85E1006F4BE6 /* SceneStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA12B2C9273C85E1006F4BE6 /* SceneStore.swift */; };
-		DA68B56C27354CCE004C3EB7 /* bob_writing.atlas in Resources */ = {isa = PBXBuildFile; fileRef = DA68B56B27354CCE004C3EB7 /* bob_writing.atlas */; };
-		DA68B5712735824A004C3EB7 /* bob_sweeping.atlas in Resources */ = {isa = PBXBuildFile; fileRef = DA68B56F2735824A004C3EB7 /* bob_sweeping.atlas */; };
-		DA68B5722735824A004C3EB7 /* bob_cheering.atlas in Resources */ = {isa = PBXBuildFile; fileRef = DA68B5702735824A004C3EB7 /* bob_cheering.atlas */; };
 		DA72C45427435B8900590E0B /* yellow_lamp.png in Resources */ = {isa = PBXBuildFile; fileRef = DA72C45227435B8900590E0B /* yellow_lamp.png */; };
 		DA72C45527435B8900590E0B /* hill_painting.png in Resources */ = {isa = PBXBuildFile; fileRef = DA72C45327435B8900590E0B /* hill_painting.png */; };
+		DA72C45A27438FC900590E0B /* bob_writing.atlas in Resources */ = {isa = PBXBuildFile; fileRef = DA72C45727438FC800590E0B /* bob_writing.atlas */; };
+		DAC76B622746A6CA00F88AE7 /* bob_cheering.atlas in Resources */ = {isa = PBXBuildFile; fileRef = DAC76B612746A6CA00F88AE7 /* bob_cheering.atlas */; };
+		DAC76B642746A96700F88AE7 /* bob_sweeping.atlas in Resources */ = {isa = PBXBuildFile; fileRef = DAC76B632746A96700F88AE7 /* bob_sweeping.atlas */; };
 		DAD0E15C2739A69000EF1E88 /* DoingTaskScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD0E15B2739A69000EF1E88 /* DoingTaskScene.swift */; };
 		DAD0E15E2739A90E00EF1E88 /* RewardsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD0E15D2739A90E00EF1E88 /* RewardsScene.swift */; };
 		DAE29E05272E4D83004835E2 /* PlaygroundScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE29E04272E4D83004835E2 /* PlaygroundScene.swift */; };
@@ -83,6 +85,9 @@
 		7E51CDA8A292E2B3D566E5A2 /* Pods-StudyBuddyAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StudyBuddyAppTests.debug.xcconfig"; path = "Target Support Files/Pods-StudyBuddyAppTests/Pods-StudyBuddyAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A5A4D08E7610B0D29F782739 /* Pods-StudyBuddyApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StudyBuddyApp.debug.xcconfig"; path = "Target Support Files/Pods-StudyBuddyApp/Pods-StudyBuddyApp.debug.xcconfig"; sourceTree = "<group>"; };
 		C429A496873E1E2552C3E042 /* Pods_StudyBuddyApp_StudyBuddyAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StudyBuddyApp_StudyBuddyAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D15A4EEC274956FE00B8A029 /* StudyBuddyApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "StudyBuddyApp-Bridging-Header.h"; sourceTree = "<group>"; };
+		D15A4F5D274CA96800B8A029 /* GSTimeIntervalPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSTimeIntervalPicker.m; sourceTree = "<group>"; };
+		D15A4F5E274CA96800B8A029 /* GSTimeIntervalPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSTimeIntervalPicker.h; sourceTree = "<group>"; };
 		D160120A272B1622003BAD02 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D1601215272BA4B9003BAD02 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		D1601223272DB01B003BAD02 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
@@ -114,17 +119,19 @@
 		D908AAA327290D3E0095600F /* PlaygroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaygroundView.swift; sourceTree = "<group>"; };
 		D9AD397C2730FA0F00408F59 /* RewardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardsView.swift; sourceTree = "<group>"; };
 		D9B3156B27435FDC002E8120 /* PlaygroundItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaygroundItemView.swift; sourceTree = "<group>"; };
+		D9B31582274AF0E1002E8120 /* open-box.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "open-box.png"; sourceTree = "<group>"; };
+		D9B31589274AF11B002E8120 /* closed-box.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "closed-box.png"; path = "/Users/austin/Documents/Zoomers/iOS/StudyBuddy/StudyBuddyApp/StudyBuddyApp/closed-box.png"; sourceTree = "<absolute>"; };
 		D9BC45EF272C721A00962100 /* DurationPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DurationPicker.swift; sourceTree = "<group>"; };
 		D9BC461E272DE43B00962100 /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
 		D9BC462D272DE76900962100 /* DoingTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoingTaskView.swift; sourceTree = "<group>"; };
 		D9BC4632272DE7A000962100 /* TabbedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbedView.swift; sourceTree = "<group>"; };
 		DA12B2C7273C638F006F4BE6 /* SpriteTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpriteTimer.swift; sourceTree = "<group>"; };
 		DA12B2C9273C85E1006F4BE6 /* SceneStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneStore.swift; sourceTree = "<group>"; };
-		DA68B56B27354CCE004C3EB7 /* bob_writing.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = bob_writing.atlas; sourceTree = "<group>"; };
-		DA68B56F2735824A004C3EB7 /* bob_sweeping.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = bob_sweeping.atlas; sourceTree = "<group>"; };
-		DA68B5702735824A004C3EB7 /* bob_cheering.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = bob_cheering.atlas; sourceTree = "<group>"; };
 		DA72C45227435B8900590E0B /* yellow_lamp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yellow_lamp.png; sourceTree = "<group>"; };
 		DA72C45327435B8900590E0B /* hill_painting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hill_painting.png; sourceTree = "<group>"; };
+		DA72C45727438FC800590E0B /* bob_writing.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = bob_writing.atlas; sourceTree = "<group>"; };
+		DAC76B612746A6CA00F88AE7 /* bob_cheering.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = bob_cheering.atlas; sourceTree = "<group>"; };
+		DAC76B632746A96700F88AE7 /* bob_sweeping.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = bob_sweeping.atlas; sourceTree = "<group>"; };
 		DAD0E15B2739A69000EF1E88 /* DoingTaskScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoingTaskScene.swift; sourceTree = "<group>"; };
 		DAD0E15D2739A90E00EF1E88 /* RewardsScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardsScene.swift; sourceTree = "<group>"; };
 		DAE29E04272E4D83004835E2 /* PlaygroundScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaygroundScene.swift; sourceTree = "<group>"; };
@@ -184,6 +191,15 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		D15A4F5C274CA96800B8A029 /* GSTimeInterval */ = {
+			isa = PBXGroup;
+			children = (
+				D15A4F5D274CA96800B8A029 /* GSTimeIntervalPicker.m */,
+				D15A4F5E274CA96800B8A029 /* GSTimeIntervalPicker.h */,
+			);
+			path = GSTimeInterval;
+			sourceTree = "<group>";
+		};
 		D1A4AF95272738B300C92354 = {
 			isa = PBXGroup;
 			children = (
@@ -209,6 +225,7 @@
 		D1A4AFA0272738B300C92354 /* StudyBuddyApp */ = {
 			isa = PBXGroup;
 			children = (
+				D15A4F5C274CA96800B8A029 /* GSTimeInterval */,
 				DA68B5652735436B004C3EB7 /* Sprites */,
 				DAE29E06272E87F7004835E2 /* SpriteKit Objects */,
 				DAE29E03272E4D28004835E2 /* Scenes */,
@@ -217,6 +234,8 @@
 				D1A4AFA1272738B300C92354 /* AppDelegate.swift */,
 				D1A4AFA3272738B300C92354 /* SceneDelegate.swift */,
 				D1A4AFAA272738B900C92354 /* Assets.xcassets */,
+				D9B31589274AF11B002E8120 /* closed-box.png */,
+				D9B31582274AF0E1002E8120 /* open-box.png */,
 				38F3E0B527339A2D00E36A14 /* doingTask1.png */,
 				D1A4AFAF272738B900C92354 /* LaunchScreen.storyboard */,
 				D1A4AFB2272738B900C92354 /* Info.plist */,
@@ -224,6 +243,7 @@
 				D1A4AFAC272738B900C92354 /* Preview Content */,
 				D908AA992729096A0095600F /* ViewModel.swift */,
 				D9BC461E272DE43B00962100 /* ViewRouter.swift */,
+				D15A4EEC274956FE00B8A029 /* StudyBuddyApp-Bridging-Header.h */,
 			);
 			path = StudyBuddyApp;
 			sourceTree = "<group>";
@@ -301,9 +321,9 @@
 		DA68B56627354371004C3EB7 /* Bob */ = {
 			isa = PBXGroup;
 			children = (
-				DA68B5702735824A004C3EB7 /* bob_cheering.atlas */,
-				DA68B56F2735824A004C3EB7 /* bob_sweeping.atlas */,
-				DA68B56B27354CCE004C3EB7 /* bob_writing.atlas */,
+				DAC76B632746A96700F88AE7 /* bob_sweeping.atlas */,
+				DAC76B612746A6CA00F88AE7 /* bob_cheering.atlas */,
+				DA72C45727438FC800590E0B /* bob_writing.atlas */,
 			);
 			path = Bob;
 			sourceTree = "<group>";
@@ -409,6 +429,7 @@
 				TargetAttributes = {
 					D1A4AF9D272738B300C92354 = {
 						CreatedOnToolsVersion = 12.4;
+						LastSwiftMigration = 1240;
 					};
 					D1A4AFB6272738BA00C92354 = {
 						CreatedOnToolsVersion = 12.4;
@@ -446,14 +467,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				D1A4AFB1272738B900C92354 /* LaunchScreen.storyboard in Resources */,
-				DA68B5712735824A004C3EB7 /* bob_sweeping.atlas in Resources */,
-				DA68B5722735824A004C3EB7 /* bob_cheering.atlas in Resources */,
 				DA72C45527435B8900590E0B /* hill_painting.png in Resources */,
+				DA72C45A27438FC900590E0B /* bob_writing.atlas in Resources */,
 				D1A4AFAE272738B900C92354 /* Preview Assets.xcassets in Resources */,
-				DA68B56C27354CCE004C3EB7 /* bob_writing.atlas in Resources */,
 				D1A4AFAB272738B900C92354 /* Assets.xcassets in Resources */,
+				DAC76B622746A6CA00F88AE7 /* bob_cheering.atlas in Resources */,
 				38F3E0B627339A2D00E36A14 /* doingTask1.png in Resources */,
 				DA72C45427435B8900590E0B /* yellow_lamp.png in Resources */,
+				DAC76B642746A96700F88AE7 /* bob_sweeping.atlas in Resources */,
+				D9B31584274AF0E1002E8120 /* open-box.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -586,6 +608,7 @@
 				D1A4AFA9272738B300C92354 /* StudyBuddyApp.xcdatamodeld in Sources */,
 				D9B3156C27435FDC002E8120 /* PlaygroundItemView.swift in Sources */,
 				D9BC461F272DE43B00962100 /* ViewRouter.swift in Sources */,
+				D15A4F5F274CA96800B8A029 /* GSTimeIntervalPicker.m in Sources */,
 				D9BC45F0272C721A00962100 /* DurationPicker.swift in Sources */,
 				D9AD397D2730FA0F00408F59 /* RewardsView.swift in Sources */,
 				D9BC4633272DE7A000962100 /* TabbedView.swift in Sources */,
@@ -781,6 +804,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"StudyBuddyApp/Preview Content\"";
 				DEVELOPMENT_TEAM = HMHKQ2Q3HN;
@@ -792,6 +816,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = cmu.ios.StudyBuddyApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "StudyBuddyApp/StudyBuddyApp-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -803,6 +829,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"StudyBuddyApp/Preview Content\"";
 				DEVELOPMENT_TEAM = HMHKQ2Q3HN;
@@ -814,6 +841,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = cmu.ios.StudyBuddyApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "StudyBuddyApp/StudyBuddyApp-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
