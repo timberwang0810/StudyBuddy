@@ -12,6 +12,7 @@ struct StoreView: View {
   @EnvironmentObject var viewRouter: ViewRouter
   @State private var showingConfirmationAlert = false
   @State private var selectedItem: PlaygroundItem? = nil
+  @State private var selectedItemCost: Int = -1
 
   let data = (1...10).map { "Item \($0)" }
   let CART_ICON_SIZE: CGFloat = 23.0
@@ -66,7 +67,7 @@ struct StoreView: View {
                 .alert(isPresented: $showingConfirmationAlert) {
                   Alert(
                     title: Text("Would you like to purchase \(selectedItem!.name)?"),
-                    message: Text("This will cost \(storeItem.price) coins."),
+                    message: Text("This will cost \(selectedItem.price) coins."),
                     primaryButton: .default(Text("Purchase"), action: {
                       if (self.viewModel.buyStorePlaygroundItem(item: storeItem)){
                         self.viewModel.saveUserData()
