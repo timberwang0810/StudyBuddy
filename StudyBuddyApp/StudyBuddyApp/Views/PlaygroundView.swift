@@ -17,18 +17,6 @@ struct PlaygroundView: View {
   let MENU_BG_COLOR = Color(red: 248 / 255, green: 208 / 255, blue: 116 / 255)
   let BOX_BG_COLOR = Color(red: 254 / 255, green: 250 / 255, blue: 224 / 255)
   
-  init(viewModel: ViewModel) {
-    self.viewModel = viewModel
-    
-    // initialize state with currently selected items
-    //self.viewModel.initializePlaygroundItems()
-    
-    for item in viewModel.getAllPlaygroundItems() {
-      self.selectedItems[item] = viewModel.isItemInUse(item: item)
-    }
-  }
-  
-  
   var scene: SKScene {
     let scene = PlaygroundScene()
     scene.size = CGSize(width: 400, height: 700)
@@ -68,17 +56,12 @@ struct PlaygroundView: View {
               PlaygroundItemView(viewModel: viewModel, item: playgroundItem, isInUse: selectedItems[playgroundItem] ?? false)
                 .onTapGesture {
                   print(playgroundItem.name)
-
-                  //                    print("Before: \(viewModel.isItemInUse(item: playgroundItem))")
                   viewModel.togglePlaygroundItem(item: playgroundItem)
                   // update visual display of whether item is selected
                   
                   for item in viewModel.getAllPlaygroundItems() {
                     self.selectedItems[item] = viewModel.isItemInUse(item: item)
                   }
-                  
-                  //                    print("After: \(viewModel.isItemInUse(item: playgroundItem))")
-                  print(viewModel.playground.getAllDecorations())
                 }
             }
           }.padding(.horizontal, 15)
