@@ -25,7 +25,21 @@ struct StoreView: View {
 //
   var body: some View {
        ScrollView {
-        Text("Store").font(Font.custom("Chalkboard SE", size: 30))
+        VStack(spacing: 5) {
+          Text("Store").font(Font.custom("Chalkboard SE", size: 30))
+          HStack{
+            Image("coin")
+              .resizable()
+              .frame(width: 14.0, height: 14.0)
+            Text("\(viewModel.getCurrentMoney())")
+              .font(Font.custom("Chalkboard SE", size: 24))
+              .baselineOffset(5)
+              .padding(.leading, 10)
+              .onAppear(perform: {
+                self.viewModel.updateUserData()
+              })
+          }
+        }
         LazyVGrid(columns: Array(repeating: GridItem(), count: 2), spacing: 20) {
                ForEach(viewModel.getStoreItems(), id: \.self) { storeItem in
                StoreItemView(viewModel: viewModel,  item:  storeItem)
