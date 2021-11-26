@@ -11,6 +11,7 @@ struct StoreView: View {
   @ObservedObject var viewModel: ViewModel
   @EnvironmentObject var viewRouter: ViewRouter
   let data = (1...10).map { "Item \($0)" }
+  let CART_ICON_SIZE: CGFloat = 23.0
   
   let columns = [
     GridItem(.adaptive(minimum: 80))
@@ -28,7 +29,13 @@ struct StoreView: View {
       Color(red: 241 / 255, green: 241 / 255, blue: 241 / 255).edgesIgnoringSafeArea([.top])
       ScrollView {
         VStack(spacing: 8) {
-          Text("Store").font(Font.custom("Chalkboard SE", size: 30))
+          HStack(spacing: 10) {
+            Image(systemName: "cart")
+              .resizable()
+              .scaledToFill()
+              .frame(width: CART_ICON_SIZE, height: CART_ICON_SIZE)
+            Text("Store").font(Font.custom("Chalkboard SE", size: 30))
+          }
           HStack{
             Image("coin")
               .resizable()
