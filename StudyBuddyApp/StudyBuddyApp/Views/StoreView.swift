@@ -47,6 +47,7 @@ struct StoreView: View {
                 .padding(.leading, 10)
                 .onAppear(perform: {
                   self.viewModel.updateUserData()
+                  self.viewModel.updateItemData(viewToUpdate: "store")
                 })
             }
             .padding(.horizontal, 30)
@@ -56,7 +57,14 @@ struct StoreView: View {
             ForEach(viewModel.getStoreItems(), id: \.self) { storeItem in
               StoreItemView(viewModel: viewModel,  item:  storeItem)
                 .onTapGesture {
-                  print(storeItem.name)
+                  // TODO: BUY stuff
+                  if (self.viewModel.buyStorePlaygroundItem(item: storeItem)){
+                    self.viewModel.saveUserData()
+                    self.viewModel.saveItemData(itemName: storeItem.name, isPurchased: true, isEquipped: false)
+                    self.viewModel.updateUserData()
+                    self.viewModel.updateItemData(viewToUpdate: "store")
+                  }
+                  //print(storeItem.name)
                 }
             }
           }

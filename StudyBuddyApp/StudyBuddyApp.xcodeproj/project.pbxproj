@@ -120,7 +120,7 @@
 		D9AD397C2730FA0F00408F59 /* RewardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardsView.swift; sourceTree = "<group>"; };
 		D9B3156B27435FDC002E8120 /* PlaygroundItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaygroundItemView.swift; sourceTree = "<group>"; };
 		D9B31582274AF0E1002E8120 /* open-box.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "open-box.png"; sourceTree = "<group>"; };
-		D9B31589274AF11B002E8120 /* closed-box.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "closed-box.png"; path = "/Users/austin/Documents/Zoomers/iOS/StudyBuddy/StudyBuddyApp/StudyBuddyApp/closed-box.png"; sourceTree = "<absolute>"; };
+		D9B31589274AF11B002E8120 /* closed-box.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "closed-box.png"; sourceTree = "<group>"; };
 		D9BC45EF272C721A00962100 /* DurationPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DurationPicker.swift; sourceTree = "<group>"; };
 		D9BC461E272DE43B00962100 /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
 		D9BC462D272DE76900962100 /* DoingTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoingTaskView.swift; sourceTree = "<group>"; };
