@@ -11,6 +11,7 @@ struct StoreView: View {
   @ObservedObject var viewModel: ViewModel
   @EnvironmentObject var viewRouter: ViewRouter
   @State private var showingConfirmationAlert = false
+  @State private var showingInsufficientFundsAlert = false
   @State private var selectedItem: PlaygroundItem? = nil
   @State private var selectedItemCost: Int = -1
 
@@ -61,9 +62,12 @@ struct StoreView: View {
             ForEach(viewModel.getStoreItems(), id: \.self) { storeItem in
               StoreItemView(viewModel: viewModel,  item:  storeItem)
                 .onTapGesture {
-                  self.showingConfirmationAlert = true
-                  self.selectedItem = storeItem
-                  self.selectedItemCost = storeItem.price
+                  if (viewModel.getCurrentMoney() < storeItem.price) {
+                    self.showingInsufficientFundsAlert = true
+                  } else {
+                    self.selectedItem = storeItem
+                    self.selectedItemCost = storeItem.price
+                  }
                 }
                 .alert(isPresented: $showingConfirmationAlert) {
                   Alert(
@@ -79,6 +83,14 @@ struct StoreView: View {
                     }),
                     secondaryButton: .default(Text("Cancel"), action: {
                       self.showingConfirmationAlert = false
+                    })
+                  )
+                }
+                .alert(isPresented: $showingInsufficientFundsAlert) {
+                  Alert(
+                    title: Text("Insufficient Funds"),
+                    dismissButton: .default(Text("Okay"), action: {
+                      self.showingInsufficientFundsAlert = false
                     })
                   )
                 }
