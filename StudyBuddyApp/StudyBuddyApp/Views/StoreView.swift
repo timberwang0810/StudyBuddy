@@ -58,6 +58,15 @@ struct StoreView: View {
             .padding(.horizontal, 30)
             .background( RoundedRectangle(cornerRadius: 5).fill(Color.white))
           }
+          .alert(isPresented: $showingInsufficientFundsAlert) {
+            Alert(
+              title: Text("Insufficient Funds"),
+              dismissButton: .default(Text("Okay"), action: {
+                self.showingInsufficientFundsAlert = false
+              })
+            )
+          }
+          
           LazyVGrid(columns: Array(repeating: GridItem(), count: 2), spacing: 20) {
             ForEach(viewModel.getStoreItems(), id: \.self) { storeItem in
               StoreItemView(viewModel: viewModel,  item:  storeItem)
@@ -84,14 +93,6 @@ struct StoreView: View {
                     }),
                     secondaryButton: .default(Text("Cancel"), action: {
                       self.showingConfirmationAlert = false
-                    })
-                  )
-                }
-                .alert(isPresented: $showingInsufficientFundsAlert) {
-                  Alert(
-                    title: Text("Insufficient Funds"),
-                    dismissButton: .default(Text("Okay"), action: {
-                      self.showingInsufficientFundsAlert = false
                     })
                   )
                 }
