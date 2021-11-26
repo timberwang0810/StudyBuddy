@@ -26,6 +26,10 @@ class Store {
     return playgroundItems + purchasedPlaygroundItems
   }
   
+  public func getAllPurchasedPlaygroundItems() -> [PlaygroundItem]{
+    return purchasedPlaygroundItems
+  }
+  
   public func getPlaygroundItemsByCategory(category: PlaygroundItemCategory) -> [PlaygroundItem]{
     return playgroundItems.filter{$0.category == category} + purchasedPlaygroundItems.filter{$0.category == category}
   }

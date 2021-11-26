@@ -56,20 +56,6 @@ struct PlaygroundView: View {
           .padding(20)
         }
         
-        //        HStack{
-        //          Text("\(viewModel.getCurrentMoney())")
-        //            .font(Font.custom("Chalkboard SE", size: 24))
-        //            .baselineOffset(5)
-        //            .padding(.trailing, 10)
-        //            .onAppear(perform: {
-        //              self.viewModel.updateUserData()
-        //            })
-        //          Image("coin")
-        //            .resizable()
-        //            .frame(width: 32.0, height: 32.0)
-        //
-        //        }
-        
         SpriteView(scene: scene)
           .frame(width: 400.0, height: 700.0)
           .edgesIgnoringSafeArea(.all)
