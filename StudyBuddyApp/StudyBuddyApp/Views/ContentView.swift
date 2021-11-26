@@ -8,28 +8,27 @@
 import SwiftUI
 
 struct ContentView: View {
-    @ObservedObject var viewModel = ViewModel()
-    @EnvironmentObject var viewRouter: ViewRouter
-
-    var body: some View {
-        switch viewRouter.currentPage {
-            case .tabbedPage:
-                TabbedView(viewModel: viewModel)
-            case .doingTaskPage:
-                DoingTaskView(viewModel: viewModel)
-            case .rewardsPage:
-                RewardsView(viewModel: viewModel)
-          case .playgroundPage:
-            PlaygroundView(viewModel: viewModel)
-        case .storePage:
-          StoreView(viewModel: viewModel)
-          
-        }
+  @ObservedObject var viewModel = ViewModel()
+  @EnvironmentObject var viewRouter: ViewRouter
+  
+  var body: some View {
+    switch viewRouter.currentPage {
+    case .tabbedPage:
+      TabbedView(viewModel: viewModel)
+    case .doingTaskPage:
+      DoingTaskView(viewModel: viewModel)
+    case .rewardsPage:
+      RewardsView(viewModel: viewModel)
+    case .playgroundPage:
+      PlaygroundView(viewModel: viewModel)
+    case .storePage:
+      StoreView(viewModel: viewModel)
     }
+  }
 }
 
 struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView().environmentObject(ViewRouter())
-    }
+  static var previews: some View {
+    ContentView().environmentObject(ViewRouter())
+  }
 }
