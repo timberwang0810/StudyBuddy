@@ -67,7 +67,7 @@ class ViewModel: ObservableObject {
   }
   
   func getStoreItems() -> [PlaygroundItem]{
-    return store.getAllPlaygroundItems()
+    return store.getAllPlaygroundItems().sorted(by: {$0.price < $1.price})
   }
   
   func getAllPlaygroundItems() -> [PlaygroundItem] {

@@ -63,11 +63,12 @@ struct StoreView: View {
                 .onTapGesture {
                   self.showingConfirmationAlert = true
                   self.selectedItem = storeItem
+                  self.selectedItemCost = storeItem.price
                 }
                 .alert(isPresented: $showingConfirmationAlert) {
                   Alert(
                     title: Text("Would you like to purchase \(selectedItem!.name)?"),
-                    message: Text("This will cost \(selectedItem.price) coins."),
+                    message: Text("This will cost \(selectedItemCost) coins."),
                     primaryButton: .default(Text("Purchase"), action: {
                       if (self.viewModel.buyStorePlaygroundItem(item: storeItem)){
                         self.viewModel.saveUserData()
