@@ -50,7 +50,7 @@ struct StoreView: View {
                 })
             }
             .padding(.horizontal, 30)
-            .background( RoundedRectangle(cornerRadius: 8).fill(Color.white))
+            .background( RoundedRectangle(cornerRadius: 5).fill(Color.white))
           }
           LazyVGrid(columns: Array(repeating: GridItem(), count: 2), spacing: 20) {
             ForEach(viewModel.getStoreItems(), id: \.self) { storeItem in

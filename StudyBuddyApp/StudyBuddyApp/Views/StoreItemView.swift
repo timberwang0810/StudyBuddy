@@ -11,7 +11,8 @@ struct StoreItemView: View {
   @ObservedObject var viewModel: ViewModel
   var item : PlaygroundItem
   let SELECTED_BG_COLOR = Color(red: 170 / 255, green: 208 / 255, blue: 161 / 255)
-
+  let OUTLINE_COLOR = Color(red: 203 / 255, green: 202 / 255, blue: 183 / 255)
+  
   var body: some View {
     VStack{
       HStack{
@@ -30,13 +31,13 @@ struct StoreItemView: View {
       Text(item.name).font(Font.custom("Chalkboard SE", size: 18))
     }
     .padding(10)
-    .border(Color.gray, width: 1)
-    .background(viewModel.isItemPurchased(item: item) ? SELECTED_BG_COLOR : Color.white)
+    .overlay(RoundedRectangle(cornerRadius: 5).stroke(OUTLINE_COLOR, lineWidth: 1))
+    .background(RoundedRectangle(cornerRadius: 5).fill(viewModel.isItemPurchased(item: item) ? SELECTED_BG_COLOR : Color.white).shadow(color: Color.gray, radius: 2, x: 0, y: 2))
   }
 }
 
 struct StoreView_Previews: PreviewProvider {
   static var previews: some View {
-    StoreItemView(viewModel: ViewModel(), item:  PlaygroundItem(name: "Pjainting", price: 400, image: "hill_painting", category:  PlaygroundItemCategory.Wall)).environmentObject(ViewRouter())
+    StoreItemView(viewModel: ViewModel(), item:  PlaygroundItem(name: "Painting", price: 400, image: "hill_painting", category:  PlaygroundItemCategory.Wall)).environmentObject(ViewRouter())
   }
 }
