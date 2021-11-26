@@ -68,14 +68,17 @@ struct PlaygroundView: View {
               PlaygroundItemView(viewModel: viewModel, item: playgroundItem, isInUse: selectedItems[playgroundItem] ?? false)
                 .onTapGesture {
                   print(playgroundItem.name)
+
                   //                    print("Before: \(viewModel.isItemInUse(item: playgroundItem))")
                   viewModel.togglePlaygroundItem(item: playgroundItem)
                   // update visual display of whether item is selected
+                  
                   for item in viewModel.getAllPlaygroundItems() {
                     self.selectedItems[item] = viewModel.isItemInUse(item: item)
                   }
                   
                   //                    print("After: \(viewModel.isItemInUse(item: playgroundItem))")
+                  print(viewModel.playground.getAllDecorations())
                 }
             }
           }.padding(.horizontal, 15)
@@ -84,8 +87,11 @@ struct PlaygroundView: View {
         .overlay(RoundedRectangle(cornerRadius: 6.0).stroke(Color.gray))
         .padding(.horizontal, 20)
         .offset(y: -250)
-        .onAppear(){
+        .onAppear{
           self.viewModel.updateItemData(viewToUpdate: "playground")
+          for item in viewModel.getAllPlaygroundItems() {
+            self.selectedItems[item] = viewModel.isItemInUse(item: item)
+          }
         }
       }
     }

@@ -117,11 +117,16 @@ class ViewModel: ObservableObject {
   }
   
   
-  func togglePlaygroundItem(item: PlaygroundItem) {
+  func togglePlaygroundItem(item: PlaygroundItem){
     if (isItemInUse(item: item)) {
       playground.moveIntoStorage(itemCategory: item.category)
+      saveItemData(itemName: item.name, isPurchased: true, isEquipped: false)
     } else {
+      if let equippedItem = playground.getAllDecorations()[item.category]{
+        saveItemData(itemName: equippedItem.name, isPurchased: true, isEquipped: false)
+      }
       playground.moveIntoPlayground(item: item)
+      saveItemData(itemName: item.name, isPurchased: true, isEquipped: true)
     }
   }
   
