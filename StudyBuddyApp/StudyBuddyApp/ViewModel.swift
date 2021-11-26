@@ -75,12 +75,7 @@ class ViewModel: ObservableObject {
   }
   
   func isItemPurchased(item: PlaygroundItem) -> Bool {
-    let arr = store.getAllPurchasedPlaygroundItems()
-    //print(arr)
-    if arr.contains(item){
-      return true
-    }
-    return false
+    return store.getAllPurchasedPlaygroundItems().contains(item)
   }
   
   func isItemInUse(item: PlaygroundItem) -> Bool {
@@ -136,7 +131,6 @@ class ViewModel: ObservableObject {
         if (storeNeedUpdate){
           if result.count == 0{
             // init for first time only
-            print("lolz")
             var initialItems : [PlaygroundItem] = []
             for index in 1...5 {
               let painting = PlaygroundItem(name: "Painting \(index)", price: 400, image: "hill_painting", category: PlaygroundItemCategory.Wall)
@@ -170,8 +164,6 @@ class ViewModel: ObservableObject {
               let category = data.value(forKey: "category") as? String ?? ""
               let isPlayground = data.value(forKey: "isPlayground") as? Bool ?? false
               let isPurchased = data.value(forKey: "isPurchased") as? Bool ?? false
-              print(store.getAllPlaygroundItems().map{$0.name})
-              print(name)
               if (!isPurchased){
                 if (isPlayground){
                   let item = PlaygroundItem(name:name, price: price, image: image, category: PlaygroundItemCategory(rawValue: category)!)
@@ -183,7 +175,6 @@ class ViewModel: ObservableObject {
                 }
               }
             }
-            print("penis")
           }
           storeNeedUpdate = false
         }

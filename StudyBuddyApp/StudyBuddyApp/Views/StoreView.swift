@@ -10,6 +10,9 @@ import SwiftUI
 struct StoreView: View {
   @ObservedObject var viewModel: ViewModel
   @EnvironmentObject var viewRouter: ViewRouter
+  @State private var showingConfirmationAlert = false
+  @State private var selectedItem: PlaygroundItem? = nil
+
   let data = (1...10).map { "Item \($0)" }
   let CART_ICON_SIZE: CGFloat = 23.0
   
@@ -57,14 +60,25 @@ struct StoreView: View {
             ForEach(viewModel.getStoreItems(), id: \.self) { storeItem in
               StoreItemView(viewModel: viewModel,  item:  storeItem)
                 .onTapGesture {
-                  // TODO: BUY stuff
-                  if (self.viewModel.buyStorePlaygroundItem(item: storeItem)){
-                    self.viewModel.saveUserData()
-                    self.viewModel.saveItemData(itemName: storeItem.name, isPurchased: true, isEquipped: false)
-                    self.viewModel.updateUserData()
-                    self.viewModel.updateItemData(viewToUpdate: "store")
-                  }
-                  //print(storeItem.name)
+                  self.showingConfirmationAlert = true
+                  self.selectedItem = storeItem
+                }
+                .alert(isPresented: $showingConfirmationAlert) {
+                  Alert(
+                    title: Text("Would you like to purchase \(selectedItem!.name)?"),
+                    message: Text("This will cost \(storeItem.price) coins."),
+                    primaryButton: .default(Text("Purchase"), action: {
+                      if (self.viewModel.buyStorePlaygroundItem(item: storeItem)){
+                        self.viewModel.saveUserData()
+                        self.viewModel.saveItemData(itemName: storeItem.name, isPurchased: true, isEquipped: false)
+                        self.viewModel.updateUserData()
+                        self.viewModel.updateItemData(viewToUpdate: "store")
+                      }
+                    }),
+                    secondaryButton: .default(Text("Cancel"), action: {
+                      self.showingConfirmationAlert = false
+                    })
+                  )
                 }
             }
           }
