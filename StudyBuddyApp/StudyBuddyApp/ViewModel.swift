@@ -133,8 +133,8 @@ class ViewModel: ObservableObject {
             // init for first time only
             var initialItems : [PlaygroundItem] = []
             for index in 1...5 {
-              let painting = PlaygroundItem(name: "Painting \(index)", price: 400, image: "hill_painting", category: PlaygroundItemCategory.Wall)
-              let carpet = PlaygroundItem(name: "Lamp \(index)", price: 500, image: "yellow_lamp", category: PlaygroundItemCategory.Floor)
+              let painting = PlaygroundItem(name: "Painting \(index)", price: index * 20 + index, image: "hill_painting", category: PlaygroundItemCategory.Wall)
+              let carpet = PlaygroundItem(name: "Lamp \(index)", price: index  * 25 + index, image: "yellow_lamp", category: PlaygroundItemCategory.Floor)
               store.addPlaygroundItem(item: painting)
               store.addPlaygroundItem(item: carpet)
               initialItems.append(painting)
