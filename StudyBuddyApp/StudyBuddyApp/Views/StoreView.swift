@@ -65,6 +65,7 @@ struct StoreView: View {
                   if (viewModel.getCurrentMoney() < storeItem.price) {
                     self.showingInsufficientFundsAlert = true
                   } else {
+                    self.showingConfirmationAlert = true
                     self.selectedItem = storeItem
                     self.selectedItemCost = storeItem.price
                   }
