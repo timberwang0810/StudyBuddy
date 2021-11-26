@@ -8,36 +8,51 @@
 import SwiftUI
 
 struct StoreView: View {
+  @ObservedObject var viewModel: ViewModel
+  @EnvironmentObject var viewRouter: ViewRouter
   let data = (1...10).map { "Item \($0)" }
 
   let columns = [
       GridItem(.adaptive(minimum: 80))
   ]
-  var body: some View {
-    Text("hi")
-//           ScrollView {
-//               LazyVGrid(columns: Array(repeating: GridItem(), count: 4)) {
-//                   ForEach(data, id: \.self) { item in VStack(alignment: .leading, spacing: 10) {
-//                      Image("\(item.image)")
-//                              .resizable()
-//                              .frame(width: 150, height: 200)
-//                              .padding(4)
-//                              .cornerRadius(10)
+//  ForEach(viewModel.getStorageItems(), id: \.self) { playgroundItem in
+//    PlaygroundItemView(viewModel: viewModel, item: playgroundItem)
+//      .onTapGesture {
+//        print(playgroundItem.name)
+//        print("Before: \(viewModel.isItemInUse(item: playgroundItem))")
+//        viewModel.togglePlaygroundItem(item: playgroundItem)
+//        print("After: \(viewModel.isItemInUse(item: playgroundItem))")
 //
-//                      Text(item.name)
-//                      Text(item.price)
-//                   }
-//               }
-//           }
-      }
+  var body: some View {
+       ScrollView {
+        Text("Store").font(Font.custom("Chalkboard SE", size: 30))
+        LazyVGrid(columns: Array(repeating: GridItem(), count: 2), spacing: 20) {
+               ForEach(viewModel.getStoreItems(), id: \.self) { storeItem in
+               StoreItemView(viewModel: viewModel,  item:  storeItem)
+                      .onTapGesture {
+                        print(storeItem.name)
+               }
+           }
+       }
+    }
 }
 
 struct StoreView_Previews: PreviewProvider {
     static var previews: some View {
-        StoreView()
-      
+      StoreView(viewModel: ViewModel()).environmentObject(ViewRouter())
     }
 }
+  
+
+//VStack(alignment: .leading, spacing: 10) {
+//   Image("\(item.image)")
+//           .resizable()
+//           .frame(width: 150, height: 200)
+//           .padding(4)
+//           .cornerRadius(10)
+//
+//   Text(item.name)
+//   Text(item.price)
 
 //
 //var body: some View {
@@ -49,3 +64,4 @@ struct StoreView_Previews: PreviewProvider {
 //             }
 //         }
 //    }
+}

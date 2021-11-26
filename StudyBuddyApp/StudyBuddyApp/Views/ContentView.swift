@@ -21,6 +21,9 @@ struct ContentView: View {
                 RewardsView(viewModel: viewModel)
           case .playgroundPage:
             PlaygroundView(viewModel: viewModel)
+        case .storePage:
+          StoreView(viewModel: viewModel)
+          
         }
     }
 }
