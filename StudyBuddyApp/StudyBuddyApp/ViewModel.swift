@@ -67,36 +67,7 @@ class ViewModel: ObservableObject {
   }
   
   func getStoreItems() -> [PlaygroundItem]{
-    // Don't reinitialize store items if you already have
-//    if (store.getAllPlaygroundItems().count > 0) {
-//      return store.getAllPlaygroundItems()
-//    }
-//
-//    for index in 1...5 {
-//      let painting = PlaygroundItem(name: "Painting \(index)", price: 400+index, image: "hill_painting", category: PlaygroundItemCategory.Wall)
-//      let carpet = PlaygroundItem(name: "Lamp \(index)", price: 500, image: "yellow_lamp", category: PlaygroundItemCategory.Floor)
-//      store.addPlaygroundItem(item: painting)
-//      store.markPlaygroundItemAsPurchased(item: painting)
-//      store.addPlaygroundItem(item: carpet)
-//    }
     return store.getAllPlaygroundItems()
-  }
-  
-  func initializePlaygroundItems() {
-    if (playground.getNumNewItem() > 0) {
-      return
-    }
-    
-    print("INITIALIZE PLAYGROUND ITEMS")
-    
-    // Hardcode items for now
-    for index in 1...5 {
-      let painting = PlaygroundItem(name: "Painting \(index)", price: 400, image: "hill_painting", category: PlaygroundItemCategory.Wall)
-      let carpet = PlaygroundItem(name: "Lamp \(index)", price: 500, image: "yellow_lamp", category: PlaygroundItemCategory.Floor)
-      
-      playground.onNewItemPurchased(item: painting)
-      playground.onNewItemPurchased(item: carpet)
-    }
   }
   
   func getAllPlaygroundItems() -> [PlaygroundItem] {
