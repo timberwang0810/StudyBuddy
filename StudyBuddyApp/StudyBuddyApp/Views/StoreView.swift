@@ -84,9 +84,9 @@ struct StoreView: View {
                     title: Text("Would you like to purchase \(selectedItem!.name)?"),
                     message: Text("This will cost \(selectedItemCost) coins."),
                     primaryButton: .default(Text("Purchase"), action: {
-                      if (self.viewModel.buyStorePlaygroundItem(item: storeItem)){
+                      if (self.viewModel.buyStorePlaygroundItem(item: selectedItem!)){
                         self.viewModel.saveUserData()
-                        self.viewModel.saveItemData(itemName: storeItem.name, isPurchased: true, isEquipped: false)
+                        self.viewModel.saveItemData(itemName: selectedItem!.name, isPurchased: true, isEquipped: false)
                         self.viewModel.updateUserData()
                         self.viewModel.updateItemData(viewToUpdate: "store")
                       }
