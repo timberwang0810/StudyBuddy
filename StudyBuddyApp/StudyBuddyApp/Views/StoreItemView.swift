@@ -28,9 +28,8 @@ struct StoreItemView: View {
         .frame(width: 60.0, height: 60.0)
         .padding(10)
       Text(item.name).font(Font.custom("Chalkboard SE", size: 18))
-    }.padding(15)
-    .padding(.leading, 10)
-    .padding(.trailing, 10)
+    }
+    .padding(10)
     .border(Color.gray, width: 1)
     .background(viewModel.isItemPurchased(item: item) ? SELECTED_BG_COLOR : Color.white)
   }

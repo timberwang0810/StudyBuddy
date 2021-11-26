@@ -28,37 +28,39 @@ struct StoreView: View {
     ZStack {
       Color(red: 241 / 255, green: 241 / 255, blue: 241 / 255).edgesIgnoringSafeArea([.top])
       ScrollView {
-        VStack(spacing: 8) {
-          HStack(spacing: 10) {
-            Image(systemName: "cart")
-              .resizable()
-              .scaledToFill()
-              .frame(width: CART_ICON_SIZE, height: CART_ICON_SIZE)
-            Text("Store").font(Font.custom("Chalkboard SE", size: 30))
+        VStack {
+          VStack(spacing: 8) {
+            HStack(spacing: 10) {
+              Image(systemName: "cart")
+                .resizable()
+                .scaledToFill()
+                .frame(width: CART_ICON_SIZE, height: CART_ICON_SIZE)
+              Text("Store").font(Font.custom("Chalkboard SE", size: 30))
+            }
+            HStack{
+              Image("coin")
+                .resizable()
+                .frame(width: 20.0, height: 20.0)
+              Text("\(viewModel.getCurrentMoney())")
+                .font(Font.custom("Chalkboard SE", size: 24))
+                .baselineOffset(5)
+                .padding(.leading, 10)
+                .onAppear(perform: {
+                  self.viewModel.updateUserData()
+                })
+            }
+            .padding(.horizontal, 30)
+            .background( RoundedRectangle(cornerRadius: 8).fill(Color.white))
           }
-          HStack{
-            Image("coin")
-              .resizable()
-              .frame(width: 20.0, height: 20.0)
-            Text("\(viewModel.getCurrentMoney())")
-              .font(Font.custom("Chalkboard SE", size: 24))
-              .baselineOffset(5)
-              .padding(.leading, 10)
-              .onAppear(perform: {
-                self.viewModel.updateUserData()
-              })
+          LazyVGrid(columns: Array(repeating: GridItem(), count: 2), spacing: 20) {
+            ForEach(viewModel.getStoreItems(), id: \.self) { storeItem in
+              StoreItemView(viewModel: viewModel,  item:  storeItem)
+                .onTapGesture {
+                  print(storeItem.name)
+                }
+            }
           }
-          .padding(.horizontal, 30)
-          .background( RoundedRectangle(cornerRadius: 8).fill(Color.white))
-        }
-        LazyVGrid(columns: Array(repeating: GridItem(), count: 2), spacing: 20) {
-          ForEach(viewModel.getStoreItems(), id: \.self) { storeItem in
-            StoreItemView(viewModel: viewModel,  item:  storeItem)
-              .onTapGesture {
-                print(storeItem.name)
-              }
-          }
-        }
+        }.padding(.horizontal, 30)
       }
     }
   }
