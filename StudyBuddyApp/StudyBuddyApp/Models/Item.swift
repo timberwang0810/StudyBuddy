@@ -56,10 +56,12 @@ struct PlaygroundItem : Item{
   var price: Int
   var image: String
   var category : PlaygroundItemCategory
-  init(name: String, price: Int, image: String, category: PlaygroundItemCategory){
+    var position: (Float, Float)
+    init(name: String, price: Int, image: String, category: PlaygroundItemCategory, position: (Float, Float)){
     self.category = category
     self.name = name
     self.price = price
     self.image = image
+    self.position = position
   }
 }
