@@ -49,22 +49,20 @@ class PlaygroundScene: SKScene {
             print("Added " + item.name)
         }
         
+        updatePlaygroundItems()
+        
     }
     
     func updatePlaygroundItems() {
-        self.selectedItems = Dictionary(uniqueKeysWithValues: viewModel.getAllPlaygroundItems().map{($0, false)})
+        self.selectedItems = Dictionary(uniqueKeysWithValues: viewModel.getAllPlaygroundItems().map{($0, viewModel.isItemInUse(item: $0))})
         
         for (item, sprite) in self.itemSprites {
-            sprite.isHidden = selectedItems[item] ?? false
-            print(item.name + " is " + (sprite.isHidden ? "shown" : "hidden"))
+            sprite.isHidden = !(selectedItems[item] ?? false)
+            print(item.name + " is " + (sprite.isHidden ? "hidden" : "shown"))
         }
     }
     
-    func hideAllPlaygroundItems() {
-        for (_, sprite) in itemSprites {
-            sprite.isHidden = true
-        }
-    }
+
     
     
 }
