@@ -49,6 +49,10 @@ class ViewModel: ObservableObject {
     currentTask!.complete(timeRemaining: timeRemaining)
   }
   
+  func getTaskName() -> String{
+    return currentTask!.name
+  }
+  
   func getTaskReward() -> Int{
     return currentTask!.finalReward
   }
@@ -61,38 +65,39 @@ class ViewModel: ObservableObject {
   func getCurrentMoney() -> Int{
     return user.getMoney()
   }
-  
-  func initializePlaygroundItems() {
-    if (playground.getNumNewItem() > 0) {
-      return
-    }
-    
-    print("INITIALIZE PLAYGROUND ITEMS")
-    
-    // Hardcode items for now
-    for index in 1...5 {
-        let painting = PlaygroundItem(name: "Painting \(index)", price: 400, image: "hill_painting", category: PlaygroundItemCategory.Wall, position: (0.25, 0.7))
-        let carpet = PlaygroundItem(name: "Lamp \(index)", price: 500, image: "yellow_lamp", category: PlaygroundItemCategory.Floor, position: (0.75, 0.4))
-      
-      playground.onNewItemPurchased(item: painting)
-      playground.onNewItemPurchased(item: carpet)
-    }
+
+  func getStoreItems() -> [PlaygroundItem]{
+    return store.getAllPlaygroundItems().sorted(by: {$0.price < $1.price})
   }
   
   func getAllPlaygroundItems() -> [PlaygroundItem] {
     return playground.getAllDecorations().values + playground.getAllStorageItems()
   }
   
+  func isItemPurchased(item: PlaygroundItem) -> Bool {
+    return store.getAllPurchasedPlaygroundItems().contains(item)
+  }
+  
   func isItemInUse(item: PlaygroundItem) -> Bool {
     return item == playground.getAllDecorations()[item.category]
   }
   
-  func togglePlaygroundItem(item: PlaygroundItem) {
+  
+  func togglePlaygroundItem(item: PlaygroundItem){
     if (isItemInUse(item: item)) {
       playground.moveIntoStorage(itemCategory: item.category)
+      saveItemData(itemName: item.name, isPurchased: true, isEquipped: false)
     } else {
+      if let equippedItem = playground.getAllDecorations()[item.category]{
+        saveItemData(itemName: equippedItem.name, isPurchased: true, isEquipped: false)
+      }
       playground.moveIntoPlayground(item: item)
+      saveItemData(itemName: item.name, isPurchased: true, isEquipped: true)
     }
+  }
+  
+  func buyStorePlaygroundItem(item: PlaygroundItem) -> Bool{
+    return user.purchasePlaygroundItem(item: item, playground: playground, store: store)
   }
   
   func saveItemData(itemName: String, isPurchased: Bool, isEquipped: Bool){
@@ -120,15 +125,17 @@ class ViewModel: ObservableObject {
   func fetchItemData(modelName: String){
     let context = appDelegate.persistentContainer.viewContext
     if let entity = NSEntityDescription.entity(forEntityName: "ItemEntity", in: context){
-      let result = fetchRecordsForEntity("UserEntity", inManagedObjectContext: context)
+      let result = fetchRecordsForEntity("ItemEntity", inManagedObjectContext: context)
       switch (modelName){
-        case "store":
+      case "store":
+        if (storeNeedUpdate){
           if result.count == 0{
             // init for first time only
             var initialItems : [PlaygroundItem] = []
             for index in 1...5 {
-              let painting = PlaygroundItem(name: "Painting \(index)", price: 400, image: "hill_painting", category: PlaygroundItemCategory.Wall, position: (0.25, 0.7))
-              let carpet = PlaygroundItem(name: "Lamp \(index)", price: 500, image: "yellow_lamp", category: PlaygroundItemCategory.Floor, position: (0.75, 0.4))
+              let painting = PlaygroundItem(name: "Painting \(index)", price: index * 20 + index, image: "hill_painting", category: PlaygroundItemCategory.Wall, position: (0.25, 0.7))
+              let carpet = PlaygroundItem(name: "Lamp \(index)", price: index  * 25 + index, image: "yellow_lamp", category: PlaygroundItemCategory.Floor, position: (0.75, 0.4))
+
               store.addPlaygroundItem(item: painting)
               store.addPlaygroundItem(item: carpet)
               initialItems.append(painting)
@@ -171,8 +178,11 @@ class ViewModel: ObservableObject {
               }
             }
           }
-          break
-        case "playground":
+          storeNeedUpdate = false
+        }
+        break
+      case "playground":
+        if (playgroundNeedUpdate){
           for data in result{
             let name = data.value(forKey: "name") as? String ?? ""
             let price = data.value(forKey: "price") as? Int ?? 0
@@ -190,8 +200,11 @@ class ViewModel: ObservableObject {
               }
             }
           }
-          break
-        case "character":
+          playgroundNeedUpdate = false
+        }
+        break
+      case "character":
+        if (characterNeedUpdate){
           for data in result{
             let name = data.value(forKey: "name") as? String ?? ""
             let price = data.value(forKey: "price") as? Int ?? 0
@@ -208,36 +221,35 @@ class ViewModel: ObservableObject {
               }
             }
           }
-          break
-        default:
-          break
+          characterNeedUpdate = false
+        }
+        break
+      default:
+        break
       }
     }
   }
   
   func updateItemData(viewToUpdate: String){
     switch (viewToUpdate.lowercased()){
-      case "store":
-        if (storeNeedUpdate){
-          store = Store()
-          storeNeedUpdate = false
-        }
-        break
-      case "character":
-        if (characterNeedUpdate){
-          let name = character.getName()
-          character = Character(name: name)
-          characterNeedUpdate = false
-        }
-        break
-      case "playground":
-        if (playgroundNeedUpdate){
-          playground = Playground()
-          playgroundNeedUpdate = false
-        }
-        break
-      default:
-        break
+    case "store":
+      if (storeNeedUpdate){
+        store = Store()
+      }
+      break
+    case "character":
+      if (characterNeedUpdate){
+        let name = character.getName()
+        character = Character(name: name)
+      }
+      break
+    case "playground":
+      if (playgroundNeedUpdate){
+        playground = Playground()
+      }
+      break
+    default:
+      break
     }
     fetchItemData(modelName: viewToUpdate)
   }

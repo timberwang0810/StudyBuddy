@@ -21,6 +21,10 @@ struct TabbedView: View {
                 .tabItem {
                     Label("Playground", systemImage: "gamecontroller")
                 }
+          StoreView(viewModel: viewModel)
+                .tabItem {
+                    Label("Store", systemImage: "cart")
+                }
         }
     }
 }

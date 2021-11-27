@@ -19,6 +19,7 @@ enum Page {
     case doingTaskPage
     case rewardsPage
     case playgroundPage
+    case storePage
 }
 
 //struct ViewRouter_Previews: PreviewProvider {
