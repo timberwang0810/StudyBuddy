@@ -10,6 +10,11 @@ import SwiftUI
 struct StoreView: View {
   @ObservedObject var viewModel: ViewModel
   @EnvironmentObject var viewRouter: ViewRouter
+  @State private var showingConfirmationAlert = false
+  @State private var showingInsufficientFundsAlert = false
+  @State private var selectedItem: PlaygroundItem? = nil
+  @State private var selectedItemCost: Int = -1
+
   let data = (1...10).map { "Item \($0)" }
   let CART_ICON_SIZE: CGFloat = 23.0
   
@@ -53,18 +58,43 @@ struct StoreView: View {
             .padding(.horizontal, 30)
             .background( RoundedRectangle(cornerRadius: 5).fill(Color.white))
           }
+          .alert(isPresented: $showingInsufficientFundsAlert) {
+            Alert(
+              title: Text("Insufficient Funds"),
+              dismissButton: .default(Text("Okay"), action: {
+                self.showingInsufficientFundsAlert = false
+              })
+            )
+          }
+          
           LazyVGrid(columns: Array(repeating: GridItem(), count: 2), spacing: 20) {
             ForEach(viewModel.getStoreItems(), id: \.self) { storeItem in
               StoreItemView(viewModel: viewModel,  item:  storeItem)
                 .onTapGesture {
-                  // TODO: BUY stuff
-                  if (self.viewModel.buyStorePlaygroundItem(item: storeItem)){
-                    self.viewModel.saveUserData()
-                    self.viewModel.saveItemData(itemName: storeItem.name, isPurchased: true, isEquipped: false)
-                    self.viewModel.updateUserData()
-                    self.viewModel.updateItemData(viewToUpdate: "store")
+                  if (viewModel.getCurrentMoney() < storeItem.price) {
+                    self.showingInsufficientFundsAlert = true
+                  } else {
+                    self.showingConfirmationAlert = true
+                    self.selectedItem = storeItem
+                    self.selectedItemCost = storeItem.price
                   }
-                  //print(storeItem.name)
+                }
+                .alert(isPresented: $showingConfirmationAlert) {
+                  Alert(
+                    title: Text("Would you like to purchase \(selectedItem!.name)?"),
+                    message: Text("This will cost \(selectedItemCost) coins."),
+                    primaryButton: .default(Text("Purchase"), action: {
+                      if (self.viewModel.buyStorePlaygroundItem(item: selectedItem!)){
+                        self.viewModel.saveUserData()
+                        self.viewModel.saveItemData(itemName: selectedItem!.name, isPurchased: true, isEquipped: false)
+                        self.viewModel.updateUserData()
+                        self.viewModel.updateItemData(viewToUpdate: "store")
+                      }
+                    }),
+                    secondaryButton: .default(Text("Cancel"), action: {
+                      self.showingConfirmationAlert = false
+                    })
+                  )
                 }
             }
           }

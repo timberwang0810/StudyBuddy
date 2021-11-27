@@ -67,36 +67,7 @@ class ViewModel: ObservableObject {
   }
   
   func getStoreItems() -> [PlaygroundItem]{
-    // Don't reinitialize store items if you already have
-//    if (store.getAllPlaygroundItems().count > 0) {
-//      return store.getAllPlaygroundItems()
-//    }
-//
-//    for index in 1...5 {
-//      let painting = PlaygroundItem(name: "Painting \(index)", price: 400+index, image: "hill_painting", category: PlaygroundItemCategory.Wall)
-//      let carpet = PlaygroundItem(name: "Lamp \(index)", price: 500, image: "yellow_lamp", category: PlaygroundItemCategory.Floor)
-//      store.addPlaygroundItem(item: painting)
-//      store.markPlaygroundItemAsPurchased(item: painting)
-//      store.addPlaygroundItem(item: carpet)
-//    }
-    return store.getAllPlaygroundItems()
-  }
-  
-  func initializePlaygroundItems() {
-    if (playground.getNumNewItem() > 0) {
-      return
-    }
-    
-    print("INITIALIZE PLAYGROUND ITEMS")
-    
-    // Hardcode items for now
-    for index in 1...5 {
-      let painting = PlaygroundItem(name: "Painting \(index)", price: 400, image: "hill_painting", category: PlaygroundItemCategory.Wall)
-      let carpet = PlaygroundItem(name: "Lamp \(index)", price: 500, image: "yellow_lamp", category: PlaygroundItemCategory.Floor)
-      
-      playground.onNewItemPurchased(item: painting)
-      playground.onNewItemPurchased(item: carpet)
-    }
+    return store.getAllPlaygroundItems().sorted(by: {$0.price < $1.price})
   }
   
   func getAllPlaygroundItems() -> [PlaygroundItem] {
@@ -104,12 +75,7 @@ class ViewModel: ObservableObject {
   }
   
   func isItemPurchased(item: PlaygroundItem) -> Bool {
-    let arr = store.getAllPurchasedPlaygroundItems()
-    //print(arr)
-    if arr.contains(item){
-      return true
-    }
-    return false
+    return store.getAllPurchasedPlaygroundItems().contains(item)
   }
   
   func isItemInUse(item: PlaygroundItem) -> Bool {
@@ -165,11 +131,10 @@ class ViewModel: ObservableObject {
         if (storeNeedUpdate){
           if result.count == 0{
             // init for first time only
-            print("lolz")
             var initialItems : [PlaygroundItem] = []
             for index in 1...5 {
-              let painting = PlaygroundItem(name: "Painting \(index)", price: 400, image: "hill_painting", category: PlaygroundItemCategory.Wall)
-              let carpet = PlaygroundItem(name: "Lamp \(index)", price: 500, image: "yellow_lamp", category: PlaygroundItemCategory.Floor)
+              let painting = PlaygroundItem(name: "Painting \(index)", price: index * 20 + index, image: "hill_painting", category: PlaygroundItemCategory.Wall)
+              let carpet = PlaygroundItem(name: "Lamp \(index)", price: index  * 25 + index, image: "yellow_lamp", category: PlaygroundItemCategory.Floor)
               store.addPlaygroundItem(item: painting)
               store.addPlaygroundItem(item: carpet)
               initialItems.append(painting)
@@ -199,8 +164,6 @@ class ViewModel: ObservableObject {
               let category = data.value(forKey: "category") as? String ?? ""
               let isPlayground = data.value(forKey: "isPlayground") as? Bool ?? false
               let isPurchased = data.value(forKey: "isPurchased") as? Bool ?? false
-              print(store.getAllPlaygroundItems().map{$0.name})
-              print(name)
               if (!isPurchased){
                 if (isPlayground){
                   let item = PlaygroundItem(name:name, price: price, image: image, category: PlaygroundItemCategory(rawValue: category)!)
@@ -212,7 +175,6 @@ class ViewModel: ObservableObject {
                 }
               }
             }
-            print("penis")
           }
           storeNeedUpdate = false
         }
