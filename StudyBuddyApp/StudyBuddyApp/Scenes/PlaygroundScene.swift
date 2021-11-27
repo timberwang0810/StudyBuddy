@@ -20,8 +20,6 @@ class PlaygroundScene: SKScene {
         self.viewModel = viewModel
         self.selectedItems = Dictionary(uniqueKeysWithValues: viewModel.getAllPlaygroundItems().map{($0, false)})
         
-        print(selectedItems)
-        
         self.itemSprites = [:]
         super.init(size: size)
     }
@@ -39,14 +37,12 @@ class PlaygroundScene: SKScene {
         //bob.startAnimation()
         
         var spriteNode: SKSpriteNode
-        print("selectedItems: ", selectedItems)
         for (item, _) in selectedItems {
             spriteNode = SKSpriteNode(texture: SKTexture(imageNamed: item.image))
             spriteNode.position = CGPoint(x: frame.maxX * CGFloat(item.position.0), y: frame.maxY * CGFloat(item.position.1))
             
             itemSprites[item] = spriteNode
             addChild(spriteNode)
-            print("Added " + item.name)
         }
         
         updatePlaygroundItems()
@@ -58,7 +54,6 @@ class PlaygroundScene: SKScene {
         
         for (item, sprite) in self.itemSprites {
             sprite.isHidden = !(selectedItems[item] ?? false)
-            print(item.name + " is " + (sprite.isHidden ? "hidden" : "shown"))
         }
     }
     
