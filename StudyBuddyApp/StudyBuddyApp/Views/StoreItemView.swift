@@ -38,6 +38,6 @@ struct StoreItemView: View {
 
 struct StoreView_Previews: PreviewProvider {
   static var previews: some View {
-    StoreItemView(viewModel: ViewModel(), item:  PlaygroundItem(name: "Painting", price: 400, image: "hill_painting", category:  PlaygroundItemCategory.Wall)).environmentObject(ViewRouter())
+    StoreItemView(viewModel: ViewModel(), item:  PlaygroundItem(name: "Painting", price: 400, image: "hill_painting", category:  PlaygroundItemCategory.Wall, position: (200.0, 200.0))).environmentObject(ViewRouter())
   }
 }
