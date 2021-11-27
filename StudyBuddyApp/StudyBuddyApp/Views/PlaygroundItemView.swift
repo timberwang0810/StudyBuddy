@@ -26,6 +26,6 @@ struct PlaygroundItemView: View {
 
 struct PlaygroundItemView_Previews: PreviewProvider {
   static var previews: some View {
-    PlaygroundItemView(viewModel: ViewModel(), item: PlaygroundItem(name: "Painting", price: 400, image: "hill_painting", category: PlaygroundItemCategory.Wall), isInUse: true).environmentObject(ViewRouter())
+    PlaygroundItemView(viewModel: ViewModel(), item: PlaygroundItem(name: "Painting", price: 400, image: "hill_painting", category: PlaygroundItemCategory.Wall, position: (0.25, 0.7)), isInUse: true).environmentObject(ViewRouter())
   }
 }

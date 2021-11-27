@@ -71,8 +71,8 @@ class ViewModel: ObservableObject {
     
     // Hardcode items for now
     for index in 1...5 {
-      let painting = PlaygroundItem(name: "Painting \(index)", price: 400, image: "hill_painting", category: PlaygroundItemCategory.Wall)
-      let carpet = PlaygroundItem(name: "Lamp \(index)", price: 500, image: "yellow_lamp", category: PlaygroundItemCategory.Floor)
+        let painting = PlaygroundItem(name: "Painting \(index)", price: 400, image: "hill_painting", category: PlaygroundItemCategory.Wall, position: (0.25, 0.7))
+        let carpet = PlaygroundItem(name: "Lamp \(index)", price: 500, image: "yellow_lamp", category: PlaygroundItemCategory.Floor, position: (0.75, 0.4))
       
       playground.onNewItemPurchased(item: painting)
       playground.onNewItemPurchased(item: carpet)
@@ -127,8 +127,8 @@ class ViewModel: ObservableObject {
             // init for first time only
             var initialItems : [PlaygroundItem] = []
             for index in 1...5 {
-              let painting = PlaygroundItem(name: "Painting \(index)", price: 400, image: "hill_painting", category: PlaygroundItemCategory.Wall)
-              let carpet = PlaygroundItem(name: "Lamp \(index)", price: 500, image: "yellow_lamp", category: PlaygroundItemCategory.Floor)
+              let painting = PlaygroundItem(name: "Painting \(index)", price: 400, image: "hill_painting", category: PlaygroundItemCategory.Wall, position: (0.25, 0.7))
+              let carpet = PlaygroundItem(name: "Lamp \(index)", price: 500, image: "yellow_lamp", category: PlaygroundItemCategory.Floor, position: (0.75, 0.4))
               store.addPlaygroundItem(item: painting)
               store.addPlaygroundItem(item: carpet)
               initialItems.append(painting)
@@ -156,11 +156,12 @@ class ViewModel: ObservableObject {
               let price = data.value(forKey: "price") as? Int ?? 0
               let image = data.value(forKey: "image") as? String ?? ""
               let category = data.value(forKey: "category") as? String ?? ""
+              let position = data.value(forKey: "position") as? (Float, Float) ?? (-1.0, -1.0)
               let isPlayground = data.value(forKey: "isPlayground") as? Bool ?? false
               let isPurchased = data.value(forKey: "isPurchased") as? Bool ?? false
               if (!isPurchased){
                 if (isPlayground){
-                  let item = PlaygroundItem(name:name, price: price, image: image, category: PlaygroundItemCategory(rawValue: category)!)
+                    let item = PlaygroundItem(name:name, price: price, image: image, category: PlaygroundItemCategory(rawValue: category)!, position: position)
                   store.addPlaygroundItem(item: item)
                 }
                 else{
@@ -177,11 +178,12 @@ class ViewModel: ObservableObject {
             let price = data.value(forKey: "price") as? Int ?? 0
             let image = data.value(forKey: "image") as? String ?? ""
             let category = data.value(forKey: "category") as? String ?? ""
+            let position = data.value(forKey: "position") as? (Float, Float) ?? (-1.0, -1.0)
             let isPlayground = data.value(forKey: "isPlayground") as? Bool ?? false
             let isPurchased = data.value(forKey: "isPurchased") as? Bool ?? false
             let isEquipped = data.value(forKey: "isEquipped") as? Bool ?? false
             if (isPlayground && isPurchased){
-              let item = PlaygroundItem(name:name, price: price, image: image, category: PlaygroundItemCategory(rawValue: category)!)
+                let item = PlaygroundItem(name:name, price: price, image: image, category: PlaygroundItemCategory(rawValue: category)!, position: position)
               playground.onNewItemPurchased(item: item)
               if (isEquipped){
                 playground.moveIntoPlayground(item: item)
