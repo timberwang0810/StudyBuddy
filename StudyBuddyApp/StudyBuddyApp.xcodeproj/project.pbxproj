@@ -47,6 +47,7 @@
 		DA72C45427435B8900590E0B /* yellow_lamp.png in Resources */ = {isa = PBXBuildFile; fileRef = DA72C45227435B8900590E0B /* yellow_lamp.png */; };
 		DA72C45527435B8900590E0B /* hill_painting.png in Resources */ = {isa = PBXBuildFile; fileRef = DA72C45327435B8900590E0B /* hill_painting.png */; };
 		DA72C45A27438FC900590E0B /* bob_writing.atlas in Resources */ = {isa = PBXBuildFile; fileRef = DA72C45727438FC800590E0B /* bob_writing.atlas */; };
+		DA9CC3AD274B1F42001EB0F1 /* PlaygroundFurniture.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9CC3AC274B1F42001EB0F1 /* PlaygroundFurniture.swift */; };
 		DAC76B622746A6CA00F88AE7 /* bob_cheering.atlas in Resources */ = {isa = PBXBuildFile; fileRef = DAC76B612746A6CA00F88AE7 /* bob_cheering.atlas */; };
 		DAC76B642746A96700F88AE7 /* bob_sweeping.atlas in Resources */ = {isa = PBXBuildFile; fileRef = DAC76B632746A96700F88AE7 /* bob_sweeping.atlas */; };
 		DAD0E15C2739A69000EF1E88 /* DoingTaskScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD0E15B2739A69000EF1E88 /* DoingTaskScene.swift */; };
@@ -126,6 +127,7 @@
 		DA72C45227435B8900590E0B /* yellow_lamp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yellow_lamp.png; sourceTree = "<group>"; };
 		DA72C45327435B8900590E0B /* hill_painting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hill_painting.png; sourceTree = "<group>"; };
 		DA72C45727438FC800590E0B /* bob_writing.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = bob_writing.atlas; sourceTree = "<group>"; };
+		DA9CC3AC274B1F42001EB0F1 /* PlaygroundFurniture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaygroundFurniture.swift; sourceTree = "<group>"; };
 		DAC76B612746A6CA00F88AE7 /* bob_cheering.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = bob_cheering.atlas; sourceTree = "<group>"; };
 		DAC76B632746A96700F88AE7 /* bob_sweeping.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = bob_sweeping.atlas; sourceTree = "<group>"; };
 		DAD0E15B2739A69000EF1E88 /* DoingTaskScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoingTaskScene.swift; sourceTree = "<group>"; };
@@ -347,6 +349,7 @@
 			children = (
 				DAE29E07272E883A004835E2 /* AnimatedSprite.swift */,
 				DA12B2C7273C638F006F4BE6 /* SpriteTimer.swift */,
+				DA9CC3AC274B1F42001EB0F1 /* PlaygroundFurniture.swift */,
 			);
 			path = "SpriteKit Objects";
 			sourceTree = "<group>";
@@ -621,6 +624,7 @@
 				D1A4AFA6272738B300C92354 /* ContentView.swift in Sources */,
 				DAD0E15C2739A69000EF1E88 /* DoingTaskScene.swift in Sources */,
 				D908AAA427290D3E0095600F /* PlaygroundView.swift in Sources */,
+				DA9CC3AD274B1F42001EB0F1 /* PlaygroundFurniture.swift in Sources */,
 				DA12B2CA273C85E1006F4BE6 /* SceneStore.swift in Sources */,
 				DA12B2C8273C638F006F4BE6 /* SpriteTimer.swift in Sources */,
 			);

@@ -13,6 +13,8 @@ struct PlaygroundView: View {
   @EnvironmentObject var viewRouter: ViewRouter
   @State private var selectedItems: [PlaygroundItem: Bool] = [:]
   @State private var showMenu: Bool = false
+    
+    @ObservedObject var sceneStore: SceneStore
   
   let MENU_BG_COLOR = Color(red: 248 / 255, green: 208 / 255, blue: 116 / 255)
   let BOX_BG_COLOR = Color(red: 254 / 255, green: 250 / 255, blue: 224 / 255)
@@ -20,20 +22,19 @@ struct PlaygroundView: View {
   init(viewModel: ViewModel) {
     self.viewModel = viewModel
     
+    // Doing this to avoid 'self' used before all stored properties are initialized error
+    self.sceneStore = SceneStore(scene: SKScene())
+    
     // initialize state with currently selected items
     self.viewModel.initializePlaygroundItems()
     
     for item in viewModel.getAllPlaygroundItems() {
       self.selectedItems[item] = viewModel.isItemInUse(item: item)
     }
-  }
-  
-  
-  var scene: SKScene {
-    let scene = PlaygroundScene()
-    scene.size = CGSize(width: 400, height: 700)
-    scene.scaleMode = .fill
-    return scene
+    
+    self.sceneStore = SceneStore(
+        scene: PlaygroundScene(size: CGSize(width: 400, height: 700), selectedItems: selectedItems)
+    )
   }
   
   var body: some View {
@@ -70,7 +71,7 @@ struct PlaygroundView: View {
         //
         //        }
         
-        SpriteView(scene: scene)
+        SpriteView(scene: self.sceneStore.scene)
           .frame(width: 400.0, height: 700.0)
           .edgesIgnoringSafeArea(.all)
       }
@@ -88,6 +89,8 @@ struct PlaygroundView: View {
                   for item in viewModel.getAllPlaygroundItems() {
                     self.selectedItems[item] = viewModel.isItemInUse(item: item)
                   }
+                    let scene = self.sceneStore.scene as! PlaygroundScene
+                    scene.updatePlaygroundItems()
                   
                   //                    print("After: \(viewModel.isItemInUse(item: playgroundItem))")
                 }
