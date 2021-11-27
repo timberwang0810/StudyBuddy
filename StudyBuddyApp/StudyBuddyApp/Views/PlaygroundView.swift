@@ -31,9 +31,9 @@ struct PlaygroundView: View {
     for item in viewModel.getAllPlaygroundItems() {
       self.selectedItems[item] = viewModel.isItemInUse(item: item)
     }
-    
+        
     self.sceneStore = SceneStore(
-        scene: PlaygroundScene(size: CGSize(width: 400, height: 700), selectedItems: selectedItems)
+        scene: PlaygroundScene(size: CGSize(width: 400, height: 700), viewModel: self.viewModel)
     )
   }
   
@@ -89,8 +89,9 @@ struct PlaygroundView: View {
                   for item in viewModel.getAllPlaygroundItems() {
                     self.selectedItems[item] = viewModel.isItemInUse(item: item)
                   }
-                    let scene = self.sceneStore.scene as! PlaygroundScene
-                    scene.updatePlaygroundItems()
+                    //Update spritekit scene
+                  let scene = self.sceneStore.scene as! PlaygroundScene
+                  scene.updatePlaygroundItems()
                   
                   //                    print("After: \(viewModel.isItemInUse(item: playgroundItem))")
                 }

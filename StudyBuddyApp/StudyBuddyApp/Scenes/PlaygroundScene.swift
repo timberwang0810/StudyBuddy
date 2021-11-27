@@ -5,18 +5,22 @@
 //  Created by Jonathan Fischer on 10/31/21.
 //
 
-import UIKit
+import SwiftUI
 import SpriteKit
 
 
 class PlaygroundScene: SKScene {
     
+    @ObservedObject var viewModel: ViewModel
     var selectedItems: [PlaygroundItem: Bool]
     var itemSprites: [PlaygroundItem: SKSpriteNode]
 
     
-    init(size: CGSize, selectedItems: [PlaygroundItem : Bool]) {
-        self.selectedItems = selectedItems
+    init(size: CGSize, viewModel: ViewModel) {
+        self.viewModel = viewModel
+        self.selectedItems = Dictionary(uniqueKeysWithValues: viewModel.getAllPlaygroundItems().map{($0, false)})
+        
+        print(selectedItems)
         
         self.itemSprites = [:]
         super.init(size: size)
@@ -34,19 +38,25 @@ class PlaygroundScene: SKScene {
         //addChild(bob)
         //bob.startAnimation()
         
-        var spriteNode: PlaygroundFurniture
+        var spriteNode: SKSpriteNode
+        print("selectedItems: ", selectedItems)
         for (item, _) in selectedItems {
-            spriteNode = PlaygroundFurniture(sprite: SKTexture(imageNamed: item.image))
+            spriteNode = SKSpriteNode(texture: SKTexture(imageNamed: item.image))
+            spriteNode.position = CGPoint(x: frame.midX, y: frame.midY)
             
             itemSprites[item] = spriteNode
             addChild(spriteNode)
+            print("Added " + item.name)
         }
         
     }
     
     func updatePlaygroundItems() {
-        for (item, sprite) in itemSprites {
+        self.selectedItems = Dictionary(uniqueKeysWithValues: viewModel.getAllPlaygroundItems().map{($0, false)})
+        
+        for (item, sprite) in self.itemSprites {
             sprite.isHidden = selectedItems[item] ?? false
+            print(item.name + " is " + (sprite.isHidden ? "shown" : "hidden"))
         }
     }
     
