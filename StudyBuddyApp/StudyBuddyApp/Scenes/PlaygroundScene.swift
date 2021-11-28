@@ -39,7 +39,7 @@ class PlaygroundScene: SKScene {
         var spriteNode: SKSpriteNode
         for (item, _) in selectedItems {
             spriteNode = SKSpriteNode(texture: SKTexture(imageNamed: item.image))
-            spriteNode.position = CGPoint(x: frame.maxX * CGFloat(item.position.0), y: frame.maxY * CGFloat(item.position.1))
+            spriteNode.position = CGPoint(x: frame.maxX * CGFloat(item.position.x), y: frame.maxY * CGFloat(item.position.y))
             
             itemSprites[item] = spriteNode
             addChild(spriteNode)

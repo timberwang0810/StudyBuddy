@@ -51,13 +51,22 @@ struct AccessoryItem : Item{
   
 }
 
+struct Vector2 : Hashable {
+    let x: Float
+    let y: Float
+    init(x: Float, y: Float) {
+        self.x = x
+        self.y = y
+    }
+}
+
 struct PlaygroundItem : Item{
   var name: String
   var price: Int
   var image: String
   var category : PlaygroundItemCategory
-    var position: (Float, Float)
-    init(name: String, price: Int, image: String, category: PlaygroundItemCategory, position: (Float, Float)){
+    var position: Vector2
+    init(name: String, price: Int, image: String, category: PlaygroundItemCategory, position: Vector2){
     self.category = category
     self.name = name
     self.price = price

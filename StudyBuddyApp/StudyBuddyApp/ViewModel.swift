@@ -124,6 +124,7 @@ class ViewModel: ObservableObject {
   
   func fetchItemData(modelName: String){
     let context = appDelegate.persistentContainer.viewContext
+    
     if let entity = NSEntityDescription.entity(forEntityName: "ItemEntity", in: context){
       let result = fetchRecordsForEntity("ItemEntity", inManagedObjectContext: context)
       switch (modelName){
@@ -133,8 +134,8 @@ class ViewModel: ObservableObject {
             // init for first time only
             var initialItems : [PlaygroundItem] = []
             for index in 1...5 {
-              let painting = PlaygroundItem(name: "Painting \(index)", price: index * 20 + index, image: "hill_painting", category: PlaygroundItemCategory.Wall, position: (0.25, 0.7))
-              let carpet = PlaygroundItem(name: "Lamp \(index)", price: index  * 25 + index, image: "yellow_lamp", category: PlaygroundItemCategory.Floor, position: (0.75, 0.4))
+                let painting = PlaygroundItem(name: "Painting \(index)", price: index * 20 + index, image: "hill_painting", category: PlaygroundItemCategory.Wall, position: Vector2(x: 0.25, y: 0.7))
+                let carpet = PlaygroundItem(name: "Lamp \(index)", price: index  * 25 + index, image: "yellow_lamp", category: PlaygroundItemCategory.Floor, position: Vector2(x: 0.75, y: 0.4))
 
               store.addPlaygroundItem(item: painting)
               store.addPlaygroundItem(item: carpet)
@@ -145,6 +146,8 @@ class ViewModel: ObservableObject {
               let newItem = NSManagedObject(entity: entity, insertInto: context)
               newItem.setValue(item.name, forKey: "name")
               newItem.setValue(item.price, forKey: "price")
+              newItem.setValue(item.position.x, forKey: "pos_x")
+              newItem.setValue(item.position.y, forKey: "pos_y")
               newItem.setValue(item.category.rawValue, forKey: "category")
               newItem.setValue(item.image, forKey: "image")
               newItem.setValue(false, forKey: "isEquipped")
@@ -163,12 +166,13 @@ class ViewModel: ObservableObject {
               let price = data.value(forKey: "price") as? Int ?? 0
               let image = data.value(forKey: "image") as? String ?? ""
               let category = data.value(forKey: "category") as? String ?? ""
-              let position = data.value(forKey: "position") as? (Float, Float) ?? (-1.0, -1.0)
+              let pos_x = data.value(forKey: "pos_x") as? Float ?? 0
+              let pos_y = data.value(forKey: "pos_y") as? Float ?? 0
               let isPlayground = data.value(forKey: "isPlayground") as? Bool ?? false
               let isPurchased = data.value(forKey: "isPurchased") as? Bool ?? false
               if (!isPurchased){
                 if (isPlayground){
-                    let item = PlaygroundItem(name:name, price: price, image: image, category: PlaygroundItemCategory(rawValue: category)!, position: position)
+                  let item = PlaygroundItem(name:name, price: price, image: image, category: PlaygroundItemCategory(rawValue: category)!, position: Vector2(x: pos_x, y: pos_y))
                   store.addPlaygroundItem(item: item)
                 }
                 else{
@@ -188,12 +192,13 @@ class ViewModel: ObservableObject {
             let price = data.value(forKey: "price") as? Int ?? 0
             let image = data.value(forKey: "image") as? String ?? ""
             let category = data.value(forKey: "category") as? String ?? ""
-            let position = data.value(forKey: "position") as? (Float, Float) ?? (-1.0, -1.0)
+            let pos_x = data.value(forKey: "pos_x") as? Float ?? 0
+            let pos_y = data.value(forKey: "pos_y") as? Float ?? 0
             let isPlayground = data.value(forKey: "isPlayground") as? Bool ?? false
             let isPurchased = data.value(forKey: "isPurchased") as? Bool ?? false
             let isEquipped = data.value(forKey: "isEquipped") as? Bool ?? false
             if (isPlayground && isPurchased){
-                let item = PlaygroundItem(name:name, price: price, image: image, category: PlaygroundItemCategory(rawValue: category)!, position: position)
+                let item = PlaygroundItem(name:name, price: price, image: image, category: PlaygroundItemCategory(rawValue: category)!, position: Vector2(x: pos_x, y: pos_y))
               playground.onNewItemPurchased(item: item)
               if (isEquipped){
                 playground.moveIntoPlayground(item: item)
@@ -307,6 +312,21 @@ class ViewModel: ObservableObject {
     }
     
     return result
+  }
+  
+  func deleteEntityData(entityName: String){
+    let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: entityName)
+    let myPersistentStoreCoordinator = appDelegate.persistentContainer.persistentStoreCoordinator
+
+    let context = appDelegate.persistentContainer.viewContext
+
+    let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+
+    do {
+        try myPersistentStoreCoordinator.execute(deleteRequest, with: context)
+    } catch let error as NSError {
+      print(error.code)
+    }
   }
   
 }

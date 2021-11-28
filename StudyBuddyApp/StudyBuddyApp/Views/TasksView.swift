@@ -114,7 +114,10 @@ struct TasksView: View {
             .background(Color.white)
             .cornerRadius(10)
             .shadow(color: Color.gray, radius: 3, x: 0, y: 5)
-        }
+        }.onAppear(perform: {
+//          self.viewModel.deleteEntityData(entityName: "ItemEntity")
+//          self.viewModel.deleteEntityData(entityName: "UserEntity")
+        })
         
     }
 }

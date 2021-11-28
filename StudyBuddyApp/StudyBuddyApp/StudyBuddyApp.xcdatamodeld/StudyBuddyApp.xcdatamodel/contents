@@ -7,13 +7,15 @@
         <attribute name="isPlayground" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="isPurchased" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="pos_x" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="pos_y" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="price" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
     </entity>
     <entity name="UserEntity" representedClassName="UserEntity" syncable="YES" codeGenerationType="class">
         <attribute name="money" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
     </entity>
     <elements>
+        <element name="ItemEntity" positionX="-63" positionY="-9" width="128" height="164"/>
         <element name="UserEntity" positionX="-63" positionY="-18" width="128" height="44"/>
-        <element name="ItemEntity" positionX="-63" positionY="-9" width="128" height="134"/>
     </elements>
 </model>
