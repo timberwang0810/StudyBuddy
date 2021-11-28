@@ -30,7 +30,7 @@ struct PlaygroundView: View {
   }
   
   var body: some View {
-    ZStack{
+    ZStack {
       VStack {
         Spacer()
         HStack {

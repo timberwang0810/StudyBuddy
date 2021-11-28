@@ -48,7 +48,7 @@ class User{
     if (!store.hasAccessoryItem(item: item) || item.price > self.money){
       return false
     }
-    store.markAccessoryItemAsPurhcased(item: item)
+    store.markAccessoryItemAsPurchased(item: item)
     spendMoney(dec: item.price)
     character.onNewItemPurchased(item: item)
     return true

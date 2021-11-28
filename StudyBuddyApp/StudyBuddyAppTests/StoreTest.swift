@@ -99,7 +99,7 @@ class StoreTest: XCTestCase {
     XCTAssertFalse(sut.hasAccessoryItem(item: helmet))
 
 
-    sut.markAccessoryItemAsPurhcased(item: cowboy)
+    sut.markAccessoryItemAsPurchased(item: cowboy)
     XCTAssertEqual(sut.getAllAccessoryItems().count, 3)
     XCTAssertTrue(sut.getAllAccessoryItems().contains(beanie))
     XCTAssertTrue(sut.getAllAccessoryItems().contains(cowboy))
@@ -107,12 +107,12 @@ class StoreTest: XCTestCase {
     XCTAssertFalse(sut.hasAccessoryItem(item: cowboy))
     
     XCTAssertFalse(sut.getAllAccessoryItems().contains(helmet))
-    sut.markAccessoryItemAsPurhcased(item: helmet)
+    sut.markAccessoryItemAsPurchased(item: helmet)
     XCTAssertEqual(sut.getAllAccessoryItems().count, 3)
     XCTAssertFalse(sut.hasAccessoryItem(item: helmet))
     
-    sut.markAccessoryItemAsPurhcased(item: beanie)
-    sut.markAccessoryItemAsPurhcased(item: baseball)
+    sut.markAccessoryItemAsPurchased(item: beanie)
+    sut.markAccessoryItemAsPurchased(item: baseball)
     XCTAssertEqual(sut.getAllAccessoryItems().count, 3)
     XCTAssertFalse(sut.hasAccessoryItem(item: beanie))
     XCTAssertFalse(sut.hasAccessoryItem(item: baseball))
@@ -184,7 +184,7 @@ class StoreTest: XCTestCase {
     XCTAssertTrue(sut.hasAccessoryItem(item: cowboy))
     XCTAssertTrue(sut.hasAccessoryItem(item: baseball))
     
-    sut.markAccessoryItemAsPurhcased(item: (cowboy))
+    sut.markAccessoryItemAsPurchased(item: (cowboy))
     XCTAssertTrue(sut.hasAccessoryItem(item: beanie))
     XCTAssertFalse(sut.hasAccessoryItem(item: cowboy))
     XCTAssertTrue(sut.hasAccessoryItem(item: baseball))

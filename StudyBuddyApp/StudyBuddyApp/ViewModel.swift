@@ -67,6 +67,8 @@ class ViewModel: ObservableObject {
   }
 
   func getStoreItems() -> [PlaygroundItem]{
+    print(store.getAllPlaygroundItems().map{$0.name})
+    print(store.getAllPurchasedPlaygroundItems().map{$0.name})
     return store.getAllPlaygroundItems().sorted(by: {$0.price < $1.price})
   }
   
@@ -170,14 +172,18 @@ class ViewModel: ObservableObject {
               let pos_y = data.value(forKey: "pos_y") as? Float ?? 0
               let isPlayground = data.value(forKey: "isPlayground") as? Bool ?? false
               let isPurchased = data.value(forKey: "isPurchased") as? Bool ?? false
-              if (!isPurchased){
-                if (isPlayground){
-                  let item = PlaygroundItem(name:name, price: price, image: image, category: PlaygroundItemCategory(rawValue: category)!, position: Vector2(x: pos_x, y: pos_y))
-                  store.addPlaygroundItem(item: item)
+              if (isPlayground){
+                let item = PlaygroundItem(name:name, price: price, image: image, category: PlaygroundItemCategory(rawValue: category)!, position: Vector2(x: pos_x, y: pos_y))
+                store.addPlaygroundItem(item: item)
+                if (isPurchased){
+                  store.markPlaygroundItemAsPurchased(item: item)
                 }
-                else{
-                  let item = AccessoryItem(name:name, price: price, image: image, category: AccessoryItemCategory(rawValue: category)!)
-                  store.addAccessoryItem(item: item)
+              }
+              else{
+                let item = AccessoryItem(name:name, price: price, image: image, category: AccessoryItemCategory(rawValue: category)!)
+                store.addAccessoryItem(item: item)
+                if (isPurchased){
+                  store.markAccessoryItemAsPurchased(item: item)
                 }
               }
             }

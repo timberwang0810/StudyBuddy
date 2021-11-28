@@ -42,7 +42,7 @@ class Store {
     playgroundItems.append(item)
   }
   
-  public func markAccessoryItemAsPurhcased(item:AccessoryItem){
+  public func markAccessoryItemAsPurchased(item:AccessoryItem){
     for (index, element) in self.accessoryItems.enumerated(){
       if (element == item){
         self.accessoryItems.remove(at: index)
@@ -56,7 +56,9 @@ class Store {
     for (index, element) in self.playgroundItems.enumerated(){
       if (element == item){
         self.playgroundItems.remove(at: index)
+        print("haha")
         self.purchasedPlaygroundItems.append(item)
+        print(purchasedPlaygroundItems)
         break
       }
     }
