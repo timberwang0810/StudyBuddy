@@ -99,6 +99,7 @@
 		D1601251272F1629003BAD02 /* CharacterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterTest.swift; sourceTree = "<group>"; };
 		D1601256272F27CB003BAD02 /* PlaygroundTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaygroundTest.swift; sourceTree = "<group>"; };
 		D160125B272F7AC3003BAD02 /* StoreTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreTest.swift; sourceTree = "<group>"; };
+		D1764A08275569360021B6F3 /* StudyBuddyApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = StudyBuddyApp.entitlements; sourceTree = "<group>"; };
 		D1A4AF9E272738B300C92354 /* StudyBuddyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudyBuddyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1A4AFA1272738B300C92354 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D1A4AFA3272738B300C92354 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -225,6 +226,7 @@
 		D1A4AFA0272738B300C92354 /* StudyBuddyApp */ = {
 			isa = PBXGroup;
 			children = (
+				D1764A08275569360021B6F3 /* StudyBuddyApp.entitlements */,
 				D15A4F5C274CA96800B8A029 /* GSTimeInterval */,
 				DA68B5652735436B004C3EB7 /* Sprites */,
 				DAE29E06272E87F7004835E2 /* SpriteKit Objects */,
@@ -805,6 +807,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = StudyBuddyApp/StudyBuddyApp.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"StudyBuddyApp/Preview Content\"";
 				DEVELOPMENT_TEAM = HMHKQ2Q3HN;
@@ -816,6 +820,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = cmu.ios.StudyBuddyApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "StudyBuddyApp/StudyBuddyApp-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -830,6 +835,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = StudyBuddyApp/StudyBuddyApp.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"StudyBuddyApp/Preview Content\"";
 				DEVELOPMENT_TEAM = HMHKQ2Q3HN;
@@ -841,6 +848,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = cmu.ios.StudyBuddyApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "StudyBuddyApp/StudyBuddyApp-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
