@@ -16,13 +16,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     // Override point for customization after application launch.
-    UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
-        if success {
-            print("All set!")
-        } else if let error = error {
-            print(error.localizedDescription)
-        }
+    var hasUserAccepted : Bool = false
+    UNUserNotificationCenter.current().getNotificationSettings(completionHandler: { (setting) in
+      hasUserAccepted = setting.authorizationStatus == UNAuthorizationStatus.authorized
+    })
+    
+    if (!hasUserAccepted){
+      UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
+          if success {
+              print("All set!")
+          } else if let error = error {
+              print(error.localizedDescription)
+          }
+      }
     }
+    
     return true
   }
 
