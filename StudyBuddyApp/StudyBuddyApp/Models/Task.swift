@@ -64,6 +64,10 @@ class Task : Equatable{
   
   private static func calculateFinalRewards(baseReward: Int, timeEstimated: TimeInterval, timeActual: TimeInterval) -> Int{
     // TODO: Reward calculation function
-    return (baseReward * 5 / 4) + 3
+    return baseReward + calculateBonusRewards(baseReward: baseReward)
+  }
+  private static func calculateBonusRewards(baseReward: Int) -> Int{
+    // TODO: Reward calculation function
+    return (baseReward / 5) + 3
   }
 }
