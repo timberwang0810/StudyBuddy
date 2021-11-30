@@ -37,6 +37,7 @@
 		D908AA9A2729096A0095600F /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D908AA992729096A0095600F /* ViewModel.swift */; };
 		D908AA9F27290D2C0095600F /* TasksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D908AA9E27290D2C0095600F /* TasksView.swift */; };
 		D908AAA427290D3E0095600F /* PlaygroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D908AAA327290D3E0095600F /* PlaygroundView.swift */; };
+		D926DF782756CB790000253B /* bob_cheering_f2_launchscreen.png in Resources */ = {isa = PBXBuildFile; fileRef = D926DF772756CB790000253B /* bob_cheering_f2_launchscreen.png */; };
 		D9AD397D2730FA0F00408F59 /* RewardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AD397C2730FA0F00408F59 /* RewardsView.swift */; };
 		D9B3156C27435FDC002E8120 /* PlaygroundItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B3156B27435FDC002E8120 /* PlaygroundItemView.swift */; };
 		D9B31584274AF0E1002E8120 /* open-box.png in Resources */ = {isa = PBXBuildFile; fileRef = D9B31582274AF0E1002E8120 /* open-box.png */; };
@@ -117,6 +118,7 @@
 		D908AA992729096A0095600F /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		D908AA9E27290D2C0095600F /* TasksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksView.swift; sourceTree = "<group>"; };
 		D908AAA327290D3E0095600F /* PlaygroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaygroundView.swift; sourceTree = "<group>"; };
+		D926DF772756CB790000253B /* bob_cheering_f2_launchscreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bob_cheering_f2_launchscreen.png; sourceTree = "<group>"; };
 		D9AD397C2730FA0F00408F59 /* RewardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardsView.swift; sourceTree = "<group>"; };
 		D9B3156B27435FDC002E8120 /* PlaygroundItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaygroundItemView.swift; sourceTree = "<group>"; };
 		D9B31582274AF0E1002E8120 /* open-box.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "open-box.png"; sourceTree = "<group>"; };
@@ -234,6 +236,7 @@
 				D1A4AFA1272738B300C92354 /* AppDelegate.swift */,
 				D1A4AFA3272738B300C92354 /* SceneDelegate.swift */,
 				D1A4AFAA272738B900C92354 /* Assets.xcassets */,
+				D926DF772756CB790000253B /* bob_cheering_f2_launchscreen.png */,
 				D9B31589274AF11B002E8120 /* closed-box.png */,
 				D9B31582274AF0E1002E8120 /* open-box.png */,
 				38F3E0B527339A2D00E36A14 /* doingTask1.png */,
@@ -468,6 +471,7 @@
 			files = (
 				D1A4AFB1272738B900C92354 /* LaunchScreen.storyboard in Resources */,
 				DA72C45527435B8900590E0B /* hill_painting.png in Resources */,
+				D926DF782756CB790000253B /* bob_cheering_f2_launchscreen.png in Resources */,
 				DA72C45A27438FC900590E0B /* bob_writing.atlas in Resources */,
 				D1A4AFAE272738B900C92354 /* Preview Assets.xcassets in Resources */,
 				D1A4AFAB272738B900C92354 /* Assets.xcassets in Resources */,
