@@ -79,12 +79,11 @@ struct PlaygroundView: View {
         .overlay(RoundedRectangle(cornerRadius: 6.0).stroke(Color.gray))
         .padding(.horizontal, 20)
         .offset(y: -250)
-        .onAppear{
-          self.viewModel.updateItemData(viewToUpdate: "playground")
-          for item in viewModel.getAllPlaygroundItems() {
-            self.selectedItems[item] = viewModel.isItemInUse(item: item)
-          }
-        }
+      }
+    }.onAppear{
+      self.viewModel.updateItemData(viewToUpdate: "playground")
+      for item in viewModel.getAllPlaygroundItems() {
+        self.selectedItems[item] = viewModel.isItemInUse(item: item)
       }
     }
     
