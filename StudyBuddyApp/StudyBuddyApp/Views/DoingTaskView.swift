@@ -126,8 +126,8 @@ struct DoingTaskView: View {
       print("Moving to the background!")
       self.pauseTimer()
       let content = UNMutableNotificationContent()
-      content.title = "Hey Woah come back!"
-      content.body = "Hey! I'm doing my task and so should you! I'm not gonna do it unless you come back and do it with me!"
+      content.title = "Come back!🥺"
+      content.body = "Please come back and do task with me ~"
       content.sound = UNNotificationSound.default
 
       // show this notification five seconds from now
