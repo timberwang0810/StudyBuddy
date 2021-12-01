@@ -41,7 +41,7 @@ class DoingTaskScene: SKScene {
         bob.position = CGPoint(x: frame.midX, y: frame.midY)
         addChild(bob)
         
-        self.timer.position = CGPoint(x: 1.5 * frame.midX, y: 0.5 * frame.midY)
+        self.timer.position = CGPoint(x: 1.95 * frame.midX, y: 0.4 * frame.midY)
         addChild(self.timer)
         
         bob.startAnimation()
