@@ -56,9 +56,7 @@ class Store {
     for (index, element) in self.playgroundItems.enumerated(){
       if (element == item){
         self.playgroundItems.remove(at: index)
-        print("haha")
         self.purchasedPlaygroundItems.append(item)
-        print(purchasedPlaygroundItems)
         break
       }
     }

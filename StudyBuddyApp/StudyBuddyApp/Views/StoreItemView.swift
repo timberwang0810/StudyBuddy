@@ -10,7 +10,7 @@ import SwiftUI
 struct StoreItemView: View {
   @ObservedObject var viewModel: ViewModel
   var item : PlaygroundItem
-  let SELECTED_BG_COLOR = Color(red: 170 / 255, green: 208 / 255, blue: 161 / 255)
+  let SELECTED_BG_COLOR = Color(red: 210 / 255, green: 210 / 255, blue: 210 / 255)
   let OUTLINE_COLOR = Color(red: 203 / 255, green: 202 / 255, blue: 183 / 255)
   
   var body: some View {

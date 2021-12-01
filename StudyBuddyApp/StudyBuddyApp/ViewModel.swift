@@ -67,8 +67,6 @@ class ViewModel: ObservableObject {
   }
 
   func getStoreItems() -> [PlaygroundItem]{
-    print(store.getAllPlaygroundItems().map{$0.name})
-    print(store.getAllPurchasedPlaygroundItems().map{$0.name})
     return store.getAllPlaygroundItems().sorted(by: {$0.price < $1.price})
   }
   

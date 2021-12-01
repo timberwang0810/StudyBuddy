@@ -71,6 +71,11 @@ struct StoreView: View {
             ForEach(viewModel.getStoreItems(), id: \.self) { storeItem in
               StoreItemView(viewModel: viewModel,  item:  storeItem)
                 .onTapGesture {
+                  // Can't purchase bought store items
+                  if (viewModel.isItemPurchased(item: storeItem)) {
+                    return
+                  }
+                  
                   if (viewModel.getCurrentMoney() < storeItem.price) {
                     self.showingInsufficientFundsAlert = true
                   } else {
