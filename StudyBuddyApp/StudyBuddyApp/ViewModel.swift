@@ -57,6 +57,14 @@ class ViewModel: ObservableObject {
     return currentTask!.finalReward
   }
   
+  func getBaseReward() -> Int{
+    return currentTask!.baseReward
+  }
+  
+  func getBonusReward() -> Int{
+    return currentTask!.bonusReward
+  }
+  
   func earnMoney(inc: Int) {
     user.earnMoney(inc: inc)
     saveUserData()
