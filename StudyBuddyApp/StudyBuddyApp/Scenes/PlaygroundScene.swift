@@ -18,7 +18,7 @@ class PlaygroundScene: SKScene {
     
     init(size: CGSize, viewModel: ViewModel) {
         self.viewModel = viewModel
-        self.selectedItems = Dictionary(uniqueKeysWithValues: viewModel.getAllPlaygroundItems().map{($0, false)})
+        self.selectedItems = [:]
         
         self.itemSprites = [:]
         super.init(size: size)
@@ -30,6 +30,8 @@ class PlaygroundScene: SKScene {
         
     override func didMove(to view: SKView) {
         backgroundColor = SKColor.white
+        
+        self.selectedItems = Dictionary(uniqueKeysWithValues: viewModel.getAllPlaygroundItems().map{($0, viewModel.isItemInUse(item: $0))})
         
         //let bob = AnimatedSprite(timePerFrame: 1.0, atlasName: "bob_writing")
         //bob.position = CGPoint(x: frame.midX, y: frame.midY)
