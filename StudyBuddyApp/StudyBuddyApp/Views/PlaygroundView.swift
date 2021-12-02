@@ -27,6 +27,13 @@ struct PlaygroundView: View {
     self.sceneStore = SceneStore(
         scene: PlaygroundScene(size: CGSize(width: 400, height: 700), viewModel: self.viewModel)
     )
+    
+    self.viewModel.updateItemData(viewToUpdate: "playground")
+    for item in viewModel.getAllPlaygroundItems() {
+      self.selectedItems[item] = viewModel.isItemInUse(item: item)
+    }
+    let scene = self.sceneStore.scene as! PlaygroundScene
+    scene.updatePlaygroundItems()
   }
   
   var body: some View {
@@ -65,7 +72,7 @@ struct PlaygroundView: View {
                   // update visual display of whether item is selected
                   
                   for item in viewModel.getAllPlaygroundItems() {
-                    self.selectedItems[item] = viewModel.isItemInUse(item: item)
+                    self.selectedItems.updateValue(viewModel.isItemInUse(item: item), forKey: item)
                   }
                     //Update spritekit scene
                   let scene = self.sceneStore.scene as! PlaygroundScene
