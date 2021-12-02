@@ -14,6 +14,7 @@ class Task : Equatable{
   let duration: TimeInterval
   let category: TaskCategory
   var finalReward: Int
+  var bonusReward: Int
   
   private var hasTaskStarted: Bool
   private var hasTaskEnded: Bool
@@ -26,6 +27,7 @@ class Task : Equatable{
     self.hasTaskStarted = false
     self.hasTaskEnded = false
     self.finalReward = 0
+    self.bonusReward = 0
   }
   
   func start() {
@@ -43,6 +45,7 @@ class Task : Equatable{
     }
     self.hasTaskEnded = true
     self.finalReward = Task.calculateFinalRewards(baseReward: self.baseReward, timeEstimated: self.duration, timeActual: self.duration-timeRemaining)
+    self.bonusReward = Task.calculateBonusRewards(baseReward: self.baseReward)
   }
   
   public func isTaskStarted() -> Bool{
@@ -64,6 +67,10 @@ class Task : Equatable{
   
   private static func calculateFinalRewards(baseReward: Int, timeEstimated: TimeInterval, timeActual: TimeInterval) -> Int{
     // TODO: Reward calculation function
-    return (baseReward * 5 / 4) + 3
+    return baseReward + calculateBonusRewards(baseReward: baseReward)
+  }
+  private static func calculateBonusRewards(baseReward: Int) -> Int{
+    // TODO: Reward calculation function
+    return (baseReward / 5) + 3
   }
 }
