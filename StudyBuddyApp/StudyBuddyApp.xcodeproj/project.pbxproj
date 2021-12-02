@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		387A5EAD27598CE30024FFC5 /* bed.png in Resources */ = {isa = PBXBuildFile; fileRef = 387A5EAC27598CE30024FFC5 /* bed.png */; };
+		387A5EB227598CF10024FFC5 /* hanging_light.png in Resources */ = {isa = PBXBuildFile; fileRef = 387A5EB127598CF10024FFC5 /* hanging_light.png */; };
+		387A5EB727598CFD0024FFC5 /* tv.png in Resources */ = {isa = PBXBuildFile; fileRef = 387A5EB627598CFD0024FFC5 /* tv.png */; };
+		387A5EBC27598D2A0024FFC5 /* fridge.png in Resources */ = {isa = PBXBuildFile; fileRef = 387A5EBB27598D2A0024FFC5 /* fridge.png */; };
 		38A005C7274355E1004E5BD7 /* StoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A005C6274355E1004E5BD7 /* StoreView.swift */; };
 		38A006492746DBDC004E5BD7 /* StoreItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A006482746DBDC004E5BD7 /* StoreItemView.swift */; };
 		38F3E0B627339A2D00E36A14 /* doingTask1.png in Resources */ = {isa = PBXBuildFile; fileRef = 38F3E0B527339A2D00E36A14 /* doingTask1.png */; };
@@ -81,6 +85,10 @@
 /* Begin PBXFileReference section */
 		0EF48D5CC853A954D904CDE7 /* Pods_StudyBuddyApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StudyBuddyApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BA03A543A571531BA9E78C6 /* Pods-StudyBuddyApp-StudyBuddyAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StudyBuddyApp-StudyBuddyAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-StudyBuddyApp-StudyBuddyAppUITests/Pods-StudyBuddyApp-StudyBuddyAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		387A5EAC27598CE30024FFC5 /* bed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bed.png; sourceTree = "<group>"; };
+		387A5EB127598CF10024FFC5 /* hanging_light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hanging_light.png; sourceTree = "<group>"; };
+		387A5EB627598CFD0024FFC5 /* tv.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tv.png; sourceTree = "<group>"; };
+		387A5EBB27598D2A0024FFC5 /* fridge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fridge.png; sourceTree = "<group>"; };
 		38A005C6274355E1004E5BD7 /* StoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreView.swift; sourceTree = "<group>"; };
 		38A006482746DBDC004E5BD7 /* StoreItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreItemView.swift; sourceTree = "<group>"; };
 		38F3E0B527339A2D00E36A14 /* doingTask1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = doingTask1.png; sourceTree = "<group>"; };
@@ -342,6 +350,10 @@
 				DA06EE2D275757E700372F9B /* basic_rug.png */,
 				DA06EE2E275757E700372F9B /* classic_clock.png */,
 				DA06EE2C275757E700372F9B /* fancy_lamp.png */,
+				387A5EB127598CF10024FFC5 /* hanging_light.png */,
+				387A5EB627598CFD0024FFC5 /* tv.png */,
+				387A5EAC27598CE30024FFC5 /* bed.png */,
+				387A5EBB27598D2A0024FFC5 /* fridge.png */,
 				DA72C45327435B8900590E0B /* hill_painting.png */,
 				DA06EE322757591D00372F9B /* potted_cactus.png */,
 				DA72C45227435B8900590E0B /* yellow_lamp.png */,
@@ -482,14 +494,18 @@
 				DA06EE2F275757E700372F9B /* fancy_lamp.png in Resources */,
 				DA72C45527435B8900590E0B /* hill_painting.png in Resources */,
 				DA06EE30275757E700372F9B /* basic_rug.png in Resources */,
+				387A5EBC27598D2A0024FFC5 /* fridge.png in Resources */,
+				387A5EB727598CFD0024FFC5 /* tv.png in Resources */,
 				DA06EE31275757E700372F9B /* classic_clock.png in Resources */,
 				DA72C45A27438FC900590E0B /* bob_writing.atlas in Resources */,
 				D1A4AFAE272738B900C92354 /* Preview Assets.xcassets in Resources */,
+				387A5EB227598CF10024FFC5 /* hanging_light.png in Resources */,
 				D1A4AFAB272738B900C92354 /* Assets.xcassets in Resources */,
 				DAC76B622746A6CA00F88AE7 /* bob_cheering.atlas in Resources */,
 				38F3E0B627339A2D00E36A14 /* doingTask1.png in Resources */,
 				DA72C45427435B8900590E0B /* yellow_lamp.png in Resources */,
 				DAC76B642746A96700F88AE7 /* bob_sweeping.atlas in Resources */,
+				387A5EAD27598CE30024FFC5 /* bed.png in Resources */,
 				DA06EE332757591D00372F9B /* potted_cactus.png in Resources */,
 				D9B31584274AF0E1002E8120 /* open-box.png in Resources */,
 			);
