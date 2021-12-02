@@ -7,6 +7,7 @@
 
 import SwiftUI
 import SpriteKit
+import UserNotifications
 
 struct DoingTaskView: View {
   @ObservedObject var viewModel: ViewModel
@@ -34,6 +35,14 @@ struct DoingTaskView: View {
   }
   
   var body: some View {
+//    Text("Hey! I'm doing my task and so should you! I'm not gonna do it unless you come back and do it with me!")
+//        .onReceive(NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification)) { _ in
+//          self.pauseTimer()
+//        }
+//    Text("Welcome Back!")
+//        .onReceive(NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification)) { _ in
+//          self.startTimer()
+//        }
     ZStack{
       SpriteView(scene: sceneStore.scene)
         .frame(width: 400, height: 700)
@@ -113,6 +122,27 @@ struct DoingTaskView: View {
           }
         }
       }
+    }.onReceive(NotificationCenter.default.publisher(for: UIApplication.didEnterBackgroundNotification)) { _ in
+      print("Moving to the background!")
+      self.pauseTimer()
+      let content = UNMutableNotificationContent()
+      content.title = "Come back!🥺"
+      content.body = "Please come back and do task with me ~"
+      content.sound = UNNotificationSound.default
+
+      // show this notification five seconds from now
+      let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+
+      // choose a random identifier
+      let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+
+      // add our notification request
+      UNUserNotificationCenter.current().add(request)
+    }.onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)) { _ in
+      self.startTimer()
+    }.onReceive(NotificationCenter.default.publisher(for: UIApplication.willTerminateNotification)) { _ in
+      print("will terminate")
+      UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
     }
     
   }
