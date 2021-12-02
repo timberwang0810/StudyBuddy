@@ -62,7 +62,7 @@ class SpriteTimer: SKLabelNode {
     
     func updateText() {
         self.text = (self.timeRemaining < 0 ? "Overtime! " : "") + self.countDownString()
-        self.fontColor = self.timeRemaining < 0 ? .red : .black
+        self.fontColor = self.timeRemaining < 0 ? .gray : .black
     }
     
     func setRemainingTime(timeRemaining: Double) {
