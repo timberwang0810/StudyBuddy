@@ -61,6 +61,10 @@ class ViewModel: ObservableObject {
     return currentTask!.baseReward
   }
   
+  func getTimedReward() -> Int {
+    return currentTask!.timedReward
+  }
+  
   func getBonusReward() -> Int{
     return currentTask!.bonusReward
   }

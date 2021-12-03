@@ -34,7 +34,7 @@ struct RewardsView: View {
         .frame(width: 400.0, height: 400.0)
         .edgesIgnoringSafeArea(.all)
       
-      Text("Base Reward: \(viewModel.getBaseReward())")
+      Text("Timed Reward: \(viewModel.getTimedReward())")
         .font(Font.custom("Chalkboard SE", size: 24))
         .baselineOffset(5)
         .padding(.trailing, 5)
