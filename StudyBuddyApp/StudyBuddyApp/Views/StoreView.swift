@@ -61,7 +61,7 @@ struct StoreView: View {
           .alert(isPresented: $showingInsufficientFundsAlert) {
             Alert(
               title: Text("Insufficient Funds"),
-              dismissButton: .default(Text("Okay"), action: {
+              dismissButton: .default(Text("Ok"), action: {
                 self.showingInsufficientFundsAlert = false
               })
             )
