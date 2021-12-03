@@ -50,6 +50,8 @@
 		DA12B2CA273C85E1006F4BE6 /* SceneStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA12B2C9273C85E1006F4BE6 /* SceneStore.swift */; };
 		DA48A3A12759D0A8005A3570 /* bob_mopping.atlas in Resources */ = {isa = PBXBuildFile; fileRef = DA48A3A02759D0A8005A3570 /* bob_mopping.atlas */; };
 		DA48A3A42759D457005A3570 /* bob_writing.atlas in Resources */ = {isa = PBXBuildFile; fileRef = DA48A3A32759D457005A3570 /* bob_writing.atlas */; };
+		DA48A3A72759D9DB005A3570 /* bob_walking_right.atlas in Resources */ = {isa = PBXBuildFile; fileRef = DA48A3A52759D9DB005A3570 /* bob_walking_right.atlas */; };
+		DA48A3A82759D9DB005A3570 /* bob_waving.atlas in Resources */ = {isa = PBXBuildFile; fileRef = DA48A3A62759D9DB005A3570 /* bob_waving.atlas */; };
 		DA72C45427435B8900590E0B /* yellow_lamp.png in Resources */ = {isa = PBXBuildFile; fileRef = DA72C45227435B8900590E0B /* yellow_lamp.png */; };
 		DA72C45527435B8900590E0B /* hill_painting.png in Resources */ = {isa = PBXBuildFile; fileRef = DA72C45327435B8900590E0B /* hill_painting.png */; };
 		DAC76B622746A6CA00F88AE7 /* bob_cheering.atlas in Resources */ = {isa = PBXBuildFile; fileRef = DAC76B612746A6CA00F88AE7 /* bob_cheering.atlas */; };
@@ -134,6 +136,8 @@
 		DA12B2C9273C85E1006F4BE6 /* SceneStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneStore.swift; sourceTree = "<group>"; };
 		DA48A3A02759D0A8005A3570 /* bob_mopping.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = bob_mopping.atlas; sourceTree = "<group>"; };
 		DA48A3A32759D457005A3570 /* bob_writing.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = bob_writing.atlas; sourceTree = "<group>"; };
+		DA48A3A52759D9DB005A3570 /* bob_walking_right.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = bob_walking_right.atlas; sourceTree = "<group>"; };
+		DA48A3A62759D9DB005A3570 /* bob_waving.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = bob_waving.atlas; sourceTree = "<group>"; };
 		DA72C45227435B8900590E0B /* yellow_lamp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yellow_lamp.png; sourceTree = "<group>"; };
 		DA72C45327435B8900590E0B /* hill_painting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hill_painting.png; sourceTree = "<group>"; };
 		DAC76B612746A6CA00F88AE7 /* bob_cheering.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = bob_cheering.atlas; sourceTree = "<group>"; };
@@ -329,6 +333,8 @@
 		DA68B56627354371004C3EB7 /* Bob */ = {
 			isa = PBXGroup;
 			children = (
+				DA48A3A52759D9DB005A3570 /* bob_walking_right.atlas */,
+				DA48A3A62759D9DB005A3570 /* bob_waving.atlas */,
 				DA48A3A32759D457005A3570 /* bob_writing.atlas */,
 				DA48A3A02759D0A8005A3570 /* bob_mopping.atlas */,
 				DAC76B612746A6CA00F88AE7 /* bob_cheering.atlas */,
@@ -477,6 +483,7 @@
 				D926DF8927573A030000253B /* bob_waving_f1.png in Resources */,
 				D1A4AFB1272738B900C92354 /* LaunchScreen.storyboard in Resources */,
 				DA48A3A42759D457005A3570 /* bob_writing.atlas in Resources */,
+				DA48A3A72759D9DB005A3570 /* bob_walking_right.atlas in Resources */,
 				DA72C45527435B8900590E0B /* hill_painting.png in Resources */,
 				D926DF782756CB790000253B /* bob_cheering_f2_launchscreen.png in Resources */,
 				D1A4AFAE272738B900C92354 /* Preview Assets.xcassets in Resources */,
@@ -484,6 +491,7 @@
 				DAC76B622746A6CA00F88AE7 /* bob_cheering.atlas in Resources */,
 				38F3E0B627339A2D00E36A14 /* doingTask1.png in Resources */,
 				DA72C45427435B8900590E0B /* yellow_lamp.png in Resources */,
+				DA48A3A82759D9DB005A3570 /* bob_waving.atlas in Resources */,
 				D9B31584274AF0E1002E8120 /* open-box.png in Resources */,
 				DA48A3A12759D0A8005A3570 /* bob_mopping.atlas in Resources */,
 			);
