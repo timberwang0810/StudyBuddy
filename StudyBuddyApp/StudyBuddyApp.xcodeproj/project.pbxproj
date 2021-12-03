@@ -50,8 +50,9 @@
 		DA12B2CA273C85E1006F4BE6 /* SceneStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA12B2C9273C85E1006F4BE6 /* SceneStore.swift */; };
 		DA48A3A12759D0A8005A3570 /* bob_mopping.atlas in Resources */ = {isa = PBXBuildFile; fileRef = DA48A3A02759D0A8005A3570 /* bob_mopping.atlas */; };
 		DA48A3A42759D457005A3570 /* bob_writing.atlas in Resources */ = {isa = PBXBuildFile; fileRef = DA48A3A32759D457005A3570 /* bob_writing.atlas */; };
-		DA48A3A72759D9DB005A3570 /* bob_walking_right.atlas in Resources */ = {isa = PBXBuildFile; fileRef = DA48A3A52759D9DB005A3570 /* bob_walking_right.atlas */; };
 		DA48A3A82759D9DB005A3570 /* bob_waving.atlas in Resources */ = {isa = PBXBuildFile; fileRef = DA48A3A62759D9DB005A3570 /* bob_waving.atlas */; };
+		DA48A3B0275A1065005A3570 /* bob_standing.atlas in Resources */ = {isa = PBXBuildFile; fileRef = DA48A3AF275A1065005A3570 /* bob_standing.atlas */; };
+		DA48A3B2275A10CD005A3570 /* BobPlayground.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA48A3B1275A10CD005A3570 /* BobPlayground.swift */; };
 		DA72C45427435B8900590E0B /* yellow_lamp.png in Resources */ = {isa = PBXBuildFile; fileRef = DA72C45227435B8900590E0B /* yellow_lamp.png */; };
 		DA72C45527435B8900590E0B /* hill_painting.png in Resources */ = {isa = PBXBuildFile; fileRef = DA72C45327435B8900590E0B /* hill_painting.png */; };
 		DAC76B622746A6CA00F88AE7 /* bob_cheering.atlas in Resources */ = {isa = PBXBuildFile; fileRef = DAC76B612746A6CA00F88AE7 /* bob_cheering.atlas */; };
@@ -136,8 +137,11 @@
 		DA12B2C9273C85E1006F4BE6 /* SceneStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneStore.swift; sourceTree = "<group>"; };
 		DA48A3A02759D0A8005A3570 /* bob_mopping.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = bob_mopping.atlas; sourceTree = "<group>"; };
 		DA48A3A32759D457005A3570 /* bob_writing.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = bob_writing.atlas; sourceTree = "<group>"; };
-		DA48A3A52759D9DB005A3570 /* bob_walking_right.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = bob_walking_right.atlas; sourceTree = "<group>"; };
 		DA48A3A62759D9DB005A3570 /* bob_waving.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = bob_waving.atlas; sourceTree = "<group>"; };
+		DA48A3AF275A1065005A3570 /* bob_standing.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = bob_standing.atlas; sourceTree = "<group>"; };
+		DA48A3B1275A10CD005A3570 /* BobPlayground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BobPlayground.swift; sourceTree = "<group>"; };
+		DA48A3B5275A1328005A3570 /* bob_walking_left.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = bob_walking_left.atlas; sourceTree = "<group>"; };
+		DA48A3B6275A1335005A3570 /* bob_walking_right.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = bob_walking_right.atlas; sourceTree = "<group>"; };
 		DA72C45227435B8900590E0B /* yellow_lamp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yellow_lamp.png; sourceTree = "<group>"; };
 		DA72C45327435B8900590E0B /* hill_painting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hill_painting.png; sourceTree = "<group>"; };
 		DAC76B612746A6CA00F88AE7 /* bob_cheering.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = bob_cheering.atlas; sourceTree = "<group>"; };
@@ -333,7 +337,9 @@
 		DA68B56627354371004C3EB7 /* Bob */ = {
 			isa = PBXGroup;
 			children = (
-				DA48A3A52759D9DB005A3570 /* bob_walking_right.atlas */,
+				DA48A3AF275A1065005A3570 /* bob_standing.atlas */,
+				DA48A3B6275A1335005A3570 /* bob_walking_right.atlas */,
+				DA48A3B5275A1328005A3570 /* bob_walking_left.atlas */,
 				DA48A3A62759D9DB005A3570 /* bob_waving.atlas */,
 				DA48A3A32759D457005A3570 /* bob_writing.atlas */,
 				DA48A3A02759D0A8005A3570 /* bob_mopping.atlas */,
@@ -367,6 +373,7 @@
 			children = (
 				DAE29E07272E883A004835E2 /* AnimatedSprite.swift */,
 				DA12B2C7273C638F006F4BE6 /* SpriteTimer.swift */,
+				DA48A3B1275A10CD005A3570 /* BobPlayground.swift */,
 			);
 			path = "SpriteKit Objects";
 			sourceTree = "<group>";
@@ -481,9 +488,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D926DF8927573A030000253B /* bob_waving_f1.png in Resources */,
+				DA48A3B0275A1065005A3570 /* bob_standing.atlas in Resources */,
 				D1A4AFB1272738B900C92354 /* LaunchScreen.storyboard in Resources */,
 				DA48A3A42759D457005A3570 /* bob_writing.atlas in Resources */,
-				DA48A3A72759D9DB005A3570 /* bob_walking_right.atlas in Resources */,
 				DA72C45527435B8900590E0B /* hill_painting.png in Resources */,
 				D926DF782756CB790000253B /* bob_cheering_f2_launchscreen.png in Resources */,
 				D1A4AFAE272738B900C92354 /* Preview Assets.xcassets in Resources */,
@@ -637,6 +644,7 @@
 				DAE29E08272E883A004835E2 /* AnimatedSprite.swift in Sources */,
 				D1A4AFA4272738B300C92354 /* SceneDelegate.swift in Sources */,
 				38A005C7274355E1004E5BD7 /* StoreView.swift in Sources */,
+				DA48A3B2275A10CD005A3570 /* BobPlayground.swift in Sources */,
 				D160122E272DC7B2003BAD02 /* Character.swift in Sources */,
 				38A006492746DBDC004E5BD7 /* StoreItemView.swift in Sources */,
 				D160120B272B1622003BAD02 /* User.swift in Sources */,
