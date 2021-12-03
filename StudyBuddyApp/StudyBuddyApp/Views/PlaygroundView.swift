@@ -44,6 +44,8 @@ struct PlaygroundView: View {
           Spacer()
           Button(action: {
             self.showMenu.toggle()
+            let scene = self.sceneStore.scene as! PlaygroundScene
+            scene.toggleBobVisibility()
           }) {
             Image(self.showMenu ? "open-box" : "closed-box")
               .resizable()

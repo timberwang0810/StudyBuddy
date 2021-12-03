@@ -15,10 +15,10 @@ class DoingTaskScene: SKScene {
     
     let atlases:[TaskCategory:String] = [
         TaskCategory.STUDY: "bob_writing",
-        TaskCategory.CHORES: "bob_sweeping",
         TaskCategory.WORK: "bob_writing",
-        TaskCategory.EXERCISE: "bob_sweeping",
-        TaskCategory.OTHER: "bob_sweeping"
+        TaskCategory.CHORES: "bob_mopping",
+        TaskCategory.EXERCISE: "bob_mopping",
+        TaskCategory.OTHER: "bob_mopping"
     ]
     
     init(size: CGSize, duration: Double, taskCategory: TaskCategory) {
