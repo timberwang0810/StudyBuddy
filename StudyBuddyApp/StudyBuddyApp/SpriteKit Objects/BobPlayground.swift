@@ -37,6 +37,8 @@ class BobPlayground: SKSpriteNode {
                 
         super.init(texture: atlases[self.state]!.frames[0], color: SKColor.clear, size: atlases[self.state]!.frames[0].size())
         
+        self.zPosition = 1
+        
         self.actions = [
             BobState.STANDING: SKAction.sequence([
                 SKAction.run { print("Running state: Standing") },
