@@ -117,6 +117,8 @@ struct TasksView: View {
         }.onAppear(perform: {
 //          self.viewModel.deleteEntityData(entityName: "ItemEntity")
 //          self.viewModel.deleteEntityData(entityName: "UserEntity")
+//          self.viewModel.earnMoney(inc: 5000)
+//          self.viewModel.saveUserData()
         })
         
     }

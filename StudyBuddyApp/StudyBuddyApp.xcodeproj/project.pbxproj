@@ -347,16 +347,16 @@
 		DA72C45127435B7500590E0B /* Playground Items */ = {
 			isa = PBXGroup;
 			children = (
+				DA72C45327435B8900590E0B /* hill_painting.png */,
+				DA72C45227435B8900590E0B /* yellow_lamp.png */,
 				DA06EE2D275757E700372F9B /* basic_rug.png */,
 				DA06EE2E275757E700372F9B /* classic_clock.png */,
 				DA06EE2C275757E700372F9B /* fancy_lamp.png */,
-				DA72C45327435B8900590E0B /* hill_painting.png */,
 				387A5EC3275991E80024FFC5 /* fridge.png */,
 				387A5EC8275991EC0024FFC5 /* bed.png */,
 				387A5ED2275991F30024FFC5 /* tv.png */,
 				387A5ECD275991EF0024FFC5 /* hanging_light.png */,
 				DA06EE322757591D00372F9B /* potted_cactus.png */,
-				DA72C45227435B8900590E0B /* yellow_lamp.png */,
 			);
 			path = "Playground Items";
 			sourceTree = "<group>";
