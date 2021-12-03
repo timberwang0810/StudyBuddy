@@ -210,4 +210,14 @@ class StoreTest: XCTestCase {
     XCTAssertFalse(sut.hasPlaygroundItem(item: fan))
     XCTAssertTrue(sut.hasPlaygroundItem(item: carpet))
   }
+  func testGetAllPurchasedPlaygroundItem() throws {
+    XCTAssertEqual(sut.getAllPurchasedPlaygroundItems(), [])
+    sut.addPlaygroundItem(item: lamp)
+    sut.addPlaygroundItem(item: fan)
+    XCTAssertEqual(sut.getAllPurchasedPlaygroundItems(), [])
+    sut.markPlaygroundItemAsPurchased(item: lamp)
+    XCTAssertEqual(sut.getAllPurchasedPlaygroundItems(), [lamp])
+    sut.markPlaygroundItemAsPurchased(item: fan)
+    XCTAssertEqual(sut.getAllPurchasedPlaygroundItems(), [lamp, fan])
+  }
 }
