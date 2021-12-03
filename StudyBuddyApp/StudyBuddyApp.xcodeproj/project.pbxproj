@@ -53,6 +53,8 @@
 		DA48A3A82759D9DB005A3570 /* bob_waving.atlas in Resources */ = {isa = PBXBuildFile; fileRef = DA48A3A62759D9DB005A3570 /* bob_waving.atlas */; };
 		DA48A3B0275A1065005A3570 /* bob_standing.atlas in Resources */ = {isa = PBXBuildFile; fileRef = DA48A3AF275A1065005A3570 /* bob_standing.atlas */; };
 		DA48A3B2275A10CD005A3570 /* BobPlayground.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA48A3B1275A10CD005A3570 /* BobPlayground.swift */; };
+		DA48A3B8275A4648005A3570 /* bob_walking_right.atlas in Resources */ = {isa = PBXBuildFile; fileRef = DA48A3B7275A4648005A3570 /* bob_walking_right.atlas */; };
+		DA48A3BA275A467B005A3570 /* bob_walking_left.atlas in Resources */ = {isa = PBXBuildFile; fileRef = DA48A3B9275A467B005A3570 /* bob_walking_left.atlas */; };
 		DA72C45427435B8900590E0B /* yellow_lamp.png in Resources */ = {isa = PBXBuildFile; fileRef = DA72C45227435B8900590E0B /* yellow_lamp.png */; };
 		DA72C45527435B8900590E0B /* hill_painting.png in Resources */ = {isa = PBXBuildFile; fileRef = DA72C45327435B8900590E0B /* hill_painting.png */; };
 		DAC76B622746A6CA00F88AE7 /* bob_cheering.atlas in Resources */ = {isa = PBXBuildFile; fileRef = DAC76B612746A6CA00F88AE7 /* bob_cheering.atlas */; };
@@ -140,8 +142,8 @@
 		DA48A3A62759D9DB005A3570 /* bob_waving.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = bob_waving.atlas; sourceTree = "<group>"; };
 		DA48A3AF275A1065005A3570 /* bob_standing.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = bob_standing.atlas; sourceTree = "<group>"; };
 		DA48A3B1275A10CD005A3570 /* BobPlayground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BobPlayground.swift; sourceTree = "<group>"; };
-		DA48A3B5275A1328005A3570 /* bob_walking_left.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = bob_walking_left.atlas; sourceTree = "<group>"; };
-		DA48A3B6275A1335005A3570 /* bob_walking_right.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = bob_walking_right.atlas; sourceTree = "<group>"; };
+		DA48A3B7275A4648005A3570 /* bob_walking_right.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = bob_walking_right.atlas; sourceTree = "<group>"; };
+		DA48A3B9275A467B005A3570 /* bob_walking_left.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = bob_walking_left.atlas; sourceTree = "<group>"; };
 		DA72C45227435B8900590E0B /* yellow_lamp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yellow_lamp.png; sourceTree = "<group>"; };
 		DA72C45327435B8900590E0B /* hill_painting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hill_painting.png; sourceTree = "<group>"; };
 		DAC76B612746A6CA00F88AE7 /* bob_cheering.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = bob_cheering.atlas; sourceTree = "<group>"; };
@@ -338,8 +340,8 @@
 			isa = PBXGroup;
 			children = (
 				DA48A3AF275A1065005A3570 /* bob_standing.atlas */,
-				DA48A3B6275A1335005A3570 /* bob_walking_right.atlas */,
-				DA48A3B5275A1328005A3570 /* bob_walking_left.atlas */,
+				DA48A3B7275A4648005A3570 /* bob_walking_right.atlas */,
+				DA48A3B9275A467B005A3570 /* bob_walking_left.atlas */,
 				DA48A3A62759D9DB005A3570 /* bob_waving.atlas */,
 				DA48A3A32759D457005A3570 /* bob_writing.atlas */,
 				DA48A3A02759D0A8005A3570 /* bob_mopping.atlas */,
@@ -489,11 +491,13 @@
 			files = (
 				D926DF8927573A030000253B /* bob_waving_f1.png in Resources */,
 				DA48A3B0275A1065005A3570 /* bob_standing.atlas in Resources */,
+				DA48A3BA275A467B005A3570 /* bob_walking_left.atlas in Resources */,
 				D1A4AFB1272738B900C92354 /* LaunchScreen.storyboard in Resources */,
 				DA48A3A42759D457005A3570 /* bob_writing.atlas in Resources */,
 				DA72C45527435B8900590E0B /* hill_painting.png in Resources */,
 				D926DF782756CB790000253B /* bob_cheering_f2_launchscreen.png in Resources */,
 				D1A4AFAE272738B900C92354 /* Preview Assets.xcassets in Resources */,
+				DA48A3B8275A4648005A3570 /* bob_walking_right.atlas in Resources */,
 				D1A4AFAB272738B900C92354 /* Assets.xcassets in Resources */,
 				DAC76B622746A6CA00F88AE7 /* bob_cheering.atlas in Resources */,
 				38F3E0B627339A2D00E36A14 /* doingTask1.png in Resources */,

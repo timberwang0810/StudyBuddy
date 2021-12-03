@@ -16,12 +16,86 @@ enum BobState {
 }
 
 class BobPlayground: SKSpriteNode {
+    
+    var state: BobState
+    let midX: CGFloat
+    
+    var actions:[BobState: SKAction] = [:]
+    var mainLoop: SKAction = SKAction()
 
-    let atlases:[BobState: String] = [
-        BobState.STANDING: "bob_standing",
-        BobState.WALKING_RIGHT: "bob_walking_right",
-        BobState.WALKING_LEFT: "bob_walking_left",
-        BobState.WAVING: "bob_waving"
+    let atlases:[BobState: AnimatedSprite] = [
+        BobState.STANDING: AnimatedSprite(timePerFrame: 1, atlasName: "bob_standing"),
+        BobState.WALKING_RIGHT: AnimatedSprite(timePerFrame: 0.25, atlasName: "bob_walking_right"),
+        BobState.WALKING_LEFT: AnimatedSprite(timePerFrame: 0.25, atlasName: "bob_walking_left"),
+        BobState.WAVING: AnimatedSprite(timePerFrame: 0.5, atlasName: "bob_waving")
     ]
+    
+    init(midX: CGFloat) {
+        self.state = BobState.WAVING
+        self.midX = midX
+                
+        super.init(texture: atlases[self.state]!.frames[0], color: SKColor.clear, size: atlases[self.state]!.frames[0].size())
+        
+        self.actions = [
+            BobState.STANDING: SKAction.sequence([
+                SKAction.wait(forDuration: Double.random(in: 0.4...1.2)),
+                SKAction.run {
+                    if self.position.x < self.midX {
+                        self.state = BobState.WALKING_RIGHT
+                    }
+                    else {
+                        self.state = BobState.WALKING_LEFT
+                    }
+                },
+            ]),
+            BobState.WALKING_RIGHT: SKAction.sequence([
+                SKAction.wait(forDuration: 1.5),
+                SKAction.run {
+                    self.state = BobState.STANDING
+                },
+            ]),
+            BobState.WALKING_LEFT: SKAction.sequence([
+                SKAction.wait(forDuration: 1.5),
+                SKAction.run {
+                    self.state = BobState.STANDING
+                },
+            ]),
+            BobState.WAVING: SKAction.sequence([
+                SKAction.wait(forDuration: 2.0),
+                SKAction.run {
+                    self.state = BobState.STANDING
+                },
+            ]),
+        ]
+        
+        self.mainLoop = SKAction.repeatForever(SKAction.sequence([
+            SKAction.run {
+                self.texture = self.getCurrentAnimation().frames[0]
+                self.startAnimation()
+            },
+            self.getActionForCurrentState()
+        ]))
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func getCurrentAnimation() -> AnimatedSprite {
+        return self.atlases[self.state]!
+    }
+    
+    func startAnimation() {
+        getCurrentAnimation().startAnimation()
+    }
+    
+    func getActionForCurrentState() -> SKAction {
+        return self.actions[self.state]!
+    }
+    
+    func runMainLoop() {
+        self.run(self.mainLoop)
+    }
+    
     
 }

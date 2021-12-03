@@ -33,10 +33,10 @@ class PlaygroundScene: SKScene {
         
         self.selectedItems = Dictionary(uniqueKeysWithValues: viewModel.getAllPlaygroundItems().map{($0, viewModel.isItemInUse(item: $0))})
         
-        //let bob = AnimatedSprite(timePerFrame: 1.0, atlasName: "bob_writing")
-        //bob.position = CGPoint(x: frame.midX, y: frame.midY)
-        //addChild(bob)
-        //bob.startAnimation()
+        let bob = BobPlayground(midX: frame.midX)
+        bob.position = CGPoint(x: 0.5 * frame.midX, y: frame.midY)
+        addChild(bob)
+        bob.runMainLoop()
         
         var spriteNode: SKSpriteNode
         for (item, _) in selectedItems {
