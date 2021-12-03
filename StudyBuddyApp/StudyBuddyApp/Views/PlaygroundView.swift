@@ -94,6 +94,11 @@ struct PlaygroundView: View {
       for item in viewModel.getAllPlaygroundItems() {
         self.selectedItems[item] = viewModel.isItemInUse(item: item)
       }
+        
+      if self.showMenu {
+        let scene = self.sceneStore.scene as! PlaygroundScene
+        scene.toggleBobVisibility()
+      }
     }
     
   }
