@@ -77,7 +77,7 @@ struct TasksView: View {
                 
                 VStack(alignment: .center) {
                     VStack (spacing: 0) {
-                        Text("Reward")
+                        Text("Expected Reward")
                             .fontWeight(.light)
                         HStack {
                             Image("coin")
