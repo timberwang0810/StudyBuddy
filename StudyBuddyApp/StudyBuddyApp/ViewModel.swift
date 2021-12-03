@@ -74,8 +74,13 @@ class ViewModel: ObservableObject {
     return user.getMoney()
   }
 
+  // Get items separated by unpurchased/purchased and sorted by name
   func getStoreItems() -> [PlaygroundItem]{
-    return store.getAllPlaygroundItems().sorted(by: {$0.price < $1.price})
+    // All of this would be more efficient if backend supported getting unpurchased items and auto-sorted
+    let purchasedItems = store.getAllPurchasedPlaygroundItems()
+    let unpurchasedItems = store.getAllPlaygroundItems().filter { !purchasedItems.contains($0) }
+
+    return unpurchasedItems.sorted(by: { $0.name < $1.name }) + purchasedItems.sorted(by: { $0.name < $1.name })
   }
   
   func getAllPlaygroundItems() -> [PlaygroundItem] {
