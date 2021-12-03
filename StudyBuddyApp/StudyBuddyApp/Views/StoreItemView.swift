@@ -21,7 +21,11 @@ struct StoreItemView: View {
           .resizable()
           .scaledToFit()
           .frame(width: 20.0, height: 20.0)
-        Text(String(item.price)).padding(.trailing, 5).font(Font.custom("Chalkboard SE", size: 14))
+        Text(String(item.price))
+          .strikethrough(viewModel.isItemPurchased(item: item))
+          .padding(.trailing, 5)
+          .font(Font.custom("Chalkboard SE", size: 14))
+          .opacity(viewModel.isItemPurchased(item: item) ? 0.3 : 1.0)
       }
       Image(item.image)
         .resizable()
@@ -29,6 +33,7 @@ struct StoreItemView: View {
         .frame(width: 60.0, height: 60.0)
         .padding(10)
       Text(item.name).font(Font.custom("Chalkboard SE", size: 18))
+        .opacity(viewModel.isItemPurchased(item: item) ? 0.3 : 1.0)
     }
     .padding(10)
     .overlay(RoundedRectangle(cornerRadius: 5).stroke(OUTLINE_COLOR, lineWidth: 1))
