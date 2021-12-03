@@ -74,4 +74,11 @@ class TaskTest: XCTestCase {
     let task = sut
     XCTAssertEqual(sut, task)
   }
+  
+  func testUpdateTimedReward() throws{
+    XCTAssertEqual(sut.timedReward, 0)
+    sut.updateTimedReward(timeRemaining: 600)
+    XCTAssertNotEqual(sut.timedReward, 0)
+    XCTAssertEqual(sut.timedReward, Task.calculateBaseRewards(duration: sut.duration - 600))
+  }
 }
