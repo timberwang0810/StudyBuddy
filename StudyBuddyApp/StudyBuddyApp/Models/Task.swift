@@ -13,7 +13,9 @@ class Task : Equatable{
   let baseReward: Int
   let duration: TimeInterval
   let category: TaskCategory
+  var timedReward: Int
   var finalReward: Int
+  var bonusReward: Int
   
   private var hasTaskStarted: Bool
   private var hasTaskEnded: Bool
@@ -25,7 +27,9 @@ class Task : Equatable{
     self.baseReward = Task.calculateBaseRewards(duration: duration)
     self.hasTaskStarted = false
     self.hasTaskEnded = false
+    self.timedReward = 0
     self.finalReward = 0
+    self.bonusReward = 0
   }
   
   func start() {
@@ -42,7 +46,9 @@ class Task : Equatable{
       return;
     }
     self.hasTaskEnded = true
-    self.finalReward = Task.calculateFinalRewards(baseReward: self.baseReward, timeEstimated: self.duration, timeActual: self.duration-timeRemaining)
+    self.timedReward = Task.calculateBaseRewards(duration: self.duration-timeRemaining)
+    self.finalReward = Task.calculateFinalRewards(baseReward: self.timedReward, timeEstimated: self.duration, timeActual: self.duration-timeRemaining)
+    self.bonusReward = Task.calculateBonusRewards(baseReward: self.timedReward)
   }
   
   public func isTaskStarted() -> Bool{
@@ -51,6 +57,10 @@ class Task : Equatable{
   
   public func isTaskEnded() -> Bool {
     return self.hasTaskEnded
+  }
+  
+  public func updateTimedReward(timeRemaining: TimeInterval){
+    self.timedReward = Task.calculateBaseRewards(duration: self.duration-timeRemaining)
   }
   
   static func == (lhs: Task, rhs: Task) -> Bool{
@@ -64,6 +74,16 @@ class Task : Equatable{
   
   private static func calculateFinalRewards(baseReward: Int, timeEstimated: TimeInterval, timeActual: TimeInterval) -> Int{
     // TODO: Reward calculation function
-    return (baseReward * 5 / 4) + 3
+    return baseReward + calculateBonusRewards(baseReward: baseReward)
+  }
+  private static func calculateBonusRewards(baseReward: Int) -> Int{
+    // TODO: Reward calculation function
+    if (baseReward <= 5) {
+      return 0
+    }
+    if (baseReward <= 10) {
+      return 2
+    }
+    return (baseReward / 5) + 3
   }
 }

@@ -7,6 +7,7 @@
 
 import SwiftUI
 import SpriteKit
+import UserNotifications
 
 struct DoingTaskView: View {
   @ObservedObject var viewModel: ViewModel
@@ -17,7 +18,8 @@ struct DoingTaskView: View {
   @State var seconds: Int = 0
   @State var timerIsPaused: Bool = false
   @State var timeRemaining: Double = 0.0
-  @State private var showingConfirmationAlert = false
+  @State private var showingStopAlert = false
+  @State private var showingCompleteAlert = false
   
   @ObservedObject var sceneStore: SceneStore
   
@@ -34,6 +36,14 @@ struct DoingTaskView: View {
   }
   
   var body: some View {
+//    Text("Hey! I'm doing my task and so should you! I'm not gonna do it unless you come back and do it with me!")
+//        .onReceive(NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification)) { _ in
+//          self.pauseTimer()
+//        }
+//    Text("Welcome Back!")
+//        .onReceive(NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification)) { _ in
+//          self.startTimer()
+//        }
     ZStack{
       SpriteView(scene: sceneStore.scene)
         .frame(width: 400, height: 700)
@@ -49,7 +59,7 @@ struct DoingTaskView: View {
           Spacer()
           
           Button(action:{
-            self.showingConfirmationAlert = true
+            self.showingStopAlert = true
           }){
             Image(systemName: "x.circle")
               .resizable()
@@ -59,7 +69,7 @@ struct DoingTaskView: View {
           }
           .contentShape(Circle())
           .offset(y: -5)
-          .alert(isPresented: $showingConfirmationAlert) {
+          .alert(isPresented: $showingStopAlert) {
             Alert(
               title: Text("Are you sure you want to stop your task?"),
               message: Text("You will lose current progress towards your rewards."),
@@ -67,7 +77,7 @@ struct DoingTaskView: View {
                 self.viewRouter.currentPage = .tabbedPage
               }),
               secondaryButton: .default(Text("Cancel"), action: {
-                self.showingConfirmationAlert = false
+                self.showingStopAlert = false
               })
             )
           }
@@ -102,7 +112,7 @@ struct DoingTaskView: View {
             }
             
             Button(action:{
-              finishTask()
+              self.showingCompleteAlert = true
             }){
               Image(systemName: "checkmark.circle")
                 .resizable()
@@ -110,9 +120,42 @@ struct DoingTaskView: View {
                 .frame(width: BUTTON_SIZE, height: BUTTON_SIZE)
                 .padding()
             }.contentShape(Circle())
+            .alert(isPresented: $showingCompleteAlert) {
+              Alert(
+                title: Text("Done with your task?"),
+                message: Text("Your reward may vary based on how much time you've spent working."),
+                primaryButton: .default(Text("I'm done!"), action: {
+                  finishTask()
+                }),
+                secondaryButton: .default(Text("Cancel"), action: {
+                  self.showingCompleteAlert = false
+                })
+              )
+            }
           }
         }
       }
+    }.onReceive(NotificationCenter.default.publisher(for: UIApplication.didEnterBackgroundNotification)) { _ in
+      print("Moving to the background!")
+      self.pauseTimer()
+      let content = UNMutableNotificationContent()
+      content.title = "Come back!🥺"
+      content.body = "Please come back and do task with me ~"
+      content.sound = UNNotificationSound.default
+
+      // show this notification five seconds from now
+      let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+
+      // choose a random identifier
+      let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+
+      // add our notification request
+      UNUserNotificationCenter.current().add(request)
+    }.onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)) { _ in
+      self.startTimer()
+    }.onReceive(NotificationCenter.default.publisher(for: UIApplication.willTerminateNotification)) { _ in
+      print("will terminate")
+      UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
     }
     
   }

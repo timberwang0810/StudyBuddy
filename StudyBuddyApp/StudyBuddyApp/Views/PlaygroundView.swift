@@ -27,6 +27,13 @@ struct PlaygroundView: View {
     self.sceneStore = SceneStore(
         scene: PlaygroundScene(size: CGSize(width: 400, height: 700), viewModel: self.viewModel)
     )
+    
+    self.viewModel.updateItemData(viewToUpdate: "playground")
+    for item in viewModel.getAllPlaygroundItems() {
+      self.selectedItems[item] = viewModel.isItemInUse(item: item)
+    }
+    let scene = self.sceneStore.scene as! PlaygroundScene
+    scene.updatePlaygroundItems()
   }
   
   var body: some View {
@@ -37,6 +44,8 @@ struct PlaygroundView: View {
           Spacer()
           Button(action: {
             self.showMenu.toggle()
+            let scene = self.sceneStore.scene as! PlaygroundScene
+            scene.toggleBobVisibility()
           }) {
             Image(self.showMenu ? "open-box" : "closed-box")
               .resizable()
@@ -65,7 +74,7 @@ struct PlaygroundView: View {
                   // update visual display of whether item is selected
                   
                   for item in viewModel.getAllPlaygroundItems() {
-                    self.selectedItems[item] = viewModel.isItemInUse(item: item)
+                    self.selectedItems.updateValue(viewModel.isItemInUse(item: item), forKey: item)
                   }
                     //Update spritekit scene
                   let scene = self.sceneStore.scene as! PlaygroundScene
@@ -79,12 +88,11 @@ struct PlaygroundView: View {
         .overlay(RoundedRectangle(cornerRadius: 6.0).stroke(Color.gray))
         .padding(.horizontal, 20)
         .offset(y: -250)
-        .onAppear{
-          self.viewModel.updateItemData(viewToUpdate: "playground")
-          for item in viewModel.getAllPlaygroundItems() {
-            self.selectedItems[item] = viewModel.isItemInUse(item: item)
-          }
-        }
+      }
+    }.onAppear{
+      self.viewModel.updateItemData(viewToUpdate: "playground")
+      for item in viewModel.getAllPlaygroundItems() {
+        self.selectedItems[item] = viewModel.isItemInUse(item: item)
       }
     }
     

@@ -15,10 +15,10 @@ class DoingTaskScene: SKScene {
     
     let atlases:[TaskCategory:String] = [
         TaskCategory.STUDY: "bob_writing",
-        TaskCategory.CHORES: "bob_sweeping",
         TaskCategory.WORK: "bob_writing",
-        TaskCategory.EXERCISE: "bob_sweeping",
-        TaskCategory.OTHER: "bob_sweeping"
+        TaskCategory.CHORES: "bob_mopping",
+        TaskCategory.EXERCISE: "bob_mopping",
+        TaskCategory.OTHER: "bob_mopping"
     ]
     
     init(size: CGSize, duration: Double, taskCategory: TaskCategory) {
@@ -41,7 +41,7 @@ class DoingTaskScene: SKScene {
         bob.position = CGPoint(x: frame.midX, y: frame.midY)
         addChild(bob)
         
-        self.timer.position = CGPoint(x: 1.5 * frame.midX, y: 0.5 * frame.midY)
+        self.timer.position = CGPoint(x: 1.95 * frame.midX, y: 0.4 * frame.midY)
         addChild(self.timer)
         
         bob.startAnimation()

@@ -26,11 +26,11 @@ class StoreTest: XCTestCase {
     beanie = AccessoryItem(name: "Beanie", price: 300, image: "beanie_img", category: AccessoryItemCategory.Hat)
     cowboy = AccessoryItem(name: "Cowboy Hat", price: 200, image: "cowboy_hat_img", category: AccessoryItemCategory.Hat)
     baseball = AccessoryItem(name: "Baseball Hat", price: 150, image: "baseball_img", category: AccessoryItemCategory.Hat)
-    lamp = PlaygroundItem(name: "Lamp", price: 400, image: "lamp_img", category: PlaygroundItemCategory.Floor)
-    fan = PlaygroundItem(name: "Fan", price: 500, image: "fan_img", category: PlaygroundItemCategory.Ceiling)
-    carpet = PlaygroundItem(name: "carpet", price: 500, image: "carpet_img", category: PlaygroundItemCategory.Floor)
+    lamp = PlaygroundItem(name: "Lamp", price: 400, image: "lamp_img", category: PlaygroundItemCategory.Floor, position: Vector2(x: 0,y: 0))
+    fan = PlaygroundItem(name: "Fan", price: 500, image: "fan_img", category: PlaygroundItemCategory.Ceiling, position: Vector2(x: 0,y: 0))
+    carpet = PlaygroundItem(name: "carpet", price: 500, image: "carpet_img", category: PlaygroundItemCategory.Floor, position: Vector2(x: 0,y: 0))
     helmet = AccessoryItem(name: "Helmet", price: 100, image: "helmet_img", category: AccessoryItemCategory.Hat)
-    painting = PlaygroundItem(name: "Painting", price: 5000, image: "painting_img", category: PlaygroundItemCategory.Wall)
+    painting = PlaygroundItem(name: "Painting", price: 5000, image: "painting_img", category: PlaygroundItemCategory.Wall, position: Vector2(x: 0,y: 0))
   }
 
   override func tearDownWithError() throws {
@@ -209,5 +209,15 @@ class StoreTest: XCTestCase {
     XCTAssertTrue(sut.hasPlaygroundItem(item: lamp))
     XCTAssertFalse(sut.hasPlaygroundItem(item: fan))
     XCTAssertTrue(sut.hasPlaygroundItem(item: carpet))
+  }
+  func testGetAllPurchasedPlaygroundItem() throws {
+    XCTAssertEqual(sut.getAllPurchasedPlaygroundItems(), [])
+    sut.addPlaygroundItem(item: lamp)
+    sut.addPlaygroundItem(item: fan)
+    XCTAssertEqual(sut.getAllPurchasedPlaygroundItems(), [])
+    sut.markPlaygroundItemAsPurchased(item: lamp)
+    XCTAssertEqual(sut.getAllPurchasedPlaygroundItems(), [lamp])
+    sut.markPlaygroundItemAsPurchased(item: fan)
+    XCTAssertEqual(sut.getAllPurchasedPlaygroundItems(), [lamp, fan])
   }
 }

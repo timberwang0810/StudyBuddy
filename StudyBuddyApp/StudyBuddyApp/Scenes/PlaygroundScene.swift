@@ -14,13 +14,15 @@ class PlaygroundScene: SKScene {
     @ObservedObject var viewModel: ViewModel
     var selectedItems: [PlaygroundItem: Bool]
     var itemSprites: [PlaygroundItem: SKSpriteNode]
+    var bob: BobPlayground = BobPlayground(midX: 0)
 
     
     init(size: CGSize, viewModel: ViewModel) {
         self.viewModel = viewModel
-        self.selectedItems = Dictionary(uniqueKeysWithValues: viewModel.getAllPlaygroundItems().map{($0, false)})
+        self.selectedItems = [:]
         
         self.itemSprites = [:]
+                
         super.init(size: size)
     }
     
@@ -31,10 +33,12 @@ class PlaygroundScene: SKScene {
     override func didMove(to view: SKView) {
         backgroundColor = SKColor.white
         
-        //let bob = AnimatedSprite(timePerFrame: 1.0, atlasName: "bob_writing")
-        //bob.position = CGPoint(x: frame.midX, y: frame.midY)
-        //addChild(bob)
-        //bob.startAnimation()
+        self.selectedItems = Dictionary(uniqueKeysWithValues: viewModel.getAllPlaygroundItems().map{($0, viewModel.isItemInUse(item: $0))})
+        
+        self.bob = BobPlayground(midX: frame.midX)
+        self.bob.position = CGPoint(x: 0.5 * frame.midX, y: 1.15 * frame.midY)
+        addChild(self.bob)
+        self.bob.runMainLoop()
         
         var spriteNode: SKSpriteNode
         for (item, _) in selectedItems {
@@ -55,6 +59,10 @@ class PlaygroundScene: SKScene {
         for (item, sprite) in self.itemSprites {
             sprite.isHidden = !(selectedItems[item] ?? false)
         }
+    }
+    
+    func toggleBobVisibility() {
+        self.bob.isHidden = !self.bob.isHidden
     }
     
 

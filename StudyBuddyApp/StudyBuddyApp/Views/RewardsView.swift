@@ -24,7 +24,7 @@ struct RewardsView: View {
       Text("Completed Task:\n\(viewModel.getTaskName())")
         .font(Font.custom("Chalkboard SE", size: 24))
         .multilineTextAlignment(.center)
-        .padding(.bottom, 15)
+        .padding(.bottom, 5)
       
       Text("Nicely Done!")
         .font(Font.custom("Chalkboard SE", size: 40))
@@ -33,6 +33,15 @@ struct RewardsView: View {
       SpriteView(scene: scene)
         .frame(width: 400.0, height: 400.0)
         .edgesIgnoringSafeArea(.all)
+      
+      Text("Timed Reward: \(viewModel.getTimedReward())")
+        .font(Font.custom("Chalkboard SE", size: 24))
+        .baselineOffset(5)
+        .padding(.trailing, 5)
+      Text("Bonus Reward: \(viewModel.getBonusReward())")
+        .font(Font.custom("Chalkboard SE", size: 24))
+        .baselineOffset(5)
+        .padding(.trailing, 5)
       
       Button(action: {
               viewModel.earnMoney(inc: viewModel.getTaskReward())

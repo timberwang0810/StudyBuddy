@@ -40,6 +40,7 @@ class SpriteTimer: SKLabelNode {
         self.fontSize = 35
         self.fontName = "Chalkboard SE"
         self.fontColor = .black
+        self.horizontalAlignmentMode = .right
         
         updateText()
         self.run(self.timerAction, withKey: "timer")
@@ -50,15 +51,18 @@ class SpriteTimer: SKLabelNode {
     }
     
     func countDownString() -> String {
-        let hours = (Int(self.timeRemaining) / 3600)
-        let minutes = Int(self.timeRemaining / 60) - Int(hours * 60)
-        let seconds = Int(self.timeRemaining) - (Int(timeRemaining / 60) * 60)
+        let remainingTimePositive = abs(self.timeRemaining)
+        
+        let hours = (Int(remainingTimePositive) / 3600)
+        let minutes = Int(remainingTimePositive / 60) - Int(hours * 60)
+        let seconds = Int(remainingTimePositive) - (Int(remainingTimePositive / 60) * 60) + (self.timeRemaining < 0 ? 1 : 0)
       
       return String(format: "%0.2d:%0.2d:%0.2d",hours,minutes,seconds)
     }
     
     func updateText() {
-        self.text = self.countDownString()
+        self.text = (self.timeRemaining < 0 ? "Overtime! " : "") + self.countDownString()
+        self.fontColor = self.timeRemaining < 0 ? .gray : .black
     }
     
     func setRemainingTime(timeRemaining: Double) {

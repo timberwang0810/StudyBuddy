@@ -19,10 +19,10 @@ class PlaygroundTest: XCTestCase {
     try super.setUpWithError()
     sut = Playground()
     
-    lamp = PlaygroundItem(name: "Lamp", price: 400, image: "lamp_img", category: PlaygroundItemCategory.Floor)
-    fan = PlaygroundItem(name: "Fan", price: 500, image: "fan_img", category: PlaygroundItemCategory.Ceiling)
-    carpet = PlaygroundItem(name: "carpet", price: 500, image: "carpet_img", category: PlaygroundItemCategory.Floor)
-    painting = PlaygroundItem(name: "Painting", price: 5000, image: "painting_img", category: PlaygroundItemCategory.Wall)
+    lamp = PlaygroundItem(name: "Lamp", price: 400, image: "lamp_img", category: PlaygroundItemCategory.Floor, position: Vector2(x: 0,y: 0))
+    fan = PlaygroundItem(name: "Fan", price: 500, image: "fan_img", category: PlaygroundItemCategory.Ceiling, position: Vector2(x: 0,y: 0))
+    carpet = PlaygroundItem(name: "carpet", price: 500, image: "carpet_img", category: PlaygroundItemCategory.Floor, position: Vector2(x: 0,y: 0))
+    painting = PlaygroundItem(name: "Painting", price: 5000, image: "painting_img", category: PlaygroundItemCategory.Wall, position: Vector2(x: 0,y: 0))
   }
 
   override func tearDownWithError() throws {

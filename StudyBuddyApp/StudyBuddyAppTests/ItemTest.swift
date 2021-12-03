@@ -16,7 +16,7 @@ class ItemTest: XCTestCase {
   override func setUpWithError() throws {
     try super.setUpWithError()
     sut_a = AccessoryItem(name: "Beanie", price: 200, image: "beanie_img", category: AccessoryItemCategory.Hat)
-    sut_p = PlaygroundItem(name: "Lamp", price: 500, image: "lamp_img", category: PlaygroundItemCategory.Floor)
+    sut_p = PlaygroundItem(name: "Lamp", price: 500, image: "lamp_img", category: PlaygroundItemCategory.Floor, position: Vector2(x: 0,y: 0))
   }
 
   override func tearDownWithError() throws {
@@ -41,8 +41,8 @@ class ItemTest: XCTestCase {
     XCTAssertEqual(sut_a, beanie)
     XCTAssertNotEqual(sut_a, cowboy)
     
-    let lamp = PlaygroundItem(name: "Lamp", price: 400, image: "lamp_img", category: PlaygroundItemCategory.Floor)
-    let carpet = PlaygroundItem(name: "carpet", price: 500, image: "carpet_img", category: PlaygroundItemCategory.Floor)
+    let lamp = PlaygroundItem(name: "Lamp", price: 400, image: "lamp_img", category: PlaygroundItemCategory.Floor, position: Vector2(x: 0,y: 0))
+    let carpet = PlaygroundItem(name: "carpet", price: 500, image: "carpet_img", category: PlaygroundItemCategory.Floor, position: Vector2(x: 0,y: 0))
     XCTAssertEqual(sut_p, lamp)
     XCTAssertNotEqual(sut_p, carpet)
   }
