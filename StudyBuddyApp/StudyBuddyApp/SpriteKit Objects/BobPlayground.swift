@@ -41,7 +41,7 @@ class BobPlayground: SKSpriteNode {
         
         self.actions = [
             BobState.STANDING: SKAction.sequence([
-                SKAction.run { print("Running state: Standing") },
+                //SKAction.run { print("Running state: Standing") },
                 SKAction.wait(forDuration: Double.random(in: 0.4...1.2)),
                 SKAction.run {
                     if self.position.x < self.midX {
@@ -53,21 +53,21 @@ class BobPlayground: SKSpriteNode {
                 },
             ]),
             BobState.WALKING_RIGHT: SKAction.sequence([
-                SKAction.run { print("Running state: Walking Right") },
+                //SKAction.run { print("Running state: Walking Right") },
                 SKAction.wait(forDuration: 1.5),
                 SKAction.run {
                     self.changeState(state: BobState.STANDING)
                 },
             ]),
             BobState.WALKING_LEFT: SKAction.sequence([
-                SKAction.run { print("Running state: Walking Left") },
+                //SKAction.run { print("Running state: Walking Left") },
                 SKAction.wait(forDuration: 1.5),
                 SKAction.run {
                     self.changeState(state: BobState.STANDING)
                 },
             ]),
             BobState.WAVING: SKAction.sequence([
-                SKAction.run { print("Running state: Waving") },
+                //SKAction.run { print("Running state: Waving") },
                 SKAction.wait(forDuration: 2.0),
                 SKAction.run {
                     self.changeState(state: BobState.STANDING)
