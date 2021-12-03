@@ -22,6 +22,7 @@ class BobPlayground: SKSpriteNode {
     
     var actions:[BobState: SKAction] = [:]
     var mainLoop: SKAction = SKAction()
+    var currentAnimation: SKAction = SKAction()
 
     let atlases:[BobState: AnimatedSprite] = [
         BobState.STANDING: AnimatedSprite(timePerFrame: 1, atlasName: "bob_standing"),
@@ -38,32 +39,36 @@ class BobPlayground: SKSpriteNode {
         
         self.actions = [
             BobState.STANDING: SKAction.sequence([
+                SKAction.run { print("Running state: Standing") },
                 SKAction.wait(forDuration: Double.random(in: 0.4...1.2)),
                 SKAction.run {
                     if self.position.x < self.midX {
-                        self.state = BobState.WALKING_RIGHT
+                        self.changeState(state: BobState.WALKING_RIGHT)
                     }
                     else {
-                        self.state = BobState.WALKING_LEFT
+                        self.changeState(state: BobState.WALKING_LEFT)
                     }
                 },
             ]),
             BobState.WALKING_RIGHT: SKAction.sequence([
+                SKAction.run { print("Running state: Walking Right") },
                 SKAction.wait(forDuration: 1.5),
                 SKAction.run {
-                    self.state = BobState.STANDING
+                    self.changeState(state: BobState.STANDING)
                 },
             ]),
             BobState.WALKING_LEFT: SKAction.sequence([
+                SKAction.run { print("Running state: Walking Left") },
                 SKAction.wait(forDuration: 1.5),
                 SKAction.run {
-                    self.state = BobState.STANDING
+                    self.changeState(state: BobState.STANDING)
                 },
             ]),
             BobState.WAVING: SKAction.sequence([
+                SKAction.run { print("Running state: Waving") },
                 SKAction.wait(forDuration: 2.0),
                 SKAction.run {
-                    self.state = BobState.STANDING
+                    self.changeState(state: BobState.STANDING)
                 },
             ]),
         ]
@@ -71,7 +76,8 @@ class BobPlayground: SKSpriteNode {
         self.mainLoop = SKAction.repeatForever(SKAction.sequence([
             SKAction.run {
                 self.texture = self.getCurrentAnimation().frames[0]
-                self.startAnimation()
+                self.currentAnimation = self.getCurrentAnimation().animation
+                self.run(self.currentAnimation)
             },
             self.getActionForCurrentState()
         ]))
@@ -85,16 +91,16 @@ class BobPlayground: SKSpriteNode {
         return self.atlases[self.state]!
     }
     
-    func startAnimation() {
-        getCurrentAnimation().startAnimation()
-    }
-    
     func getActionForCurrentState() -> SKAction {
         return self.actions[self.state]!
     }
     
     func runMainLoop() {
         self.run(self.mainLoop)
+    }
+    
+    func changeState(state: BobState) {
+        self.state = state
     }
     
     
