@@ -48,11 +48,11 @@
 		D9BC4633272DE7A000962100 /* TabbedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BC4632272DE7A000962100 /* TabbedView.swift */; };
 		DA12B2C8273C638F006F4BE6 /* SpriteTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA12B2C7273C638F006F4BE6 /* SpriteTimer.swift */; };
 		DA12B2CA273C85E1006F4BE6 /* SceneStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA12B2C9273C85E1006F4BE6 /* SceneStore.swift */; };
+		DA48A3A12759D0A8005A3570 /* bob_mopping.atlas in Resources */ = {isa = PBXBuildFile; fileRef = DA48A3A02759D0A8005A3570 /* bob_mopping.atlas */; };
 		DA72C45427435B8900590E0B /* yellow_lamp.png in Resources */ = {isa = PBXBuildFile; fileRef = DA72C45227435B8900590E0B /* yellow_lamp.png */; };
 		DA72C45527435B8900590E0B /* hill_painting.png in Resources */ = {isa = PBXBuildFile; fileRef = DA72C45327435B8900590E0B /* hill_painting.png */; };
 		DA72C45A27438FC900590E0B /* bob_writing.atlas in Resources */ = {isa = PBXBuildFile; fileRef = DA72C45727438FC800590E0B /* bob_writing.atlas */; };
 		DAC76B622746A6CA00F88AE7 /* bob_cheering.atlas in Resources */ = {isa = PBXBuildFile; fileRef = DAC76B612746A6CA00F88AE7 /* bob_cheering.atlas */; };
-		DAC76B642746A96700F88AE7 /* bob_sweeping.atlas in Resources */ = {isa = PBXBuildFile; fileRef = DAC76B632746A96700F88AE7 /* bob_sweeping.atlas */; };
 		DAD0E15C2739A69000EF1E88 /* DoingTaskScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD0E15B2739A69000EF1E88 /* DoingTaskScene.swift */; };
 		DAD0E15E2739A90E00EF1E88 /* RewardsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD0E15D2739A90E00EF1E88 /* RewardsScene.swift */; };
 		DAE29E05272E4D83004835E2 /* PlaygroundScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE29E04272E4D83004835E2 /* PlaygroundScene.swift */; };
@@ -132,11 +132,11 @@
 		D9BC4632272DE7A000962100 /* TabbedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbedView.swift; sourceTree = "<group>"; };
 		DA12B2C7273C638F006F4BE6 /* SpriteTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpriteTimer.swift; sourceTree = "<group>"; };
 		DA12B2C9273C85E1006F4BE6 /* SceneStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneStore.swift; sourceTree = "<group>"; };
+		DA48A3A02759D0A8005A3570 /* bob_mopping.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = bob_mopping.atlas; sourceTree = "<group>"; };
 		DA72C45227435B8900590E0B /* yellow_lamp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yellow_lamp.png; sourceTree = "<group>"; };
 		DA72C45327435B8900590E0B /* hill_painting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hill_painting.png; sourceTree = "<group>"; };
 		DA72C45727438FC800590E0B /* bob_writing.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = bob_writing.atlas; sourceTree = "<group>"; };
 		DAC76B612746A6CA00F88AE7 /* bob_cheering.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = bob_cheering.atlas; sourceTree = "<group>"; };
-		DAC76B632746A96700F88AE7 /* bob_sweeping.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = bob_sweeping.atlas; sourceTree = "<group>"; };
 		DAD0E15B2739A69000EF1E88 /* DoingTaskScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoingTaskScene.swift; sourceTree = "<group>"; };
 		DAD0E15D2739A90E00EF1E88 /* RewardsScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardsScene.swift; sourceTree = "<group>"; };
 		DAE29E04272E4D83004835E2 /* PlaygroundScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaygroundScene.swift; sourceTree = "<group>"; };
@@ -329,7 +329,7 @@
 		DA68B56627354371004C3EB7 /* Bob */ = {
 			isa = PBXGroup;
 			children = (
-				DAC76B632746A96700F88AE7 /* bob_sweeping.atlas */,
+				DA48A3A02759D0A8005A3570 /* bob_mopping.atlas */,
 				DAC76B612746A6CA00F88AE7 /* bob_cheering.atlas */,
 				DA72C45727438FC800590E0B /* bob_writing.atlas */,
 			);
@@ -484,8 +484,8 @@
 				DAC76B622746A6CA00F88AE7 /* bob_cheering.atlas in Resources */,
 				38F3E0B627339A2D00E36A14 /* doingTask1.png in Resources */,
 				DA72C45427435B8900590E0B /* yellow_lamp.png in Resources */,
-				DAC76B642746A96700F88AE7 /* bob_sweeping.atlas in Resources */,
 				D9B31584274AF0E1002E8120 /* open-box.png in Resources */,
+				DA48A3A12759D0A8005A3570 /* bob_mopping.atlas in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
