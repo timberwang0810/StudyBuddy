@@ -46,7 +46,7 @@ struct DoingTaskView: View {
 //        }
     ZStack{
       SpriteView(scene: sceneStore.scene)
-        .frame(width: 400, height: 700)
+        .frame(width: 360, height: 630)
         .edgesIgnoringSafeArea(.all)
       
       VStack{
@@ -81,7 +81,7 @@ struct DoingTaskView: View {
               })
             )
           }
-        }
+        }.padding(.top, 10)
         
         Spacer()
         VStack(alignment: .trailing){
