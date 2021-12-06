@@ -74,7 +74,7 @@ struct TasksView: View {
         }
         .font(Font.custom("Chalkboard SE", size: 18))
         .padding(.horizontal, 20)
-        .padding(.bottom, 10)
+        .padding(.bottom, 20)
         
         VStack(alignment: .center) {
           VStack (spacing: 0) {
@@ -111,7 +111,7 @@ struct TasksView: View {
         .shadow(color: Color(red: 185 / 255, green: 108 / 255, blue: 37 / 255), radius: 1, x: 0, y: 5)
       }
       .font(Font.custom("Chalkboard SE", size: 22))
-      .padding(.vertical, 30)
+      .padding(.vertical, 40)
       .frame(maxWidth: 385)
       .background(Color.white)
       .cornerRadius(10)

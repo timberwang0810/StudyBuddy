@@ -24,12 +24,13 @@ struct RewardsView: View {
       Text("Completed Task:\n\(viewModel.getTaskName())")
         .font(Font.custom("Chalkboard SE", size: 24))
         .multilineTextAlignment(.center)
+        .padding(.trailing, 10)
       
       Text("Nicely Done!")
         .font(Font.custom("Chalkboard SE", size: 40))
       
       SpriteView(scene: scene)
-        .frame(width: 300.0, height: 300.0)
+        .frame(width: 400.0, height: 400.0)
         .edgesIgnoringSafeArea(.all)
       
       Text("Timed Reward: \(viewModel.getTimedReward())")
