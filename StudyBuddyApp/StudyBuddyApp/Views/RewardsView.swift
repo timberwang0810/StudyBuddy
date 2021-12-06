@@ -24,11 +24,10 @@ struct RewardsView: View {
       Text("Completed Task:\n\(viewModel.getTaskName())")
         .font(Font.custom("Chalkboard SE", size: 24))
         .multilineTextAlignment(.center)
-        .padding(.bottom, 5)
+        .padding(.trailing, 10)
       
       Text("Nicely Done!")
         .font(Font.custom("Chalkboard SE", size: 40))
-        .padding(.bottom, 50)
       
       SpriteView(scene: scene)
         .frame(width: 400.0, height: 400.0)

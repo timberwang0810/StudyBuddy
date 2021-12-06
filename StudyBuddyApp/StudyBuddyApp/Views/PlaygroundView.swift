@@ -38,8 +38,7 @@ struct PlaygroundView: View {
   
   var body: some View {
     ZStack {
-      VStack {
-        Spacer()
+      VStack(spacing: 0) {
         HStack {
           Spacer()
           Button(action: {
@@ -55,11 +54,12 @@ struct PlaygroundView: View {
           .background(BOX_BG_COLOR)
           .overlay(RoundedRectangle(cornerRadius: 100).stroke(Color.gray))
           .clipShape(Circle())
-          .padding(20)
+          .padding(.top, 20)
+          .padding(.horizontal, 20)
         }
 
         SpriteView(scene: self.sceneStore.scene)
-          .frame(width: 400.0, height: 700.0)
+          .frame(width: 360.0, height: 630.0)
           .edgesIgnoringSafeArea(.all)
       }
       
@@ -87,7 +87,7 @@ struct PlaygroundView: View {
         .background(MENU_BG_COLOR)
         .overlay(RoundedRectangle(cornerRadius: 6.0).stroke(Color.gray))
         .padding(.horizontal, 20)
-        .offset(y: -250)
+        .offset(y: -210)
       }
     }.onAppear{
       self.viewModel.updateItemData(viewToUpdate: "playground")

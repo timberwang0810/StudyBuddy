@@ -13,13 +13,13 @@ struct TabbedView: View {
     
     var body: some View {
         TabView {
-            TasksView(viewModel: viewModel)
-                .tabItem {
-                    Label("Task", systemImage: "list.dash")
-                }
           PlaygroundView(viewModel: viewModel)
                 .tabItem {
                     Label("Playground", systemImage: "gamecontroller")
+                }
+            TasksView(viewModel: viewModel)
+                .tabItem {
+                    Label("Task", systemImage: "list.dash")
                 }
           StoreView(viewModel: viewModel)
                 .tabItem {
