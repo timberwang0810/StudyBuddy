@@ -99,6 +99,12 @@ struct PlaygroundView: View {
         let scene = self.sceneStore.scene as! PlaygroundScene
         scene.toggleBobVisibility()
       }
+//      self.viewModel.deleteEntityData(entityName: "ItemEntity")
+//      self.viewModel.deleteEntityData(entityName: "UserEntity")
+//          self.viewModel.earnMoney(inc: 90000)
+//          self.viewModel.saveUserData()
+    }.onDisappear{
+      self.showMenu = false
     }
     
   }
