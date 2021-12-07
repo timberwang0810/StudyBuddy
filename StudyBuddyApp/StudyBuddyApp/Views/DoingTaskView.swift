@@ -8,6 +8,7 @@
 import SwiftUI
 import SpriteKit
 import UserNotifications
+import SwiftySound
 
 struct DoingTaskView: View {
   @ObservedObject var viewModel: ViewModel
@@ -26,6 +27,9 @@ struct DoingTaskView: View {
   let SMALL_BUTTON_SIZE: CGFloat = 20.0
   let BUTTON_SIZE: CGFloat = 64.0
   
+  private var currBGM : Sound?
+  private var bgm_1_url : URL?
+  
   init( viewModel: ViewModel) {
     self.viewModel = viewModel
     _timeRemaining = State(initialValue: viewModel.currentTask!.duration)
@@ -33,6 +37,13 @@ struct DoingTaskView: View {
     self.sceneStore = SceneStore(
       scene: DoingTaskScene(size: CGSize(width: 400, height: 700), duration: viewModel.currentTask!.duration, taskCategory: viewModel.currentTask!.category)
     )
+    
+    if let bgm1Url = Bundle.main.url(forResource: "bgm_1", withExtension: "mp3") {
+      bgm_1_url = bgm1Url
+      currBGM = Sound(url: bgm1Url)
+      currBGM?.volume = 0.8
+      currBGM?.prepare()
+    }
   }
   
   var body: some View {
@@ -90,6 +101,7 @@ struct DoingTaskView: View {
               
               Button(action:{
                 self.startTimer()
+                self.enableBGM()
               }){
                 Image(systemName: "play.circle")
                   .resizable()
@@ -101,6 +113,7 @@ struct DoingTaskView: View {
             } else {
               Button(action:{
                 self.pauseTimer()
+                self.disableBGM()
               }){
                 Image(systemName: "pause.circle")
                   .resizable()
@@ -156,6 +169,10 @@ struct DoingTaskView: View {
     }.onReceive(NotificationCenter.default.publisher(for: UIApplication.willTerminateNotification)) { _ in
       print("will terminate")
       UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+    }.onDisappear{
+      self.disableBGM()
+    }.onAppear{
+      self.enableBGM()
     }
     
   }
@@ -186,6 +203,17 @@ struct DoingTaskView: View {
     self.viewRouter.currentPage = .rewardsPage
   }
   
+  private func enableBGM(){
+    guard let bgmSound = self.currBGM else {return}
+    if (!bgmSound.resume()){
+      bgmSound.play(numberOfLoops: -1)
+    }
+  }
+  
+  private func disableBGM(){
+    self.currBGM?.pause()
+  }
+
 }
 
 
@@ -193,5 +221,5 @@ struct DoingTaskView_Previews: PreviewProvider {
   static var previews: some View {
     DoingTaskView(viewModel: ViewModel()).environmentObject(ViewRouter())
   }
-  
+
 }

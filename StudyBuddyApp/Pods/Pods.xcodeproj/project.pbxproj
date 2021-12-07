@@ -7,124 +7,153 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		02E0144304501155F1984812B9BD7BCA /* OnDeactivateModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1403EB431956040B71AA60739D9A41F3 /* OnDeactivateModifier.swift */; };
-		052208A91CFFAD8371BAE7EAE4BDA1C1 /* Pods-StudyBuddyApp-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2FAFB5C435C72D506D62938D1DC0FBD4 /* Pods-StudyBuddyApp-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		07B71E68B0AE4C4D1A4B1BB79064D16F /* Pods-StudyBuddyApp-StudyBuddyAppUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2631A73DF93A00D595767A6EDD3B8DBD /* Pods-StudyBuddyApp-StudyBuddyAppUITests-dummy.m */; };
-		0DDC5FDF80FE968D74A028962BF78898 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		138E38F1517A270599E5823A39DFED55 /* PagingAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937BE1BFC37E20903864A8919FBA23B7 /* PagingAnimation.swift */; };
-		1E77045D8164AADFCE91B281C604AF7F /* SwipeInteractionArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E75EC6528A16764C0B369F89A220B07 /* SwipeInteractionArea.swift */; };
-		1F85C387A8ED2F0989455193BF3376D9 /* SwiftUIPager-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 13FBC4301838366161DDAA14FBE60478 /* SwiftUIPager-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		280977636CEAA213BB94A614D7CB5B83 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61EC93547A610D4EECB448D57B890D53 /* Page.swift */; };
-		2FA48A8981BBDD767F52F0F8DCB4CBAC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		3CCF20CEF2F0894BA7C3DBF9807A94EB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		3DCFF35C3EE9801846AF39D62FD33245 /* Pods-StudyBuddyApp-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BDCE948123D72C195CE831D1B1DA5D5 /* Pods-StudyBuddyApp-dummy.m */; };
-		470F37287204077F05C6C3448EE4244B /* PositionAlignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06669429A8060F9C0A17DDF036E445AA /* PositionAlignment.swift */; };
-		493CD21AAD3A513FE04FE1B4D1A5E56A /* PagerContent+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED987EB87158B05FD16299D150511C7F /* PagerContent+Helper.swift */; };
+		02E0144304501155F1984812B9BD7BCA /* OnDeactivateModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEF3E57B92BBF1A6C4D3F089EF01B3B /* OnDeactivateModifier.swift */; };
+		0B9579CC651F5ECC0634860B67080B07 /* SwiftySound-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E8E8C1D16838C7DE78267AFB8C3DF916 /* SwiftySound-dummy.m */; };
+		0DDC5FDF80FE968D74A028962BF78898 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BD9787FB7C94A0DC2A516C656509B78 /* Foundation.framework */; };
+		138E38F1517A270599E5823A39DFED55 /* PagingAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377D3136B5317BC22E1DAA7B3DE95589 /* PagingAnimation.swift */; };
+		1E77045D8164AADFCE91B281C604AF7F /* SwipeInteractionArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84BEB279EF703E9EEEB370B48C77BE1 /* SwipeInteractionArea.swift */; };
+		1F85C387A8ED2F0989455193BF3376D9 /* SwiftUIPager-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 567F122C3247D41CAFE8A005CF42D4D6 /* SwiftUIPager-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		280977636CEAA213BB94A614D7CB5B83 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B20AFD6CC1D09BC39B77458576E8AB2 /* Page.swift */; };
+		2DBA866D9F6682FF5AC35AA7D2F73B5D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BD9787FB7C94A0DC2A516C656509B78 /* Foundation.framework */; };
+		3CCF20CEF2F0894BA7C3DBF9807A94EB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BD9787FB7C94A0DC2A516C656509B78 /* Foundation.framework */; };
+		420CF591E247F3D9CF22F8BB784D0F88 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BD9787FB7C94A0DC2A516C656509B78 /* Foundation.framework */; };
+		470F37287204077F05C6C3448EE4244B /* PositionAlignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA6903F58A241EF68D68E2ACDD9C103 /* PositionAlignment.swift */; };
+		493CD21AAD3A513FE04FE1B4D1A5E56A /* PagerContent+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20ED56DD2DF43C204CFD39005F1CA629 /* PagerContent+Helper.swift */; };
 		4EAD5849518C12B1448207E1B60EBF82 /* Pods-StudyBuddyAppTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D3ED07882A1737F4521B5F381A87E1C5 /* Pods-StudyBuddyAppTests-dummy.m */; };
-		543ECD2B814BECA9C9F4D23B7DEF479A /* PaginationSensitivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B46768809661DA8A0A260F65BE5108D /* PaginationSensitivity.swift */; };
-		735F0E14EED5D71E31A65280E1266E4C /* PagerContent+Buildable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E2103428FCB91F4045D4C5F840FFCF /* PagerContent+Buildable.swift */; };
-		774CE5D44E8239A87FC096F94FF0112D /* SwipeDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1FCA8D53D1C6EA27315F46EAD38591 /* SwipeDirection.swift */; };
-		7C109B53B722F9F6F1D63BCF1A007E6E /* View+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6FBB898FB65B98D13F6FABC9E48C5A /* View+Helper.swift */; };
+		543ECD2B814BECA9C9F4D23B7DEF479A /* PaginationSensitivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19899D58B425428A38E5B3DDBEBFD5E /* PaginationSensitivity.swift */; };
+		5F96154A5AF208B5B1ECE23EB64EF848 /* Pods-StudyBuddyApp-StudyBuddyAppUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2631A73DF93A00D595767A6EDD3B8DBD /* Pods-StudyBuddyApp-StudyBuddyAppUITests-dummy.m */; };
+		735F0E14EED5D71E31A65280E1266E4C /* PagerContent+Buildable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D34D659ABC370338DC5B091DA06A1CA /* PagerContent+Buildable.swift */; };
+		774CE5D44E8239A87FC096F94FF0112D /* SwipeDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF68BB4A05ED5516384D71B8E71331AC /* SwipeDirection.swift */; };
+		7C109B53B722F9F6F1D63BCF1A007E6E /* View+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D602C682E39E0D33F6CC7A62612D0AC /* View+Helper.swift */; };
 		85433A6DA57EB532BBAD13BDAF5A10BA /* Pods-StudyBuddyAppTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C3C731423E9F04EDA1DFCBFA190C54E /* Pods-StudyBuddyAppTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		90CFE6CB47C41D10C5357F18DE7F9B89 /* SwiftUIPager-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 45CB1B1DF737BD4CA668F1BA6F8D1883 /* SwiftUIPager-dummy.m */; };
-		944ABB3D63E590C898412B499A358031 /* GesturePriority.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD92A204138290DBD3A894B4DC50875 /* GesturePriority.swift */; };
-		96A0B7C438EE12E733EB9D1B59A05F1F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		B016B5DFD4296D236E7C4E27738AFF04 /* Pager+Buildable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D94125BCB2ABF4D3E9F379AABF57089 /* Pager+Buildable.swift */; };
-		B139CF153D16F75BF27CE8D16165BD84 /* CGPoint+Angle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DA36A5D72220451E07D9CF36D0813D /* CGPoint+Angle.swift */; };
-		B69164A805B27A945718A924AAE41C7A /* Pods-StudyBuddyApp-StudyBuddyAppUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1ED3D5766284472D487E10867B4E291A /* Pods-StudyBuddyApp-StudyBuddyAppUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CC5EC7F332FF8FB4DFF02BAAED771B67 /* PageTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02EF69EC76E1055A14B2B7678472694 /* PageTransition.swift */; };
-		D15B277F61A5161E4EBE72B1107D18C1 /* ContentLoadingPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E601CC7C50A5CD428F3A43EF647A8C4 /* ContentLoadingPolicy.swift */; };
-		DFD0D7B9EE3342733F6F9B1409F2E266 /* Pager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C52C0A75CB49559632158189655DA8 /* Pager.swift */; };
-		E41CA9D6304E994B45BEAFBAEC5F7E21 /* Buildable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C217A11B08BD154228466F357F67E9C1 /* Buildable.swift */; };
-		ECF4076A204F61181C6EE4FE2BA1DA97 /* PageWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81E576CDEA3BB6EE286754731DBBF3F /* PageWrapper.swift */; };
-		F1462BF6022AEABFD52CDCC14692417A /* PagerContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC631F681F97DE9CC11C4D12D7D3728F /* PagerContent.swift */; };
-		F2B9E8171E3C1CE4CE3851477ECA633F /* OnAnimationCompletedModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD50596B0661BDD6770D2018DC5D7E6 /* OnAnimationCompletedModifier.swift */; };
+		90CFE6CB47C41D10C5357F18DE7F9B89 /* SwiftUIPager-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 44332C484A332BB05862F9F66F50CF39 /* SwiftUIPager-dummy.m */; };
+		944ABB3D63E590C898412B499A358031 /* GesturePriority.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290D7FD256E77F4780D38533E34ACE48 /* GesturePriority.swift */; };
+		ACAA5B9B4341425981D1CFEABAA4ED33 /* Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ABA89B6FC4CCF24B3DA4D496B38572 /* Sound.swift */; };
+		B016B5DFD4296D236E7C4E27738AFF04 /* Pager+Buildable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04301A9789E9D806C3452DB674649B9C /* Pager+Buildable.swift */; };
+		B139CF153D16F75BF27CE8D16165BD84 /* CGPoint+Angle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E15B105942266C57E027F80493AD5A /* CGPoint+Angle.swift */; };
+		B7E98F247454199DEEA7ECA744C683A5 /* Pods-StudyBuddyApp-StudyBuddyAppUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1ED3D5766284472D487E10867B4E291A /* Pods-StudyBuddyApp-StudyBuddyAppUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CC5EC7F332FF8FB4DFF02BAAED771B67 /* PageTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBCDBB32232D9EF60E411911E3B5D4E /* PageTransition.swift */; };
+		CD88B31DEBD81E2A618FAA6AA64421C7 /* Pods-StudyBuddyApp-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BDCE948123D72C195CE831D1B1DA5D5 /* Pods-StudyBuddyApp-dummy.m */; };
+		D15B277F61A5161E4EBE72B1107D18C1 /* ContentLoadingPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F30A022BAA8A780CF1D84FC32CA9DF /* ContentLoadingPolicy.swift */; };
+		D386CD8309BA4D1128507B9B8685BFD4 /* Pods-StudyBuddyApp-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2FAFB5C435C72D506D62938D1DC0FBD4 /* Pods-StudyBuddyApp-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D6F519A0DDF8051607B63C6A777B29B3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BD9787FB7C94A0DC2A516C656509B78 /* Foundation.framework */; };
+		DFD0D7B9EE3342733F6F9B1409F2E266 /* Pager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C400BB7C2056E350FABBE282ACDDEC98 /* Pager.swift */; };
+		E41CA9D6304E994B45BEAFBAEC5F7E21 /* Buildable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C156F33BD2DB1121CF5935B42C58AC /* Buildable.swift */; };
+		ECF4076A204F61181C6EE4FE2BA1DA97 /* PageWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F518659E351852FD00302EA4D2A0AFAB /* PageWrapper.swift */; };
+		F1462BF6022AEABFD52CDCC14692417A /* PagerContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1820CE2579DE9D1D41F971DD543F34F2 /* PagerContent.swift */; };
+		F2B9E8171E3C1CE4CE3851477ECA633F /* OnAnimationCompletedModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44313BABC3F66D5DAD019D62DBCE28F3 /* OnAnimationCompletedModifier.swift */; };
+		F9F735423ABBDDB1679FFDACEB4B1BDE /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2689EA712E5D78CDDF35E7B1BD8994B6 /* AVFoundation.framework */; };
+		FE8B9BD971E022ABE8E1CAF3CECAA0D8 /* SwiftySound-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 629E67D9ED3943CC1B4BEE50FD63AFA9 /* SwiftySound-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		6ACA4F0355842A152832F44F3EB55462 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 7EDD561B01B453B33504B0EACB2107CC;
-			remoteInfo = SwiftUIPager;
-		};
-		9D4D254433A28591D1E65F48661D0746 /* PBXContainerItemProxy */ = {
+		0813C611D795FF4098FC2BC0894BB143 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 2EBCFBFE4D14B640A08B2FDD8A00DDA1;
 			remoteInfo = "Pods-StudyBuddyApp";
 		};
-		F4FABFF223E142DD7E2516A849A28B4F /* PBXContainerItemProxy */ = {
+		1AB6B0F3A2CC46F0DD69D59B781AC21A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 7EDD561B01B453B33504B0EACB2107CC;
 			remoteInfo = SwiftUIPager;
 		};
+		4DF6B266D7F043ED83FB40995B6C5524 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7EDD561B01B453B33504B0EACB2107CC;
+			remoteInfo = SwiftUIPager;
+		};
+		5233A3847E4CD00217B8666D34811C28 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AF76419D4650F093FFACB1AD713C1EF1;
+			remoteInfo = SwiftySound;
+		};
+		62805B568BEE3331DD4A84C611FE69EC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AF76419D4650F093FFACB1AD713C1EF1;
+			remoteInfo = SwiftySound;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		06669429A8060F9C0A17DDF036E445AA /* PositionAlignment.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PositionAlignment.swift; path = Sources/SwiftUIPager/PageConfiguration/PositionAlignment.swift; sourceTree = "<group>"; };
+		026819E30917814C571F984556BA5AB7 /* SwiftUIPager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftUIPager.debug.xcconfig; sourceTree = "<group>"; };
+		04301A9789E9D806C3452DB674649B9C /* Pager+Buildable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Pager+Buildable.swift"; path = "Sources/SwiftUIPager/Pager+Buildable.swift"; sourceTree = "<group>"; };
 		0777927DE1AB68F6D6FFAC4215FFB319 /* Pods-StudyBuddyApp.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-StudyBuddyApp.modulemap"; sourceTree = "<group>"; };
-		13FBC4301838366161DDAA14FBE60478 /* SwiftUIPager-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftUIPager-umbrella.h"; sourceTree = "<group>"; };
-		13FF45B318333126A606607852D59C5D /* SwiftUIPager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftUIPager.debug.xcconfig; sourceTree = "<group>"; };
-		1403EB431956040B71AA60739D9A41F3 /* OnDeactivateModifier.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OnDeactivateModifier.swift; path = Sources/SwiftUIPager/Helpers/OnDeactivateModifier.swift; sourceTree = "<group>"; };
+		07F30A022BAA8A780CF1D84FC32CA9DF /* ContentLoadingPolicy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ContentLoadingPolicy.swift; path = Sources/SwiftUIPager/PageConfiguration/ContentLoadingPolicy.swift; sourceTree = "<group>"; };
+		08F1CA3CD8671D85FE9242E3272C4EEB /* SwiftUIPager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftUIPager.release.xcconfig; sourceTree = "<group>"; };
+		1820CE2579DE9D1D41F971DD543F34F2 /* PagerContent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PagerContent.swift; path = Sources/SwiftUIPager/PagerContent.swift; sourceTree = "<group>"; };
 		1ED3D5766284472D487E10867B4E291A /* Pods-StudyBuddyApp-StudyBuddyAppUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-StudyBuddyApp-StudyBuddyAppUITests-umbrella.h"; sourceTree = "<group>"; };
+		20ED56DD2DF43C204CFD39005F1CA629 /* PagerContent+Helper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "PagerContent+Helper.swift"; path = "Sources/SwiftUIPager/PagerContent+Helper.swift"; sourceTree = "<group>"; };
 		216D82D81AE4451E2EDAC036E5051E56 /* Pods-StudyBuddyApp-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-StudyBuddyApp-frameworks.sh"; sourceTree = "<group>"; };
-		22DA36A5D72220451E07D9CF36D0813D /* CGPoint+Angle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "CGPoint+Angle.swift"; path = "Sources/SwiftUIPager/Helpers/CGPoint+Angle.swift"; sourceTree = "<group>"; };
 		2424AA953E315D4581A98C84BA387DEF /* Pods-StudyBuddyAppTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-StudyBuddyAppTests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		2631A73DF93A00D595767A6EDD3B8DBD /* Pods-StudyBuddyApp-StudyBuddyAppUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-StudyBuddyApp-StudyBuddyAppUITests-dummy.m"; sourceTree = "<group>"; };
-		2B46768809661DA8A0A260F65BE5108D /* PaginationSensitivity.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PaginationSensitivity.swift; path = Sources/SwiftUIPager/PageConfiguration/PaginationSensitivity.swift; sourceTree = "<group>"; };
+		2689EA712E5D78CDDF35E7B1BD8994B6 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
+		290D7FD256E77F4780D38533E34ACE48 /* GesturePriority.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GesturePriority.swift; path = Sources/SwiftUIPager/PageConfiguration/GesturePriority.swift; sourceTree = "<group>"; };
+		2BA6903F58A241EF68D68E2ACDD9C103 /* PositionAlignment.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PositionAlignment.swift; path = Sources/SwiftUIPager/PageConfiguration/PositionAlignment.swift; sourceTree = "<group>"; };
+		2BD9787FB7C94A0DC2A516C656509B78 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		2CD09939CD94C95871A86CFA74BBA3CF /* Pods-StudyBuddyApp-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-StudyBuddyApp-acknowledgements.markdown"; sourceTree = "<group>"; };
 		2FAFB5C435C72D506D62938D1DC0FBD4 /* Pods-StudyBuddyApp-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-StudyBuddyApp-umbrella.h"; sourceTree = "<group>"; };
 		32A2800C6E21737FC09D737EED64DE4F /* Pods-StudyBuddyApp-StudyBuddyAppUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-StudyBuddyApp-StudyBuddyAppUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		377D3136B5317BC22E1DAA7B3DE95589 /* PagingAnimation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PagingAnimation.swift; path = Sources/SwiftUIPager/PageConfiguration/PagingAnimation.swift; sourceTree = "<group>"; };
 		3FF070AB6ECB9016F6CC76C156D86C23 /* Pods-StudyBuddyApp-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-StudyBuddyApp-Info.plist"; sourceTree = "<group>"; };
 		41555EFEDE2C3DB45AE9A9FBB46187CE /* Pods-StudyBuddyApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-StudyBuddyApp.release.xcconfig"; sourceTree = "<group>"; };
 		4206F1A1AC8B52F45E00A8637D2D9FA3 /* Pods-StudyBuddyApp-StudyBuddyAppUITests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-StudyBuddyApp-StudyBuddyAppUITests"; path = Pods_StudyBuddyApp_StudyBuddyAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		421A2738F9385795AAEC1F7DF7531AF0 /* Pods-StudyBuddyApp */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-StudyBuddyApp"; path = Pods_StudyBuddyApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		44313BABC3F66D5DAD019D62DBCE28F3 /* OnAnimationCompletedModifier.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OnAnimationCompletedModifier.swift; path = Sources/SwiftUIPager/Helpers/OnAnimationCompletedModifier.swift; sourceTree = "<group>"; };
+		44332C484A332BB05862F9F66F50CF39 /* SwiftUIPager-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftUIPager-dummy.m"; sourceTree = "<group>"; };
 		454A2B98212EA25DC7AF2F4BF3ECA0B2 /* Pods-StudyBuddyApp-StudyBuddyAppUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-StudyBuddyApp-StudyBuddyAppUITests-Info.plist"; sourceTree = "<group>"; };
-		45CB1B1DF737BD4CA668F1BA6F8D1883 /* SwiftUIPager-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftUIPager-dummy.m"; sourceTree = "<group>"; };
-		49E2103428FCB91F4045D4C5F840FFCF /* PagerContent+Buildable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "PagerContent+Buildable.swift"; path = "Sources/SwiftUIPager/PagerContent+Buildable.swift"; sourceTree = "<group>"; };
+		4854E0DF0E2298698AB281B079C086AD /* SwiftUIPager-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftUIPager-prefix.pch"; sourceTree = "<group>"; };
+		4B20AFD6CC1D09BC39B77458576E8AB2 /* Page.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Page.swift; path = Sources/SwiftUIPager/Page.swift; sourceTree = "<group>"; };
 		4BDCE948123D72C195CE831D1B1DA5D5 /* Pods-StudyBuddyApp-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-StudyBuddyApp-dummy.m"; sourceTree = "<group>"; };
 		4C5E1060BC024041C8A31AF82ED2ED1B /* Pods-StudyBuddyAppTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-StudyBuddyAppTests-Info.plist"; sourceTree = "<group>"; };
-		4E601CC7C50A5CD428F3A43EF647A8C4 /* ContentLoadingPolicy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ContentLoadingPolicy.swift; path = Sources/SwiftUIPager/PageConfiguration/ContentLoadingPolicy.swift; sourceTree = "<group>"; };
 		5675CD55C999D3CA37059895535B6AE4 /* Pods-StudyBuddyApp-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-StudyBuddyApp-acknowledgements.plist"; sourceTree = "<group>"; };
-		57C52C0A75CB49559632158189655DA8 /* Pager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Pager.swift; path = Sources/SwiftUIPager/Pager.swift; sourceTree = "<group>"; };
-		5AD50596B0661BDD6770D2018DC5D7E6 /* OnAnimationCompletedModifier.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OnAnimationCompletedModifier.swift; path = Sources/SwiftUIPager/Helpers/OnAnimationCompletedModifier.swift; sourceTree = "<group>"; };
+		567F122C3247D41CAFE8A005CF42D4D6 /* SwiftUIPager-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftUIPager-umbrella.h"; sourceTree = "<group>"; };
 		5F060F604FB977B901C8C62548B5C157 /* Pods-StudyBuddyApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-StudyBuddyApp.debug.xcconfig"; sourceTree = "<group>"; };
-		5F83E5B3BB1F51586A8A4630D791D536 /* SwiftUIPager-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SwiftUIPager-Info.plist"; sourceTree = "<group>"; };
-		61EC93547A610D4EECB448D57B890D53 /* Page.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Page.swift; path = Sources/SwiftUIPager/Page.swift; sourceTree = "<group>"; };
+		629E67D9ED3943CC1B4BEE50FD63AFA9 /* SwiftySound-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftySound-umbrella.h"; sourceTree = "<group>"; };
 		6C3C731423E9F04EDA1DFCBFA190C54E /* Pods-StudyBuddyAppTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-StudyBuddyAppTests-umbrella.h"; sourceTree = "<group>"; };
+		6D602C682E39E0D33F6CC7A62612D0AC /* View+Helper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "View+Helper.swift"; path = "Sources/SwiftUIPager/Helpers/View+Helper.swift"; sourceTree = "<group>"; };
+		716CCA18D2A611E7032FA939779090C6 /* SwiftySound-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SwiftySound-Info.plist"; sourceTree = "<group>"; };
 		71800426B96E3911C259394DE5B30D5E /* Pods-StudyBuddyAppTests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-StudyBuddyAppTests"; path = Pods_StudyBuddyAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		7E75EC6528A16764C0B369F89A220B07 /* SwipeInteractionArea.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwipeInteractionArea.swift; path = Sources/SwiftUIPager/PageConfiguration/SwipeInteractionArea.swift; sourceTree = "<group>"; };
+		7DEF3E57B92BBF1A6C4D3F089EF01B3B /* OnDeactivateModifier.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OnDeactivateModifier.swift; path = Sources/SwiftUIPager/Helpers/OnDeactivateModifier.swift; sourceTree = "<group>"; };
 		7E885D2F70ED19758CD2F9383F7BB5BA /* Pods-StudyBuddyAppTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-StudyBuddyAppTests-acknowledgements.plist"; sourceTree = "<group>"; };
-		7FE58681860217814990E5C2BBAA652B /* SwiftUIPager-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftUIPager-prefix.pch"; sourceTree = "<group>"; };
 		82A0A5409C07A65F72B65B37A97F9C37 /* Pods-StudyBuddyAppTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-StudyBuddyAppTests.modulemap"; sourceTree = "<group>"; };
-		8D94125BCB2ABF4D3E9F379AABF57089 /* Pager+Buildable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Pager+Buildable.swift"; path = "Sources/SwiftUIPager/Pager+Buildable.swift"; sourceTree = "<group>"; };
-		937BE1BFC37E20903864A8919FBA23B7 /* PagingAnimation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PagingAnimation.swift; path = Sources/SwiftUIPager/PageConfiguration/PagingAnimation.swift; sourceTree = "<group>"; };
-		9CD92A204138290DBD3A894B4DC50875 /* GesturePriority.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GesturePriority.swift; path = Sources/SwiftUIPager/PageConfiguration/GesturePriority.swift; sourceTree = "<group>"; };
+		906D44ADFE6D947B0CFDDC5A1E7BBBFE /* SwiftUIPager-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SwiftUIPager-Info.plist"; sourceTree = "<group>"; };
+		9693BA7074A671ED3AFF5B7E7E69244F /* SwiftUIPager.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwiftUIPager.modulemap; sourceTree = "<group>"; };
+		996615DEDCD6C2933EC3F8504427765B /* SwiftySound */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftySound; path = SwiftySound.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		99C156F33BD2DB1121CF5935B42C58AC /* Buildable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Buildable.swift; path = Sources/SwiftUIPager/Helpers/Buildable.swift; sourceTree = "<group>"; };
+		9D34D659ABC370338DC5B091DA06A1CA /* PagerContent+Buildable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "PagerContent+Buildable.swift"; path = "Sources/SwiftUIPager/PagerContent+Buildable.swift"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A212AE6A26EC76991C6E35F24D786BE6 /* Pods-StudyBuddyApp-StudyBuddyAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-StudyBuddyApp-StudyBuddyAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		A6B952AADC68B4B6CE33216489E27361 /* SwiftySound.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftySound.debug.xcconfig; sourceTree = "<group>"; };
 		AAC293177F4546E740E06D555D8DF37F /* Pods-StudyBuddyAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-StudyBuddyAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		AAF2A706DF619D36ED41A974188CDC7C /* SwiftySound.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwiftySound.modulemap; sourceTree = "<group>"; };
 		B1922F60046ADA1B2B1C17AC3C7DF5C4 /* Pods-StudyBuddyApp-StudyBuddyAppUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-StudyBuddyApp-StudyBuddyAppUITests-acknowledgements.plist"; sourceTree = "<group>"; };
-		B81E576CDEA3BB6EE286754731DBBF3F /* PageWrapper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PageWrapper.swift; path = Sources/SwiftUIPager/PageWrapper.swift; sourceTree = "<group>"; };
-		C217A11B08BD154228466F357F67E9C1 /* Buildable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Buildable.swift; path = Sources/SwiftUIPager/Helpers/Buildable.swift; sourceTree = "<group>"; };
-		C2F51D127F5DB32D3F442D2522C2B44A /* SwiftUIPager.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwiftUIPager.modulemap; sourceTree = "<group>"; };
-		C45D354D2C1008D419027BAE6DBFFE2E /* SwiftUIPager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftUIPager.release.xcconfig; sourceTree = "<group>"; };
-		CC631F681F97DE9CC11C4D12D7D3728F /* PagerContent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PagerContent.swift; path = Sources/SwiftUIPager/PagerContent.swift; sourceTree = "<group>"; };
+		BAE19CA3A02B3FED7DF7B0FC9A94CC95 /* SwiftySound.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftySound.release.xcconfig; sourceTree = "<group>"; };
+		C400BB7C2056E350FABBE282ACDDEC98 /* Pager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Pager.swift; path = Sources/SwiftUIPager/Pager.swift; sourceTree = "<group>"; };
+		C84BEB279EF703E9EEEB370B48C77BE1 /* SwipeInteractionArea.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwipeInteractionArea.swift; path = Sources/SwiftUIPager/PageConfiguration/SwipeInteractionArea.swift; sourceTree = "<group>"; };
+		CA48257691F95CE254C02C6764FF1AEE /* SwiftySound-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftySound-prefix.pch"; sourceTree = "<group>"; };
 		D2013EAA453E065F01082081BC7AA0CE /* Pods-StudyBuddyApp-StudyBuddyAppUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-StudyBuddyApp-StudyBuddyAppUITests.modulemap"; sourceTree = "<group>"; };
 		D3ED07882A1737F4521B5F381A87E1C5 /* Pods-StudyBuddyAppTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-StudyBuddyAppTests-dummy.m"; sourceTree = "<group>"; };
+		E19899D58B425428A38E5B3DDBEBFD5E /* PaginationSensitivity.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PaginationSensitivity.swift; path = Sources/SwiftUIPager/PageConfiguration/PaginationSensitivity.swift; sourceTree = "<group>"; };
 		E6C22776E13A78FD3ABB342130E81D42 /* Pods-StudyBuddyApp-StudyBuddyAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-StudyBuddyApp-StudyBuddyAppUITests.release.xcconfig"; sourceTree = "<group>"; };
-		ED1FCA8D53D1C6EA27315F46EAD38591 /* SwipeDirection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwipeDirection.swift; path = Sources/SwiftUIPager/PageConfiguration/SwipeDirection.swift; sourceTree = "<group>"; };
-		ED987EB87158B05FD16299D150511C7F /* PagerContent+Helper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "PagerContent+Helper.swift"; path = "Sources/SwiftUIPager/PagerContent+Helper.swift"; sourceTree = "<group>"; };
+		E8E8C1D16838C7DE78267AFB8C3DF916 /* SwiftySound-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftySound-dummy.m"; sourceTree = "<group>"; };
 		EE18735978C1FD3A42D4D3D0356F3CA6 /* SwiftUIPager */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftUIPager; path = SwiftUIPager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF518CD285637C850B4D3259363DA888 /* Pods-StudyBuddyAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-StudyBuddyAppTests.debug.xcconfig"; sourceTree = "<group>"; };
-		F02EF69EC76E1055A14B2B7678472694 /* PageTransition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PageTransition.swift; path = Sources/SwiftUIPager/PageTransition.swift; sourceTree = "<group>"; };
 		F18A554E3774AAAA3FF95153AB75A779 /* Pods-StudyBuddyApp-StudyBuddyAppUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-StudyBuddyApp-StudyBuddyAppUITests-frameworks.sh"; sourceTree = "<group>"; };
-		FD6FBB898FB65B98D13F6FABC9E48C5A /* View+Helper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "View+Helper.swift"; path = "Sources/SwiftUIPager/Helpers/View+Helper.swift"; sourceTree = "<group>"; };
+		F4ABA89B6FC4CCF24B3DA4D496B38572 /* Sound.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Sound.swift; path = Sources/Sound.swift; sourceTree = "<group>"; };
+		F4E15B105942266C57E027F80493AD5A /* CGPoint+Angle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "CGPoint+Angle.swift"; path = "Sources/SwiftUIPager/Helpers/CGPoint+Angle.swift"; sourceTree = "<group>"; };
+		F518659E351852FD00302EA4D2A0AFAB /* PageWrapper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PageWrapper.swift; path = Sources/SwiftUIPager/PageWrapper.swift; sourceTree = "<group>"; };
+		FCBCDBB32232D9EF60E411911E3B5D4E /* PageTransition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PageTransition.swift; path = Sources/SwiftUIPager/PageTransition.swift; sourceTree = "<group>"; };
+		FF68BB4A05ED5516384D71B8E71331AC /* SwipeDirection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwipeDirection.swift; path = Sources/SwiftUIPager/PageConfiguration/SwipeDirection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +165,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5EA4B34A3EBD2ECB45E712F49637D6AB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				420CF591E247F3D9CF22F8BB784D0F88 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		734851542F634C10602E077B84F104AD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -144,25 +181,34 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		90D8722E2E53FC95E95B42D12C0C8690 /* Frameworks */ = {
+		9BE29C388052B3B108EF9D4D3D772D90 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				96A0B7C438EE12E733EB9D1B59A05F1F /* Foundation.framework in Frameworks */,
+				F9F735423ABBDDB1679FFDACEB4B1BDE /* AVFoundation.framework in Frameworks */,
+				D6F519A0DDF8051607B63C6A777B29B3 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9FFEE0C431A21544760952F92D7B2CB0 /* Frameworks */ = {
+		DD3F8375B3E9A3EDB525A20500A4473D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2FA48A8981BBDD767F52F0F8DCB4CBAC /* Foundation.framework in Frameworks */,
+				2DBA866D9F6682FF5AC35AA7D2F73B5D /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CA13D49ADE69D79D70A8B79AAAC38DE9 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		38110865F66A794A7300A485E59E06BC /* Pods-StudyBuddyAppTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -179,20 +225,25 @@
 			path = "Target Support Files/Pods-StudyBuddyAppTests";
 			sourceTree = "<group>";
 		};
-		3C0A61FC7DA5E08A66AE352EF1578968 /* Pods */ = {
+		428813799335A814639F101E6D75639E /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				7DB12359FFFE0E296DE521BD0F82994E /* SwiftUIPager */,
+				F050AC461A0AF1C1D70B68B47C1FD23E /* SwiftUIPager */,
+				FB271543702F8ED8B39FB7BB29C1B757 /* SwiftySound */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
+		4EF45269C03F498980A9A9641A836DCD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */,
+				421A2738F9385795AAEC1F7DF7531AF0 /* Pods-StudyBuddyApp */,
+				4206F1A1AC8B52F45E00A8637D2D9FA3 /* Pods-StudyBuddyApp-StudyBuddyAppUITests */,
+				71800426B96E3911C259394DE5B30D5E /* Pods-StudyBuddyAppTests */,
+				EE18735978C1FD3A42D4D3D0356F3CA6 /* SwiftUIPager */,
+				996615DEDCD6C2933EC3F8504427765B /* SwiftySound */,
 			);
-			name = iOS;
+			name = Products;
 			sourceTree = "<group>";
 		};
 		5C0F9FCB9955FB93146127FE3495D49D /* Pods-StudyBuddyApp */ = {
@@ -212,35 +263,6 @@
 			path = "Target Support Files/Pods-StudyBuddyApp";
 			sourceTree = "<group>";
 		};
-		7DB12359FFFE0E296DE521BD0F82994E /* SwiftUIPager */ = {
-			isa = PBXGroup;
-			children = (
-				C217A11B08BD154228466F357F67E9C1 /* Buildable.swift */,
-				22DA36A5D72220451E07D9CF36D0813D /* CGPoint+Angle.swift */,
-				4E601CC7C50A5CD428F3A43EF647A8C4 /* ContentLoadingPolicy.swift */,
-				9CD92A204138290DBD3A894B4DC50875 /* GesturePriority.swift */,
-				5AD50596B0661BDD6770D2018DC5D7E6 /* OnAnimationCompletedModifier.swift */,
-				1403EB431956040B71AA60739D9A41F3 /* OnDeactivateModifier.swift */,
-				61EC93547A610D4EECB448D57B890D53 /* Page.swift */,
-				57C52C0A75CB49559632158189655DA8 /* Pager.swift */,
-				8D94125BCB2ABF4D3E9F379AABF57089 /* Pager+Buildable.swift */,
-				CC631F681F97DE9CC11C4D12D7D3728F /* PagerContent.swift */,
-				49E2103428FCB91F4045D4C5F840FFCF /* PagerContent+Buildable.swift */,
-				ED987EB87158B05FD16299D150511C7F /* PagerContent+Helper.swift */,
-				F02EF69EC76E1055A14B2B7678472694 /* PageTransition.swift */,
-				B81E576CDEA3BB6EE286754731DBBF3F /* PageWrapper.swift */,
-				2B46768809661DA8A0A260F65BE5108D /* PaginationSensitivity.swift */,
-				937BE1BFC37E20903864A8919FBA23B7 /* PagingAnimation.swift */,
-				06669429A8060F9C0A17DDF036E445AA /* PositionAlignment.swift */,
-				ED1FCA8D53D1C6EA27315F46EAD38591 /* SwipeDirection.swift */,
-				7E75EC6528A16764C0B369F89A220B07 /* SwipeInteractionArea.swift */,
-				FD6FBB898FB65B98D13F6FABC9E48C5A /* View+Helper.swift */,
-				99E8570F24CBD105E2687FE3EBB7E01E /* Support Files */,
-			);
-			name = SwiftUIPager;
-			path = SwiftUIPager;
-			sourceTree = "<group>";
-		};
 		9458BE0C271CE4BDFC552E253E357657 /* Pods-StudyBuddyApp-StudyBuddyAppUITests */ = {
 			isa = PBXGroup;
 			children = (
@@ -258,16 +280,31 @@
 			path = "Target Support Files/Pods-StudyBuddyApp-StudyBuddyAppUITests";
 			sourceTree = "<group>";
 		};
-		99E8570F24CBD105E2687FE3EBB7E01E /* Support Files */ = {
+		9757A7EC5A985BDCA116C232FE613F62 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				C2F51D127F5DB32D3F442D2522C2B44A /* SwiftUIPager.modulemap */,
-				45CB1B1DF737BD4CA668F1BA6F8D1883 /* SwiftUIPager-dummy.m */,
-				5F83E5B3BB1F51586A8A4630D791D536 /* SwiftUIPager-Info.plist */,
-				7FE58681860217814990E5C2BBAA652B /* SwiftUIPager-prefix.pch */,
-				13FBC4301838366161DDAA14FBE60478 /* SwiftUIPager-umbrella.h */,
-				13FF45B318333126A606607852D59C5D /* SwiftUIPager.debug.xcconfig */,
-				C45D354D2C1008D419027BAE6DBFFE2E /* SwiftUIPager.release.xcconfig */,
+				AAF2A706DF619D36ED41A974188CDC7C /* SwiftySound.modulemap */,
+				E8E8C1D16838C7DE78267AFB8C3DF916 /* SwiftySound-dummy.m */,
+				716CCA18D2A611E7032FA939779090C6 /* SwiftySound-Info.plist */,
+				CA48257691F95CE254C02C6764FF1AEE /* SwiftySound-prefix.pch */,
+				629E67D9ED3943CC1B4BEE50FD63AFA9 /* SwiftySound-umbrella.h */,
+				A6B952AADC68B4B6CE33216489E27361 /* SwiftySound.debug.xcconfig */,
+				BAE19CA3A02B3FED7DF7B0FC9A94CC95 /* SwiftySound.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SwiftySound";
+			sourceTree = "<group>";
+		};
+		A2228F179E7B44E47E9003F58A213EF1 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				9693BA7074A671ED3AFF5B7E7E69244F /* SwiftUIPager.modulemap */,
+				44332C484A332BB05862F9F66F50CF39 /* SwiftUIPager-dummy.m */,
+				906D44ADFE6D947B0CFDDC5A1E7BBBFE /* SwiftUIPager-Info.plist */,
+				4854E0DF0E2298698AB281B079C086AD /* SwiftUIPager-prefix.pch */,
+				567F122C3247D41CAFE8A005CF42D4D6 /* SwiftUIPager-umbrella.h */,
+				026819E30917814C571F984556BA5AB7 /* SwiftUIPager.debug.xcconfig */,
+				08F1CA3CD8671D85FE9242E3272C4EEB /* SwiftUIPager.release.xcconfig */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/SwiftUIPager";
@@ -283,34 +320,63 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		C69F7040E0F1CC73E5BEF6DDDBB6A23D /* Products */ = {
+		CA13D49ADE69D79D70A8B79AAAC38DE9 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				421A2738F9385795AAEC1F7DF7531AF0 /* Pods-StudyBuddyApp */,
-				4206F1A1AC8B52F45E00A8637D2D9FA3 /* Pods-StudyBuddyApp-StudyBuddyAppUITests */,
-				71800426B96E3911C259394DE5B30D5E /* Pods-StudyBuddyAppTests */,
-				EE18735978C1FD3A42D4D3D0356F3CA6 /* SwiftUIPager */,
+				2689EA712E5D78CDDF35E7B1BD8994B6 /* AVFoundation.framework */,
+				2BD9787FB7C94A0DC2A516C656509B78 /* Foundation.framework */,
 			);
-			name = Products;
+			name = iOS;
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
-				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
-				3C0A61FC7DA5E08A66AE352EF1578968 /* Pods */,
-				C69F7040E0F1CC73E5BEF6DDDBB6A23D /* Products */,
+				1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */,
+				428813799335A814639F101E6D75639E /* Pods */,
+				4EF45269C03F498980A9A9641A836DCD /* Products */,
 				B3B67CB4FE5B7D34BC2553E9A8CE1CC4 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+		F050AC461A0AF1C1D70B68B47C1FD23E /* SwiftUIPager */ = {
 			isa = PBXGroup;
 			children = (
-				578452D2E740E91742655AC8F1636D1F /* iOS */,
+				99C156F33BD2DB1121CF5935B42C58AC /* Buildable.swift */,
+				F4E15B105942266C57E027F80493AD5A /* CGPoint+Angle.swift */,
+				07F30A022BAA8A780CF1D84FC32CA9DF /* ContentLoadingPolicy.swift */,
+				290D7FD256E77F4780D38533E34ACE48 /* GesturePriority.swift */,
+				44313BABC3F66D5DAD019D62DBCE28F3 /* OnAnimationCompletedModifier.swift */,
+				7DEF3E57B92BBF1A6C4D3F089EF01B3B /* OnDeactivateModifier.swift */,
+				4B20AFD6CC1D09BC39B77458576E8AB2 /* Page.swift */,
+				C400BB7C2056E350FABBE282ACDDEC98 /* Pager.swift */,
+				04301A9789E9D806C3452DB674649B9C /* Pager+Buildable.swift */,
+				1820CE2579DE9D1D41F971DD543F34F2 /* PagerContent.swift */,
+				9D34D659ABC370338DC5B091DA06A1CA /* PagerContent+Buildable.swift */,
+				20ED56DD2DF43C204CFD39005F1CA629 /* PagerContent+Helper.swift */,
+				FCBCDBB32232D9EF60E411911E3B5D4E /* PageTransition.swift */,
+				F518659E351852FD00302EA4D2A0AFAB /* PageWrapper.swift */,
+				E19899D58B425428A38E5B3DDBEBFD5E /* PaginationSensitivity.swift */,
+				377D3136B5317BC22E1DAA7B3DE95589 /* PagingAnimation.swift */,
+				2BA6903F58A241EF68D68E2ACDD9C103 /* PositionAlignment.swift */,
+				FF68BB4A05ED5516384D71B8E71331AC /* SwipeDirection.swift */,
+				C84BEB279EF703E9EEEB370B48C77BE1 /* SwipeInteractionArea.swift */,
+				6D602C682E39E0D33F6CC7A62612D0AC /* View+Helper.swift */,
+				A2228F179E7B44E47E9003F58A213EF1 /* Support Files */,
 			);
-			name = Frameworks;
+			name = SwiftUIPager;
+			path = SwiftUIPager;
+			sourceTree = "<group>";
+		};
+		FB271543702F8ED8B39FB7BB29C1B757 /* SwiftySound */ = {
+			isa = PBXGroup;
+			children = (
+				F4ABA89B6FC4CCF24B3DA4D496B38572 /* Sound.swift */,
+				9757A7EC5A985BDCA116C232FE613F62 /* Support Files */,
+			);
+			name = SwiftySound;
+			path = SwiftySound;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -324,11 +390,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2C2B7331F1A97FEC68A2568D6B698348 /* Headers */ = {
+		3D2DBEB3A9272ED6736B86D3BE9E5E5D /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B69164A805B27A945718A924AAE41C7A /* Pods-StudyBuddyApp-StudyBuddyAppUITests-umbrella.h in Headers */,
+				B7E98F247454199DEEA7ECA744C683A5 /* Pods-StudyBuddyApp-StudyBuddyAppUITests-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,11 +406,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FCC56835C13D6B5F4A81182EA7B81603 /* Headers */ = {
+		A7ED9460BEA8C33BE619B94CE7CFBD59 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				052208A91CFFAD8371BAE7EAE4BDA1C1 /* Pods-StudyBuddyApp-umbrella.h in Headers */,
+				D386CD8309BA4D1128507B9B8685BFD4 /* Pods-StudyBuddyApp-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BC8803EB6C8993ECF4A0B5D9FA30FB9A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE8B9BD971E022ABE8E1CAF3CECAA0D8 /* SwiftySound-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,17 +427,18 @@
 /* Begin PBXNativeTarget section */
 		10A9E3F8F35B6F4552FECE0C19AE4F1E /* Pods-StudyBuddyApp-StudyBuddyAppUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 045A779F9B747D372E0F0A3F4CBC24E1 /* Build configuration list for PBXNativeTarget "Pods-StudyBuddyApp-StudyBuddyAppUITests" */;
+			buildConfigurationList = 929E312E52E052366894EE884B4BF316 /* Build configuration list for PBXNativeTarget "Pods-StudyBuddyApp-StudyBuddyAppUITests" */;
 			buildPhases = (
-				2C2B7331F1A97FEC68A2568D6B698348 /* Headers */,
-				B4D04340B5288A3858FDA0D83C6BDDAB /* Sources */,
-				90D8722E2E53FC95E95B42D12C0C8690 /* Frameworks */,
-				583BABCB962E4532D74A2AB86E555D1D /* Resources */,
+				3D2DBEB3A9272ED6736B86D3BE9E5E5D /* Headers */,
+				3C2B3FB73F9156354896A2A6D2EB0ABD /* Sources */,
+				5EA4B34A3EBD2ECB45E712F49637D6AB /* Frameworks */,
+				E64E5E7FEEE1C077992FA77201DFDC09 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				9E29A6E92BEC5D1DAED57A375D00C19B /* PBXTargetDependency */,
+				3614D888EED82B3AF963C73326801F59 /* PBXTargetDependency */,
+				2E42D35E0A218718359929A8E71864F2 /* PBXTargetDependency */,
 			);
 			name = "Pods-StudyBuddyApp-StudyBuddyAppUITests";
 			productName = Pods_StudyBuddyApp_StudyBuddyAppUITests;
@@ -382,7 +457,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				A92C1DFDC32B955D629AB68286231F80 /* PBXTargetDependency */,
+				C81EBFF01DDE2DD723493EF2E71C05FA /* PBXTargetDependency */,
 			);
 			name = "Pods-StudyBuddyAppTests";
 			productName = Pods_StudyBuddyAppTests;
@@ -391,17 +466,18 @@
 		};
 		2EBCFBFE4D14B640A08B2FDD8A00DDA1 /* Pods-StudyBuddyApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 35AC002BF0F62EEA6CE34BB9BA342334 /* Build configuration list for PBXNativeTarget "Pods-StudyBuddyApp" */;
+			buildConfigurationList = 5462CEE7BB9C9E43D91B2146500C7D1D /* Build configuration list for PBXNativeTarget "Pods-StudyBuddyApp" */;
 			buildPhases = (
-				FCC56835C13D6B5F4A81182EA7B81603 /* Headers */,
-				F6A1D28C442190536BA0A52E8219688B /* Sources */,
-				9FFEE0C431A21544760952F92D7B2CB0 /* Frameworks */,
-				CB6B2BAF699B7E0BF87E211236138388 /* Resources */,
+				A7ED9460BEA8C33BE619B94CE7CFBD59 /* Headers */,
+				750FB4BA914CAD57D8D6DAAB2B020A37 /* Sources */,
+				DD3F8375B3E9A3EDB525A20500A4473D /* Frameworks */,
+				D515447B68400E8538C25B4EFD48D9C8 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				11BCBF6F14E9D175657EA079A1D5DFA2 /* PBXTargetDependency */,
+				54EF146F8D7B58F2E6D7D19A539AC226 /* PBXTargetDependency */,
+				20F9CF0B3B2C89C406140F09609297C9 /* PBXTargetDependency */,
 			);
 			name = "Pods-StudyBuddyApp";
 			productName = Pods_StudyBuddyApp;
@@ -426,6 +502,24 @@
 			productReference = EE18735978C1FD3A42D4D3D0356F3CA6 /* SwiftUIPager */;
 			productType = "com.apple.product-type.framework";
 		};
+		AF76419D4650F093FFACB1AD713C1EF1 /* SwiftySound */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CF74FADB2B69096A7F543A113959FD60 /* Build configuration list for PBXNativeTarget "SwiftySound" */;
+			buildPhases = (
+				BC8803EB6C8993ECF4A0B5D9FA30FB9A /* Headers */,
+				1C03CC6C1EDCAC90FE5A3BADFB4ED7D4 /* Sources */,
+				9BE29C388052B3B108EF9D4D3D772D90 /* Frameworks */,
+				FF497B1E6002E475922BFF4DD6F1750D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SwiftySound;
+			productName = SwiftySound;
+			productReference = 996615DEDCD6C2933EC3F8504427765B /* SwiftySound */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -444,7 +538,7 @@
 				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = C69F7040E0F1CC73E5BEF6DDDBB6A23D /* Products */;
+			productRefGroup = 4EF45269C03F498980A9A9641A836DCD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -452,19 +546,13 @@
 				10A9E3F8F35B6F4552FECE0C19AE4F1E /* Pods-StudyBuddyApp-StudyBuddyAppUITests */,
 				233A60B7730BAC535BD563FAD011379B /* Pods-StudyBuddyAppTests */,
 				7EDD561B01B453B33504B0EACB2107CC /* SwiftUIPager */,
+				AF76419D4650F093FFACB1AD713C1EF1 /* SwiftySound */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		1148EE8C9E7CFF9ED2DA070B413EB60B /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		583BABCB962E4532D74A2AB86E555D1D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -478,7 +566,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CB6B2BAF699B7E0BF87E211236138388 /* Resources */ = {
+		D515447B68400E8538C25B4EFD48D9C8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E64E5E7FEEE1C077992FA77201DFDC09 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF497B1E6002E475922BFF4DD6F1750D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -488,6 +590,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		1C03CC6C1EDCAC90FE5A3BADFB4ED7D4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ACAA5B9B4341425981D1CFEABAA4ED33 /* Sound.swift in Sources */,
+				0B9579CC651F5ECC0634860B67080B07 /* SwiftySound-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		28AEFACE8A939BA17EE49ECFDC129631 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -524,83 +635,58 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B4D04340B5288A3858FDA0D83C6BDDAB /* Sources */ = {
+		3C2B3FB73F9156354896A2A6D2EB0ABD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07B71E68B0AE4C4D1A4B1BB79064D16F /* Pods-StudyBuddyApp-StudyBuddyAppUITests-dummy.m in Sources */,
+				5F96154A5AF208B5B1ECE23EB64EF848 /* Pods-StudyBuddyApp-StudyBuddyAppUITests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F6A1D28C442190536BA0A52E8219688B /* Sources */ = {
+		750FB4BA914CAD57D8D6DAAB2B020A37 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3DCFF35C3EE9801846AF39D62FD33245 /* Pods-StudyBuddyApp-dummy.m in Sources */,
+				CD88B31DEBD81E2A618FAA6AA64421C7 /* Pods-StudyBuddyApp-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		11BCBF6F14E9D175657EA079A1D5DFA2 /* PBXTargetDependency */ = {
+		20F9CF0B3B2C89C406140F09609297C9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftySound;
+			target = AF76419D4650F093FFACB1AD713C1EF1 /* SwiftySound */;
+			targetProxy = 62805B568BEE3331DD4A84C611FE69EC /* PBXContainerItemProxy */;
+		};
+		2E42D35E0A218718359929A8E71864F2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftySound;
+			target = AF76419D4650F093FFACB1AD713C1EF1 /* SwiftySound */;
+			targetProxy = 5233A3847E4CD00217B8666D34811C28 /* PBXContainerItemProxy */;
+		};
+		3614D888EED82B3AF963C73326801F59 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SwiftUIPager;
 			target = 7EDD561B01B453B33504B0EACB2107CC /* SwiftUIPager */;
-			targetProxy = 6ACA4F0355842A152832F44F3EB55462 /* PBXContainerItemProxy */;
+			targetProxy = 1AB6B0F3A2CC46F0DD69D59B781AC21A /* PBXContainerItemProxy */;
 		};
-		9E29A6E92BEC5D1DAED57A375D00C19B /* PBXTargetDependency */ = {
+		54EF146F8D7B58F2E6D7D19A539AC226 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SwiftUIPager;
 			target = 7EDD561B01B453B33504B0EACB2107CC /* SwiftUIPager */;
-			targetProxy = F4FABFF223E142DD7E2516A849A28B4F /* PBXContainerItemProxy */;
+			targetProxy = 4DF6B266D7F043ED83FB40995B6C5524 /* PBXContainerItemProxy */;
 		};
-		A92C1DFDC32B955D629AB68286231F80 /* PBXTargetDependency */ = {
+		C81EBFF01DDE2DD723493EF2E71C05FA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-StudyBuddyApp";
 			target = 2EBCFBFE4D14B640A08B2FDD8A00DDA1 /* Pods-StudyBuddyApp */;
-			targetProxy = 9D4D254433A28591D1E65F48661D0746 /* PBXContainerItemProxy */;
+			targetProxy = 0813C611D795FF4098FC2BC0894BB143 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		0B31D2BB3F39567801D52D919DF46771 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5F060F604FB977B901C8C62548B5C157 /* Pods-StudyBuddyApp.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-StudyBuddyApp/Pods-StudyBuddyApp-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-StudyBuddyApp/Pods-StudyBuddyApp.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 		2F96DD9E7E0DE220F2976BAA98E4917B /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = AAC293177F4546E740E06D555D8DF37F /* Pods-StudyBuddyAppTests.release.xcconfig */;
@@ -639,9 +725,84 @@
 			};
 			name = Release;
 		};
+		32AB215333707A973602A83A880B23E4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5F060F604FB977B901C8C62548B5C157 /* Pods-StudyBuddyApp.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-StudyBuddyApp/Pods-StudyBuddyApp-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-StudyBuddyApp/Pods-StudyBuddyApp.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		32D1D8047ED3974BA12F2B05C5D9F884 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E6C22776E13A78FD3ABB342130E81D42 /* Pods-StudyBuddyApp-StudyBuddyAppUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-StudyBuddyApp-StudyBuddyAppUITests/Pods-StudyBuddyApp-StudyBuddyAppUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-StudyBuddyApp-StudyBuddyAppUITests/Pods-StudyBuddyApp-StudyBuddyAppUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		439428C1714B5C583DB08D12489EA67F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C45D354D2C1008D419027BAE6DBFFE2E /* SwiftUIPager.release.xcconfig */;
+			baseConfigurationReference = 08F1CA3CD8671D85FE9242E3272C4EEB /* SwiftUIPager.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -677,7 +838,7 @@
 		};
 		501F44348DFD20A8DCC7E804EC9A59DE /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 13FF45B318333126A606607852D59C5D /* SwiftUIPager.debug.xcconfig */;
+			baseConfigurationReference = 026819E30917814C571F984556BA5AB7 /* SwiftUIPager.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -734,43 +895,6 @@
 				);
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-StudyBuddyAppTests/Pods-StudyBuddyAppTests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		6E7EDFFFE069832BB9F433B67D66FC08 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = A212AE6A26EC76991C6E35F24D786BE6 /* Pods-StudyBuddyApp-StudyBuddyAppUITests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-StudyBuddyApp-StudyBuddyAppUITests/Pods-StudyBuddyApp-StudyBuddyAppUITests-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-StudyBuddyApp-StudyBuddyAppUITests/Pods-StudyBuddyApp-StudyBuddyAppUITests.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -912,9 +1036,43 @@
 			};
 			name = Debug;
 		};
-		9617DA4229788D1A7AB284B7E23BA8A3 /* Release */ = {
+		7C32EFD23F77627430DC503377A94E94 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E6C22776E13A78FD3ABB342130E81D42 /* Pods-StudyBuddyApp-StudyBuddyAppUITests.release.xcconfig */;
+			baseConfigurationReference = A6B952AADC68B4B6CE33216489E27361 /* SwiftySound.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftySound/SwiftySound-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftySound/SwiftySound-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/SwiftySound/SwiftySound.modulemap";
+				PRODUCT_MODULE_NAME = SwiftySound;
+				PRODUCT_NAME = SwiftySound;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.1;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		9BE2C19CCB890B5C899A7175AFD07AB8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A212AE6A26EC76991C6E35F24D786BE6 /* Pods-StudyBuddyApp-StudyBuddyAppUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -944,13 +1102,12 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
-		D6D72D71743AB3173031337866865C64 /* Release */ = {
+		C04646C7973B7EB203A1AB7C59751D40 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 41555EFEDE2C3DB45AE9A9FBB46187CE /* Pods-StudyBuddyApp.release.xcconfig */;
 			buildSettings = {
@@ -988,27 +1145,44 @@
 			};
 			name = Release;
 		};
+		F1236B56E1162C6A302E500B32BD086A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BAE19CA3A02B3FED7DF7B0FC9A94CC95 /* SwiftySound.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftySound/SwiftySound-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftySound/SwiftySound-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/SwiftySound/SwiftySound.modulemap";
+				PRODUCT_MODULE_NAME = SwiftySound;
+				PRODUCT_NAME = SwiftySound;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.1;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		045A779F9B747D372E0F0A3F4CBC24E1 /* Build configuration list for PBXNativeTarget "Pods-StudyBuddyApp-StudyBuddyAppUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				6E7EDFFFE069832BB9F433B67D66FC08 /* Debug */,
-				9617DA4229788D1A7AB284B7E23BA8A3 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		35AC002BF0F62EEA6CE34BB9BA342334 /* Build configuration list for PBXNativeTarget "Pods-StudyBuddyApp" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				0B31D2BB3F39567801D52D919DF46771 /* Debug */,
-				D6D72D71743AB3173031337866865C64 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1018,11 +1192,38 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		5462CEE7BB9C9E43D91B2146500C7D1D /* Build configuration list for PBXNativeTarget "Pods-StudyBuddyApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				32AB215333707A973602A83A880B23E4 /* Debug */,
+				C04646C7973B7EB203A1AB7C59751D40 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		7C8E453BA9658806BE1DB5E53C606B5C /* Build configuration list for PBXNativeTarget "SwiftUIPager" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				501F44348DFD20A8DCC7E804EC9A59DE /* Debug */,
 				439428C1714B5C583DB08D12489EA67F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		929E312E52E052366894EE884B4BF316 /* Build configuration list for PBXNativeTarget "Pods-StudyBuddyApp-StudyBuddyAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9BE2C19CCB890B5C899A7175AFD07AB8 /* Debug */,
+				32D1D8047ED3974BA12F2B05C5D9F884 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CF74FADB2B69096A7F543A113959FD60 /* Build configuration list for PBXNativeTarget "SwiftySound" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7C32EFD23F77627430DC503377A94E94 /* Debug */,
+				F1236B56E1162C6A302E500B32BD086A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
