@@ -7,6 +7,7 @@
 
 import SwiftUI
 import SpriteKit
+import SwiftySound
 
 struct PlaygroundView: View {
   @ObservedObject var viewModel: ViewModel
@@ -18,9 +19,10 @@ struct PlaygroundView: View {
   
   let MENU_BG_COLOR = Color(red: 248 / 255, green: 208 / 255, blue: 116 / 255)
   let BOX_BG_COLOR = Color(red: 254 / 255, green: 250 / 255, blue: 224 / 255)
-  
+    
   init(viewModel: ViewModel) {
     self.viewModel = viewModel
+
     // Doing this to avoid 'self' used before all stored properties are initialized error
     self.sceneStore = SceneStore(scene: SKScene())
     

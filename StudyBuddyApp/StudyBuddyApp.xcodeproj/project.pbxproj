@@ -37,6 +37,8 @@
 		D1EB0B60275EF7E700DC26F4 /* bgm_1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D1EB0B5F275EF7E700DC26F4 /* bgm_1.mp3 */; };
 		D1EB0B66275F032C00DC26F4 /* bgm_2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D1EB0B64275F032C00DC26F4 /* bgm_2.mp3 */; };
 		D1EB0B67275F032C00DC26F4 /* bgm_3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D1EB0B65275F032C00DC26F4 /* bgm_3.mp3 */; };
+		D1EB0B75276067F500DC26F4 /* switch.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D1EB0B73276067F500DC26F4 /* switch.mp3 */; };
+		D1EB0B76276067F500DC26F4 /* cash.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D1EB0B74276067F500DC26F4 /* cash.mp3 */; };
 		D1F03D072729B6970076A871 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F03D062729B6970076A871 /* Task.swift */; };
 		D908AA9A2729096A0095600F /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D908AA992729096A0095600F /* ViewModel.swift */; };
 		D908AA9F27290D2C0095600F /* TasksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D908AA9E27290D2C0095600F /* TasksView.swift */; };
@@ -136,6 +138,8 @@
 		D1EB0B5F275EF7E700DC26F4 /* bgm_1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bgm_1.mp3; sourceTree = "<group>"; };
 		D1EB0B64275F032C00DC26F4 /* bgm_2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bgm_2.mp3; sourceTree = "<group>"; };
 		D1EB0B65275F032C00DC26F4 /* bgm_3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bgm_3.mp3; sourceTree = "<group>"; };
+		D1EB0B73276067F500DC26F4 /* switch.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = switch.mp3; sourceTree = "<group>"; };
+		D1EB0B74276067F500DC26F4 /* cash.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = cash.mp3; sourceTree = "<group>"; };
 		D1F03D062729B6970076A871 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		D908AA992729096A0095600F /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		D908AA9E27290D2C0095600F /* TasksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksView.swift; sourceTree = "<group>"; };
@@ -353,6 +357,8 @@
 		D1EB0B51275EF50100DC26F4 /* Sound */ = {
 			isa = PBXGroup;
 			children = (
+				D1EB0B74276067F500DC26F4 /* cash.mp3 */,
+				D1EB0B73276067F500DC26F4 /* switch.mp3 */,
 				D1EB0B64275F032C00DC26F4 /* bgm_2.mp3 */,
 				D1EB0B65275F032C00DC26F4 /* bgm_3.mp3 */,
 				D1EB0B5F275EF7E700DC26F4 /* bgm_1.mp3 */,
@@ -551,7 +557,9 @@
 				D1EB0B60275EF7E700DC26F4 /* bgm_1.mp3 in Resources */,
 				DA48A3CD275AB508005A3570 /* yellow_lamp.png in Resources */,
 				DA48A3C4275AADA4005A3570 /* bed.png in Resources */,
+				D1EB0B76276067F500DC26F4 /* cash.mp3 in Resources */,
 				387A5ECE275991EF0024FFC5 /* hanging_light.png in Resources */,
+				D1EB0B75276067F500DC26F4 /* switch.mp3 in Resources */,
 				DAC76B622746A6CA00F88AE7 /* bob_cheering.atlas in Resources */,
 				DA48A3BC275AAA07005A3570 /* bob_writing.atlas in Resources */,
 				38F3E0B627339A2D00E36A14 /* doingTask1.png in Resources */,

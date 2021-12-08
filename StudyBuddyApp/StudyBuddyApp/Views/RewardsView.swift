@@ -37,7 +37,7 @@ struct RewardsView: View {
         .font(Font.custom("Chalkboard SE", size: 24))
         .baselineOffset(5)
         .padding(.trailing, 5)
-      Text("Bonus Reward: \(viewModel.getBonusReward())")
+      Text("On-time Bonus: \(viewModel.getBonusReward())")
         .font(Font.custom("Chalkboard SE", size: 24))
         .baselineOffset(5)
         .padding(.trailing, 5)
