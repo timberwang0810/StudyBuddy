@@ -47,8 +47,8 @@ class Task : Equatable{
     }
     self.hasTaskEnded = true
     self.timedReward = Task.calculateBaseRewards(duration: self.duration-timeRemaining)
-    self.finalReward = Task.calculateFinalRewards(baseReward: self.timedReward, timeEstimated: self.duration, timeActual: self.duration-timeRemaining)
-    self.bonusReward = Task.calculateBonusRewards(baseReward: self.timedReward)
+    self.finalReward = Task.calculateFinalRewards(baseReward: self.timedReward, timeRemaining: timeRemaining, duration: self.duration)
+    self.bonusReward = Task.calculateBonusRewards(baseReward: self.timedReward, timeRemaining: timeRemaining, duration: self.duration)
   }
   
   public func isTaskStarted() -> Bool{
@@ -72,18 +72,26 @@ class Task : Equatable{
     return Int(duration) / 50
   }
   
-  private static func calculateFinalRewards(baseReward: Int, timeEstimated: TimeInterval, timeActual: TimeInterval) -> Int{
+  private static func calculateFinalRewards(baseReward: Int, timeRemaining: TimeInterval, duration: TimeInterval) -> Int{
     // TODO: Reward calculation function
-    return baseReward + calculateBonusRewards(baseReward: baseReward)
+    return baseReward + calculateBonusRewards(baseReward: baseReward, timeRemaining: timeRemaining, duration: duration)
   }
-  private static func calculateBonusRewards(baseReward: Int) -> Int{
+  private static func calculateBonusRewards(baseReward: Int, timeRemaining: TimeInterval, duration: TimeInterval) -> Int{
+    print((Int(duration) * 2)/12)
+    print(Int(timeRemaining))
     // TODO: Reward calculation function
-    if (baseReward <= 5) {
-      return 0
+    if (Int(timeRemaining) <= (Int(duration) * 1)/12){
+      return baseReward / 2
     }
-    if (baseReward <= 10) {
-      return 2
+    if (Int(timeRemaining) <= (Int(duration) * 2)/12){
+      return baseReward / 4
     }
-    return (baseReward / 5) + 3
+    if (Int(timeRemaining) <= (Int(duration) * 3)/12){
+      return baseReward / 8
+    }
+    if (Int(timeRemaining) <= (Int(duration) * 4)/12){
+      return baseReward / 16
+    }
+    return 0
   }
 }
