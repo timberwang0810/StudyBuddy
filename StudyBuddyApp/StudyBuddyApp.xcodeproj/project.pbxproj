@@ -14,6 +14,8 @@
 		A9EE60D611FE8C1DD4BD0774 /* Pods_StudyBuddyAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E8D64EDE2A72AC155B302B5 /* Pods_StudyBuddyAppTests.framework */; };
 		C3F59CCA737769A6743DC217 /* Pods_StudyBuddyApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EF48D5CC853A954D904CDE7 /* Pods_StudyBuddyApp.framework */; };
 		C939FE84D401F898FC509120 /* Pods_StudyBuddyApp_StudyBuddyAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C429A496873E1E2552C3E042 /* Pods_StudyBuddyApp_StudyBuddyAppUITests.framework */; };
+		D14FAE0A276113B9003C7367 /* bgm_4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D14FAE09276113B9003C7367 /* bgm_4.mp3 */; };
+		D14FAE0F27611ACB003C7367 /* bgm_5.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D14FAE0E27611ACB003C7367 /* bgm_5.mp3 */; };
 		D15A4F5F274CA96800B8A029 /* GSTimeIntervalPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = D15A4F5D274CA96800B8A029 /* GSTimeIntervalPicker.m */; };
 		D160120B272B1622003BAD02 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D160120A272B1622003BAD02 /* User.swift */; };
 		D1601216272BA4B9003BAD02 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1601215272BA4B9003BAD02 /* Item.swift */; };
@@ -106,6 +108,8 @@
 		7E51CDA8A292E2B3D566E5A2 /* Pods-StudyBuddyAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StudyBuddyAppTests.debug.xcconfig"; path = "Target Support Files/Pods-StudyBuddyAppTests/Pods-StudyBuddyAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A5A4D08E7610B0D29F782739 /* Pods-StudyBuddyApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StudyBuddyApp.debug.xcconfig"; path = "Target Support Files/Pods-StudyBuddyApp/Pods-StudyBuddyApp.debug.xcconfig"; sourceTree = "<group>"; };
 		C429A496873E1E2552C3E042 /* Pods_StudyBuddyApp_StudyBuddyAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StudyBuddyApp_StudyBuddyAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D14FAE09276113B9003C7367 /* bgm_4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bgm_4.mp3; sourceTree = "<group>"; };
+		D14FAE0E27611ACB003C7367 /* bgm_5.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bgm_5.mp3; sourceTree = "<group>"; };
 		D15A4EEC274956FE00B8A029 /* StudyBuddyApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "StudyBuddyApp-Bridging-Header.h"; sourceTree = "<group>"; };
 		D15A4F5D274CA96800B8A029 /* GSTimeIntervalPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSTimeIntervalPicker.m; sourceTree = "<group>"; };
 		D15A4F5E274CA96800B8A029 /* GSTimeIntervalPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSTimeIntervalPicker.h; sourceTree = "<group>"; };
@@ -357,6 +361,8 @@
 		D1EB0B51275EF50100DC26F4 /* Sound */ = {
 			isa = PBXGroup;
 			children = (
+				D14FAE0E27611ACB003C7367 /* bgm_5.mp3 */,
+				D14FAE09276113B9003C7367 /* bgm_4.mp3 */,
 				D1EB0B74276067F500DC26F4 /* cash.mp3 */,
 				D1EB0B73276067F500DC26F4 /* switch.mp3 */,
 				D1EB0B64275F032C00DC26F4 /* bgm_2.mp3 */,
@@ -536,6 +542,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D14FAE0A276113B9003C7367 /* bgm_4.mp3 in Resources */,
 				DA48A3C0275AAB95005A3570 /* bob_mopping.atlas in Resources */,
 				D926DF8927573A030000253B /* bob_waving_f1.png in Resources */,
 				DA48A3B0275A1065005A3570 /* bob_standing.atlas in Resources */,
@@ -553,6 +560,7 @@
 				DA48A3C3275AADA4005A3570 /* tv.png in Resources */,
 				D1A4AFAE272738B900C92354 /* Preview Assets.xcassets in Resources */,
 				DA48A3C9275AB4C1005A3570 /* classic_clock.png in Resources */,
+				D14FAE0F27611ACB003C7367 /* bgm_5.mp3 in Resources */,
 				D1A4AFAB272738B900C92354 /* Assets.xcassets in Resources */,
 				D1EB0B60275EF7E700DC26F4 /* bgm_1.mp3 in Resources */,
 				DA48A3CD275AB508005A3570 /* yellow_lamp.png in Resources */,

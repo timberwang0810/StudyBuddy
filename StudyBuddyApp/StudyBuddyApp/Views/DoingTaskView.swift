@@ -21,7 +21,7 @@ struct DoingTaskView: View {
   @State var timeRemaining: Double = 0.0
   @State private var showingStopAlert = false
   @State private var showingCompleteAlert = false
-  @State private var currBGM : Int = Int.random(in: 0...2)
+  @State private var currBGM : Int = Int.random(in: 0...4)
   
   @ObservedObject var sceneStore: SceneStore
   
@@ -33,7 +33,8 @@ struct DoingTaskView: View {
    1. "Equinox" by Purrple Cat https://www.chosic.com/download-audio/28547/
    2. "bedtime after a coffee" by Barradeen  https://www.chosic.com/download-audio/26756/
    3. "[Lofi Study Music] Morning Routine by Ghostrifter Official https://www.chosic.com/download-audio/29425/
-   
+   4. "Coral" by LiQWYD https://www.chosic.com/download-audio/28067/
+   5. "Field of Fireflies" by Purrple Cat https://www.chosic.com/download-audio/28546/
   **/
   private var bgms : [Sound?]
   
@@ -46,7 +47,7 @@ struct DoingTaskView: View {
       scene: DoingTaskScene(size: CGSize(width: 400, height: 700), duration: viewModel.currentTask!.duration, taskCategory: viewModel.currentTask!.category)
     )
     self.bgms = [Sound?]()
-    for i in 1...3{
+    for i in 1...5{
       if let bgmUrl = Bundle.main.url(forResource: "bgm_\(i)", withExtension: "mp3") {
         let bgm = Sound(url: bgmUrl)
         print("reached \(i)")
@@ -151,6 +152,7 @@ struct DoingTaskView: View {
       }
     }.onReceive(NotificationCenter.default.publisher(for: UIApplication.didEnterBackgroundNotification)) { _ in
       print("Moving to the background!")
+      self.disableBGM()
       self.pauseTimer()
       let content = UNMutableNotificationContent()
       content.title = "Come back!🥺"
@@ -166,12 +168,15 @@ struct DoingTaskView: View {
       // add our notification request
       UNUserNotificationCenter.current().add(request)
     }.onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)) { _ in
+      self.enableBGM()
       self.startTimer()
     }.onReceive(NotificationCenter.default.publisher(for: UIApplication.willTerminateNotification)) { _ in
       print("will terminate")
       UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
     }.onDisappear{
-      self.disableBGM()
+      for (_, element) in bgms.enumerated(){
+        element?.stop()
+      }
     }.onAppear{
       self.enableBGM()
     }
@@ -218,10 +223,12 @@ struct DoingTaskView: View {
   
   private func onBGMFinished(completed: Bool){
     print("called")
-    self.currBGM = Int.random(in: 0..<bgms.count)
+    let oldBGM = self.currBGM
+    while (self.currBGM == oldBGM){
+      self.currBGM = Int.random(in: 0..<bgms.count)
+    }
     self.enableBGM()
   }
-
 }
 
 
