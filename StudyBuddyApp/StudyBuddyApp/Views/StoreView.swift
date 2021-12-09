@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftySound
 
 struct StoreView: View {
   @ObservedObject var viewModel: ViewModel
@@ -14,7 +15,7 @@ struct StoreView: View {
   @State private var showingInsufficientFundsAlert = false
   @State private var selectedItem: PlaygroundItem? = nil
   @State private var selectedItemCost: Int = -1
-
+  
   let data = (1...10).map { "Item \($0)" }
   let CART_ICON_SIZE: CGFloat = 23.0
   
@@ -29,6 +30,7 @@ struct StoreView: View {
   //        viewModel.togglePlaygroundItem(item: playgroundItem)
   //        print("After: \(viewModel.isItemInUse(item: playgroundItem))")
   //
+  
   var body: some View {
     ZStack {
       Color(red: 241 / 255, green: 241 / 255, blue: 241 / 255).edgesIgnoringSafeArea([.top])
@@ -90,6 +92,7 @@ struct StoreView: View {
                     message: Text("This will cost \(selectedItemCost) coins."),
                     primaryButton: .default(Text("Purchase"), action: {
                       if (self.viewModel.buyStorePlaygroundItem(item: selectedItem!)){
+                        Sound.play(file: "cash", fileExtension: "mp3", numberOfLoops: 0)
                         self.viewModel.saveUserData()
                         self.viewModel.saveItemData(itemName: selectedItem!.name, isPurchased: true, isEquipped: false)
                         self.viewModel.updateUserData()

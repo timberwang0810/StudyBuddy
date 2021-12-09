@@ -37,10 +37,12 @@ struct RewardsView: View {
         .font(Font.custom("Chalkboard SE", size: 24))
         .baselineOffset(5)
         .padding(.trailing, 5)
-      Text("Bonus Reward: \(viewModel.getBonusReward())")
-        .font(Font.custom("Chalkboard SE", size: 24))
-        .baselineOffset(5)
-        .padding(.trailing, 5)
+      if (viewModel.getBonusReward() > 0){
+        Text("On-time Bonus: \(viewModel.getBonusReward())")
+          .font(Font.custom("Chalkboard SE", size: 24))
+          .baselineOffset(5)
+          .padding(.trailing, 5)
+      }
       
       Button(action: {
               viewModel.earnMoney(inc: viewModel.getTaskReward())

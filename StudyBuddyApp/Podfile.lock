@@ -1,16 +1,20 @@
 PODS:
   - SwiftUIPager (2.3.1)
+  - SwiftySound (1.2.0)
 
 DEPENDENCIES:
   - SwiftUIPager
+  - SwiftySound
 
 SPEC REPOS:
   trunk:
     - SwiftUIPager
+    - SwiftySound
 
 SPEC CHECKSUMS:
   SwiftUIPager: 273cbaec55a03784d5fbec30f57d8b8974e60450
+  SwiftySound: 9eb28bb14edb601b40027e44319e0ef8383f88bf
 
-PODFILE CHECKSUM: a6e25243cbe03bae7b340d9488c5709cdd5e6280
+PODFILE CHECKSUM: 2b93b8af5037175c5d9df688a43f2a76180ad40e
 
 COCOAPODS: 1.11.2
