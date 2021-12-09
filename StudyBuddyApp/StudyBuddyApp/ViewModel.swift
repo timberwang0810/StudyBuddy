@@ -150,16 +150,16 @@ class ViewModel: ObservableObject {
           if result.count == 0{
             // init for first time only
             var initialItems : [PlaygroundItem] = []
-            let painting = PlaygroundItem(name: "Painting", price: 1000, image: "hill_painting", category: PlaygroundItemCategory.Wall, position: Vector2(x: 0.25, y: 0.7))
-            let lamp = PlaygroundItem(name: "Lamp", price: 100, image: "yellow_lamp", category: PlaygroundItemCategory.Floor, position: Vector2(x: 0.75, y: 0.4))
-            let rug = PlaygroundItem(name: "Rug", price: 50, image: "basic_rug", category: PlaygroundItemCategory.Floor, position: Vector2(x: 0.5, y: 0.2))
-            let fancy_lamp = PlaygroundItem(name: "Fancy Lamp", price: 300, image: "fancy_lamp", category: PlaygroundItemCategory.Floor, position: Vector2(x: 0.75, y: 0.4))
-            let bed = PlaygroundItem(name: "Bed", price: 200, image: "bed", category: PlaygroundItemCategory.Floor, position: Vector2(x: 0.75, y: 0.4))
-            let tv = PlaygroundItem(name: "TV", price: 400, image: "tv", category: PlaygroundItemCategory.Wall, position: Vector2(x: 0.25, y: 0.7))
-            let hanging_light = PlaygroundItem(name: "Hanging Light", price: 150, image: "hanging_light", category: PlaygroundItemCategory.Ceiling, position: Vector2(x: 0.5, y: 0.8))
-            let potted_cactus = PlaygroundItem(name: "Potted Cactus", price: 50, image: "potted_cactus", category: PlaygroundItemCategory.Floor, position: Vector2(x: 0.75, y: 0.4))
-            let clock = PlaygroundItem(name: "Clock", price: 400, image: "classic_clock", category: PlaygroundItemCategory.Wall, position: Vector2(x: 0.25, y: 0.7))
-            let fridge = PlaygroundItem(name: "Fridge", price: 800, image: "fridge", category: PlaygroundItemCategory.Floor, position: Vector2(x: 0.75, y: 0.4))
+            let painting = PlaygroundItem(name: "Painting", price: 1000, image: "hill_painting", category: PlaygroundItemCategory.Wall, position: Vector2(x: 0.15, y: 0.7))
+            let lamp = PlaygroundItem(name: "Lamp", price: 100, image: "yellow_lamp", category: PlaygroundItemCategory.Floor, position: Vector2(x: 0.75, y: 0.5375))
+            let rug = PlaygroundItem(name: "Rug", price: 50, image: "basic_rug", category: PlaygroundItemCategory.Floor, position: Vector2(x: 0.5, y: 0.375))
+            let fancy_lamp = PlaygroundItem(name: "Fancy Lamp", price: 300, image: "fancy_lamp", category: PlaygroundItemCategory.Floor, position: Vector2(x: 0.75, y: 0.5375))
+            let bed = PlaygroundItem(name: "Bed", price: 200, image: "bed", category: PlaygroundItemCategory.Floor, position: Vector2(x: 0.75, y: 0.5))
+            let tv = PlaygroundItem(name: "TV", price: 400, image: "tv", category: PlaygroundItemCategory.Floor, position: Vector2(x: 0.75, y: 0.525))
+            let hanging_light = PlaygroundItem(name: "Hanging Light", price: 150, image: "hanging_light", category: PlaygroundItemCategory.Ceiling, position: Vector2(x: 0.5, y: 0.95))
+            let potted_cactus = PlaygroundItem(name: "Potted Cactus", price: 50, image: "potted_cactus", category: PlaygroundItemCategory.Floor, position: Vector2(x: 0.75, y: 0.475))
+            let clock = PlaygroundItem(name: "Clock", price: 400, image: "classic_clock", category: PlaygroundItemCategory.Wall, position: Vector2(x: 0.15, y: 0.7))
+            let fridge = PlaygroundItem(name: "Fridge", price: 800, image: "fridge", category: PlaygroundItemCategory.Floor, position: Vector2(x: 0.75, y: 0.6))
 //            for index in 1...5 {
 //                let painting = PlaygroundItem(name: "Painting \(index)", price: index * 20 + index, image: "hill_painting", category: PlaygroundItemCategory.Wall, position: Vector2(x: 0.25, y: 0.7))
 //                let carpet = PlaygroundItem(name: "Lamp \(index)", price: index  * 25 + index, image: "yellow_lamp", category: PlaygroundItemCategory.Floor, position: Vector2(x: 0.75, y: 0.4))

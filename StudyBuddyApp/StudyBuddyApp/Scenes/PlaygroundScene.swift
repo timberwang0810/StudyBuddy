@@ -36,7 +36,7 @@ class PlaygroundScene: SKScene {
         self.selectedItems = Dictionary(uniqueKeysWithValues: viewModel.getAllPlaygroundItems().map{($0, viewModel.isItemInUse(item: $0))})
         
         self.bob = BobPlayground(midX: frame.midX)
-        self.bob.position = CGPoint(x: 0.5 * frame.midX, y: 1.15 * frame.midY)
+        self.bob.position = CGPoint(x: 0.5 * frame.midX, y: 1.1 * frame.midY)
         addChild(self.bob)
         self.bob.runMainLoop()
         
