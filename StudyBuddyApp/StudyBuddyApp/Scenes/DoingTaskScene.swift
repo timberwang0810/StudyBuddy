@@ -52,7 +52,7 @@ class DoingTaskScene: SKScene {
             SKAction.wait(forDuration: 45, withRange: 15),
             SKAction.run {
                 let bubble = DialogueBubble(message: "__random_doingTask", time: nil)
-                bubble.position = CGPoint(x: self.frame.midX * 1.5, y: self.frame.midY * 1.5)
+                bubble.position = CGPoint(x: self.frame.midX * 1.3, y: self.frame.midY * 1.6)
                 self.addChild(bubble)
             }
         ]))

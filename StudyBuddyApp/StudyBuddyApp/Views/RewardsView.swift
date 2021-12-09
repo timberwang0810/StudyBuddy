@@ -7,6 +7,7 @@
 
 import SwiftUI
 import SpriteKit
+import SwiftySound
 
 struct RewardsView: View {
   @ObservedObject var viewModel: ViewModel
@@ -45,6 +46,7 @@ struct RewardsView: View {
       }
       
       Button(action: {
+              Sound.play(file: "coin", fileExtension: "wav", numberOfLoops: 0)
               viewModel.earnMoney(inc: viewModel.getTaskReward())
               viewRouter.currentPage = .tabbedPage }) {
         Image(systemName: "gift.fill")
@@ -63,6 +65,8 @@ struct RewardsView: View {
       .foregroundColor(.black)
       .cornerRadius(10)
       .shadow(color: Color.gray, radius: 3, x: 0, y: 5)
+    }.onAppear{
+      Sound.play(file: "success", fileExtension: "wav", numberOfLoops: 0)
     }
   }
 }
