@@ -83,7 +83,7 @@ struct TasksView: View {
               .fontWeight(.light)
             HStack {
               Image("coin")
-              Text("\(Task.calculateBaseRewards(duration: duration))+")
+              Text("\(Task.calculateBaseRewards(duration: duration))")
                 .font(Font.custom("Chalkboard SE", size: 34))
                 .fontWeight(.light)
                 .baselineOffset(5)
