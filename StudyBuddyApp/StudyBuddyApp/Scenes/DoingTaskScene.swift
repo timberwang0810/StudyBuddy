@@ -45,12 +45,20 @@ class DoingTaskScene: SKScene {
         addChild(self.timer)
         
         let dialogue = DialogueBubble(message: "Let's go!")
-        dialogue.xScale = 0.35
-        dialogue.yScale = 0.35
         dialogue.position = CGPoint(x: frame.midX * 1.5, y: frame.midY * 1.5)
         addChild(dialogue)
         
+        let spawnDialogue = SKAction.repeatForever(SKAction.sequence([
+            SKAction.wait(forDuration: 45, withRange: 15),
+            SKAction.run {
+                let bubble = DialogueBubble(message: nil)
+                bubble.position = CGPoint(x: self.frame.midX * 1.5, y: self.frame.midY * 1.5)
+                self.addChild(bubble)
+            }
+        ]))
+        
         bob.startAnimation()
+        self.run(spawnDialogue)
     }
 
 }

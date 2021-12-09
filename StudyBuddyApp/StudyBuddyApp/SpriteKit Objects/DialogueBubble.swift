@@ -29,7 +29,7 @@ class DialogueBubble: SKSpriteNode {
         }
         
         self.textNode = SKLabelNode(text: text)
-        self.textNode.fontSize = 80
+        self.textNode.fontSize = 72
         self.textNode.fontName = "Chalkboard SE"
         self.textNode.fontColor = .black
         self.textNode.position = CGPoint(x: 0, y: -25)
@@ -44,6 +44,8 @@ class DialogueBubble: SKSpriteNode {
         ])
         
         super.init(texture: bubble, color: SKColor.clear, size: bubble.size())
+        self.xScale = 0.35
+        self.yScale = 0.35
         
         self.addChild(self.textNode)
         self.alpha = 0.0
