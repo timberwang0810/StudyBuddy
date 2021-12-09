@@ -13,23 +13,31 @@ class DialogueBubble: SKSpriteNode {
     var textNode: SKLabelNode
     var selfDeleteAction: SKAction
     
-    let strings:[String] = [
+    let doingTaskStrings:[String] = [
         "You can do this!",
         "Hang in there!",
         "You've got this!",
         "Let's get to work!"
     ]
+    let playgroundStrings:[String] = [
+        "How's your day?",
+        "Let's go study!",
+        "This room is cozy.",
+        "I feel great today!"
+    ]
     
-    init(message: String?) {
+    init(message: String, time: Double?) {
         var text: String
-        if message == nil {
-            text = strings[Int.random(in: 0...(strings.count-1))]
+        if message == "__random_doingTask" {
+            text = doingTaskStrings[Int.random(in: 0...(doingTaskStrings.count-1))]
+        } else if message == "__random_playground" {
+            text = playgroundStrings[Int.random(in: 0...(playgroundStrings.count-1))]
         } else {
-            text = message!
+            text = message
         }
         
         self.textNode = SKLabelNode(text: text)
-        self.textNode.fontSize = 72
+        self.textNode.fontSize = 64
         self.textNode.fontName = "Chalkboard SE"
         self.textNode.fontColor = .black
         self.textNode.position = CGPoint(x: 0, y: -25)
@@ -39,13 +47,14 @@ class DialogueBubble: SKSpriteNode {
         selfDeleteAction = SKAction.sequence([
             SKAction.wait(forDuration: 0.35),
             SKAction.fadeIn(withDuration: 0.05),
-            SKAction.wait(forDuration: 5.0),
+            SKAction.wait(forDuration: time ?? 5.0),
             SKAction.fadeOut(withDuration: 0.05)
         ])
         
         super.init(texture: bubble, color: SKColor.clear, size: bubble.size())
-        self.xScale = 0.35
-        self.yScale = 0.35
+        self.xScale = 0.45
+        self.yScale = 0.45
+        self.zPosition = 10
         
         self.addChild(self.textNode)
         self.alpha = 0.0

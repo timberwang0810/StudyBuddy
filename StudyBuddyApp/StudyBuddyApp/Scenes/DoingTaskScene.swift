@@ -44,14 +44,14 @@ class DoingTaskScene: SKScene {
         self.timer.position = CGPoint(x: 1.95 * frame.midX, y: 0.4 * frame.midY)
         addChild(self.timer)
         
-        let dialogue = DialogueBubble(message: "Let's go!")
+        let dialogue = DialogueBubble(message: "Let's go!", time: 2.0)
         dialogue.position = CGPoint(x: frame.midX * 1.5, y: frame.midY * 1.5)
         addChild(dialogue)
         
         let spawnDialogue = SKAction.repeatForever(SKAction.sequence([
             SKAction.wait(forDuration: 45, withRange: 15),
             SKAction.run {
-                let bubble = DialogueBubble(message: nil)
+                let bubble = DialogueBubble(message: "__random_doingTask", time: nil)
                 bubble.position = CGPoint(x: self.frame.midX * 1.5, y: self.frame.midY * 1.5)
                 self.addChild(bubble)
             }
