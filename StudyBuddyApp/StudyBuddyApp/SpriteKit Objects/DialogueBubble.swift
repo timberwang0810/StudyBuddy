@@ -11,6 +11,7 @@ import SpriteKit
 class DialogueBubble: SKSpriteNode {
     
     var textNode: SKLabelNode
+    var selfDeleteAction: SKAction
     
     let strings:[String] = [
         "You can do this!",
@@ -35,9 +36,18 @@ class DialogueBubble: SKSpriteNode {
         
         let bubble = SKTexture(imageNamed: "dialogue_bubble")
         
+        selfDeleteAction = SKAction.sequence([
+            SKAction.wait(forDuration: 0.35),
+            SKAction.fadeIn(withDuration: 0.05),
+            SKAction.wait(forDuration: 5.0),
+            SKAction.fadeOut(withDuration: 0.05)
+        ])
+        
         super.init(texture: bubble, color: SKColor.clear, size: bubble.size())
         
         self.addChild(self.textNode)
+        self.alpha = 0.0
+        self.run(selfDeleteAction)
     }
     
     required init?(coder aDecoder: NSCoder) {
