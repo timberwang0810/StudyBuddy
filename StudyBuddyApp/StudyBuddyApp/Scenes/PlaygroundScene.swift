@@ -49,6 +49,21 @@ class PlaygroundScene: SKScene {
             addChild(spriteNode)
         }
         
+        let dialogue = DialogueBubble(message: "Hello there!", time: 1.5)
+        dialogue.position = CGPoint(x: self.bob.position.x + 150, y: self.bob.position.y + 150)
+        addChild(dialogue)
+        
+        let spawnDialogue = SKAction.repeatForever(SKAction.sequence([
+            SKAction.wait(forDuration: 30, withRange: 10),
+            SKAction.run {
+                let bubble = DialogueBubble(message: "__random_playground", time: nil)
+                bubble.position = CGPoint(x: self.bob.position.x + 150, y: self.bob.position.y + 150)
+                self.addChild(bubble)
+            }
+        ]))
+        
+        self.run(spawnDialogue)
+        
         updatePlaygroundItems()
         
     }

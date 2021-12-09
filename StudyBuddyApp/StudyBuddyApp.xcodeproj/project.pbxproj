@@ -72,6 +72,8 @@
 		DA48A3CD275AB508005A3570 /* yellow_lamp.png in Resources */ = {isa = PBXBuildFile; fileRef = DA48A3CB275AB507005A3570 /* yellow_lamp.png */; };
 		DA48A3CE275AB508005A3570 /* fancy_lamp.png in Resources */ = {isa = PBXBuildFile; fileRef = DA48A3CC275AB508005A3570 /* fancy_lamp.png */; };
 		DA48A3D0275AB544005A3570 /* potted_cactus.png in Resources */ = {isa = PBXBuildFile; fileRef = DA48A3CF275AB544005A3570 /* potted_cactus.png */; };
+		DAB933E527619E370065ADB8 /* DialogueBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB933E427619E370065ADB8 /* DialogueBubble.swift */; };
+		DAB933E72761A49C0065ADB8 /* dialogue_bubble.png in Resources */ = {isa = PBXBuildFile; fileRef = DAB933E62761A49C0065ADB8 /* dialogue_bubble.png */; };
 		DAC76B622746A6CA00F88AE7 /* bob_cheering.atlas in Resources */ = {isa = PBXBuildFile; fileRef = DAC76B612746A6CA00F88AE7 /* bob_cheering.atlas */; };
 		DAD0E15C2739A69000EF1E88 /* DoingTaskScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD0E15B2739A69000EF1E88 /* DoingTaskScene.swift */; };
 		DAD0E15E2739A90E00EF1E88 /* RewardsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD0E15D2739A90E00EF1E88 /* RewardsScene.swift */; };
@@ -176,6 +178,8 @@
 		DA48A3CB275AB507005A3570 /* yellow_lamp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yellow_lamp.png; sourceTree = "<group>"; };
 		DA48A3CC275AB508005A3570 /* fancy_lamp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fancy_lamp.png; sourceTree = "<group>"; };
 		DA48A3CF275AB544005A3570 /* potted_cactus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = potted_cactus.png; sourceTree = "<group>"; };
+		DAB933E427619E370065ADB8 /* DialogueBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogueBubble.swift; sourceTree = "<group>"; };
+		DAB933E62761A49C0065ADB8 /* dialogue_bubble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dialogue_bubble.png; sourceTree = "<group>"; };
 		DAC76B612746A6CA00F88AE7 /* bob_cheering.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = bob_cheering.atlas; sourceTree = "<group>"; };
 		DAD0E15B2739A69000EF1E88 /* DoingTaskScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoingTaskScene.swift; sourceTree = "<group>"; };
 		DAD0E15D2739A90E00EF1E88 /* RewardsScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardsScene.swift; sourceTree = "<group>"; };
@@ -384,6 +388,7 @@
 		DA68B56627354371004C3EB7 /* Bob */ = {
 			isa = PBXGroup;
 			children = (
+				DAB933E62761A49C0065ADB8 /* dialogue_bubble.png */,
 				DA48A3AF275A1065005A3570 /* bob_standing.atlas */,
 				DA48A3BD275AAA1E005A3570 /* bob_walking_right.atlas */,
 				DA48A3B9275A467B005A3570 /* bob_walking_left.atlas */,
@@ -429,6 +434,7 @@
 				DAE29E07272E883A004835E2 /* AnimatedSprite.swift */,
 				DA12B2C7273C638F006F4BE6 /* SpriteTimer.swift */,
 				DA48A3B1275A10CD005A3570 /* BobPlayground.swift */,
+				DAB933E427619E370065ADB8 /* DialogueBubble.swift */,
 			);
 			path = "SpriteKit Objects";
 			sourceTree = "<group>";
@@ -546,6 +552,7 @@
 				DA48A3C0275AAB95005A3570 /* bob_mopping.atlas in Resources */,
 				D926DF8927573A030000253B /* bob_waving_f1.png in Resources */,
 				DA48A3B0275A1065005A3570 /* bob_standing.atlas in Resources */,
+				DAB933E72761A49C0065ADB8 /* dialogue_bubble.png in Resources */,
 				DA48A3CE275AB508005A3570 /* fancy_lamp.png in Resources */,
 				DA48A3BA275A467B005A3570 /* bob_walking_left.atlas in Resources */,
 				D1A4AFB1272738B900C92354 /* LaunchScreen.storyboard in Resources */,
@@ -709,6 +716,7 @@
 				D9BC45F0272C721A00962100 /* DurationPicker.swift in Sources */,
 				D9AD397D2730FA0F00408F59 /* RewardsView.swift in Sources */,
 				D9BC4633272DE7A000962100 /* TabbedView.swift in Sources */,
+				DAB933E527619E370065ADB8 /* DialogueBubble.swift in Sources */,
 				D1601224272DB01B003BAD02 /* Store.swift in Sources */,
 				D1A4AFA2272738B300C92354 /* AppDelegate.swift in Sources */,
 				D1601229272DC4DD003BAD02 /* Playground.swift in Sources */,
