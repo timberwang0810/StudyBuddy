@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftySound
 
 struct TasksView: View {
   @ObservedObject var viewModel: ViewModel
@@ -97,7 +98,9 @@ struct TasksView: View {
         }
         .padding(15)
         
-        Button(action: {self.viewModel.createTask(name: name, duration: duration, category: selection, isStarted: true, completion: {
+        Button(action: {
+                Sound.play(file: "click", fileExtension: "wav", numberOfLoops: 0)
+                self.viewModel.createTask(name: name, duration: duration, category: selection, isStarted: true, completion: {
           viewRouter.currentPage = .doingTaskPage
         })}) {
           Text("Start Now")

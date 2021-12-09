@@ -72,6 +72,7 @@ struct DoingTaskView: View {
           Spacer()
           
           Button(action:{
+            Sound.play(file: "click", fileExtension: "wav", numberOfLoops: 0)
             self.showingStopAlert = true
           }){
             Image(systemName: "x.circle")
@@ -102,6 +103,7 @@ struct DoingTaskView: View {
             if self.timerIsPaused {
               
               Button(action:{
+                Sound.play(file: "click", fileExtension: "wav", numberOfLoops: 0)
                 self.startTimer()
                 self.enableBGM()
               }){
@@ -114,6 +116,7 @@ struct DoingTaskView: View {
               
             } else {
               Button(action:{
+                Sound.play(file: "click", fileExtension: "wav", numberOfLoops: 0)
                 self.pauseTimer()
                 self.disableBGM()
               }){
@@ -127,6 +130,7 @@ struct DoingTaskView: View {
             }
             
             Button(action:{
+              Sound.play(file: "click", fileExtension: "wav", numberOfLoops: 0)
               self.showingCompleteAlert = true
             }){
               Image(systemName: "checkmark.circle")

@@ -44,6 +44,7 @@ struct PlaygroundView: View {
         HStack {
           Spacer()
           Button(action: {
+            Sound.play(file: "cardboard", fileExtension: "wav", numberOfLoops: 0)
             self.showMenu.toggle()
             let scene = self.sceneStore.scene as! PlaygroundScene
             scene.toggleBobVisibility()
@@ -103,10 +104,14 @@ struct PlaygroundView: View {
       }
 //      self.viewModel.deleteEntityData(entityName: "ItemEntity")
 //      self.viewModel.deleteEntityData(entityName: "UserEntity")
-//          self.viewModel.earnMoney(inc: 90000)
+//          self.viewModel.earnMoney(inc: 179250)
 //          self.viewModel.saveUserData()
     }.onDisappear{
-      self.showMenu = false
+      if (self.showMenu){
+        self.showMenu = false
+        let scene = self.sceneStore.scene as! PlaygroundScene
+        scene.toggleBobVisibility()
+      }
     }
     
   }
