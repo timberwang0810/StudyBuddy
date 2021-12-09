@@ -13,7 +13,7 @@ struct TasksView: View {
   @EnvironmentObject var viewRouter: ViewRouter
   
   @State var name: String = ""
-  @State var duration: TimeInterval = TimeInterval(1200)
+  @State var duration: TimeInterval = TimeInterval(0) // default time to 0
   @State private var selection: TaskCategory = .STUDY
   
   var body: some View {
@@ -46,6 +46,7 @@ struct TasksView: View {
                 .font(Font.custom("Chalkboard SE", size: 10))
                 .foregroundColor(.red)
                 .padding(.horizontal)
+                .padding(.bottom, 1)
             }
           }
           
@@ -54,6 +55,14 @@ struct TasksView: View {
               .fontWeight(.light)
             DurationPicker(duration: $duration)
               .padding(.horizontal)
+            
+            if (viewModel.showTaskDurationErrorMessage) {
+              Text("Please select task duration greater than 0 minutes!")
+                .font(Font.custom("Chalkboard SE", size: 10))
+                .foregroundColor(.red)
+                .padding(.horizontal)
+                .padding(.bottom, 1)
+            }
           }.padding(.horizontal)
           
           HStack {
@@ -83,7 +92,7 @@ struct TasksView: View {
               .fontWeight(.light)
             HStack {
               Image("coin")
-              Text("\(Task.calculateBaseRewards(duration: duration))+")
+              Text("\(Task.calculateBaseRewards(duration: duration))")
                 .font(Font.custom("Chalkboard SE", size: 34))
                 .fontWeight(.light)
                 .baselineOffset(5)

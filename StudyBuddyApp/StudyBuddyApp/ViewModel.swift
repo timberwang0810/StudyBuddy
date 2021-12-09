@@ -20,17 +20,19 @@ class ViewModel: ObservableObject {
   @Published var character: Character = Character(name: "Bob")
   @Published var user: User = User()
   @Published var showTaskErrorMessage: Bool = false
+  @Published var showTaskDurationErrorMessage: Bool = false
   
   private var storeNeedUpdate: Bool = true
   private var playgroundNeedUpdate: Bool = true
   private var characterNeedUpdate: Bool = true
   
   func createTask(name: String, duration: TimeInterval, category: TaskCategory, isStarted: Bool, completion: @escaping () -> Void) {
-    if (name == "") {
-      showTaskErrorMessage = true
+    showTaskErrorMessage = name == ""
+    showTaskDurationErrorMessage = duration == 0
+    
+    if (showTaskErrorMessage || showTaskDurationErrorMessage) {
       return
     }
-    showTaskErrorMessage = false
     
     currentTask = Task(name: name, duration: duration, category: category)
     if (isStarted) {
