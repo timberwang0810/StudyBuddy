@@ -65,7 +65,7 @@ class TaskTest: XCTestCase {
     sut.complete(timeRemaining: 0)
     XCTAssertTrue(sut.isTaskStarted())
     XCTAssertTrue(sut.isTaskEnded())
-    XCTAssertEqual(sut.finalReward, 483)
+    XCTAssertEqual(sut.finalReward, 600)
   }
   
   func testTaskEqual() throws{

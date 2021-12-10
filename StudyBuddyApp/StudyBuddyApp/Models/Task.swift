@@ -77,19 +77,18 @@ class Task : Equatable{
     return baseReward + calculateBonusRewards(baseReward: baseReward, timeRemaining: timeRemaining, duration: duration)
   }
   private static func calculateBonusRewards(baseReward: Int, timeRemaining: TimeInterval, duration: TimeInterval) -> Int{
-    print((Int(duration) * 2)/12)
-    print(Int(timeRemaining))
     // TODO: Reward calculation function
-    if (Int(timeRemaining) <= (Int(duration) * 1)/12){
+    let timeRemInt = abs(Int(timeRemaining))
+    if (timeRemInt <= (Int(duration) * 1)/12){
       return baseReward / 2
     }
-    if (Int(timeRemaining) <= (Int(duration) * 2)/12){
+    if (timeRemInt <= (Int(duration) * 2)/12){
       return baseReward / 4
     }
-    if (Int(timeRemaining) <= (Int(duration) * 3)/12){
+    if (timeRemInt <= (Int(duration) * 3)/12){
       return baseReward / 8
     }
-    if (Int(timeRemaining) <= (Int(duration) * 4)/12){
+    if (timeRemInt <= (Int(duration) * 4)/12){
       return baseReward / 16
     }
     return 0
